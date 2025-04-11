@@ -230,6 +230,92 @@ The project uses Gradle for building. Key Gradle files include:
      org.gradle.parallel=true
      ```
 
+#### Advanced Gradle Troubleshooting
+
+If you're still experiencing the `GRADLE_USER_HOME is unknown` error or other persistent Gradle issues after trying the solutions above, try these more advanced approaches:
+
+1. **Create Gradle Wrapper Scripts Manually**:
+   - Create a new `gradlew` file in the project root:
+     ```bash
+     # On Linux/Mac
+     echo '#!/bin/sh
+     exec java -Dorg.gradle.appname=gradlew -classpath `dirname $0`/gradle/wrapper/gradle-wrapper.jar org.gradle.wrapper.GradleWrapperMain "$@"' > gradlew
+     chmod +x gradlew
+     
+     # On Windows, create gradlew.bat:
+     echo @rem Gradle startup script for Windows > gradlew.bat
+     echo @rem Add the rest of the bat file content... >> gradlew.bat
+     ```
+
+2. **Direct Gradle Distribution Download**:
+   - Download Gradle 7.3.3 manually from https://services.gradle.org/distributions/gradle-7.3.3-bin.zip
+   - Unzip it to a directory on your machine
+   - Add the bin directory to your PATH
+   - Run gradle commands directly instead of using the wrapper
+
+3. **Check System Environment Variables**:
+   - Make sure no conflicting environment variables exist:
+     ```bash
+     # On Linux/Mac
+     env | grep GRADLE
+     
+     # On Windows
+     set | findstr GRADLE
+     ```
+   - Look for any unexpected GRADLE_* variables that might be causing conflicts
+
+4. **Verify File Permissions**:
+   - Ensure your user has write permissions to:
+     - The project directory
+     - Your home directory
+     - The .gradle directory
+
+5. **Clean Environment Completely**:
+   ```bash
+   # Delete all Gradle caches and temp files
+   rm -rf ~/.gradle/caches/
+   rm -rf ~/.gradle/wrapper/
+   rm -rf ~/.gradle/daemon/
+   rm -rf <project>/.gradle
+   ```
+
+6. **Try a Different Java Version**:
+   - Gradle 7.3.3 works best with Java 8 or 11
+   - Try switching to a different JDK version:
+     ```bash
+     # Install multiple JDKs, then
+     export JAVA_HOME=/path/to/java11
+     ```
+
+7. **Use Local Properties Approach**:
+   - Create a `local.properties` file in the project root:
+     ```
+     sdk.dir=/path/to/your/Android/sdk
+     ```
+   - Create a gradle.properties with explicit paths:
+     ```
+     org.gradle.java.home=/path/to/java
+     ```
+
+8. **IDE-Independent Build**:
+   - Try building from the command line in a clean terminal session
+   - Ensure the terminal has the correct environment variables set
+
+9. **Network/Proxy Issues**:
+   - If behind a corporate proxy, set proxy settings:
+     ```
+     # In gradle.properties
+     systemProp.http.proxyHost=proxy.company.com
+     systemProp.http.proxyPort=8080
+     systemProp.https.proxyHost=proxy.company.com
+     systemProp.https.proxyPort=8080
+     ```
+
+If all else fails, you might need to:
+1. Create a new Android project from scratch in Android Studio
+2. Copy your source files over to the new project
+3. Configure the new project with the same dependencies
+
 ### Key Dependencies
 - **Room** - For local database storage and offline mode
 - **Nordic BLE Library** - For Bluetooth Low Energy features
