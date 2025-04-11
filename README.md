@@ -108,7 +108,15 @@ Emerband is a comprehensive Android emergency response application that works wi
    - Click the Run button (green triangle) to build and install the app
 
 ### Smartwatch Setup
-Instructions for programming the Arduino smartwatch are in the `arduino/` directory.
+Complete Arduino smartwatch instructions are available in the `app/src/main/assets/arduino/` directory, including:
+
+- Full Arduino sketch code (`EmerbandWatch.ino`)
+- Detailed setup and wiring instructions (`README.md`)
+- Hardware component list and recommendations
+- 3D printable enclosure files (in the `enclosure/` subdirectory)
+- Advanced features like GPS integration and fall detection
+
+The smartwatch is designed to send four different signals ('E', 'F', 'C', 'A') to the Android app via BLE, triggering the corresponding emergency responses.
 
 ## Testing
 
@@ -200,6 +208,11 @@ app/
 │   │   │   ├── LauncherActivity.java
 │   │   │   ├── MainActivity.java
 │   │   │   └── SetupActivity.java    # First-run setup
+│   │   ├── assets/
+│   │   │   ├── arduino/              # Arduino smartwatch code and instructions
+│   │   │   │   ├── EmerbandWatch.ino # Complete Arduino sketch
+│   │   │   │   ├── README.md         # Setup and programming instructions
+│   │   │   │   └── enclosure/        # 3D printable watch enclosure files
 │   │   └── res/                      # Android resources
 │   └── androidTest/                  # Instrumented tests
 └── build.gradle                      # App build configuration
