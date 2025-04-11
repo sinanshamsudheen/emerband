@@ -160,7 +160,54 @@ The project uses Gradle for building. Key Gradle files include:
    - Run `./gradlew clean` to clean the build, then try again
    - Check that your Android SDK is properly installed and the correct version is selected
 
-3. **Dependency Resolution Issues**:
+3. **"GRADLE_USER_HOME is unknown" Error**:
+   If you see an error like: `cannot install gradle distribution from https\://services.gradle.org/distributions/gradle-7.3.3-bin.zip, reason: java.lang.runtimeexception: Base: GRADLE_USER_HOME is unknown`, try these solutions:
+
+   - **Set GRADLE_USER_HOME environment variable manually**:
+     - On Linux/Mac:
+       ```bash
+       export GRADLE_USER_HOME=$HOME/.gradle
+       ```
+     - On Windows (Command Prompt):
+       ```
+       set GRADLE_USER_HOME=%USERPROFILE%\.gradle
+       ```
+     - On Windows (PowerShell):
+       ```
+       $env:GRADLE_USER_HOME="$env:USERPROFILE\.gradle"
+       ```
+
+   - **Verify Java installation**:
+     ```bash
+     java -version
+     ```
+     Make sure Java 8 or higher is installed (JDK 11 recommended for modern Android development)
+
+   - **Create Gradle folder manually**:
+     - On Linux/Mac:
+       ```bash
+       mkdir -p $HOME/.gradle
+       ```
+     - On Windows:
+       ```
+       mkdir %USERPROFILE%\.gradle
+       ```
+
+   - **Fix Gradle wrapper**:
+     If the wrapper is corrupted, regenerate it:
+     ```bash
+     touch gradle/wrapper/gradle-wrapper.properties
+     ```
+     And ensure it contains:
+     ```
+     distributionBase=GRADLE_USER_HOME
+     distributionUrl=https\://services.gradle.org/distributions/gradle-7.3.3-bin.zip
+     distributionPath=wrapper/dists
+     zipStorePath=wrapper/dists
+     zipStoreBase=GRADLE_USER_HOME
+     ```
+
+4. **Dependency Resolution Issues**:
    - If a specific dependency is failing to download, check that it exists and is spelled correctly
    - Try adding Google's Maven repository if Google dependencies are failing:
      ```groovy
@@ -170,13 +217,13 @@ The project uses Gradle for building. Key Gradle files include:
      }
      ```
 
-4. **Out of Memory Errors**:
+5. **Out of Memory Errors**:
    - Increase Gradle's memory allocation in `gradle.properties`:
      ```
      org.gradle.jvmargs=-Xmx3g -XX:MaxPermSize=512m
      ```
 
-5. **Slow Builds**:
+6. **Slow Builds**:
    - Enable Gradle caching and parallel builds in `gradle.properties`:
      ```
      org.gradle.caching=true
