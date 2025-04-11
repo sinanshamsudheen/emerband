@@ -83,12 +83,38 @@ Emerband is a comprehensive Android emergency response application that works wi
 3. Sync Gradle files
 4. Build and run on a physical device (emulators don't support BLE)
 
+### Detailed Installation Steps
+1. **Setup Development Environment**:
+   - Install Android Studio (4.0+)
+   - Clone the repository to your local machine:
+     ```
+     git clone https://github.com/yourusername/emerband.git
+     ```
+
+2. **Open and Build Project**:
+   - Open Android Studio
+   - Select "Open an existing Android Studio project"
+   - Navigate to the cloned repository and select it
+   - Wait for Gradle sync to complete
+   - Ensure all dependencies are resolved (check the build.gradle files)
+
+3. **Deploy to Device**:
+   - Connect a physical Android device via USB
+   - Enable Developer Options on your device:
+     - Go to Settings > About phone
+     - Tap "Build number" 7 times to enable Developer Options
+   - Enable USB Debugging in Developer Options
+   - In Android Studio, select your device from the dropdown menu
+   - Click the Run button (green triangle) to build and install the app
+
 ### Smartwatch Setup
 Instructions for programming the Arduino smartwatch are in the `arduino/` directory.
 
 ## Testing
 
-The application includes a TestingUtils class that allows simulation of various scenarios:
+### Using TestingUtils
+
+The application includes a TestingUtils class that allows simulation of various scenarios without needing the actual BLE smartwatch:
 
 ```java
 // Simulate BLE signals
@@ -103,6 +129,38 @@ TestingUtils.simulateOfflineMode(context, 10000); // 10 seconds
 // Test recovery scenarios
 TestingUtils.testRecoveryFromForceClose(context);
 ```
+
+### Testing Without Arduino Smartwatch
+
+1. **Add test buttons to MainActivity** or use Android Studio's Evaluate Expression feature:
+   - Open your app and navigate to the main screen
+   - Use Android Studio's "Evaluate Expression" (Alt+F8 in debug mode) to run test commands
+
+2. **Trigger specific scenarios**:
+   ```java
+   // Emergency alert
+   TestingUtils.simulateBleSignal(getApplicationContext(), 'E');
+   
+   // Fake call
+   TestingUtils.simulateBleSignal(getApplicationContext(), 'F');
+   
+   // Cyber cell alert
+   TestingUtils.simulateBleSignal(getApplicationContext(), 'C');
+   
+   // Alert mode
+   TestingUtils.simulateBleSignal(getApplicationContext(), 'A');
+   ```
+
+3. **Test offline functionality**:
+   - Enable Airplane mode on your device
+   - Trigger an emergency event
+   - Verify that the event is stored in the database
+   - Disable Airplane mode and verify the event is processed
+
+4. **Test permission scenarios**:
+   - Go to your device Settings > Apps > Emerband > Permissions
+   - Toggle permissions off and on to test permission handling
+   - Verify that the app properly requests permissions when needed
 
 ## Permissions Required
 - Location (for BLE scanning and GPS)
