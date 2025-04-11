@@ -107,6 +107,89 @@ Emerband is a comprehensive Android emergency response application that works wi
    - In Android Studio, select your device from the dropdown menu
    - Click the Run button (green triangle) to build and install the app
 
+### Building the Project
+The project uses Gradle for building. Key Gradle files include:
+
+- `build.gradle` (Project level) - Contains project-wide build settings
+- `app/build.gradle` - Contains app-specific dependencies and settings 
+- `settings.gradle` - Defines which modules to include in the build
+- `gradle.properties` - Contains properties for the Gradle build system
+- `gradle/wrapper/gradle-wrapper.properties` - Specifies which Gradle version to use
+
+#### Using Gradle Files
+
+1. **First-Time Setup**:
+   After cloning the repository, Android Studio should automatically recognize the Gradle files and offer to sync. If not, you can manually trigger a sync:
+   - Click "Sync Now" in the notification bar
+   - Or select File > Sync Project with Gradle Files
+
+2. **Command Line Build**:
+   ```bash
+   # Build the debug APK
+   ./gradlew assembleDebug
+
+   # Install the app on a connected device
+   ./gradlew installDebug
+
+   # Run tests
+   ./gradlew test
+   ```
+
+3. **Using the Gradle Wrapper**:
+   The project uses the Gradle Wrapper (`gradlew`/`gradlew.bat`), which automatically downloads the correct Gradle version. You don't need to install Gradle separately.
+   
+   - On Linux/Mac: `./gradlew [task]`
+   - On Windows: `gradlew.bat [task]`
+
+4. **Gradle Tasks**:
+   View available tasks:
+   ```
+   ./gradlew tasks
+   ```
+
+#### Troubleshooting Gradle Issues
+
+1. **Gradle Sync Failed**:
+   - Check your internet connection (Gradle needs to download dependencies)
+   - Look at the error message in Android Studio's "Build" tab
+   - Try File > Invalidate Caches / Restart
+   - Make sure Java is installed and properly configured
+
+2. **Build Failed**:
+   - Check for compilation errors in the code
+   - Run `./gradlew clean` to clean the build, then try again
+   - Check that your Android SDK is properly installed and the correct version is selected
+
+3. **Dependency Resolution Issues**:
+   - If a specific dependency is failing to download, check that it exists and is spelled correctly
+   - Try adding Google's Maven repository if Google dependencies are failing:
+     ```groovy
+     repositories {
+         google()  // Make sure this is included
+         mavenCentral()
+     }
+     ```
+
+4. **Out of Memory Errors**:
+   - Increase Gradle's memory allocation in `gradle.properties`:
+     ```
+     org.gradle.jvmargs=-Xmx3g -XX:MaxPermSize=512m
+     ```
+
+5. **Slow Builds**:
+   - Enable Gradle caching and parallel builds in `gradle.properties`:
+     ```
+     org.gradle.caching=true
+     org.gradle.parallel=true
+     ```
+
+### Key Dependencies
+- **Room** - For local database storage and offline mode
+- **Nordic BLE Library** - For Bluetooth Low Energy features
+- **AndroidX Components** - Core Android architecture components
+- **Work Manager** - For background processing
+- **PermissionX** - For streamlined permission handling
+
 ### Smartwatch Setup
 Complete Arduino smartwatch instructions are available in the `app/src/main/assets/arduino/` directory, including:
 
@@ -183,6 +266,7 @@ TestingUtils.testRecoveryFromForceClose(context);
 ## Project Structure
 ```
 app/
+├── build.gradle              # App-specific Gradle configuration
 ├── src/
 │   ├── main/
 │   │   ├── java/com/example/emerband/
@@ -215,7 +299,9 @@ app/
 │   │   │   │   └── enclosure/        # 3D printable watch enclosure files
 │   │   └── res/                      # Android resources
 │   └── androidTest/                  # Instrumented tests
-└── build.gradle                      # App build configuration
+build.gradle                 # Project-level Gradle configuration
+gradle.properties            # Gradle properties
+settings.gradle              # Project settings
 ```
 
 ## Future Enhancements
