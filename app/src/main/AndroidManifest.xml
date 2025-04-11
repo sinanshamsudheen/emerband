@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.emerband">
+
+    <!-- Bluetooth permissions -->
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    
+    <!-- For Android 12+ -->
+    <uses-permission android:name="android.permission.BLUETOOTH_CONNECT" />
+    <uses-permission android:name="android.permission.BLUETOOTH_SCAN" />
+    
+    <!-- Location permission required for BLE scanning -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    
+    <!-- Foreground service permission for Android 9+ -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    
+    <!-- Boot completed permission to start service at boot -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    
+    <!-- Wake lock permission to keep CPU running -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    
+    <!-- SMS permission for emergency messages -->
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    
+    <!-- Call phone permission for emergency calls -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    
+    <!-- Vibration permission for fake call feature -->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    
+    <!-- Audio settings permission for alert system -->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    
+    <!-- Flashlight permission for alert system -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    
+    <!-- Feature declarations -->
+    <uses-feature android:name="android.hardware.bluetooth_le" android:required="true" />
+    <uses-feature android:name="android.hardware.bluetooth" android:required="true" />
+    <uses-feature android:name="android.hardware.camera.flash" android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        
+        <!-- Launcher activity that checks whether to show setup or main activity -->
+        <activity android:name=".LauncherActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <!-- Setup activity for first-time launch -->
+        <activity 
+            android:name=".SetupActivity"
+            android:exported="false" />
+            
+        <!-- Main activity of the application -->
+        <activity 
+            android:name=".MainActivity"
+            android:exported="false" />
+            
+        <!-- Fake Call activity -->
+        <activity 
+            android:name=".FakeCallActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+            
+        <!-- Cyber Cell Settings activity -->
+        <activity 
+            android:name=".CyberCellSettingsActivity"
+            android:parentActivityName=".MainActivity"
+            android:label="Cyber Cell Settings"
+            android:exported="false" />
+            
+        <!-- Alert activity -->
+        <activity 
+            android:name=".AlertActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar"
+            android:screenOrientation="portrait"
+            android:exported="false" />
+            
+        <!-- BLE Background Service -->
+        <service
+            android:name=".BLEBackgroundService"
+            android:enabled="true"
+            android:exported="false" />
+            
+        <!-- Boot completed receiver -->
+        <receiver
+            android:name=".BootCompletedReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+            
+    </application>
+
+</manifest> 
