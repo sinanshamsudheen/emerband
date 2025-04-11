@@ -108,13 +108,13 @@ Emerband is a comprehensive Android emergency response application that works wi
    - Click the Run button (green triangle) to build and install the app
 
 ### Building the Project
-The project uses Gradle for building. Key Gradle files include:
+The project uses Gradle 8.10 for building. Key Gradle files include:
 
-- `build.gradle` (Project level) - Contains project-wide build settings
+- `build.gradle` (Project level) - Contains project-wide build settings (using AGP 8.2.0)
 - `app/build.gradle` - Contains app-specific dependencies and settings 
 - `settings.gradle` - Defines which modules to include in the build
 - `gradle.properties` - Contains properties for the Gradle build system
-- `gradle/wrapper/gradle-wrapper.properties` - Specifies which Gradle version to use
+- `gradle/wrapper/gradle-wrapper.properties` - Specifies Gradle 8.10
 
 #### Using Gradle Files
 
@@ -147,13 +147,45 @@ The project uses Gradle for building. Key Gradle files include:
    ./gradlew tasks
    ```
 
+#### Gradle Version Information
+
+This project uses:
+- **Gradle**: 8.10
+- **Android Gradle Plugin**: 8.2.0 
+- **Kotlin**: 1.9.0
+- **Java Compatibility**: Java 17
+
+If you need to downgrade to an older Gradle version:
+
+1. **Update the Gradle Wrapper Version**:
+   - Edit `gradle/wrapper/gradle-wrapper.properties`:
+     ```properties
+     # Change from
+     distributionUrl=https\://services.gradle.org/distributions/gradle-8.10-bin.zip
+     
+     # To an older version (e.g.)
+     distributionUrl=https\://services.gradle.org/distributions/gradle-7.3.3-bin.zip
+     ```
+
+2. **Update the Android Gradle Plugin** in the project-level `build.gradle`:
+   - Also update the app-level build.gradle to use older syntax
+   - Restore older compileOptions and kotlinOptions
+
+3. **Compatibility Guidelines**:
+   | Gradle Version | Android Gradle Plugin | Java Compatibility |
+   |----------------|------------------------|-------------------|
+   | 7.3 - 7.5      | 7.2.x - 7.4.x         | Java 8            |
+   | 7.5 - 8.0      | 7.4.x - 8.0.x         | Java 11           |
+   | 8.0 - 8.5      | 8.0.x - 8.1.x         | Java 11 or 17     |
+   | 8.5+           | 8.2.x+                | Java 17           |
+
 #### Troubleshooting Gradle Issues
 
 1. **Gradle Sync Failed**:
    - Check your internet connection (Gradle needs to download dependencies)
    - Look at the error message in Android Studio's "Build" tab
    - Try File > Invalidate Caches / Restart
-   - Make sure Java is installed and properly configured
+   - Make sure Java 17 is installed and properly configured
 
 2. **Build Failed**:
    - Check for compilation errors in the code
@@ -161,7 +193,7 @@ The project uses Gradle for building. Key Gradle files include:
    - Check that your Android SDK is properly installed and the correct version is selected
 
 3. **"GRADLE_USER_HOME is unknown" Error**:
-   If you see an error like: `cannot install gradle distribution from https\://services.gradle.org/distributions/gradle-7.3.3-bin.zip, reason: java.lang.runtimeexception: Base: GRADLE_USER_HOME is unknown`, try these solutions:
+   If you see an error like: `cannot install gradle distribution from https\://services.gradle.org/distributions/gradle-8.10-bin.zip, reason: java.lang.runtimeexception: Base: GRADLE_USER_HOME is unknown`, try these solutions:
 
    - **Set GRADLE_USER_HOME environment variable manually**:
      - On Linux/Mac:
@@ -181,7 +213,7 @@ The project uses Gradle for building. Key Gradle files include:
      ```bash
      java -version
      ```
-     Make sure Java 8 or higher is installed (JDK 11 recommended for modern Android development)
+     Make sure Java 17 is installed (required for Gradle 8.10)
 
    - **Create Gradle folder manually**:
      - On Linux/Mac:
@@ -201,7 +233,7 @@ The project uses Gradle for building. Key Gradle files include:
      And ensure it contains:
      ```
      distributionBase=GRADLE_USER_HOME
-     distributionUrl=https\://services.gradle.org/distributions/gradle-7.3.3-bin.zip
+     distributionUrl=https\://services.gradle.org/distributions/gradle-8.10-bin.zip
      distributionPath=wrapper/dists
      zipStorePath=wrapper/dists
      zipStoreBase=GRADLE_USER_HOME
@@ -248,7 +280,7 @@ If you're still experiencing the `GRADLE_USER_HOME is unknown` error or other pe
      ```
 
 2. **Direct Gradle Distribution Download**:
-   - Download Gradle 7.3.3 manually from https://services.gradle.org/distributions/gradle-7.3.3-bin.zip
+   - Download Gradle 8.10 manually from https://services.gradle.org/distributions/gradle-8.10-bin.zip
    - Unzip it to a directory on your machine
    - Add the bin directory to your PATH
    - Run gradle commands directly instead of using the wrapper
@@ -280,11 +312,11 @@ If you're still experiencing the `GRADLE_USER_HOME is unknown` error or other pe
    ```
 
 6. **Try a Different Java Version**:
-   - Gradle 7.3.3 works best with Java 8 or 11
-   - Try switching to a different JDK version:
+   - Gradle 8.10 requires Java 17
+   - Ensure you're using the correct JDK version:
      ```bash
-     # Install multiple JDKs, then
-     export JAVA_HOME=/path/to/java11
+     # Set JAVA_HOME to a Java 17 installation
+     export JAVA_HOME=/path/to/java17
      ```
 
 7. **Use Local Properties Approach**:
