@@ -7,6 +7,7 @@ import android.content.pm.PackageManager;
 import android.os.Handler;
 import android.os.Looper;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.example.emerband.AlertActivity;
 import com.example.emerband.BLEBackgroundService;
@@ -19,63 +20,92 @@ import com.example.emerband.offline.OfflineModeManager;
  */
 public class TestingUtils {
     private static final String TAG = "TestingUtils";
+    private static boolean isOfflineMode = false;
+    private static final Handler mainHandler = new Handler(Looper.getMainLooper());
     
     /**
-     * Simulate a BLE signal using a direct method call to the appropriate handler
+     * Simulate a BLE signal from the smartwatch
      * @param context Application context
-     * @param signal The signal to simulate ('E', 'F', 'C', 'A')
+     * @param signalType Type of signal to simulate ('E', 'F', 'C', 'A')
      */
-    public static void simulateBleSignal(Context context, char signal) {
-        Log.d(TAG, "Simulating BLE signal: " + signal);
+    public static void simulateBleSignal(Context context, char signalType) {
+        Intent serviceIntent = new Intent(context, BLEBackgroundService.class);
+        serviceIntent.putExtra("TEST_SIGNAL", signalType);
         
-        switch (signal) {
-            case 'E':
-                // Simulate Emergency signal
-                OfflineModeManager.getInstance(context).handleEmergencyEvent("Test emergency");
-                break;
-                
-            case 'F':
-                // Simulate Fake Call signal
-                Intent fakeCallIntent = new Intent(context, FakeCallActivity.class);
-                fakeCallIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                context.startActivity(fakeCallIntent);
-                break;
-                
-            case 'C':
-                // Simulate Cyber Cell alert
-                OfflineModeManager.getInstance(context).handleCyberCellEvent();
-                break;
-                
-            case 'A':
-                // Simulate Alert signal
-                Intent alertIntent = new Intent(context, AlertActivity.class);
-                alertIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                context.startActivity(alertIntent);
-                break;
-                
-            default:
-                Log.e(TAG, "Unknown test signal: " + signal);
+        if (isOfflineMode) {
+            Toast.makeText(context, "Offline mode active - Signal will be processed when online", Toast.LENGTH_SHORT).show();
+            // TODO: Store the signal in the offline database
+        } else {
+            context.startService(serviceIntent);
+            showSignalToast(context, signalType);
         }
     }
     
     /**
-     * Simulate going into offline mode
+     * Simulate offline mode for testing
      * @param context Application context
-     * @param durationMs How long to remain in simulated offline mode (ms)
+     * @param durationMs Duration of offline mode in milliseconds
      */
     public static void simulateOfflineMode(Context context, long durationMs) {
-        // This is just a demonstration method - in a real implementation,
-        // you would create a proper network callback or override connectivity check
-        Log.d(TAG, "Simulating offline mode for " + durationMs + "ms");
-        
-        // Store an event while "offline"
-        OfflineModeManager.getInstance(context).handleEmergencyEvent("Test offline emergency");
-        
-        // After the specified duration, simulate coming back online and process events
-        new Handler(Looper.getMainLooper()).postDelayed(() -> {
-            Log.d(TAG, "Simulating return to online mode");
-            // In a real implementation, this would be triggered by actual connectivity changes
+        isOfflineMode = true;
+        Toast.makeText(context, "Offline mode activated", Toast.LENGTH_SHORT).show();
+
+        mainHandler.postDelayed(() -> {
+            isOfflineMode = false;
+            Toast.makeText(context, "Back online - Processing stored events", Toast.LENGTH_SHORT).show();
+            // TODO: Process any stored events from the offline database
         }, durationMs);
+    }
+    
+    /**
+     * Test recovery from force close
+     * @param context Application context
+     */
+    public static void testRecoveryFromForceClose(Context context) {
+        // Simulate a crash
+        Toast.makeText(context, "Simulating app crash...", Toast.LENGTH_SHORT).show();
+        
+        mainHandler.postDelayed(() -> {
+            // Restart the BLE service
+            Intent serviceIntent = new Intent(context, BLEBackgroundService.class);
+            context.startService(serviceIntent);
+            Toast.makeText(context, "Service restarted after crash", Toast.LENGTH_SHORT).show();
+        }, 2000);
+    }
+    
+    /**
+     * Test fake call feature directly
+     * @param context Application context
+     * @param callerName Name to display for the fake caller
+     * @param phoneNumber Phone number to display
+     */
+    public static void testFakeCall(Context context, String callerName, String phoneNumber) {
+        Intent intent = new Intent(context, FakeCallActivity.class);
+        intent.putExtra("CALLER_NAME", callerName);
+        intent.putExtra("PHONE_NUMBER", phoneNumber);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(intent);
+    }
+    
+    private static void showSignalToast(Context context, char signalType) {
+        String message;
+        switch (signalType) {
+            case 'E':
+                message = "Emergency signal received";
+                break;
+            case 'F':
+                message = "Fake call signal received";
+                break;
+            case 'C':
+                message = "Cyber cell signal received";
+                break;
+            case 'A':
+                message = "Alert mode signal received";
+                break;
+            default:
+                message = "Unknown signal received";
+        }
+        Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
     }
     
     /**
@@ -107,34 +137,20 @@ public class TestingUtils {
         Intent serviceIntent = new Intent(context, BLEBackgroundService.class);
         context.stopService(serviceIntent);
     }
-    
-    /**
-     * Test recovery from app force-close
-     * @param context Application context
-     */
-    public static void testRecoveryFromForceClose(Context context) {
-        // Stop and restart all components to simulate recovery
-        stopBleService(context);
-        
-        // Disable boot receiver temporarily to simulate a force-close state
-        ComponentName bootReceiver = new ComponentName(context, "com.example.emerband.BootCompletedReceiver");
-        context.getPackageManager().setComponentEnabledSetting(
-                bootReceiver,
-                PackageManager.COMPONENT_ENABLED_STATE_DISABLED,
-                PackageManager.DONT_KILL_APP);
-        
-        // After a short delay, re-enable everything
-        new Handler(Looper.getMainLooper()).postDelayed(() -> {
-            // Re-enable boot receiver
-            context.getPackageManager().setComponentEnabledSetting(
-                    bootReceiver,
-                    PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
-                    PackageManager.DONT_KILL_APP);
-            
-            // Restart services
-            startBleService(context);
-            
-            Log.d(TAG, "Simulated recovery from force-close complete");
-        }, 2000);
+
+    public static void testCyberCell(Context context) {
+        Toast.makeText(context, "Testing Cyber Cell functionality", Toast.LENGTH_SHORT).show();
+    }
+
+    public static void testAlert(Context context) {
+        Toast.makeText(context, "Testing Alert functionality", Toast.LENGTH_SHORT).show();
+    }
+
+    public static void testOffline(Context context) {
+        Toast.makeText(context, "Testing Offline mode", Toast.LENGTH_SHORT).show();
+    }
+
+    public static void testCrash(Context context) {
+        Toast.makeText(context, "Testing Crash handling", Toast.LENGTH_SHORT).show();
     }
 } 

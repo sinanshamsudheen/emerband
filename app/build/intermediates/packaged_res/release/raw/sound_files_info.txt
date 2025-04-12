@@ -1,0 +1,18 @@
+Required sound files:
+
+1. siren.mp3 - Emergency siren sound for AlertActivity
+   - Should be a loud, attention-grabbing emergency siren sound
+   - Recommended length: 3-5 seconds
+   - Format: MP3
+   - Sample rate: 44.1kHz
+   - Bitrate: 128kbps or higher
+
+2. fake_ringtone.mp3 - Ringtone for FakeCallActivity
+   - Should be a standard phone ringtone sound
+   - Recommended length: 3-5 seconds
+   - Format: MP3
+   - Sample rate: 44.1kHz
+   - Bitrate: 128kbps or higher
+
+Please add these sound files to this directory.
+You can use any royalty-free sound files that match these specifications. 

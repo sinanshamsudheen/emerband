@@ -130,7 +130,7 @@ object CyberCellHandler {
             val cyberCellNumber = getCyberCellNumber(context)
             val alertMessage = getCyberAlertMessage(context)
             
-            val smsManager = SmsManager.getDefault()
+            val smsManager = context.getSystemService(SmsManager::class.java)
             
             // Split message if it's too long
             val parts = smsManager.divideMessage(alertMessage)

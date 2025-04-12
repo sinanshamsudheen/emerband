@@ -205,9 +205,14 @@ public class AlertActivity extends AppCompatActivity {
      */
     private void playAlertSound() {
         try {
+            // Try to create MediaPlayer with the siren sound
             mediaPlayer = MediaPlayer.create(this, R.raw.siren);
-            mediaPlayer.setLooping(true);
-            mediaPlayer.start();
+            if (mediaPlayer != null) {
+                mediaPlayer.setLooping(true);
+                mediaPlayer.start();
+            } else {
+                Log.w(TAG, "Could not create MediaPlayer for siren sound - file might be missing");
+            }
         } catch (Exception e) {
             Log.e(TAG, "Failed to play alert sound: " + e.getMessage());
         }

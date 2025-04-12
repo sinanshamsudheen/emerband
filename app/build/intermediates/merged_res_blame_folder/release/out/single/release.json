@@ -1,0 +1,118 @@
+[
+    {
+        "merged": "com.example.emerband.app-merged_res-43:/drawable_ic_phone.xml.flat",
+        "source": "com.example.emerband.app-main-44:/drawable/ic_phone.xml"
+    },
+    {
+        "merged": "com.example.emerband.app-merged_res-43:/drawable_green_circle_button.xml.flat",
+        "source": "com.example.emerband.app-main-44:/drawable/green_circle_button.xml"
+    },
+    {
+        "merged": "com.example.emerband.app-merged_res-43:/drawable_red_circle_button.xml.flat",
+        "source": "com.example.emerband.app-main-44:/drawable/red_circle_button.xml"
+    },
+    {
+        "merged": "com.example.emerband.app-merged_res-43:/layout_activity_main.xml.flat",
+        "source": "com.example.emerband.app-main-44:/layout/activity_main.xml"
+    },
+    {
+        "merged": "com.example.emerband.app-merged_res-43:/raw_siren.mp3.flat",
+        "source": "com.example.emerband.app-main-44:/raw/siren.mp3"
+    },
+    {
+        "merged": "com.example.emerband.app-merged_res-43:/layout_activity_alert.xml.flat",
+        "source": "com.example.emerband.app-main-44:/layout/activity_alert.xml"
+    },
+    {
+        "merged": "com.example.emerband.app-merged_res-43:/drawable_ic_bluetooth_disabled.xml.flat",
+        "source": "com.example.emerband.app-main-44:/drawable/ic_bluetooth_disabled.xml"
+    },
+    {
+        "merged": "com.example.emerband.app-merged_res-43:/drawable_ic_call_end.xml.flat",
+        "source": "com.example.emerband.app-main-44:/drawable/ic_call_end.xml"
+    },
+    {
+        "merged": "com.example.emerband.app-merged_res-43:/drawable_default_caller_image.xml.flat",
+        "source": "com.example.emerband.app-main-44:/drawable/default_caller_image.xml"
+    },
+    {
+        "merged": "com.example.emerband.app-merged_res-43:/layout_activity_setup.xml.flat",
+        "source": "com.example.emerband.app-main-44:/layout/activity_setup.xml"
+    },
+    {
+        "merged": "com.example.emerband.app-merged_res-43:/drawable_ic_help.xml.flat",
+        "source": "com.example.emerband.app-main-44:/drawable/ic_help.xml"
+    },
+    {
+        "merged": "com.example.emerband.app-merged_res-43:/raw_sound_files_info.txt.flat",
+        "source": "com.example.emerband.app-main-44:/raw/sound_files_info.txt"
+    },
+    {
+        "merged": "com.example.emerband.app-merged_res-43:/drawable_ic_shield.xml.flat",
+        "source": "com.example.emerband.app-main-44:/drawable/ic_shield.xml"
+    },
+    {
+        "merged": "com.example.emerband.app-merged_res-43:/layout_dialog_emergency.xml.flat",
+        "source": "com.example.emerband.app-main-44:/layout/dialog_emergency.xml"
+    },
+    {
+        "merged": "com.example.emerband.app-merged_res-43:/raw_fake_ringtone.mp3.flat",
+        "source": "com.example.emerband.app-main-44:/raw/fake_ringtone.mp3"
+    },
+    {
+        "merged": "com.example.emerband.app-merged_res-43:/drawable_ic_offline.xml.flat",
+        "source": "com.example.emerband.app-main-44:/drawable/ic_offline.xml"
+    },
+    {
+        "merged": "com.example.emerband.app-merged_res-43:/drawable_ic_call_answer.xml.flat",
+        "source": "com.example.emerband.app-main-44:/drawable/ic_call_answer.xml"
+    },
+    {
+        "merged": "com.example.emerband.app-merged_res-43:/drawable_circle_background.xml.flat",
+        "source": "com.example.emerband.app-main-44:/drawable/circle_background.xml"
+    },
+    {
+        "merged": "com.example.emerband.app-merged_res-43:/menu_main_menu.xml.flat",
+        "source": "com.example.emerband.app-main-44:/menu/main_menu.xml"
+    },
+    {
+        "merged": "com.example.emerband.app-merged_res-43:/drawable_ic_launcher_foreground.xml.flat",
+        "source": "com.example.emerband.app-main-44:/drawable/ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.emerband.app-merged_res-43:/drawable_ic_location.xml.flat",
+        "source": "com.example.emerband.app-main-44:/drawable/ic_location.xml"
+    },
+    {
+        "merged": "com.example.emerband.app-merged_res-43:/drawable_ic_battery_full.xml.flat",
+        "source": "com.example.emerband.app-main-44:/drawable/ic_battery_full.xml"
+    },
+    {
+        "merged": "com.example.emerband.app-merged_res-43:/drawable_ic_sos.xml.flat",
+        "source": "com.example.emerband.app-main-44:/drawable/ic_sos.xml"
+    },
+    {
+        "merged": "com.example.emerband.app-merged_res-43:/layout_activity_cyber_cell_settings.xml.flat",
+        "source": "com.example.emerband.app-main-44:/layout/activity_cyber_cell_settings.xml"
+    },
+    {
+        "merged": "com.example.emerband.app-merged_res-43:/drawable_ic_emergency.xml.flat",
+        "source": "com.example.emerband.app-main-44:/drawable/ic_emergency.xml"
+    },
+    {
+        "merged": "com.example.emerband.app-merged_res-43:/drawable_ic_bug.xml.flat",
+        "source": "com.example.emerband.app-main-44:/drawable/ic_bug.xml"
+    },
+    {
+        "merged": "com.example.emerband.app-merged_res-43:/layout_activity_fake_call.xml.flat",
+        "source": "com.example.emerband.app-main-44:/layout/activity_fake_call.xml"
+    },
+    {
+        "merged": "com.example.emerband.app-merged_res-43:/drawable_ic_contacts.xml.flat",
+        "source": "com.example.emerband.app-main-44:/drawable/ic_contacts.xml"
+    },
+    {
+        "merged": "com.example.emerband.app-merged_res-43:/drawable_ic_settings.xml.flat",
+        "source": "com.example.emerband.app-main-44:/drawable/ic_settings.xml"
+    }
+]

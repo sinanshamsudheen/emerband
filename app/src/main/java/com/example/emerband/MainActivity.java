@@ -12,6 +12,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.activity.result.ActivityResultLauncher;
@@ -19,6 +21,13 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import com.google.android.material.card.MaterialCardView;
+import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+import com.example.emerband.utils.TestingUtils;
+import androidx.appcompat.widget.Toolbar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -47,80 +56,121 @@ public class MainActivity extends AppCompatActivity {
             Manifest.permission.BLUETOOTH_CONNECT,
             Manifest.permission.BLUETOOTH_SCAN
     };
-    
+
+    // UI Elements
+    private ImageView ivBluetoothStatus;
+    private TextView tvBluetoothStatus;
+    private ImageView ivBatteryStatus;
+    private MaterialCardView debugCard;
+    private ExtendedFloatingActionButton fabEmergency;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         
+        // Initialize UI elements
+        initializeViews();
+        setupToolbar();
+        setupClickListeners();
+        showDebugSection();
+        
         // Check if we're coming from an emergency notification
         handleIntent(getIntent());
-        
-        // Example of retrieving the user's name from SharedPreferences
-        SharedPreferences settings = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
-        String userName = settings.getString(KEY_USER_NAME, "User"); // Default to "User" if not found
-        
-        // Example of displaying the user's name
-        TextView welcomeTextView = findViewById(R.id.welcomeTextView);
-        if (welcomeTextView != null) {
-            welcomeTextView.setText("Welcome, " + userName + "!");
-        }
-        
-        /*
-         * TODO: Future Enhancements for Fake Call Feature:
-         * 1. Add UI elements to allow the user to customize fake caller name and number
-         * 2. Allow the user to select a custom ringtone for fake calls
-         * 3. Implement a scheduler to trigger fake calls at specific times
-         * 4. Add settings to configure call duration before auto-hangup
-         * 5. Support response gestures (swipe to answer/decline) to mimic native call UI
-         * 6. Allow the user to record and play a voice during the call for added realism
-         */
         
         // Check and request necessary permissions
         checkAndRequestPermissions();
     }
     
+    private void initializeViews() {
+        ivBluetoothStatus = findViewById(R.id.ivBluetoothStatus);
+        tvBluetoothStatus = findViewById(R.id.tvBluetoothStatus);
+        ivBatteryStatus = findViewById(R.id.ivBatteryStatus);
+        debugCard = findViewById(R.id.debugCard);
+        fabEmergency = findViewById(R.id.fabEmergency);
+    }
+    
+    private void setupToolbar() {
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+    }
+    
+    private void setupClickListeners() {
+        // Emergency FAB
+        fabEmergency.setOnClickListener(v -> handleEmergency());
+
+        // Menu buttons
+        findViewById(R.id.btnEmergencyCall).setOnClickListener(v -> openEmergencyContacts());
+        findViewById(R.id.btnCyberCell).setOnClickListener(v -> openHelp());
+        findViewById(R.id.btnLocation).setOnClickListener(v -> openLocationSettings());
+        findViewById(R.id.btnSettings).setOnClickListener(v -> openSettings());
+
+        // Debug buttons
+        findViewById(R.id.btnTestEmergency).setOnClickListener(v -> 
+            TestingUtils.simulateBleSignal(this, 'E'));
+        findViewById(R.id.btnTestFakeCall).setOnClickListener(v -> 
+            TestingUtils.testFakeCall(this, "1234567890", "Test emergency call"));
+        findViewById(R.id.btnTestCyberCell).setOnClickListener(v -> 
+            TestingUtils.testCyberCell(this));
+        findViewById(R.id.btnTestAlert).setOnClickListener(v -> 
+            TestingUtils.testAlert(this));
+        findViewById(R.id.btnTestOffline).setOnClickListener(v -> 
+            TestingUtils.testOffline(this));
+        findViewById(R.id.btnTestCrash).setOnClickListener(v -> 
+            TestingUtils.testCrash(this));
+    }
+    
+    private void showDebugSection() {
+        debugCard.setVisibility(BuildConfig.DEBUG ? View.VISIBLE : View.GONE);
+    }
+    
+    private void handleEmergency() {
+        EmergencyDialogFragment dialog = new EmergencyDialogFragment();
+        dialog.show(getSupportFragmentManager(), "emergency_dialog");
+    }
+    
+    private void openSettings() {
+        Toast.makeText(this, "Settings will be implemented soon", Toast.LENGTH_SHORT).show();
+    }
+    
+    private void openEmergencyContacts() {
+        Toast.makeText(this, "Emergency Contacts will be implemented soon", Toast.LENGTH_SHORT).show();
+    }
+    
+    private void openLocationSettings() {
+        Toast.makeText(this, "Location Settings will be implemented soon", Toast.LENGTH_SHORT).show();
+    }
+    
+    private void openHelp() {
+        Toast.makeText(this, "Help & Support will be implemented soon", Toast.LENGTH_SHORT).show();
+    }
+    
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
-        // Handle the intent in case we're coming from a notification
         handleIntent(intent);
     }
     
-    /**
-     * Handle intent, particularly from emergency notifications
-     */
     private void handleIntent(Intent intent) {
         if (intent != null && intent.getBooleanExtra("EMERGENCY", false)) {
-            // This is an emergency intent, handle appropriately
             showEmergencyUI();
         }
     }
     
-    /**
-     * Show emergency UI (placeholder for now)
-     */
     private void showEmergencyUI() {
-        // In a real app, this would display an emergency UI with options
-        Toast.makeText(this, "EMERGENCY ALERT RECEIVED", Toast.LENGTH_LONG).show();
-        
-        // Example - change background color or show an alert dialog
+        // Show emergency dialog
+        new EmergencyDialogFragment().show(getSupportFragmentManager(), "emergency_dialog");
     }
     
-    /**
-     * Check and request required permissions
-     */
     private void checkAndRequestPermissions() {
         List<String> permissionsToRequest = new ArrayList<>();
         
-        // Check all required permissions
         for (String permission : requiredPermissions) {
             if (ContextCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED) {
                 permissionsToRequest.add(permission);
             }
         }
         
-        // Check Android 12 specific permissions
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
             for (String permission : androidSPermissions) {
                 if (ContextCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED) {
@@ -129,14 +179,12 @@ public class MainActivity extends AppCompatActivity {
             }
         }
         
-        // Request permissions if needed
         if (!permissionsToRequest.isEmpty()) {
             ActivityCompat.requestPermissions(
                     this,
                     permissionsToRequest.toArray(new String[0]),
                     PERMISSION_REQUEST_CODE);
         } else {
-            // All permissions are granted, start the BLE service
             startBLEService();
         }
     }
@@ -156,43 +204,35 @@ public class MainActivity extends AppCompatActivity {
             }
             
             if (allPermissionsGranted) {
-                // All permissions granted, start the BLE service
                 startBLEService();
             } else {
-                // Some permissions denied
-                Toast.makeText(this, "Some required permissions were denied. The app may not function properly.", Toast.LENGTH_LONG).show();
+                Snackbar.make(findViewById(android.R.id.content),
+                        "Some required permissions were denied. The app may not function properly.",
+                        Snackbar.LENGTH_LONG).show();
             }
         }
     }
     
-    /**
-     * Start the BLE background service
-     */
     private void startBLEService() {
-        // Check if Bluetooth is available and enabled
         BluetoothManager bluetoothManager = (BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
         if (bluetoothManager != null) {
             BluetoothAdapter bluetoothAdapter = bluetoothManager.getAdapter();
             if (bluetoothAdapter == null) {
-                Toast.makeText(this, "Bluetooth is not available on this device", Toast.LENGTH_LONG).show();
+                Snackbar.make(findViewById(android.R.id.content),
+                        "Bluetooth is not available on this device",
+                        Snackbar.LENGTH_LONG).show();
                 return;
             }
             
             if (!bluetoothAdapter.isEnabled()) {
-                // Bluetooth is not enabled, prompt user to enable it
                 Intent enableBtIntent = new Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE);
                 if (ActivityCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT) == PackageManager.PERMISSION_GRANTED) {
                     startActivity(enableBtIntent);
-                    return;
-                } else {
-                    Log.e(TAG, "Bluetooth connect permission not granted");
-                    Toast.makeText(this, "Bluetooth permissions not granted", Toast.LENGTH_LONG).show();
                     return;
                 }
             }
         }
         
-        // Start the BLE service
         Intent serviceIntent = new Intent(this, BLEBackgroundService.class);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             startForegroundService(serviceIntent);
@@ -213,10 +253,17 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         
-        if (id == R.id.action_cyber_cell_settings) {
-            // Launch the cyber cell settings activity
-            Intent settingsIntent = new Intent(this, CyberCellSettingsActivity.class);
-            startActivity(settingsIntent);
+        if (id == R.id.menu_contacts) {
+            openEmergencyContacts();
+            return true;
+        } else if (id == R.id.menu_location) {
+            openLocationSettings();
+            return true;
+        } else if (id == R.id.menu_help) {
+            openHelp();
+            return true;
+        } else if (id == R.id.menu_settings) {
+            openSettings();
             return true;
         }
         

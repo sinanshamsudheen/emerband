@@ -178,7 +178,7 @@ object EmergencyHandler {
         }
         
         try {
-            val smsManager = SmsManager.getDefault()
+            val smsManager = context.getSystemService(SmsManager::class.java)
             
             // Split message if it's too long
             val parts = smsManager.divideMessage(message)

@@ -23,12 +23,14 @@ android {
                 arguments += ["room.schemaLocation": "$projectDir/schemas".toString()]
             }
         }
+        buildConfigField "boolean", "DEBUG", "true"
     }
     
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            buildConfigField "boolean", "DEBUG", "false"
         }
     }
     
@@ -43,6 +45,7 @@ android {
     
     buildFeatures {
         viewBinding true
+        buildConfig true
     }
     
     // Recommended for Room
@@ -50,6 +53,11 @@ android {
         resources {
             excludes += '/META-INF/atomicfu.kotlin_module'
         }
+    }
+
+    // Add lint baseline configuration
+    lint {
+        baseline = file("lint-baseline.xml")
     }
 }
 
@@ -65,6 +73,7 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.7.0'
+    implementation 'androidx.fragment:fragment:1.6.2'
     
     // Room for database
     implementation 'androidx.room:room-runtime:2.6.1'

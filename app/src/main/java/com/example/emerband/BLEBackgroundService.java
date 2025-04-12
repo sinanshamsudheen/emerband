@@ -1,5 +1,6 @@
 package com.example.emerband;
 
+import android.Manifest;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
@@ -21,6 +22,7 @@ import android.bluetooth.le.ScanSettings;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
@@ -33,6 +35,8 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.core.app.NotificationCompat;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -90,8 +94,18 @@ public class BLEBackgroundService extends Service {
             super.onScanResult(callbackType, result);
             BluetoothDevice device = result.getDevice();
             
-            String deviceName = device.getName();
-            Log.d(TAG, "Found device: " + deviceName);
+            String deviceName = null;
+            try {
+                if (ActivityCompat.checkSelfPermission(BLEBackgroundService.this, 
+                        Manifest.permission.BLUETOOTH_CONNECT) == PackageManager.PERMISSION_GRANTED) {
+                    deviceName = device.getName();
+                }
+            } catch (SecurityException e) {
+                Log.e(TAG, "Bluetooth permission not granted", e);
+                return;
+            }
+            
+            Log.d(TAG, "Found device: " + (deviceName != null ? deviceName : "Unknown"));
             
             if (deviceName != null && deviceName.equals(TARGET_DEVICE_NAME)) {
                 // Stop scanning when we find our target device

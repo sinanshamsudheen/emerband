@@ -13,13 +13,9 @@ buildscript {
     }
 }
 
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
+// Remove allprojects as it's deprecated in Gradle 8.x
+// Repository declarations should be in settings.gradle
 
-task clean(type: Delete) {
+tasks.register('clean', Delete) {
     delete rootProject.buildDir
 } 

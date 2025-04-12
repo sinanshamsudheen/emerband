@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary colors -->
+    <color name="primary">#FF6200EE</color>
+    <color name="primary_dark">#FF3700B3</color>
+    <color name="primary_light">#FFBB86FC</color>
+    
+    <!-- Secondary colors -->
+    <color name="accent">#FF03DAC5</color>
+    <color name="accent_dark">#FF018786</color>
+    <color name="accent_light">#FF03DAC5</color>
+    
+    <!-- Basic colors -->
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="gray">#FF757575</color>
+    <color name="gray_light">#FFBDBDBD</color>
+    <color name="gray_dark">#FF424242</color>
+    
+    <!-- Status colors -->
+    <color name="success">#FF4CAF50</color>
+    <color name="error">#FFF44336</color>
+    <color name="warning">#FFFFC107</color>
+    <color name="info">#FF2196F3</color>
+</resources> 
