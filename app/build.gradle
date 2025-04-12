@@ -1,7 +1,7 @@
 plugins {
     id 'com.android.application'
-    id 'kotlin-android'
-    id 'kotlin-kapt'
+    id 'org.jetbrains.kotlin.android'
+    id 'org.jetbrains.kotlin.kapt'
 }
 
 android {
@@ -58,6 +58,19 @@ android {
     // Add lint baseline configuration
     lint {
         baseline = file("lint-baseline.xml")
+    }
+
+    // Fix for kapt
+    kapt {
+        correctErrorTypes true
+        useBuildCache true
+        arguments {
+            arg("room.schemaLocation", "$projectDir/schemas")
+        }
+        javacOptions {
+            option("-source", "17")
+            option("-target", "17")
+        }
     }
 }
 

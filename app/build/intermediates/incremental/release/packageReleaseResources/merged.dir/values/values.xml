@@ -1,53 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="accent">#FF03DAC5</color>
-    <color name="accent_dark">#FF018786</color>
-    <color name="accent_light">#FF03DAC5</color>
-    <color name="black">#FF000000</color>
-    <color name="error">#FFF44336</color>
-    <color name="gray">#FF757575</color>
-    <color name="gray_dark">#FF424242</color>
-    <color name="gray_light">#FFBDBDBD</color>
-    <color name="info">#FF2196F3</color>
-    <color name="primary">#FF6200EE</color>
-    <color name="primary_dark">#FF3700B3</color>
-    <color name="primary_light">#FFBB86FC</color>
-    <color name="success">#FF4CAF50</color>
-    <color name="warning">#FFFFC107</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="accent">#FF4081</color>
+    <color name="accent_dark">#F50057</color>
+    <color name="accent_light">#FF80AB</color>
+    <color name="black">#000000</color>
+    <color name="error">#F44336</color>
+    <color name="gray">#757575</color>
+    <color name="gray_dark">#424242</color>
+    <color name="gray_light">#EEEEEE</color>
+    <color name="info">#2196F3</color>
+    <color name="primary">#2196F3</color>
+    <color name="primary_dark">#1976D2</color>
+    <color name="primary_light">#BBDEFB</color>
+    <color name="success">#4CAF50</color>
+    <color name="warning">#FFC107</color>
+    <color name="white">#FFFFFF</color>
     <string name="app_name">EmerBand</string>
-    <string name="continue_button">Continue</string>
+    <string name="appbar_scrolling_view_behavior">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
     <string name="debug_tools">Debug Tools</string>
-    <string name="emergency">SOS</string>
-    <string name="emergency_button">Emergency SOS Button</string>
+    <string name="emergency">Emergency</string>
+    <string name="emergency_button">Emergency Button</string>
+    <string name="emergency_features">Emergency Features</string>
     <string name="menu_contacts">Emergency Contacts</string>
     <string name="menu_help">Help &amp; Support</string>
     <string name="menu_location">Location Settings</string>
     <string name="menu_settings">Settings</string>
-    <string name="name_hint">Your name</string>
-    <string name="name_required_error">Please enter your name to continue</string>
-    <string name="setup_instruction">Please enter your name to continue.</string>
+    <string name="msg_alert">Alert Mode Triggered</string>
+    <string name="msg_crash">Testing Crash Recovery</string>
+    <string name="msg_cyber_cell">Cyber Cell Alert Triggered</string>
+    <string name="msg_emergency">Emergency Alert Triggered</string>
+    <string name="msg_fake_call">Fake Call Triggered</string>
+    <string name="msg_offline">Offline Mode Active</string>
+    <string name="status_battery_description">Battery Status</string>
+    <string name="status_bluetooth_description">Bluetooth Status</string>
+    <string name="status_bluetooth_disabled">Bluetooth is disabled</string>
+    <string name="status_title">Status</string>
     <string name="test_alert">Test Alert</string>
     <string name="test_crash">Test Crash</string>
     <string name="test_cyber_cell">Test Cyber Cell</string>
     <string name="test_emergency">Test Emergency</string>
     <string name="test_fake_call">Test Fake Call</string>
     <string name="test_offline">Test Offline</string>
-    <string name="welcome_message">Welcome, %1$s!</string>
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         
-        <item name="colorPrimary">#4CAF50</item>
-        <item name="colorPrimaryDark">#388E3C</item>
-        <item name="colorAccent">#8BC34A</item>
-    </style>
-    <style name="Theme.EmerBand" parent="Theme.Material3.DayNight.NoActionBar">
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryVariant">@color/primary_dark</item>
+        <item name="colorPrimaryContainer">@color/primary_light</item>
         <item name="colorOnPrimary">@color/white</item>
+        
+        
         <item name="colorSecondary">@color/accent</item>
         <item name="colorSecondaryVariant">@color/accent_dark</item>
+        <item name="colorSecondaryContainer">@color/accent_light</item>
         <item name="colorOnSecondary">@color/white</item>
+        
+        
+        <item name="colorError">@color/error</item>
+        <item name="colorOnError">@color/white</item>
+        
+        
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <item name="android:windowLightStatusBar">true</item>
+        
+        
+        <item name="materialButtonStyle">@style/Widget.MaterialComponents.Button</item>
+        <item name="materialButtonOutlinedStyle">@style/Widget.MaterialComponents.Button.OutlinedButton</item>
+        <item name="extendedFloatingActionButtonStyle">@style/Widget.MaterialComponents.ExtendedFloatingActionButton</item>
+        <item name="materialCardViewStyle">@style/Widget.MaterialComponents.CardView</item>
+        <item name="toolbarStyle">@style/Widget.MaterialComponents.Toolbar.Primary</item>
+    </style>
+    <style name="Theme.EmerBand" parent="Theme.MaterialComponents.Light.NoActionBar">
+        
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primary_dark</item>
+        <item name="colorPrimaryContainer">@color/primary_light</item>
+        <item name="colorOnPrimary">@color/white</item>
+        
+        
+        <item name="colorSecondary">@color/accent</item>
+        <item name="colorSecondaryVariant">@color/accent_dark</item>
+        <item name="colorSecondaryContainer">@color/accent_light</item>
+        <item name="colorOnSecondary">@color/white</item>
+        
+        
+        <item name="colorError">@color/error</item>
+        <item name="colorOnError">@color/white</item>
+        
+        
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        
+        
+        <item name="materialButtonStyle">@style/Widget.MaterialComponents.Button</item>
+        <item name="materialButtonOutlinedStyle">@style/Widget.MaterialComponents.Button.OutlinedButton</item>
+        <item name="extendedFloatingActionButtonStyle">@style/Widget.MaterialComponents.ExtendedFloatingActionButton</item>
+        <item name="materialCardViewStyle">@style/Widget.MaterialComponents.CardView</item>
+        <item name="toolbarStyle">@style/Widget.MaterialComponents.Toolbar.Primary</item>
     </style>
 </resources>

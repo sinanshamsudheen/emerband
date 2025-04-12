@@ -14,12 +14,12 @@
                         "endOffsets": "266,408,569,779,986,1193,1396,1598,1863,2136"
                     },
                     "to": {
-                        "startLines": "55,58,62,66,69,72,75,78,81,85",
+                        "startLines": "60,63,67,71,74,77,80,83,86,90",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "3511,3727,3869,4030,4240,4447,4654,4857,5059,5324",
-                        "endLines": "57,61,65,68,71,74,77,80,84,88",
+                        "startOffsets": "3753,3969,4111,4272,4482,4689,4896,5099,5301,5566",
+                        "endLines": "62,66,70,73,76,79,82,85,89,93",
                         "endColumns": "10,10,10,10,10,10,10,10,10,10",
-                        "endOffsets": "3722,3864,4025,4235,4442,4649,4852,5054,5319,5592"
+                        "endOffsets": "3964,4106,4267,4477,4684,4891,5094,5296,5561,5834"
                     }
                 },
                 {
@@ -39,6 +39,25 @@
                         "endLines": "54",
                         "endColumns": "12",
                         "endOffsets": "3506"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Abhay\\Desktop\\EmerBand\\app\\src\\main\\res\\values-v23\\themes.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "57",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "323"
+                    },
+                    "to": {
+                        "startLines": "55",
+                        "startColumns": "4",
+                        "startOffsets": "3511",
+                        "endLines": "59",
+                        "endColumns": "12",
+                        "endOffsets": "3748"
                     }
                 },
                 {

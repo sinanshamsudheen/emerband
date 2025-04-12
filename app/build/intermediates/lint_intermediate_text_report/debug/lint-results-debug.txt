@@ -1,38 +1,7 @@
-C:\Users\Abhay\Desktop\EmerBand\app\lint-baseline.xml: Information: 10 errors/warnings were listed in the baseline file (lint-baseline.xml) but not found in the project; perhaps they have been fixed? Another possible explanation is that lint recently stopped analyzing (and including results from) dependent projects by default. You can turn this back on with android.lintOptions.checkDependencies=true. Unmatched issue types: HardcodedText (2), SetTextI18n (2), UnusedResources (6) [LintBaseline]
-C:\Users\Abhay\Desktop\EmerBand\app\lint-baseline.xml: Information: 21 errors and 63 warnings were filtered out because they are listed in the baseline file, lint-baseline.xml
+C:\Users\Abhay\Desktop\EmerBand\app\lint-baseline.xml: Information: 16 errors/warnings were listed in the baseline file (lint-baseline.xml) but not found in the project; perhaps they have been fixed? Another possible explanation is that lint recently stopped analyzing (and including results from) dependent projects by default. You can turn this back on with android.lintOptions.checkDependencies=true. Unmatched issue types: HardcodedText (2), SetTextI18n (2), UnusedResources (12) [LintBaseline]
+C:\Users\Abhay\Desktop\EmerBand\app\lint-baseline.xml: Information: 21 errors and 57 warnings were filtered out because they are listed in the baseline file, lint-baseline.xml
  [LintBaseline]
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values-night\themes.xml:11: Error: android:windowLightStatusBar requires API level 23 (current min is 21) [NewApi]
-        <item name="android:windowLightStatusBar">false</item>
-              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\themes.xml:11: Error: android:windowLightStatusBar requires API level 23 (current min is 21) [NewApi]
-        <item name="android:windowLightStatusBar">true</item>
-              ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-   Explanation for issues of type "NewApi":
-   This check scans through all the Android API calls in the application and
-   warns about any calls that are not available on all versions targeted by
-   this application (according to its minimum SDK attribute in the manifest).
-
-   If you really want to use this API and don't need to support older devices
-   just set the minSdkVersion in your build.gradle or AndroidManifest.xml
-   files.
-
-   If your code is deliberately accessing newer APIs, and you have ensured
-   (e.g. with conditional execution) that this code will only ever be called
-   on a supported platform, then you can annotate your class or method with
-   the @TargetApi annotation specifying the local minimum SDK to apply, such
-   as @TargetApi(11), such that this check considers 11 rather than your
-   manifest file's minimum SDK as the required API level.
-
-   If you are deliberately setting android: attributes in style definitions,
-   make sure you place this in a values-vNN folder in order to avoid running
-   into runtime conflicts on certain devices where manufacturers have added
-   custom attributes whose ids conflict with the new ones on later platforms.
-
-   Similarly, you can use tools:targetApi="11" in an XML file to indicate that
-   the element will only be inflated in an adequate context.
-
-C:\Users\Abhay\Desktop\EmerBand\app\build.gradle:76: Warning: A newer version of androidx.fragment:fragment than 1.6.2 is available: 1.8.6 [GradleDependency]
+C:\Users\Abhay\Desktop\EmerBand\app\build.gradle:89: Warning: A newer version of androidx.fragment:fragment than 1.6.2 is available: 1.8.6 [GradleDependency]
     implementation 'androidx.fragment:fragment:1.6.2'
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -55,44 +24,23 @@ C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\drawable\ic_settings.xml:9: War
    * Using the Android Studio vector conversion tool
    * Rasterizing the image (converting to PNG)
 
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\colors.xml:4: Warning: The resource R.color.primary appears to be unused [UnusedResources]
-    <color name="primary">#FF6200EE</color>
-           ~~~~~~~~~~~~~~
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\colors.xml:5: Warning: The resource R.color.primary_dark appears to be unused [UnusedResources]
-    <color name="primary_dark">#FF3700B3</color>
-           ~~~~~~~~~~~~~~~~~~~
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\colors.xml:6: Warning: The resource R.color.primary_light appears to be unused [UnusedResources]
-    <color name="primary_light">#FFBB86FC</color>
-           ~~~~~~~~~~~~~~~~~~~~
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\colors.xml:9: Warning: The resource R.color.accent appears to be unused [UnusedResources]
-    <color name="accent">#FF03DAC5</color>
-           ~~~~~~~~~~~~~
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\colors.xml:10: Warning: The resource R.color.accent_dark appears to be unused [UnusedResources]
-    <color name="accent_dark">#FF018786</color>
-           ~~~~~~~~~~~~~~~~~~
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\colors.xml:11: Warning: The resource R.color.accent_light appears to be unused [UnusedResources]
-    <color name="accent_light">#FF03DAC5</color>
-           ~~~~~~~~~~~~~~~~~~~
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\colors.xml:16: Warning: The resource R.color.gray appears to be unused [UnusedResources]
-    <color name="gray">#FF757575</color>
+    <color name="gray">#757575</color>
            ~~~~~~~~~~~
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\colors.xml:17: Warning: The resource R.color.gray_light appears to be unused [UnusedResources]
-    <color name="gray_light">#FFBDBDBD</color>
+    <color name="gray_light">#EEEEEE</color>
            ~~~~~~~~~~~~~~~~~
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\colors.xml:18: Warning: The resource R.color.gray_dark appears to be unused [UnusedResources]
-    <color name="gray_dark">#FF424242</color>
+    <color name="gray_dark">#424242</color>
            ~~~~~~~~~~~~~~~~
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\colors.xml:21: Warning: The resource R.color.success appears to be unused [UnusedResources]
-    <color name="success">#FF4CAF50</color>
+    <color name="success">#4CAF50</color>
            ~~~~~~~~~~~~~~
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\colors.xml:22: Warning: The resource R.color.error appears to be unused [UnusedResources]
-    <color name="error">#FFF44336</color>
-           ~~~~~~~~~~~~
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\colors.xml:23: Warning: The resource R.color.warning appears to be unused [UnusedResources]
-    <color name="warning">#FFFFC107</color>
+    <color name="warning">#FFC107</color>
            ~~~~~~~~~~~~~~
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\colors.xml:24: Warning: The resource R.color.info appears to be unused [UnusedResources]
-    <color name="info">#FF2196F3</color>
+    <color name="info">#2196F3</color>
            ~~~~~~~~~~~
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\drawable\ic_bug.xml:2: Warning: The resource R.drawable.ic_bug appears to be unused [UnusedResources]
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
@@ -103,8 +51,32 @@ C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\drawable\ic_emergency.xml:2: Wa
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\drawable\ic_offline.xml:2: Warning: The resource R.drawable.ic_offline appears to be unused [UnusedResources]
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
 ^
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\themes.xml:3: Warning: The resource R.style.Theme_EmerBand appears to be unused [UnusedResources]
-    <style name="Theme.EmerBand" parent="Theme.Material3.DayNight.NoActionBar">
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\drawable\ic_sos.xml:2: Warning: The resource R.drawable.ic_sos appears to be unused [UnusedResources]
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+^
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:7: Warning: The resource R.string.emergency_button appears to be unused [UnusedResources]
+    <string name="emergency_button">Emergency Button</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:32: Warning: The resource R.string.msg_emergency appears to be unused [UnusedResources]
+    <string name="msg_emergency">Emergency Alert Triggered</string>
+            ~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:33: Warning: The resource R.string.msg_fake_call appears to be unused [UnusedResources]
+    <string name="msg_fake_call">Fake Call Triggered</string>
+            ~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:34: Warning: The resource R.string.msg_cyber_cell appears to be unused [UnusedResources]
+    <string name="msg_cyber_cell">Cyber Cell Alert Triggered</string>
+            ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:35: Warning: The resource R.string.msg_alert appears to be unused [UnusedResources]
+    <string name="msg_alert">Alert Mode Triggered</string>
+            ~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:36: Warning: The resource R.string.msg_offline appears to be unused [UnusedResources]
+    <string name="msg_offline">Offline Mode Active</string>
+            ~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:37: Warning: The resource R.string.msg_crash appears to be unused [UnusedResources]
+    <string name="msg_crash">Testing Crash Recovery</string>
+            ~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\themes.xml:4: Warning: The resource R.style.Theme_EmerBand appears to be unused [UnusedResources]
+    <style name="Theme.EmerBand" parent="Theme.MaterialComponents.Light.NoActionBar">
            ~~~~~~~~~~~~~~~~~~~~~
 
    Explanation for issues of type "UnusedResources":
@@ -121,7 +93,7 @@ C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\themes.xml:3: Warning: T
    lint.unused-resources.exclude-tests =true.
    ,
 
-C:\Users\Abhay\Desktop\EmerBand\app\build.gradle:76: Information: Add suffix -ktx to enable the Kotlin extensions for this library [KtxExtensionAvailable]
+C:\Users\Abhay\Desktop\EmerBand\app\build.gradle:89: Information: Add suffix -ktx to enable the Kotlin extensions for this library [KtxExtensionAvailable]
     implementation 'androidx.fragment:fragment:1.6.2'
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -136,41 +108,6 @@ C:\Users\Abhay\Desktop\EmerBand\app\build.gradle:76: Information: Add suffix -kt
 
    https://developer.android.com/kotlin/ktx
 
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:60: Warning: Missing contentDescription attribute on image [ContentDescription]
-                        <ImageView
-                         ~~~~~~~~~
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:74: Warning: Missing contentDescription attribute on image [ContentDescription]
-                        <ImageView
-                         ~~~~~~~~~
-
-   Explanation for issues of type "ContentDescription":
-   Non-textual widgets like ImageViews and ImageButtons should use the
-   contentDescription attribute to specify a textual description of the widget
-   such that screen readers and other accessibility tools can adequately
-   describe the user interface.
-
-   Note that elements in application screens that are purely decorative and do
-   not provide any content or enable a user action should not have
-   accessibility content descriptions. In this case, set their descriptions to
-   @null. If your app's minSdkVersion is 16 or higher, you can instead set
-   these graphical elements' android:importantForAccessibility attributes to
-   no.
-
-   Note that for text fields, you should not set both the hint and the
-   contentDescription attributes since the hint will never be shown. Just set
-   the hint.
-
-   https://developer.android.com/guide/topics/ui/accessibility/apps#special-cases
-
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:51: Warning: Hardcoded string "Status", should use @string resource [HardcodedText]
-                        android:text="Status"
-                        ~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:72: Warning: Hardcoded string "Bluetooth Disabled", should use @string resource [HardcodedText]
-                            android:text="Bluetooth Disabled" />
-                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:104: Warning: Hardcoded string "Emergency Features", should use @string resource [HardcodedText]
-                        android:text="Emergency Features"
-                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\dialog_emergency.xml:11: Warning: Hardcoded string "Emergency Alert", should use @string resource [HardcodedText]
         android:text="Emergency Alert"
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -198,4 +135,4 @@ C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\dialog_emergency.xml:43:
    There are quickfixes to automatically extract this hardcoded string into a
    resource lookup.
 
-2 errors, 28 warnings (21 errors, 63 warnings filtered by baseline lint-baseline.xml)
+0 errors, 24 warnings (21 errors, 57 warnings filtered by baseline lint-baseline.xml)

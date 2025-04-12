@@ -1,5 +1,20 @@
 package com.example.emerband;
 
+import android.Manifest;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.telephony.SmsManager;
+import android.util.Log;
+import android.widget.Toast;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
 /**
  * Utility class to handle emergency signals received from BLE devices
  * and process associated GPS data to send alerts and make emergency calls.

@@ -1,8 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">EmerBand</string>
-    <string name="emergency">SOS</string>
-    <string name="emergency_button">Emergency SOS Button</string>
+    
+    <!-- Main UI -->
+    <string name="emergency">Emergency</string>
+    <string name="emergency_button">Emergency Button</string>
+    
+    <!-- Status Section -->
+    <string name="status_title">Status</string>
+    <string name="status_bluetooth_description">Bluetooth Status</string>
+    <string name="status_bluetooth_disabled">Bluetooth is disabled</string>
+    <string name="status_battery_description">Battery Status</string>
+    
+    <!-- Emergency Features -->
+    <string name="emergency_features">Emergency Features</string>
+    <string name="menu_contacts">Emergency Contacts</string>
+    <string name="menu_help">Help &amp; Support</string>
+    <string name="menu_location">Location Settings</string>
+    <string name="menu_settings">Settings</string>
+    
+    <!-- Debug Tools -->
     <string name="debug_tools">Debug Tools</string>
     <string name="test_emergency">Test Emergency</string>
     <string name="test_fake_call">Test Fake Call</string>
@@ -10,13 +27,15 @@
     <string name="test_alert">Test Alert</string>
     <string name="test_offline">Test Offline</string>
     <string name="test_crash">Test Crash</string>
-    <string name="menu_contacts">Emergency Contacts</string>
-    <string name="menu_location">Location Settings</string>
-    <string name="menu_help">Help &amp; Support</string>
-    <string name="menu_settings">Settings</string>
-    <string name="setup_instruction">Please enter your name to continue.</string>
-    <string name="name_hint">Your name</string>
-    <string name="continue_button">Continue</string>
-    <string name="name_required_error">Please enter your name to continue</string>
-    <string name="welcome_message">Welcome, %1$s!</string>
+    
+    <!-- Test Messages -->
+    <string name="msg_emergency">Emergency Alert Triggered</string>
+    <string name="msg_fake_call">Fake Call Triggered</string>
+    <string name="msg_cyber_cell">Cyber Cell Alert Triggered</string>
+    <string name="msg_alert">Alert Mode Triggered</string>
+    <string name="msg_offline">Offline Mode Active</string>
+    <string name="msg_crash">Testing Crash Recovery</string>
+    
+    <!-- Behaviors -->
+    <string name="appbar_scrolling_view_behavior">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
 </resources> 

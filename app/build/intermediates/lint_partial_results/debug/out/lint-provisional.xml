@@ -152,54 +152,6 @@
     </incident>
 
     <incident
-        id="NewApi"
-        severity="error"
-        message="">
-        <fix-data minSdk="fffffffffff00000" requiresApi="ffffffffffc00000"/>
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values/themes.xml"
-            line="11"
-            column="15"
-            startOffset="596"
-            endLine="11"
-            endColumn="50"
-            endOffset="631"/>
-        <map>
-            <api-levels id="minSdk"
-                value="fffffffffff00000"/>
-            <api-levels id="requiresApi"
-                value="ffffffffffc00000"/>
-            <entry
-                name="message"
-                string="`android:windowLightStatusBar` requires API level 23 (current min is %1$s)"/>
-        </map>
-    </incident>
-
-    <incident
-        id="NewApi"
-        severity="error"
-        message="">
-        <fix-data minSdk="fffffffffff00000" requiresApi="ffffffffffc00000"/>
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values-night/themes.xml"
-            line="11"
-            column="15"
-            startOffset="596"
-            endLine="11"
-            endColumn="50"
-            endOffset="631"/>
-        <map>
-            <api-levels id="minSdk"
-                value="fffffffffff00000"/>
-            <api-levels id="requiresApi"
-                value="ffffffffffc00000"/>
-            <entry
-                name="message"
-                string="`android:windowLightStatusBar` requires API level 23 (current min is %1$s)"/>
-        </map>
-    </incident>
-
-    <incident
         id="MissingPermission"
         severity="error"
         message="Call requires permission which may be rejected by user: code should explicitly check to see if permission is available (with `checkPermission`) or explicitly handle a potential `SecurityException`">
@@ -436,12 +388,12 @@
         <fix-data minSdk="fffffffffff00000" requiresApi="ffffffffc0000000"/>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/MainActivity.java"
-            line="56"
+            line="59"
             column="13"
-            startOffset="2052"
-            endLine="56"
+            startOffset="2180"
+            endLine="59"
             endColumn="50"
-            endOffset="2089"/>
+            endOffset="2217"/>
         <map>
             <api-levels id="minSdk"
                 value="fffffffffff00000"/>
@@ -460,12 +412,12 @@
         <fix-data minSdk="fffffffffff00000" requiresApi="ffffffffc0000000"/>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/MainActivity.java"
-            line="57"
+            line="60"
             column="13"
-            startOffset="2103"
-            endLine="57"
+            startOffset="2231"
+            endLine="60"
             endColumn="47"
-            endOffset="2137"/>
+            endOffset="2265"/>
         <map>
             <api-levels id="minSdk"
                 value="fffffffffff00000"/>
@@ -697,12 +649,12 @@
         <fix-data minSdk="fffffffffff00000" requiresApi="fffffffffe000000"/>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/utils/TestingUtils.java"
-            line="129"
+            line="156"
             column="17"
-            startOffset="4911"
-            endLine="129"
+            startOffset="5877"
+            endLine="156"
             endColumn="39"
-            endOffset="4933"/>
+            endOffset="5899"/>
         <map>
             <api-levels id="minSdk"
                 value="fffffffffff00000"/>

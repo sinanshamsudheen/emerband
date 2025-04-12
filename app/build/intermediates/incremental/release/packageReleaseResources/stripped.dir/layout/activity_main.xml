@@ -8,15 +8,15 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
-            android:theme="@style/ThemeOverlay.Material3.Dark.ActionBar"
-            app:popupTheme="@style/ThemeOverlay.Material3.Light" />
+            app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -36,8 +36,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="4dp">
+                style="@style/Widget.MaterialComponents.CardView">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -48,8 +47,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Status"
-                        android:textAppearance="?attr/textAppearanceHeadline6" />
+                        android:text="@string/status_title"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -62,21 +61,24 @@
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:layout_marginEnd="8dp"
-                            android:src="@drawable/ic_bluetooth_disabled" />
+                            android:src="@drawable/ic_bluetooth_disabled"
+                            android:contentDescription="@string/status_bluetooth_description" />
 
                         <TextView
                             android:id="@+id/tvBluetoothStatus"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Bluetooth Disabled" />
+                            android:text="@string/status_bluetooth_disabled"
+                            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
 
                         <ImageView
                             android:id="@+id/ivBatteryStatus"
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:layout_marginStart="8dp"
-                            android:src="@drawable/ic_battery_full" />
+                            android:src="@drawable/ic_battery_full"
+                            android:contentDescription="@string/status_battery_description" />
 
                     </LinearLayout>
 
@@ -89,8 +91,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="4dp">
+                style="@style/Widget.MaterialComponents.CardView">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -101,8 +102,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Emergency Features"
-                        android:textAppearance="?attr/textAppearanceHeadline6" />
+                        android:text="@string/emergency_features"
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
 
                     <GridLayout
                         android:layout_width="match_parent"
@@ -113,7 +114,7 @@
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/btnEmergencyCall"
-                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_columnWeight="1"
@@ -123,7 +124,7 @@
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/btnCyberCell"
-                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_columnWeight="1"
@@ -133,7 +134,7 @@
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/btnLocation"
-                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_columnWeight="1"
@@ -143,7 +144,7 @@
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/btnSettings"
-                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_columnWeight="1"
@@ -157,28 +158,13 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Emergency FAB -->
-            <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
-                android:id="@+id/fabEmergency"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="bottom|end"
-                android:layout_margin="16dp"
-                android:contentDescription="@string/emergency_button"
-                android:text="@string/emergency"
-                app:icon="@drawable/ic_sos"
-                style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton.Icon"
-                app:layout_anchor="@id/coordinatorLayout"
-                app:layout_anchorGravity="bottom|end" />
-
-            <!-- Debug Section (Only visible in debug builds) -->
+            <!-- Debug Section -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/debugCard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                app:cardCornerRadius="8dp"
-                app:cardElevation="4dp">
+                style="@style/Widget.MaterialComponents.CardView">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -190,18 +176,18 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/debug_tools"
-                        android:textAppearance="?attr/textAppearanceHeadline6" />
+                        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+                        android:layout_marginBottom="16dp"/>
 
                     <GridLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
                         android:columnCount="2"
                         android:rowCount="3">
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/btnTestEmergency"
-                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_columnWeight="1"
@@ -210,7 +196,7 @@
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/btnTestFakeCall"
-                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_columnWeight="1"
@@ -219,7 +205,7 @@
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/btnTestCyberCell"
-                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_columnWeight="1"
@@ -228,7 +214,7 @@
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/btnTestAlert"
-                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_columnWeight="1"
@@ -237,7 +223,7 @@
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/btnTestOffline"
-                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_columnWeight="1"
@@ -246,7 +232,7 @@
 
                         <com.google.android.material.button.MaterialButton
                             android:id="@+id/btnTestCrash"
-                            style="@style/Widget.Material3.Button.OutlinedButton"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_columnWeight="1"
@@ -262,5 +248,17 @@
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/fabEmergency"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="16dp"
+        android:text="@string/emergency"
+        android:textColor="@color/white"
+        app:icon="@drawable/ic_phone"
+        app:iconTint="@color/white"
+        app:backgroundTint="?attr/colorError" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout> 

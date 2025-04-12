@@ -1,5 +1,17 @@
 package com.example.emerband;
 
+import android.Manifest;
+import android.content.Context;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.net.Uri;
+import android.telephony.SmsManager;
+import android.util.Log;
+import android.widget.Toast;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
 /**
  * Utility class that handles reporting digital threats to a cyber cell
  * by initiating calls and sending alert SMS messages.

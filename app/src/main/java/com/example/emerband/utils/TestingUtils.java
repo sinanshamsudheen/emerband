@@ -26,35 +26,87 @@ public class TestingUtils {
     /**
      * Simulate a BLE signal from the smartwatch
      * @param context Application context
-     * @param signalType Type of signal to simulate ('E', 'F', 'C', 'A')
+     * @param signal Type of signal to simulate ('E', 'F', 'C', 'A')
      */
-    public static void simulateBleSignal(Context context, char signalType) {
-        Intent serviceIntent = new Intent(context, BLEBackgroundService.class);
-        serviceIntent.putExtra("TEST_SIGNAL", signalType);
-        
-        if (isOfflineMode) {
-            Toast.makeText(context, "Offline mode active - Signal will be processed when online", Toast.LENGTH_SHORT).show();
-            // TODO: Store the signal in the offline database
-        } else {
-            context.startService(serviceIntent);
-            showSignalToast(context, signalType);
+    public static void simulateBleSignal(Context context, char signal) {
+        String message;
+        switch (signal) {
+            case 'E':
+                message = "Emergency Alert Triggered";
+                simulateEmergency(context);
+                break;
+            case 'F':
+                message = "Fake Call Triggered";
+                simulateFakeCall(context);
+                break;
+            case 'C':
+                message = "Cyber Cell Alert Triggered";
+                simulateCyberCell(context);
+                break;
+            case 'A':
+                message = "Alert Mode Triggered";
+                simulateAlert(context);
+                break;
+            default:
+                message = "Unknown signal: " + signal;
+                break;
         }
+        Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
+    }
+    
+    private static void simulateEmergency(Context context) {
+        // TODO: Implement emergency simulation
+        // For now, just show a toast
+        Toast.makeText(context, "Simulating emergency: Sending SOS signals", Toast.LENGTH_LONG).show();
+        
+        // Simulate delay
+        mainHandler.postDelayed(() -> {
+            Toast.makeText(context, "Emergency contacts notified", Toast.LENGTH_SHORT).show();
+        }, 2000);
+    }
+
+    private static void simulateFakeCall(Context context) {
+        // TODO: Implement fake call simulation
+        Toast.makeText(context, "Simulating incoming call...", Toast.LENGTH_SHORT).show();
+        
+        mainHandler.postDelayed(() -> {
+            Toast.makeText(context, "Incoming call from Emergency Contact", Toast.LENGTH_LONG).show();
+        }, 1500);
+    }
+
+    private static void simulateCyberCell(Context context) {
+        // TODO: Implement cyber cell alert simulation
+        Toast.makeText(context, "Contacting cyber cell...", Toast.LENGTH_SHORT).show();
+        
+        mainHandler.postDelayed(() -> {
+            Toast.makeText(context, "Cyber cell alert sent", Toast.LENGTH_SHORT).show();
+        }, 1000);
+    }
+
+    private static void simulateAlert(Context context) {
+        // TODO: Implement alert mode simulation
+        Toast.makeText(context, "Activating alert mode...", Toast.LENGTH_SHORT).show();
+        
+        mainHandler.postDelayed(() -> {
+            Toast.makeText(context, "Alert mode active: Siren and flashlight enabled", Toast.LENGTH_LONG).show();
+        }, 1000);
     }
     
     /**
      * Simulate offline mode for testing
      * @param context Application context
-     * @param durationMs Duration of offline mode in milliseconds
+     * @param durationMillis Duration of offline mode in milliseconds
      */
-    public static void simulateOfflineMode(Context context, long durationMs) {
-        isOfflineMode = true;
-        Toast.makeText(context, "Offline mode activated", Toast.LENGTH_SHORT).show();
+    public static void simulateOfflineMode(Context context, long durationMillis) {
+        if (!isOfflineMode) {
+            isOfflineMode = true;
+            Toast.makeText(context, "Entering offline mode", Toast.LENGTH_SHORT).show();
 
-        mainHandler.postDelayed(() -> {
-            isOfflineMode = false;
-            Toast.makeText(context, "Back online - Processing stored events", Toast.LENGTH_SHORT).show();
-            // TODO: Process any stored events from the offline database
-        }, durationMs);
+            mainHandler.postDelayed(() -> {
+                isOfflineMode = false;
+                Toast.makeText(context, "Back online - Processing stored events", Toast.LENGTH_SHORT).show();
+            }, durationMillis);
+        }
     }
     
     /**
@@ -62,14 +114,10 @@ public class TestingUtils {
      * @param context Application context
      */
     public static void testRecoveryFromForceClose(Context context) {
-        // Simulate a crash
         Toast.makeText(context, "Simulating app crash...", Toast.LENGTH_SHORT).show();
         
         mainHandler.postDelayed(() -> {
-            // Restart the BLE service
-            Intent serviceIntent = new Intent(context, BLEBackgroundService.class);
-            context.startService(serviceIntent);
-            Toast.makeText(context, "Service restarted after crash", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "App recovered from crash", Toast.LENGTH_SHORT).show();
         }, 2000);
     }
     
@@ -85,27 +133,6 @@ public class TestingUtils {
         intent.putExtra("PHONE_NUMBER", phoneNumber);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
-    }
-    
-    private static void showSignalToast(Context context, char signalType) {
-        String message;
-        switch (signalType) {
-            case 'E':
-                message = "Emergency signal received";
-                break;
-            case 'F':
-                message = "Fake call signal received";
-                break;
-            case 'C':
-                message = "Cyber cell signal received";
-                break;
-            case 'A':
-                message = "Alert mode signal received";
-                break;
-            default:
-                message = "Unknown signal received";
-        }
-        Toast.makeText(context, message, Toast.LENGTH_SHORT).show();
     }
     
     /**

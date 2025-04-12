@@ -394,104 +394,6 @@
     <incident
         id="HardcodedText"
         severity="warning"
-        message="Hardcoded string &quot;Status&quot;, should use `@string` resource">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-            line="51"
-            column="25"
-            startOffset="2116"
-            endLine="51"
-            endColumn="46"
-            endOffset="2137"/>
-    </incident>
-
-    <incident
-        id="ContentDescription"
-        severity="warning"
-        message="Missing `contentDescription` attribute on image">
-        <fix-alternatives>
-            <fix-attribute
-                description="Set contentDescription"
-                namespace="http://schemas.android.com/apk/res/android"
-                attribute="contentDescription"
-                value="TODO"
-                dot="4"
-                mark="0"/>
-            <fix-attribute
-                description="Set importantForAccessibility=&quot;no&quot;"
-                namespace="http://schemas.android.com/apk/res/android"
-                attribute="importantForAccessibility"
-                value="no"/>
-        </fix-alternatives>
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-            line="60"
-            column="26"
-            startOffset="2524"
-            endLine="60"
-            endColumn="35"
-            endOffset="2533"/>
-    </incident>
-
-    <incident
-        id="HardcodedText"
-        severity="warning"
-        message="Hardcoded string &quot;Bluetooth Disabled&quot;, should use `@string` resource">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-            line="72"
-            column="29"
-            startOffset="3160"
-            endLine="72"
-            endColumn="62"
-            endOffset="3193"/>
-    </incident>
-
-    <incident
-        id="ContentDescription"
-        severity="warning"
-        message="Missing `contentDescription` attribute on image">
-        <fix-alternatives>
-            <fix-attribute
-                description="Set contentDescription"
-                namespace="http://schemas.android.com/apk/res/android"
-                attribute="contentDescription"
-                value="TODO"
-                dot="4"
-                mark="0"/>
-            <fix-attribute
-                description="Set importantForAccessibility=&quot;no&quot;"
-                namespace="http://schemas.android.com/apk/res/android"
-                attribute="importantForAccessibility"
-                value="no"/>
-        </fix-alternatives>
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-            line="74"
-            column="26"
-            startOffset="3225"
-            endLine="74"
-            endColumn="35"
-            endOffset="3234"/>
-    </incident>
-
-    <incident
-        id="HardcodedText"
-        severity="warning"
-        message="Hardcoded string &quot;Emergency Features&quot;, should use `@string` resource">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-            line="104"
-            column="25"
-            startOffset="4472"
-            endLine="104"
-            endColumn="58"
-            endOffset="4505"/>
-    </incident>
-
-    <incident
-        id="HardcodedText"
-        severity="warning"
         message="Hardcoded string &quot;Please enter your name to continue.&quot;, should use `@string` resource">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_setup.xml"
@@ -702,10 +604,10 @@
             file="${:app*projectDir}/build.gradle"
             line="14"
             column="9"
-            startOffset="265"
+            startOffset="293"
             endLine="14"
             endColumn="21"
-            endOffset="277"/>
+            endOffset="305"/>
     </incident>
 
     <incident
@@ -717,12 +619,12 @@
             url="https://developer.android.com/studio/build/migrate-to-ksp"/>
         <location
             file="${:app*projectDir}/build.gradle"
-            line="80"
+            line="93"
             column="5"
-            startOffset="2238"
-            endLine="80"
+            startOffset="2572"
+            endLine="93"
             endColumn="45"
-            endOffset="2278"/>
+            endOffset="2612"/>
     </incident>
 
     <incident
@@ -736,12 +638,12 @@
             replacement="1.16.0"/>
         <location
             file="${:app*projectDir}/build.gradle"
-            line="69"
+            line="82"
             column="20"
-            startOffset="1655"
-            endLine="69"
+            startOffset="1989"
+            endLine="82"
             endColumn="51"
-            endOffset="1686"/>
+            endOffset="2020"/>
     </incident>
 
     <incident
@@ -755,12 +657,12 @@
             replacement="1.7.0"/>
         <location
             file="${:app*projectDir}/build.gradle"
-            line="70"
+            line="83"
             column="20"
-            startOffset="1707"
-            endLine="70"
+            startOffset="2041"
+            endLine="83"
             endColumn="56"
-            endOffset="1743"/>
+            endOffset="2077"/>
     </incident>
 
     <incident
@@ -774,12 +676,12 @@
             replacement="2.2.1"/>
         <location
             file="${:app*projectDir}/build.gradle"
-            line="71"
+            line="84"
             column="20"
-            startOffset="1764"
-            endLine="71"
+            startOffset="2098"
+            endLine="84"
             endColumn="70"
-            endOffset="1814"/>
+            endOffset="2148"/>
     </incident>
 
     <incident
@@ -793,12 +695,12 @@
             replacement="1.12.0"/>
         <location
             file="${:app*projectDir}/build.gradle"
-            line="72"
+            line="85"
             column="20"
-            startOffset="1835"
-            endLine="72"
+            startOffset="2169"
+            endLine="85"
             endColumn="65"
-            endOffset="1880"/>
+            endOffset="2214"/>
     </incident>
 
     <incident
@@ -812,12 +714,12 @@
             replacement="2.8.7"/>
         <location
             file="${:app*projectDir}/build.gradle"
-            line="73"
+            line="86"
             column="20"
-            startOffset="1901"
-            endLine="73"
+            startOffset="2235"
+            endLine="86"
             endColumn="68"
-            endOffset="1949"/>
+            endOffset="2283"/>
     </incident>
 
     <incident
@@ -831,12 +733,12 @@
             replacement="2.8.7"/>
         <location
             file="${:app*projectDir}/build.gradle"
-            line="74"
+            line="87"
             column="20"
-            startOffset="1970"
-            endLine="74"
+            startOffset="2304"
+            endLine="87"
             endColumn="70"
-            endOffset="2020"/>
+            endOffset="2354"/>
     </incident>
 
     <incident
@@ -850,12 +752,12 @@
             replacement="2.8.7"/>
         <location
             file="${:app*projectDir}/build.gradle"
-            line="75"
+            line="88"
             column="20"
-            startOffset="2041"
-            endLine="75"
+            startOffset="2375"
+            endLine="88"
             endColumn="69"
-            endOffset="2090"/>
+            endOffset="2424"/>
     </incident>
 
     <incident
@@ -868,12 +770,12 @@
             replacement="androidx.fragment:fragment-ktx"/>
         <location
             file="${:app*projectDir}/build.gradle"
-            line="76"
+            line="89"
             column="20"
-            startOffset="2111"
-            endLine="76"
+            startOffset="2445"
+            endLine="89"
             endColumn="54"
-            endOffset="2145"/>
+            endOffset="2479"/>
     </incident>
 
     <incident
@@ -887,12 +789,12 @@
             replacement="1.8.6"/>
         <location
             file="${:app*projectDir}/build.gradle"
-            line="76"
+            line="89"
             column="20"
-            startOffset="2111"
-            endLine="76"
+            startOffset="2445"
+            endLine="89"
             endColumn="54"
-            endOffset="2145"/>
+            endOffset="2479"/>
     </incident>
 
     <incident
@@ -906,12 +808,12 @@
             replacement="2.7.0"/>
         <location
             file="${:app*projectDir}/build.gradle"
-            line="79"
+            line="92"
             column="20"
-            startOffset="2198"
-            endLine="79"
+            startOffset="2532"
+            endLine="92"
             endColumn="54"
-            endOffset="2232"/>
+            endOffset="2566"/>
     </incident>
 
     <incident
@@ -925,12 +827,12 @@
             replacement="2.7.0"/>
         <location
             file="${:app*projectDir}/build.gradle"
-            line="80"
+            line="93"
             column="10"
-            startOffset="2243"
-            endLine="80"
+            startOffset="2577"
+            endLine="93"
             endColumn="45"
-            endOffset="2278"/>
+            endOffset="2612"/>
     </incident>
 
     <incident
@@ -944,12 +846,12 @@
             replacement="2.7.0"/>
         <location
             file="${:app*projectDir}/build.gradle"
-            line="81"
+            line="94"
             column="20"
-            startOffset="2299"
-            endLine="81"
+            startOffset="2633"
+            endLine="94"
             endColumn="50"
-            endOffset="2329"/>
+            endOffset="2663"/>
     </incident>
 
     <incident
@@ -963,12 +865,12 @@
             replacement="2.10.0"/>
         <location
             file="${:app*projectDir}/build.gradle"
-            line="91"
+            line="104"
             column="20"
-            startOffset="2656"
-            endLine="91"
+            startOffset="2990"
+            endLine="104"
             endColumn="58"
-            endOffset="2694"/>
+            endOffset="3028"/>
     </incident>
 
     <incident
@@ -982,12 +884,12 @@
             replacement="1.2.1"/>
         <location
             file="${:app*projectDir}/build.gradle"
-            line="95"
+            line="108"
             column="31"
-            startOffset="2793"
-            endLine="95"
+            startOffset="3127"
+            endLine="108"
             endColumn="62"
-            endOffset="2824"/>
+            endOffset="3158"/>
     </incident>
 
     <incident
@@ -1001,12 +903,12 @@
             replacement="3.6.1"/>
         <location
             file="${:app*projectDir}/build.gradle"
-            line="96"
+            line="109"
             column="31"
-            startOffset="2856"
-            endLine="96"
+            startOffset="3190"
+            endLine="109"
             endColumn="75"
-            endOffset="2900"/>
+            endOffset="3234"/>
     </incident>
 
     <incident

@@ -1,13 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="Theme.EmerBand" parent="Theme.Material3.DayNight.NoActionBar">
+    <!-- Base application theme -->
+    <style name="Theme.EmerBand" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color -->
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryVariant">@color/primary_dark</item>
+        <item name="colorPrimaryContainer">@color/primary_light</item>
         <item name="colorOnPrimary">@color/white</item>
+        
+        <!-- Secondary brand color -->
         <item name="colorSecondary">@color/accent</item>
         <item name="colorSecondaryVariant">@color/accent_dark</item>
+        <item name="colorSecondaryContainer">@color/accent_light</item>
         <item name="colorOnSecondary">@color/white</item>
+        
+        <!-- Error colors -->
+        <item name="colorError">@color/error</item>
+        <item name="colorOnError">@color/white</item>
+        
+        <!-- Status bar color -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
-        <item name="android:windowLightStatusBar">true</item>
+        
+        <!-- Material specific attributes -->
+        <item name="materialButtonStyle">@style/Widget.MaterialComponents.Button</item>
+        <item name="materialButtonOutlinedStyle">@style/Widget.MaterialComponents.Button.OutlinedButton</item>
+        <item name="extendedFloatingActionButtonStyle">@style/Widget.MaterialComponents.ExtendedFloatingActionButton</item>
+        <item name="materialCardViewStyle">@style/Widget.MaterialComponents.CardView</item>
+        <item name="toolbarStyle">@style/Widget.MaterialComponents.Toolbar.Primary</item>
     </style>
 </resources> 
