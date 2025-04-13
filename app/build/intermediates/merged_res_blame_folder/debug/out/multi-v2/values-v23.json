@@ -4,7 +4,7 @@
             "outputFile": "com.example.emerband.app-mergeDebugResources-44:/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Abhay\\.gradle\\caches\\transforms-3\\9ed5f16cbcd27bf9ff2227301560040d\\transformed\\material-1.11.0\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-3\\9ed5f16cbcd27bf9ff2227301560040d\\transformed\\material-1.11.0\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,5,9,13,16,19,22,25,28,32",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
@@ -23,45 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Abhay\\.gradle\\caches\\transforms-3\\22e26384dd04e6d50684989214aa0c1b\\transformed\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "55",
-                        "endLines": "4",
-                        "endColumns": "12",
-                        "endOffsets": "200"
-                    },
-                    "to": {
-                        "startLines": "52",
-                        "startColumns": "4",
-                        "startOffsets": "3361",
-                        "endLines": "54",
-                        "endColumns": "12",
-                        "endOffsets": "3506"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Abhay\\Desktop\\EmerBand\\app\\src\\main\\res\\values-v23\\themes.xml",
-                    "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "57",
-                        "endLines": "6",
-                        "endColumns": "12",
-                        "endOffsets": "316"
-                    },
-                    "to": {
-                        "startLines": "55",
-                        "startColumns": "4",
-                        "startOffsets": "3511",
-                        "endLines": "59",
-                        "endColumns": "12",
-                        "endOffsets": "3741"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Abhay\\.gradle\\caches\\transforms-3\\1e2f861312ad42faf7384aadd6209d49\\transformed\\appcompat-1.6.1\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-3\\1e2f861312ad42faf7384aadd6209d49\\transformed\\appcompat-1.6.1\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,20,34,35,36,39,43,44,45,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -80,13 +42,51 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Abhay\\.gradle\\caches\\transforms-3\\325f6767ec2a02f277c040c84c2835de\\transformed\\work-runtime-2.9.0\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-3\\325f6767ec2a02f277c040c84c2835de\\transformed\\work-runtime-2.9.0\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
                         "startOffsets": "55,121",
                         "endColumns": "65,62",
                         "endOffsets": "116,179"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-3\\22e26384dd04e6d50684989214aa0c1b\\transformed\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "4",
+                        "endColumns": "12",
+                        "endOffsets": "200"
+                    },
+                    "to": {
+                        "startLines": "52",
+                        "startColumns": "4",
+                        "startOffsets": "3361",
+                        "endLines": "54",
+                        "endColumns": "12",
+                        "endOffsets": "3506"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\USER\\Desktop\\GB\\Bandapp\\emerband\\app\\src\\main\\res\\values-v23\\themes.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "57",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "316"
+                    },
+                    "to": {
+                        "startLines": "55",
+                        "startColumns": "4",
+                        "startOffsets": "3511",
+                        "endLines": "59",
+                        "endColumns": "12",
+                        "endOffsets": "3741"
                     }
                 }
             ]

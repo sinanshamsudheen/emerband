@@ -29,9 +29,14 @@ public class EmergencyUtils {
 
     public static void makeEmergencyCall(Context context) {
         Intent intent = new Intent(Intent.ACTION_CALL);
-        intent.setData(Uri.parse("tel:" + EMERGENCY_NUMBER));
+        String number = TestingUtils.isTestMode() ? TestingUtils.getTestPhoneNumber() : EMERGENCY_NUMBER;
+        intent.setData(Uri.parse("tel:" + number));
         if (checkCallPermission(context)) {
-            context.startActivity(intent);
+            if (TestingUtils.isTestMode()) {
+                Toast.makeText(context, "TEST MODE: Would call " + number, Toast.LENGTH_LONG).show();
+            } else {
+                context.startActivity(intent);
+            }
         }
     }
 
@@ -73,6 +78,11 @@ public class EmergencyUtils {
     }
 
     public static void sendEmergencyMessage(Context context, String location) {
+        if (TestingUtils.isTestMode()) {
+            Toast.makeText(context, "TEST MODE: Would send message with location: " + location, Toast.LENGTH_LONG).show();
+            return;
+        }
+
         SharedPreferences prefs = context.getSharedPreferences("EmerbandPrefs", Context.MODE_PRIVATE);
         String emergencyContacts = prefs.getString("emergency_contacts", "");
         String[] contacts = emergencyContacts.split(",");

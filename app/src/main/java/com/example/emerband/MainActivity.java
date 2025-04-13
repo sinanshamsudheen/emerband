@@ -86,7 +86,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        
+        // Enable test mode for development
+        TestingUtils.setTestMode(true);
+        TestingUtils.setTestPhoneNumber("0000000000");
+        
         try {
             initializeViews();
             setupToolbar();
@@ -322,9 +326,28 @@ public class MainActivity extends AppCompatActivity {
     
     private void handleEmergency() {
         try {
-            // Show emergency dialog
-            EmergencyDialogFragment dialog = new EmergencyDialogFragment();
-            dialog.show(getSupportFragmentManager(), "emergency_dialog");
+            // Get current location
+            EmergencyUtils.getCurrentLocation(this, location -> {
+                try {
+                    // Create Google Maps link with location
+                    String locationStr = "http://maps.google.com/?q=" + 
+                                      location.getLatitude() + "," + 
+                                      location.getLongitude();
+                    
+                    // Send emergency message with location
+                    EmergencyUtils.sendEmergencyMessage(this, locationStr);
+                    
+                    // Make emergency call
+                    EmergencyUtils.makeEmergencyCall(this);
+                    
+                    // Show confirmation toast
+                    Toast.makeText(this, "Emergency protocols activated", Toast.LENGTH_LONG).show();
+                } catch (Exception e) {
+                    Toast.makeText(this, "Error executing emergency protocols: " + e.getMessage(), 
+                                 Toast.LENGTH_LONG).show();
+                    Log.e(TAG, "Error in emergency protocol execution", e);
+                }
+            });
         } catch (Exception e) {
             Toast.makeText(this, "Error handling emergency: " + e.getMessage(), Toast.LENGTH_LONG).show();
             Log.e(TAG, "Error handling emergency", e);

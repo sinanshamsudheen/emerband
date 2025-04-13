@@ -23,6 +23,9 @@ public class TestingUtils {
     private static boolean isOfflineMode = false;
     private static final Handler mainHandler = new Handler(Looper.getMainLooper());
     
+    private static boolean testMode = false;
+    private static String testPhoneNumber = "0000000000";
+    
     /**
      * Simulate a BLE signal from the smartwatch
      * @param context Application context
@@ -179,5 +182,21 @@ public class TestingUtils {
 
     public static void testCrash(Context context) {
         Toast.makeText(context, "Testing Crash handling", Toast.LENGTH_SHORT).show();
+    }
+
+    public static boolean isTestMode() {
+        return testMode;
+    }
+    
+    public static void setTestMode(boolean enabled) {
+        testMode = enabled;
+    }
+    
+    public static String getTestPhoneNumber() {
+        return testPhoneNumber;
+    }
+    
+    public static void setTestPhoneNumber(String number) {
+        testPhoneNumber = number;
     }
 } 
