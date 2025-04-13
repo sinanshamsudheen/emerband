@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- Base application theme -->
-    <style name="Theme.EmerBand" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="Theme.EmerBand" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color -->
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryVariant">@color/primary_dark</item>
@@ -14,17 +14,22 @@
         <item name="colorSecondaryContainer">@color/accent_light</item>
         <item name="colorOnSecondary">@color/white</item>
         
+        <!-- Surface colors -->
+        <item name="android:colorBackground">@color/white</item>
+        <item name="colorSurface">@color/white</item>
+        <item name="colorOnSurface">@color/black</item>
+        
         <!-- Error colors -->
         <item name="colorError">@color/error</item>
         <item name="colorOnError">@color/white</item>
         
-        <!-- Status bar color -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Status bar and AppBar -->
+        <item name="android:statusBarColor">?attr/colorPrimary</item>
         
-        <!-- Material specific attributes -->
-        <item name="materialButtonStyle">@style/Widget.MaterialComponents.Button</item>
+        <!-- Material Components specific attributes -->
+        <item name="materialButtonStyle">@style/Widget.MaterialComponents.Button.UnelevatedButton</item>
         <item name="materialButtonOutlinedStyle">@style/Widget.MaterialComponents.Button.OutlinedButton</item>
-        <item name="extendedFloatingActionButtonStyle">@style/Widget.MaterialComponents.ExtendedFloatingActionButton</item>
+        <item name="floatingActionButtonStyle">@style/Widget.MaterialComponents.FloatingActionButton</item>
         <item name="materialCardViewStyle">@style/Widget.MaterialComponents.CardView</item>
         <item name="toolbarStyle">@style/Widget.MaterialComponents.Toolbar.Primary</item>
     </style>

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.emerband.app-mergeReleaseResources-41:/values-night-v8/values-night-v8.xml",
+            "outputFile": "com.example.emerband.app-mergeReleaseResources-44:/values-night-v8/values-night-v8.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Abhay\\.gradle\\caches\\transforms-3\\f1762a667b792e1a449084fc5d470a28\\transformed\\jetified-permissionx-1.7.1\\res\\values-night-v8\\values-night-v8.xml",

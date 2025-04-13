@@ -1,26 +1,42 @@
 [
     {
-        "merged": "com.example.emerband.app-mergeDebugResources-42:/layout/activity_alert.xml",
-        "source": "com.example.emerband.app-main-45:/layout/activity_alert.xml"
+        "merged": "com.example.emerband.app-mergeDebugResources-45:/layout/activity_settings.xml",
+        "source": "com.example.emerband.app-main-48:/layout/activity_settings.xml"
     },
     {
-        "merged": "com.example.emerband.app-mergeDebugResources-42:/layout/activity_cyber_cell_settings.xml",
-        "source": "com.example.emerband.app-main-45:/layout/activity_cyber_cell_settings.xml"
+        "merged": "com.example.emerband.app-mergeDebugResources-45:/layout/activity_cyber_cell_settings.xml",
+        "source": "com.example.emerband.app-main-48:/layout/activity_cyber_cell_settings.xml"
     },
     {
-        "merged": "com.example.emerband.app-mergeDebugResources-42:/layout/activity_setup.xml",
-        "source": "com.example.emerband.app-main-45:/layout/activity_setup.xml"
+        "merged": "com.example.emerband.app-mergeDebugResources-45:/layout/activity_alert.xml",
+        "source": "com.example.emerband.app-main-48:/layout/activity_alert.xml"
     },
     {
-        "merged": "com.example.emerband.app-mergeDebugResources-42:/layout/dialog_emergency.xml",
-        "source": "com.example.emerband.app-main-45:/layout/dialog_emergency.xml"
+        "merged": "com.example.emerband.app-mergeDebugResources-45:/layout/dialog_emergency.xml",
+        "source": "com.example.emerband.app-main-48:/layout/dialog_emergency.xml"
     },
     {
-        "merged": "com.example.emerband.app-mergeDebugResources-42:/layout/activity_main.xml",
-        "source": "com.example.emerband.app-main-45:/layout/activity_main.xml"
+        "merged": "com.example.emerband.app-mergeDebugResources-45:/layout/activity_location_settings.xml",
+        "source": "com.example.emerband.app-main-48:/layout/activity_location_settings.xml"
     },
     {
-        "merged": "com.example.emerband.app-mergeDebugResources-42:/layout/activity_fake_call.xml",
-        "source": "com.example.emerband.app-main-45:/layout/activity_fake_call.xml"
+        "merged": "com.example.emerband.app-mergeDebugResources-45:/layout/activity_fake_call.xml",
+        "source": "com.example.emerband.app-main-48:/layout/activity_fake_call.xml"
+    },
+    {
+        "merged": "com.example.emerband.app-mergeDebugResources-45:/layout/activity_emergency_contacts.xml",
+        "source": "com.example.emerband.app-main-48:/layout/activity_emergency_contacts.xml"
+    },
+    {
+        "merged": "com.example.emerband.app-mergeDebugResources-45:/layout/activity_cyber_cell.xml",
+        "source": "com.example.emerband.app-main-48:/layout/activity_cyber_cell.xml"
+    },
+    {
+        "merged": "com.example.emerband.app-mergeDebugResources-45:/layout/activity_setup.xml",
+        "source": "com.example.emerband.app-main-48:/layout/activity_setup.xml"
+    },
+    {
+        "merged": "com.example.emerband.app-mergeDebugResources-45:/layout/activity_main.xml",
+        "source": "com.example.emerband.app-main-48:/layout/activity_main.xml"
     }
 ]

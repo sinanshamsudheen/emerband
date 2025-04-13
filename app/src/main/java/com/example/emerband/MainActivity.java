@@ -26,9 +26,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.card.MaterialCardView;
 import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.example.emerband.utils.EmergencyUtils;
 import com.example.emerband.utils.TestingUtils;
 import androidx.appcompat.widget.Toolbar;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import android.widget.Button;
+import android.app.AlertDialog;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -65,20 +69,18 @@ public class MainActivity extends AppCompatActivity {
     private TextView tvBluetoothStatus;
     private ImageView ivBatteryStatus;
     private MaterialCardView debugCard;
-    private ExtendedFloatingActionButton fabEmergency;
-    private MaterialButton btnTestEmergency;
-    private MaterialButton btnTestFakeCall;
-    private MaterialButton btnTestCyberCell;
-    private MaterialButton btnTestAlert;
-    private MaterialButton btnTestOffline;
-    private MaterialButton btnTestCrash;
+    private FloatingActionButton fabEmergency;
+    private Button btnTestEmergency;
+    private Button btnTestFakeCall;
+    private Button btnTestAlert;
+    private Button btnTestOffline;
     private Toolbar toolbar;
 
     // Additional UI Elements
-    private MaterialButton btnEmergencyCall;
-    private MaterialButton btnCyberCell;
-    private MaterialButton btnLocation;
-    private MaterialButton btnSettings;
+    private Button btnEmergencyCall;
+    private Button btnCyberCell;
+    private Button btnLocation;
+    private Button btnSettings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -118,10 +120,8 @@ public class MainActivity extends AppCompatActivity {
             // Initialize debug buttons
             btnTestEmergency = findViewById(R.id.btnTestEmergency);
             btnTestFakeCall = findViewById(R.id.btnTestFakeCall);
-            btnTestCyberCell = findViewById(R.id.btnTestCyberCell);
             btnTestAlert = findViewById(R.id.btnTestAlert);
             btnTestOffline = findViewById(R.id.btnTestOffline);
-            btnTestCrash = findViewById(R.id.btnTestCrash);
             toolbar = findViewById(R.id.toolbar);
         } catch (Exception e) {
             throw new RuntimeException("Failed to initialize views: " + e.getMessage(), e);
@@ -208,53 +208,105 @@ public class MainActivity extends AppCompatActivity {
     }
     
     private void setupClickListeners() {
-        View.OnClickListener errorHandler = v -> {
+        // Emergency Call Button
+        btnEmergencyCall.setOnClickListener(v -> {
             try {
-                handleClick(v.getId());
+                EmergencyUtils.makeEmergencyCall(this);
             } catch (Exception e) {
-                Toast.makeText(this, "Error handling click: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                Log.e(TAG, "Error handling click", e);
+                Toast.makeText(this, "Error making emergency call: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.e(TAG, "Error making emergency call", e);
             }
-        };
+        });
 
-        // Set up emergency feature button click listeners
-        btnEmergencyCall.setOnClickListener(errorHandler);
-        btnCyberCell.setOnClickListener(errorHandler);
-        btnLocation.setOnClickListener(errorHandler);
-        btnSettings.setOnClickListener(errorHandler);
+        // Cyber Cell Button
+        btnCyberCell.setOnClickListener(v -> {
+            try {
+                EmergencyUtils.makeCyberCellCall(this);
+            } catch (Exception e) {
+                Toast.makeText(this, "Error calling cyber cell: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.e(TAG, "Error calling cyber cell", e);
+            }
+        });
 
-        // Set up debug button click listeners
-        btnTestEmergency.setOnClickListener(errorHandler);
-        btnTestFakeCall.setOnClickListener(errorHandler);
-        btnTestCyberCell.setOnClickListener(errorHandler);
-        btnTestAlert.setOnClickListener(errorHandler);
-        btnTestOffline.setOnClickListener(errorHandler);
-        btnTestCrash.setOnClickListener(errorHandler);
-        fabEmergency.setOnClickListener(errorHandler);
-    }
-    
-    private void handleClick(int viewId) {
-        if (viewId == R.id.btnTestEmergency || viewId == R.id.fabEmergency) {
-            TestingUtils.simulateBleSignal(this, 'E');
-        } else if (viewId == R.id.btnTestFakeCall) {
-            TestingUtils.simulateBleSignal(this, 'F');
-        } else if (viewId == R.id.btnTestCyberCell) {
-            TestingUtils.simulateBleSignal(this, 'C');
-        } else if (viewId == R.id.btnTestAlert) {
-            TestingUtils.simulateBleSignal(this, 'A');
-        } else if (viewId == R.id.btnTestOffline) {
-            TestingUtils.simulateOfflineMode(this, 10000);
-        } else if (viewId == R.id.btnTestCrash) {
-            TestingUtils.testRecoveryFromForceClose(this);
-        } else if (viewId == R.id.btnEmergencyCall) {
-            openEmergencyContacts();
-        } else if (viewId == R.id.btnCyberCell) {
-            openHelp();
-        } else if (viewId == R.id.btnLocation) {
-            openLocationSettings();
-        } else if (viewId == R.id.btnSettings) {
-            openSettings();
-        }
+        // Location Button
+        btnLocation.setOnClickListener(v -> {
+            try {
+                EmergencyUtils.getCurrentLocation(this, location -> {
+                    String locationStr = "Latitude: " + location.getLatitude() + 
+                                      "\nLongitude: " + location.getLongitude();
+                    new AlertDialog.Builder(this)
+                        .setTitle("Current Location")
+                        .setMessage(locationStr)
+                        .setPositiveButton("OK", null)
+                        .show();
+                });
+            } catch (Exception e) {
+                Toast.makeText(this, "Error getting location: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.e(TAG, "Error getting location", e);
+            }
+        });
+
+        // Test Emergency Button
+        btnTestEmergency.setOnClickListener(v -> {
+            try {
+                EmergencyUtils.getCurrentLocation(this, location -> {
+                    String locationStr = "http://maps.google.com/?q=" + 
+                                      location.getLatitude() + "," + 
+                                      location.getLongitude();
+                    EmergencyUtils.sendEmergencyMessage(this, locationStr);
+                });
+            } catch (Exception e) {
+                Toast.makeText(this, "Error sending emergency message: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.e(TAG, "Error sending emergency message", e);
+            }
+        });
+
+        // Fake Call Button
+        btnTestFakeCall.setOnClickListener(v -> {
+            try {
+                EmergencyUtils.playFakeCall(this);
+            } catch (Exception e) {
+                Toast.makeText(this, "Error initiating fake call: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.e(TAG, "Error initiating fake call", e);
+            }
+        });
+
+        // Alert Button
+        btnTestAlert.setOnClickListener(v -> {
+            try {
+                EmergencyUtils.playSiren(this);
+            } catch (Exception e) {
+                Toast.makeText(this, "Error playing siren: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.e(TAG, "Error playing siren", e);
+            }
+        });
+
+        // Offline Mode Button
+        btnTestOffline.setOnClickListener(v -> {
+            try {
+                new AlertDialog.Builder(this)
+                    .setTitle("Enable Airplane Mode")
+                    .setMessage("Please enable airplane mode to test offline functionality")
+                    .setPositiveButton("Open Settings", (dialog, which) -> {
+                        EmergencyUtils.toggleAirplaneMode(this);
+                    })
+                    .setNegativeButton("Cancel", null)
+                    .show();
+            } catch (Exception e) {
+                Toast.makeText(this, "Error toggling airplane mode: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.e(TAG, "Error toggling airplane mode", e);
+            }
+        });
+
+        // Emergency FAB
+        fabEmergency.setOnClickListener(v -> {
+            try {
+                handleEmergency();
+            } catch (Exception e) {
+                Toast.makeText(this, "Error handling emergency: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.e(TAG, "Error handling emergency", e);
+            }
+        });
     }
     
     private void showDebugSection() {
@@ -270,32 +322,53 @@ public class MainActivity extends AppCompatActivity {
     
     private void handleEmergency() {
         try {
+            // Show emergency dialog
             EmergencyDialogFragment dialog = new EmergencyDialogFragment();
             dialog.show(getSupportFragmentManager(), "emergency_dialog");
         } catch (Exception e) {
             Toast.makeText(this, "Error handling emergency: " + e.getMessage(), Toast.LENGTH_LONG).show();
-            e.printStackTrace();
+            Log.e(TAG, "Error handling emergency", e);
+        }
+    }
+    
+    private void openEmergencyContacts() {
+        try {
+            Intent intent = new Intent(this, EmergencyContactsActivity.class);
+            startActivity(intent);
+        } catch (Exception e) {
+            Toast.makeText(this, "Error opening emergency contacts: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            Log.e(TAG, "Error opening emergency contacts", e);
+        }
+    }
+    
+    private void openCyberCell() {
+        try {
+            Intent intent = new Intent(this, CyberCellActivity.class);
+            startActivity(intent);
+        } catch (Exception e) {
+            Toast.makeText(this, "Error opening cyber cell: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            Log.e(TAG, "Error opening cyber cell", e);
+        }
+    }
+    
+    private void openLocationSettings() {
+        try {
+            Intent intent = new Intent(this, LocationSettingsActivity.class);
+            startActivity(intent);
+        } catch (Exception e) {
+            Toast.makeText(this, "Error opening location settings: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            Log.e(TAG, "Error opening location settings", e);
         }
     }
     
     private void openSettings() {
-        Toast.makeText(this, "Opening Settings...", Toast.LENGTH_SHORT).show();
-        // TODO: Implement settings activity
-    }
-    
-    private void openEmergencyContacts() {
-        Toast.makeText(this, "Opening Emergency Contacts...", Toast.LENGTH_SHORT).show();
-        // TODO: Implement emergency contacts activity
-    }
-    
-    private void openLocationSettings() {
-        Toast.makeText(this, "Opening Location Settings...", Toast.LENGTH_SHORT).show();
-        // TODO: Implement location settings activity
-    }
-    
-    private void openHelp() {
-        Toast.makeText(this, "Opening Help & Support...", Toast.LENGTH_SHORT).show();
-        // TODO: Implement help activity
+        try {
+            Intent intent = new Intent(this, SettingsActivity.class);
+            startActivity(intent);
+        } catch (Exception e) {
+            Toast.makeText(this, "Error opening settings: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            Log.e(TAG, "Error opening settings", e);
+        }
     }
     
     @Override
@@ -371,7 +444,7 @@ public class MainActivity extends AppCompatActivity {
             openLocationSettings();
             return true;
         } else if (id == R.id.menu_help) {
-            openHelp();
+            openCyberCell();
             return true;
         } else if (id == R.id.menu_settings) {
             openSettings();

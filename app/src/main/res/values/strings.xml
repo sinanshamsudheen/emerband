@@ -11,19 +11,27 @@
     <string name="status_bluetooth_description">Bluetooth Status</string>
     <string name="status_bluetooth_disabled">Bluetooth is disabled</string>
     <string name="status_battery_description">Battery Status</string>
+    <string name="status_bluetooth_icon">Bluetooth Status</string>
+    <string name="status_battery_icon">Battery Status</string>
     
     <!-- Emergency Features -->
     <string name="emergency_features">Emergency Features</string>
+    <string name="emergency_features_title">Emergency Features</string>
     <string name="menu_contacts">Emergency Contacts</string>
+    <string name="emergency_contacts">Emergency Contacts</string>
     <string name="menu_help">Help &amp; Support</string>
     <string name="menu_location">Location Settings</string>
     <string name="menu_settings">Settings</string>
+    <string name="settings">Settings</string>
     
     <!-- Debug Tools -->
     <string name="debug_tools">Debug Tools</string>
+    <string name="debug_tools_title">Debug Tools</string>
+    <string name="test_emergency_call">Test Emergency Call</string>
+    <string name="test_cyber_cell">Test Cyber Cell</string>
+    <string name="test_location">Test Location</string>
     <string name="test_emergency">Test Emergency</string>
     <string name="test_fake_call">Test Fake Call</string>
-    <string name="test_cyber_cell">Test Cyber Cell</string>
     <string name="test_alert">Test Alert</string>
     <string name="test_offline">Test Offline</string>
     <string name="test_crash">Test Crash</string>
@@ -38,4 +46,51 @@
     
     <!-- Behaviors -->
     <string name="appbar_scrolling_view_behavior">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
+    
+    <!-- Emergency Contacts Description -->
+    <string name="emergency_contacts_description">Manage your emergency contacts here. Add, edit, or remove contacts that will be notified in case of an emergency.</string>
+    
+    <!-- Activity Descriptions -->
+    <string name="cyber_cell_description">Cyber Cell settings and information will be displayed here.</string>
+    <string name="location_settings_description">Configure your location settings and permissions here.</string>
+    <string name="settings_description">Configure your app settings and preferences here.</string>
+    
+    <!-- Actions -->
+    <string name="add_contact">Add Contact</string>
+    
+    <!-- Fake Call Screen -->
+    <string name="emergency_caller">Emergency Contact</string>
+    <string name="incoming_call">Incoming Call</string>
+    <string name="incoming_mobile_call">Mobile Call</string>
+    <string name="caller_photo">Caller Photo</string>
+    <string name="answer_call">Answer Call</string>
+    <string name="decline_call">Decline Call</string>
+    <string name="reject_call">Reject Call</string>
+    
+    <!-- Alert Screen -->
+    <string name="emergency_alert">EMERGENCY ALERT</string>
+    <string name="emergency_alert_message">Emergency alert has been activated.\nHelp is on the way!</string>
+    <string name="stop_alarm">STOP ALARM</string>
+    
+    <!-- Emergency Dialog -->
+    <string name="emergency_title">Emergency Alert</string>
+    <string name="emergency_message">Do you want to trigger the emergency alert?</string>
+    <string name="emergency_confirm">Yes, Send Alert</string>
+    <string name="emergency_cancel">Cancel</string>
+    
+    <!-- Location Dialog -->
+    <string name="location_title">Current Location</string>
+    <string name="location_error">Could not get location</string>
+    
+    <!-- Permissions -->
+    <string name="permission_required">Permission Required</string>
+    <string name="permission_call_required">Call permission is required for this feature</string>
+    <string name="permission_location_required">Location permission is required for this feature</string>
+    <string name="permission_sms_required">SMS permission is required for this feature</string>
+    
+    <!-- Offline Mode -->
+    <string name="offline_mode_title">Enable Airplane Mode</string>
+    <string name="offline_mode_message">Please enable airplane mode to test offline functionality</string>
+    <string name="offline_mode_enable">Open Settings</string>
+    <string name="offline_mode_cancel">Cancel</string>
 </resources> 

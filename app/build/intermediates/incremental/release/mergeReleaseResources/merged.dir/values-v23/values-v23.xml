@@ -55,7 +55,7 @@
     </style>
     <style name="Theme.EmerBand" parent="Theme.Material3.DayNight.NoActionBar">
         
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor">?attr/colorPrimary</item>
         <item name="android:windowLightStatusBar">false</item>
     </style>
     <style name="ThemeOverlay.Material3.AutoCompleteTextView" parent="Base.ThemeOverlay.Material3.AutoCompleteTextView">

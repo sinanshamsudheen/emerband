@@ -4,6 +4,7 @@ package com.example.emerband.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -13,9 +14,8 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.emerband.R;
-import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
-import com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -25,34 +25,31 @@ public final class ActivityMainBinding implements ViewBinding {
   private final CoordinatorLayout rootView;
 
   @NonNull
-  public final MaterialButton btnCyberCell;
+  public final Button btnCyberCell;
 
   @NonNull
-  public final MaterialButton btnEmergencyCall;
+  public final Button btnEmergencyCall;
 
   @NonNull
-  public final MaterialButton btnLocation;
+  public final Button btnEmergencyContacts;
 
   @NonNull
-  public final MaterialButton btnSettings;
+  public final Button btnLocation;
 
   @NonNull
-  public final MaterialButton btnTestAlert;
+  public final Button btnSettings;
 
   @NonNull
-  public final MaterialButton btnTestCrash;
+  public final Button btnTestAlert;
 
   @NonNull
-  public final MaterialButton btnTestCyberCell;
+  public final Button btnTestEmergency;
 
   @NonNull
-  public final MaterialButton btnTestEmergency;
+  public final Button btnTestFakeCall;
 
   @NonNull
-  public final MaterialButton btnTestFakeCall;
-
-  @NonNull
-  public final MaterialButton btnTestOffline;
+  public final Button btnTestOffline;
 
   @NonNull
   public final CoordinatorLayout coordinatorLayout;
@@ -61,7 +58,7 @@ public final class ActivityMainBinding implements ViewBinding {
   public final MaterialCardView debugCard;
 
   @NonNull
-  public final ExtendedFloatingActionButton fabEmergency;
+  public final FloatingActionButton fabEmergency;
 
   @NonNull
   public final ImageView ivBatteryStatus;
@@ -75,24 +72,21 @@ public final class ActivityMainBinding implements ViewBinding {
   @NonNull
   public final TextView tvBluetoothStatus;
 
-  private ActivityMainBinding(@NonNull CoordinatorLayout rootView,
-      @NonNull MaterialButton btnCyberCell, @NonNull MaterialButton btnEmergencyCall,
-      @NonNull MaterialButton btnLocation, @NonNull MaterialButton btnSettings,
-      @NonNull MaterialButton btnTestAlert, @NonNull MaterialButton btnTestCrash,
-      @NonNull MaterialButton btnTestCyberCell, @NonNull MaterialButton btnTestEmergency,
-      @NonNull MaterialButton btnTestFakeCall, @NonNull MaterialButton btnTestOffline,
-      @NonNull CoordinatorLayout coordinatorLayout, @NonNull MaterialCardView debugCard,
-      @NonNull ExtendedFloatingActionButton fabEmergency, @NonNull ImageView ivBatteryStatus,
-      @NonNull ImageView ivBluetoothStatus, @NonNull Toolbar toolbar,
-      @NonNull TextView tvBluetoothStatus) {
+  private ActivityMainBinding(@NonNull CoordinatorLayout rootView, @NonNull Button btnCyberCell,
+      @NonNull Button btnEmergencyCall, @NonNull Button btnEmergencyContacts,
+      @NonNull Button btnLocation, @NonNull Button btnSettings, @NonNull Button btnTestAlert,
+      @NonNull Button btnTestEmergency, @NonNull Button btnTestFakeCall,
+      @NonNull Button btnTestOffline, @NonNull CoordinatorLayout coordinatorLayout,
+      @NonNull MaterialCardView debugCard, @NonNull FloatingActionButton fabEmergency,
+      @NonNull ImageView ivBatteryStatus, @NonNull ImageView ivBluetoothStatus,
+      @NonNull Toolbar toolbar, @NonNull TextView tvBluetoothStatus) {
     this.rootView = rootView;
     this.btnCyberCell = btnCyberCell;
     this.btnEmergencyCall = btnEmergencyCall;
+    this.btnEmergencyContacts = btnEmergencyContacts;
     this.btnLocation = btnLocation;
     this.btnSettings = btnSettings;
     this.btnTestAlert = btnTestAlert;
-    this.btnTestCrash = btnTestCrash;
-    this.btnTestCyberCell = btnTestCyberCell;
     this.btnTestEmergency = btnTestEmergency;
     this.btnTestFakeCall = btnTestFakeCall;
     this.btnTestOffline = btnTestOffline;
@@ -133,61 +127,55 @@ public final class ActivityMainBinding implements ViewBinding {
     int id;
     missingId: {
       id = R.id.btnCyberCell;
-      MaterialButton btnCyberCell = ViewBindings.findChildViewById(rootView, id);
+      Button btnCyberCell = ViewBindings.findChildViewById(rootView, id);
       if (btnCyberCell == null) {
         break missingId;
       }
 
       id = R.id.btnEmergencyCall;
-      MaterialButton btnEmergencyCall = ViewBindings.findChildViewById(rootView, id);
+      Button btnEmergencyCall = ViewBindings.findChildViewById(rootView, id);
       if (btnEmergencyCall == null) {
         break missingId;
       }
 
+      id = R.id.btnEmergencyContacts;
+      Button btnEmergencyContacts = ViewBindings.findChildViewById(rootView, id);
+      if (btnEmergencyContacts == null) {
+        break missingId;
+      }
+
       id = R.id.btnLocation;
-      MaterialButton btnLocation = ViewBindings.findChildViewById(rootView, id);
+      Button btnLocation = ViewBindings.findChildViewById(rootView, id);
       if (btnLocation == null) {
         break missingId;
       }
 
       id = R.id.btnSettings;
-      MaterialButton btnSettings = ViewBindings.findChildViewById(rootView, id);
+      Button btnSettings = ViewBindings.findChildViewById(rootView, id);
       if (btnSettings == null) {
         break missingId;
       }
 
       id = R.id.btnTestAlert;
-      MaterialButton btnTestAlert = ViewBindings.findChildViewById(rootView, id);
+      Button btnTestAlert = ViewBindings.findChildViewById(rootView, id);
       if (btnTestAlert == null) {
         break missingId;
       }
 
-      id = R.id.btnTestCrash;
-      MaterialButton btnTestCrash = ViewBindings.findChildViewById(rootView, id);
-      if (btnTestCrash == null) {
-        break missingId;
-      }
-
-      id = R.id.btnTestCyberCell;
-      MaterialButton btnTestCyberCell = ViewBindings.findChildViewById(rootView, id);
-      if (btnTestCyberCell == null) {
-        break missingId;
-      }
-
       id = R.id.btnTestEmergency;
-      MaterialButton btnTestEmergency = ViewBindings.findChildViewById(rootView, id);
+      Button btnTestEmergency = ViewBindings.findChildViewById(rootView, id);
       if (btnTestEmergency == null) {
         break missingId;
       }
 
       id = R.id.btnTestFakeCall;
-      MaterialButton btnTestFakeCall = ViewBindings.findChildViewById(rootView, id);
+      Button btnTestFakeCall = ViewBindings.findChildViewById(rootView, id);
       if (btnTestFakeCall == null) {
         break missingId;
       }
 
       id = R.id.btnTestOffline;
-      MaterialButton btnTestOffline = ViewBindings.findChildViewById(rootView, id);
+      Button btnTestOffline = ViewBindings.findChildViewById(rootView, id);
       if (btnTestOffline == null) {
         break missingId;
       }
@@ -201,7 +189,7 @@ public final class ActivityMainBinding implements ViewBinding {
       }
 
       id = R.id.fabEmergency;
-      ExtendedFloatingActionButton fabEmergency = ViewBindings.findChildViewById(rootView, id);
+      FloatingActionButton fabEmergency = ViewBindings.findChildViewById(rootView, id);
       if (fabEmergency == null) {
         break missingId;
       }
@@ -231,7 +219,7 @@ public final class ActivityMainBinding implements ViewBinding {
       }
 
       return new ActivityMainBinding((CoordinatorLayout) rootView, btnCyberCell, btnEmergencyCall,
-          btnLocation, btnSettings, btnTestAlert, btnTestCrash, btnTestCyberCell, btnTestEmergency,
+          btnEmergencyContacts, btnLocation, btnSettings, btnTestAlert, btnTestEmergency,
           btnTestFakeCall, btnTestOffline, coordinatorLayout, debugCard, fabEmergency,
           ivBatteryStatus, ivBluetoothStatus, toolbar, tvBluetoothStatus);
     }

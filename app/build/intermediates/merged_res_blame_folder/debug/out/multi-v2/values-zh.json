@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.emerband.app-mergeDebugResources-41:/values-zh/values-zh.xml",
+            "outputFile": "com.example.emerband.app-mergeDebugResources-44:/values-zh/values-zh.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Abhay\\.gradle\\caches\\transforms-3\\f1762a667b792e1a449084fc5d470a28\\transformed\\jetified-permissionx-1.7.1\\res\\values-zh\\values-zh.xml",

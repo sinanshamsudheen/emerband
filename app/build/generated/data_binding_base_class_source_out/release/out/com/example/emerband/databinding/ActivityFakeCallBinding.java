@@ -4,8 +4,7 @@ package com.example.emerband.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.Chronometer;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -23,13 +22,13 @@ public final class ActivityFakeCallBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final Button answerButton;
+  public final ImageButton btnAnswer;
 
   @NonNull
-  public final TextView callStatusTextView;
+  public final ImageButton btnReject;
 
   @NonNull
-  public final Chronometer callTimer;
+  public final TextView callTypeTextView;
 
   @NonNull
   public final ImageView callerImageView;
@@ -37,24 +36,16 @@ public final class ActivityFakeCallBinding implements ViewBinding {
   @NonNull
   public final TextView callerNameTextView;
 
-  @NonNull
-  public final TextView callerNumberTextView;
-
-  @NonNull
-  public final Button declineButton;
-
-  private ActivityFakeCallBinding(@NonNull ConstraintLayout rootView, @NonNull Button answerButton,
-      @NonNull TextView callStatusTextView, @NonNull Chronometer callTimer,
-      @NonNull ImageView callerImageView, @NonNull TextView callerNameTextView,
-      @NonNull TextView callerNumberTextView, @NonNull Button declineButton) {
+  private ActivityFakeCallBinding(@NonNull ConstraintLayout rootView,
+      @NonNull ImageButton btnAnswer, @NonNull ImageButton btnReject,
+      @NonNull TextView callTypeTextView, @NonNull ImageView callerImageView,
+      @NonNull TextView callerNameTextView) {
     this.rootView = rootView;
-    this.answerButton = answerButton;
-    this.callStatusTextView = callStatusTextView;
-    this.callTimer = callTimer;
+    this.btnAnswer = btnAnswer;
+    this.btnReject = btnReject;
+    this.callTypeTextView = callTypeTextView;
     this.callerImageView = callerImageView;
     this.callerNameTextView = callerNameTextView;
-    this.callerNumberTextView = callerNumberTextView;
-    this.declineButton = declineButton;
   }
 
   @Override
@@ -84,21 +75,21 @@ public final class ActivityFakeCallBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.answerButton;
-      Button answerButton = ViewBindings.findChildViewById(rootView, id);
-      if (answerButton == null) {
+      id = R.id.btnAnswer;
+      ImageButton btnAnswer = ViewBindings.findChildViewById(rootView, id);
+      if (btnAnswer == null) {
         break missingId;
       }
 
-      id = R.id.callStatusTextView;
-      TextView callStatusTextView = ViewBindings.findChildViewById(rootView, id);
-      if (callStatusTextView == null) {
+      id = R.id.btnReject;
+      ImageButton btnReject = ViewBindings.findChildViewById(rootView, id);
+      if (btnReject == null) {
         break missingId;
       }
 
-      id = R.id.callTimer;
-      Chronometer callTimer = ViewBindings.findChildViewById(rootView, id);
-      if (callTimer == null) {
+      id = R.id.callTypeTextView;
+      TextView callTypeTextView = ViewBindings.findChildViewById(rootView, id);
+      if (callTypeTextView == null) {
         break missingId;
       }
 
@@ -114,21 +105,8 @@ public final class ActivityFakeCallBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.callerNumberTextView;
-      TextView callerNumberTextView = ViewBindings.findChildViewById(rootView, id);
-      if (callerNumberTextView == null) {
-        break missingId;
-      }
-
-      id = R.id.declineButton;
-      Button declineButton = ViewBindings.findChildViewById(rootView, id);
-      if (declineButton == null) {
-        break missingId;
-      }
-
-      return new ActivityFakeCallBinding((ConstraintLayout) rootView, answerButton,
-          callStatusTextView, callTimer, callerImageView, callerNameTextView, callerNumberTextView,
-          declineButton);
+      return new ActivityFakeCallBinding((ConstraintLayout) rootView, btnAnswer, btnReject,
+          callTypeTextView, callerImageView, callerNameTextView);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

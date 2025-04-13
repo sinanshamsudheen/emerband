@@ -6,6 +6,7 @@ import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.hardware.camera2.CameraAccessException;
 import android.hardware.camera2.CameraManager;
+import android.media.AudioAttributes;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Build;
@@ -37,7 +38,7 @@ public class AlertActivity extends AppCompatActivity {
     private static final String KEY_LAST_ALERT_TIME = "lastAlertTime";
     
     private static final long BLINK_DELAY_MS = 500; // Time between blinks (500ms)
-    private static final long VIBRATION_PATTERN[] = {0, 500, 500, 500, 500}; // Vibration pattern
+    private static final long[] VIBRATION_PATTERN = {0, 500, 500, 500, 500}; // Vibration pattern
     private static final int LIGHT_RED = Color.rgb(255, 0, 0); // Bright red
     private static final int DARK_RED = Color.rgb(150, 0, 0); // Darker red for contrast
     
@@ -62,16 +63,10 @@ public class AlertActivity extends AppCompatActivity {
         setContentView(R.layout.activity_alert);
         
         // Make sure the screen turns on if the device is locked
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O_MR1) {
-            setShowWhenLocked(true);
-            setTurnScreenOn(true);
-        } else {
-            getWindow().addFlags(
-                    WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON |
-                    WindowManager.LayoutParams.FLAG_ALLOW_LOCK_WHILE_SCREEN_ON |
-                    WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED |
-                    WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON);
-        }
+        getWindow().addFlags(
+                WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON |
+                WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED |
+                WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON);
         
         // Make the activity fullscreen
         getWindow().getDecorView().setSystemUiVisibility(
@@ -133,7 +128,7 @@ public class AlertActivity extends AppCompatActivity {
         // Maximize volume
         maximizeVolume();
         
-        // Start siren sound
+        // Start alarm sound
         playAlertSound();
         
         // Start vibration
@@ -153,7 +148,9 @@ public class AlertActivity extends AppCompatActivity {
      */
     private void stopAlert() {
         // Stop blinking
-        handler.removeCallbacks(blinkRunnable);
+        if (handler != null && blinkRunnable != null) {
+            handler.removeCallbacks(blinkRunnable);
+        }
         
         // Stop flashlight blinking
         if (hasFlash) {
@@ -163,9 +160,7 @@ public class AlertActivity extends AppCompatActivity {
         
         // Stop media player
         if (mediaPlayer != null) {
-            if (mediaPlayer.isPlaying()) {
-                mediaPlayer.stop();
-            }
+            mediaPlayer.stop();
             mediaPlayer.release();
             mediaPlayer = null;
         }
@@ -205,13 +200,19 @@ public class AlertActivity extends AppCompatActivity {
      */
     private void playAlertSound() {
         try {
-            // Try to create MediaPlayer with the siren sound
             mediaPlayer = MediaPlayer.create(this, R.raw.siren);
             if (mediaPlayer != null) {
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    AudioAttributes attributes = new AudioAttributes.Builder()
+                            .setUsage(AudioAttributes.USAGE_ALARM)
+                            .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+                            .build();
+                    mediaPlayer.setAudioAttributes(attributes);
+                } else {
+                    mediaPlayer.setAudioStreamType(AudioManager.STREAM_ALARM);
+                }
                 mediaPlayer.setLooping(true);
                 mediaPlayer.start();
-            } else {
-                Log.w(TAG, "Could not create MediaPlayer for siren sound - file might be missing");
             }
         } catch (Exception e) {
             Log.e(TAG, "Failed to play alert sound: " + e.getMessage());
@@ -225,9 +226,9 @@ public class AlertActivity extends AppCompatActivity {
         vibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
         if (vibrator != null && vibrator.hasVibrator()) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                vibrator.vibrate(VibrationEffect.createWaveform(VIBRATION_PATTERN, 0)); // repeat indefinitely
+                vibrator.vibrate(VibrationEffect.createWaveform(VIBRATION_PATTERN, 0));
             } else {
-                vibrator.vibrate(VIBRATION_PATTERN, 0); // repeat indefinitely
+                vibrator.vibrate(VIBRATION_PATTERN, 0);
             }
         }
     }
@@ -240,11 +241,7 @@ public class AlertActivity extends AppCompatActivity {
             @Override
             public void run() {
                 // Toggle between light red and dark red
-                if (isRedBackground) {
-                    alertBackground.setBackgroundColor(DARK_RED);
-                } else {
-                    alertBackground.setBackgroundColor(LIGHT_RED);
-                }
+                alertBackground.setBackgroundColor(isRedBackground ? DARK_RED : LIGHT_RED);
                 isRedBackground = !isRedBackground;
                 
                 // Schedule the next color change

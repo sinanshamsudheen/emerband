@@ -2,7 +2,7 @@
 <resources>
     <style name="Theme.EmerBand" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Status bar color -->
-        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor">?attr/colorPrimary</item>
         <item name="android:windowLightStatusBar">false</item>
     </style>
 </resources> 

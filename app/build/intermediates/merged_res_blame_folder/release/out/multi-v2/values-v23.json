@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.emerband.app-mergeReleaseResources-41:/values-v23/values-v23.xml",
+            "outputFile": "com.example.emerband.app-mergeReleaseResources-44:/values-v23/values-v23.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Abhay\\.gradle\\caches\\transforms-3\\9ed5f16cbcd27bf9ff2227301560040d\\transformed\\material-1.11.0\\res\\values-v23\\values-v23.xml",
@@ -16,10 +16,10 @@
                     "to": {
                         "startLines": "60,63,67,71,74,77,80,83,86,90",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "3753,3969,4111,4272,4482,4689,4896,5099,5301,5566",
+                        "startOffsets": "3746,3962,4104,4265,4475,4682,4889,5092,5294,5559",
                         "endLines": "62,66,70,73,76,79,82,85,89,93",
                         "endColumns": "10,10,10,10,10,10,10,10,10,10",
-                        "endOffsets": "3964,4106,4267,4477,4684,4891,5094,5296,5561,5834"
+                        "endOffsets": "3957,4099,4260,4470,4677,4884,5087,5289,5554,5827"
                     }
                 },
                 {
@@ -49,7 +49,7 @@
                         "startOffsets": "57",
                         "endLines": "6",
                         "endColumns": "12",
-                        "endOffsets": "323"
+                        "endOffsets": "316"
                     },
                     "to": {
                         "startLines": "55",
@@ -57,7 +57,7 @@
                         "startOffsets": "3511",
                         "endLines": "59",
                         "endColumns": "12",
-                        "endOffsets": "3748"
+                        "endOffsets": "3741"
                     }
                 },
                 {

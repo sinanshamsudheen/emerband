@@ -4,25 +4,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/coordinatorLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/ThemeOverlay.MaterialComponents.Dark.ActionBar">
+        android:background="?attr/colorPrimary"
+        app:liftOnScroll="true">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/ThemeOverlay.MaterialComponents.Light" />
+            android:elevation="0dp"
+            app:title="@string/app_name"
+            app:titleTextColor="?attr/colorOnPrimary"
+            app:layout_scrollFlags="scroll|enterAlways|snap"/>
 
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:fillViewport="true"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
         <LinearLayout
@@ -31,12 +36,66 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- Status Card -->
+            <!-- Status Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/status_title"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:layout_marginBottom="8dp"/>
+
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                style="@style/Widget.MaterialComponents.CardView">
+                app:cardElevation="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:padding="16dp">
+
+                    <ImageView
+                        android:id="@+id/ivBluetoothStatus"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_bluetooth_disabled"
+                        android:contentDescription="@string/status_bluetooth_icon"/>
+
+                    <TextView
+                        android:id="@+id/tvBluetoothStatus"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:text="@string/status_bluetooth_disabled"/>
+
+                    <ImageView
+                        android:id="@+id/ivBatteryStatus"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@drawable/ic_battery_full"
+                        android:contentDescription="@string/status_battery_icon"/>
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Emergency Features Section -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/emergency_features_title"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:layout_marginBottom="8dp"/>
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardElevation="1dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -44,127 +103,41 @@
                     android:orientation="vertical"
                     android:padding="16dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/status_title"
-                        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
-
-                    <LinearLayout
+                    <Button
+                        android:id="@+id/btnEmergencyContacts"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:orientation="horizontal">
+                        android:text="@string/emergency_contacts"
+                        android:drawableStart="@drawable/ic_contacts"
+                        android:drawablePadding="8dp"/>
 
-                        <ImageView
-                            android:id="@+id/ivBluetoothStatus"
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:layout_marginEnd="8dp"
-                            android:src="@drawable/ic_bluetooth_disabled"
-                            android:contentDescription="@string/status_bluetooth_description" />
-
-                        <TextView
-                            android:id="@+id/tvBluetoothStatus"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:text="@string/status_bluetooth_disabled"
-                            android:textAppearance="@style/TextAppearance.MaterialComponents.Body1" />
-
-                        <ImageView
-                            android:id="@+id/ivBatteryStatus"
-                            android:layout_width="24dp"
-                            android:layout_height="24dp"
-                            android:layout_marginStart="8dp"
-                            android:src="@drawable/ic_battery_full"
-                            android:contentDescription="@string/status_battery_description" />
-
-                    </LinearLayout>
+                    <Button
+                        android:id="@+id/btnSettings"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/settings"
+                        android:drawableStart="@drawable/ic_settings"
+                        android:drawablePadding="8dp"
+                        android:layout_marginTop="8dp"/>
 
                 </LinearLayout>
 
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Emergency Features Grid -->
-            <com.google.android.material.card.MaterialCardView
-                android:layout_width="match_parent"
+            <!-- Debug Tools Section -->
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                style="@style/Widget.MaterialComponents.CardView">
+                android:text="@string/debug_tools_title"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:layout_marginBottom="8dp"/>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/emergency_features"
-                        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6" />
-
-                    <GridLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:columnCount="2"
-                        android:rowCount="2">
-
-                        <com.google.android.material.button.MaterialButton
-                            android:id="@+id/btnEmergencyCall"
-                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_columnWeight="1"
-                            android:layout_margin="4dp"
-                            android:text="@string/menu_contacts"
-                            app:icon="@drawable/ic_phone" />
-
-                        <com.google.android.material.button.MaterialButton
-                            android:id="@+id/btnCyberCell"
-                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_columnWeight="1"
-                            android:layout_margin="4dp"
-                            android:text="@string/menu_help"
-                            app:icon="@drawable/ic_shield" />
-
-                        <com.google.android.material.button.MaterialButton
-                            android:id="@+id/btnLocation"
-                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_columnWeight="1"
-                            android:layout_margin="4dp"
-                            android:text="@string/menu_location"
-                            app:icon="@drawable/ic_location" />
-
-                        <com.google.android.material.button.MaterialButton
-                            android:id="@+id/btnSettings"
-                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_columnWeight="1"
-                            android:layout_margin="4dp"
-                            android:text="@string/menu_settings"
-                            app:icon="@drawable/ic_settings" />
-
-                    </GridLayout>
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
-            <!-- Debug Section -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/debugCard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                style="@style/Widget.MaterialComponents.CardView">
+                android:layout_marginBottom="16dp"
+                app:cardElevation="1dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -172,74 +145,60 @@
                     android:orientation="vertical"
                     android:padding="16dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/debug_tools"
-                        android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-                        android:layout_marginBottom="16dp"/>
-
-                    <GridLayout
+                    <Button
+                        android:id="@+id/btnEmergencyCall"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:columnCount="2"
-                        android:rowCount="3">
+                        android:text="@string/test_emergency_call"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
 
-                        <com.google.android.material.button.MaterialButton
-                            android:id="@+id/btnTestEmergency"
-                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_columnWeight="1"
-                            android:layout_margin="4dp"
-                            android:text="@string/test_emergency" />
+                    <Button
+                        android:id="@+id/btnCyberCell"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/test_cyber_cell"
+                        android:layout_marginTop="8dp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
 
-                        <com.google.android.material.button.MaterialButton
-                            android:id="@+id/btnTestFakeCall"
-                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_columnWeight="1"
-                            android:layout_margin="4dp"
-                            android:text="@string/test_fake_call" />
+                    <Button
+                        android:id="@+id/btnLocation"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/test_location"
+                        android:layout_marginTop="8dp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
 
-                        <com.google.android.material.button.MaterialButton
-                            android:id="@+id/btnTestCyberCell"
-                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_columnWeight="1"
-                            android:layout_margin="4dp"
-                            android:text="@string/test_cyber_cell" />
+                    <Button
+                        android:id="@+id/btnTestEmergency"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/test_emergency"
+                        android:layout_marginTop="8dp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
 
-                        <com.google.android.material.button.MaterialButton
-                            android:id="@+id/btnTestAlert"
-                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_columnWeight="1"
-                            android:layout_margin="4dp"
-                            android:text="@string/test_alert" />
+                    <Button
+                        android:id="@+id/btnTestFakeCall"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/test_fake_call"
+                        android:layout_marginTop="8dp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
 
-                        <com.google.android.material.button.MaterialButton
-                            android:id="@+id/btnTestOffline"
-                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_columnWeight="1"
-                            android:layout_margin="4dp"
-                            android:text="@string/test_offline" />
+                    <Button
+                        android:id="@+id/btnTestAlert"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/test_alert"
+                        android:layout_marginTop="8dp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
 
-                        <com.google.android.material.button.MaterialButton
-                            android:id="@+id/btnTestCrash"
-                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_columnWeight="1"
-                            android:layout_margin="4dp"
-                            android:text="@string/test_crash" />
-
-                    </GridLayout>
+                    <Button
+                        android:id="@+id/btnTestOffline"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/test_offline"
+                        android:layout_marginTop="8dp"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
 
                 </LinearLayout>
 
@@ -249,16 +208,14 @@
 
     </androidx.core.widget.NestedScrollView>
 
-    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabEmergency"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
-        android:text="@string/emergency"
-        android:textColor="@color/white"
-        app:icon="@drawable/ic_phone"
-        app:iconTint="@color/white"
-        app:backgroundTint="?attr/colorError" />
+        android:contentDescription="@string/emergency"
+        app:srcCompat="@drawable/ic_emergency"
+        app:backgroundTint="?attr/colorError"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout> 

@@ -177,9 +177,9 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 24 warnings</span>
+      <span class="mdl-layout-title">Lint Report: 65 warnings</span>
       <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Sat Apr 12 18:01:26 IST 2025 by AGP (8.2.0)</nav>
+      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Sun Apr 13 12:53:48 IST 2025 by AGP (8.2.0)</nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -187,9 +187,12 @@ document.getElementById(id).style.display = 'none';
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="#overview"><i class="material-icons">dashboard</i>Overview</a>
       <a class="mdl-navigation__link" href="#LintBaseline"><i class="material-icons warning-icon">warning</i>Baseline Issues (2)</a>
-      <a class="mdl-navigation__link" href="#GradleDependency"><i class="material-icons warning-icon">warning</i>Obsolete Gradle Dependency (1)</a>
+      <a class="mdl-navigation__link" href="#GradleDependency"><i class="material-icons warning-icon">warning</i>Obsolete Gradle Dependency (4)</a>
+      <a class="mdl-navigation__link" href="#ObsoleteSdkInt"><i class="material-icons warning-icon">warning</i>Obsolete SDK_INT Version Check (1)</a>
       <a class="mdl-navigation__link" href="#VectorPath"><i class="material-icons warning-icon">warning</i>Long vector paths (1)</a>
-      <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (18)</a>
+      <a class="mdl-navigation__link" href="#Overdraw"><i class="material-icons warning-icon">warning</i>Overdraw: Painting regions more than once (2)</a>
+      <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (51)</a>
+      <a class="mdl-navigation__link" href="#MonochromeLauncherIcon"><i class="material-icons warning-icon">warning</i>Monochrome icon is not defined (2)</a>
       <a class="mdl-navigation__link" href="#KtxExtensionAvailable"><i class="material-icons warning-icon">warning</i>KTX Extension Available (1)</a>
       <a class="mdl-navigation__link" href="#HardcodedText"><i class="material-icons warning-icon">warning</i>Hardcoded text (4)</a>
     </nav>
@@ -212,16 +215,27 @@ document.getElementById(id).style.display = 'none';
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Correctness">Correctness</a>
 </td></tr>
 <tr>
-<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">4</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#GradleDependency">GradleDependency</a>: Obsolete Gradle Dependency</td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Performance">Performance</a>
 </td></tr>
 <tr>
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#ObsoleteSdkInt">ObsoleteSdkInt</a>: Obsolete SDK_INT Version Check</td></tr>
+<tr>
+<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#VectorPath">VectorPath</a>: Long vector paths</td></tr>
 <tr>
-<td class="countColumn">18</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#Overdraw">Overdraw</a>: Overdraw: Painting regions more than once</td></tr>
+<tr>
+<td class="countColumn">51</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#UnusedResources">UnusedResources</a>: Unused resources</td></tr>
+<tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Usability:Icons">Usability:Icons</a>
+</td></tr>
+<tr>
+<td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#MonochromeLauncherIcon">MonochromeLauncherIcon</a>: Monochrome icon is not defined</td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Productivity">Productivity</a>
 </td></tr>
 <tr>
@@ -253,9 +267,9 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../lint-baseline.xml">../../lint-baseline.xml</a></span>: <span class="message">16 errors/warnings were listed in the baseline file (lint-baseline.xml) but not found in the project; perhaps they have been fixed? Another possible explanation is that lint recently stopped analyzing (and including results from) dependent projects by default. You can turn this back on with <code>android.lintOptions.checkDependencies=true</code>. Unmatched issue types: HardcodedText (2), SetTextI18n (2), UnusedResources (12)</span><br />
-<span class="location"><a href="../../lint-baseline.xml">../../lint-baseline.xml</a></span>: <span class="message">21 errors and 57 warnings were filtered out because they are listed in the baseline file, lint-baseline.xml<br/>
+<span class="location"><a href="../../lint-baseline.xml">../../lint-baseline.xml</a></span>: <span class="message">21 errors and 38 warnings were filtered out because they are listed in the baseline file, lint-baseline.xml<br/>
 </span><br />
+<span class="location"><a href="../../lint-baseline.xml">../../lint-baseline.xml</a></span>: <span class="message">35 errors/warnings were listed in the baseline file (lint-baseline.xml) but not found in the project; perhaps they have been fixed? Another possible explanation is that lint recently stopped analyzing (and including results from) dependent projects by default. You can turn this back on with <code>android.lintOptions.checkDependencies=true</code>. Unmatched issue types: ButtonStyle (2), ContentDescription, HardcodedText (8), ObsoleteSdkInt, Overdraw (2), PrivateResource, SetTextI18n (5), UnusedAttribute (2), UnusedResources (13)</span><br />
 </div>
 <div class="metadata"><div class="explanation" id="explanationLintBaseline" style="display: none;">
 Lint can be configured with a "baseline"; a set of current issues found in a codebase, which future runs of lint will silently ignore. Only new issues not found in the baseline are reported.<br/>
@@ -294,15 +308,41 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../build.gradle">../../build.gradle</a>:89</span>: <span class="message">A newer version of androidx.fragment:fragment than 1.6.2 is available: 1.8.6</span><br /><pre class="errorlines">
-<span class="lineno">  86 </span>    implementation <span class="string">'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'</span>
-<span class="lineno">  87 </span>    implementation <span class="string">'androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0'</span>
-<span class="lineno">  88 </span>    implementation <span class="string">'androidx.lifecycle:lifecycle-livedata-ktx:2.7.0'</span>
-<span class="caretline"><span class="lineno">  89 </span>    implementation <span class="warning"><span class="string">'androidx.fragment:fragment:1.6.2'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  90 </span>    
-<span class="lineno">  91 </span>    <span class="comment">// Room for database</span>
-<span class="lineno">  92 </span>    implementation <span class="string">'androidx.room:room-runtime:2.6.1'</span>
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:90</span>: <span class="message">A newer version of androidx.fragment:fragment than 1.6.2 is available: 1.8.6</span><br /><pre class="errorlines">
+<span class="lineno">  87 </span>    implementation <span class="string">'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'</span>
+<span class="lineno">  88 </span>    implementation <span class="string">'androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0'</span>
+<span class="lineno">  89 </span>    implementation <span class="string">'androidx.lifecycle:lifecycle-livedata-ktx:2.7.0'</span>
+<span class="caretline"><span class="lineno">  90 </span>    implementation <span class="warning"><span class="string">'androidx.fragment:fragment:1.6.2'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  91 </span>    
+<span class="lineno">  92 </span>    <span class="comment">// Room for database</span>
+<span class="lineno">  93 </span>    implementation <span class="string">'androidx.room:room-runtime:2.6.1'</span>
 </pre>
+
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:113</span>: <span class="message">A newer version of androidx.coordinatorlayout:coordinatorlayout than 1.2.0 is available: 1.3.0</span><br /><pre class="errorlines">
+<span class="lineno"> 110 </span>    androidTestImplementation <span class="string">'androidx.test.espresso:espresso-core:3.5.1'</span>
+<span class="lineno"> 111 </span>
+<span class="lineno"> 112 </span>    <span class="comment">// Additional dependencies</span>
+<span class="caretline"><span class="lineno"> 113 </span>    implementation <span class="warning"><span class="string">'androidx.coordinatorlayout:coordinatorlayout:1.2.0'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 114 </span>    
+<span class="lineno"> 115 </span>    <span class="comment">// Android SDK dependencies for Java</span>
+<span class="lineno"> 116 </span>    implementation <span class="string">'androidx.annotation:annotation:1.7.1'</span>
+</pre>
+
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:116</span>: <span class="message">A newer version of androidx.annotation:annotation than 1.7.1 is available: 1.9.1</span><br /><pre class="errorlines">
+<span class="lineno"> 113 </span>    implementation <span class="string">'androidx.coordinatorlayout:coordinatorlayout:1.2.0'</span>
+<span class="lineno"> 114 </span>    
+<span class="lineno"> 115 </span>    <span class="comment">// Android SDK dependencies for Java</span>
+<span class="caretline"><span class="lineno"> 116 </span>    implementation <span class="warning"><span class="string">'androidx.annotation:annotation:1.7.1'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 117 </span>    implementation <span class="string">'androidx.legacy:legacy-support-v4:1.0.0'</span>
+<span class="lineno"> 118 </span>    implementation <span class="string">'com.google.android.gms:play-services-location:21.1.0'</span>
+<span class="lineno"> 119 </span>} </pre>
+
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:118</span>: <span class="message">A newer version of com.google.android.gms:play-services-location than 21.1.0 is available: 21.3.0</span><br /><pre class="errorlines">
+<span class="lineno"> 115 </span>    <span class="comment">// Android SDK dependencies for Java</span>
+<span class="lineno"> 116 </span>    implementation <span class="string">'androidx.annotation:annotation:1.7.1'</span>
+<span class="lineno"> 117 </span>    implementation <span class="string">'androidx.legacy:legacy-support-v4:1.0.0'</span>
+<span class="caretline"><span class="lineno"> 118 </span>    implementation <span class="warning"><span class="string">'com.google.android.gms:play-services-location:21.1.0'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 119 </span>} </pre>
 
 </div>
 <div class="metadata"><div class="explanation" id="explanationGradleDependency" style="display: none;">
@@ -333,7 +373,55 @@ Dismiss</button>            </div>
             </div>
           </section>
 <a name="Performance"></a>
-<a name="VectorPath"></a>
+<a name="ObsoleteSdkInt"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="ObsoleteSdkIntCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Obsolete SDK_INT Version Check</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/java/com/example/emerband/AlertActivity.java">../../src/main/java/com/example/emerband/AlertActivity.java</a>:205</span>: <span class="message">Unnecessary; SDK_INT is always >= 21</span><br /><pre class="errorlines">
+<span class="lineno"> 202 </span>        <span class="keyword">try</span> {
+<span class="lineno"> 203 </span>            mediaPlayer = MediaPlayer.create(<span class="keyword">this</span>, R.raw.siren);
+<span class="lineno"> 204 </span>            <span class="keyword">if</span> (mediaPlayer != <span class="keyword">null</span>) {
+<span class="caretline"><span class="lineno"> 205 </span>                <span class="keyword">if</span> (<span class="warning">Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP</span>) {&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 206 </span>                    AudioAttributes attributes = <span class="keyword">new</span> AudioAttributes.Builder()
+<span class="lineno"> 207 </span>                            .setUsage(AudioAttributes.USAGE_ALARM)
+<span class="lineno"> 208 </span>                            .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
+</pre>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationObsoleteSdkInt" style="display: none;">
+This check flags version checks that are not necessary, because the <code>minSdkVersion</code> (or surrounding known API level) is already at least as high as the version checked for.<br/>
+<br/>
+Similarly, it also looks for resources in <code>-vNN</code> folders, such as <code>values-v14</code> where the version qualifier is less than or equal to the <code>minSdkVersion</code>, where the contents should be merged into the best folder.<br/>Note: This issue has an associated quickfix operation in Android Studio and IntelliJ IDEA.<br>
+To suppress this error, use the issue id "ObsoleteSdkInt" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">ObsoleteSdkInt</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Performance</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 6/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationObsoleteSdkIntLink" onclick="reveal('explanationObsoleteSdkInt');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="ObsoleteSdkIntCardLink" onclick="hideid('ObsoleteSdkIntCard');">
+Dismiss</button>            </div>
+            </div>
+          </section><a name="VectorPath"></a>
 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="VectorPathCard" style="display: block;">
             <div class="mdl-card mdl-cell mdl-cell--12-col">
   <div class="mdl-card__title">
@@ -379,6 +467,67 @@ Using long vector paths is bad for performance. There are several ways to make t
 Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="VectorPathCardLink" onclick="hideid('VectorPathCard');">
 Dismiss</button>            </div>
             </div>
+          </section><a name="Overdraw"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="OverdrawCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Overdraw: Painting regions more than once</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/res/layout/activity_alert.xml">../../src/main/res/layout/activity_alert.xml</a>:7</span>: <span class="message">Possible overdraw: Root element paints background <code>@color/error</code> with a theme that also paints a background (inferred theme is <code>@style/Theme_AppCompat_NoActionBar</code>)</span><br /><pre class="errorlines">
+<span class="lineno">  4 </span>    <span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/alertBackground"</span>
+<span class="lineno">  5 </span>    <span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"match_parent"</span>
+<span class="lineno">  6 </span>    <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"match_parent"</span>
+<span class="caretline"><span class="lineno">  7 </span>    <span class="warning"><span class="prefix">android:</span><span class="attribute">background</span>=<span class="value">"@color/error"</span></span>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  8 </span>
+<span class="lineno">  9 </span>    <span class="tag">&lt;LinearLayout</span><span class="attribute">
+</span><span class="lineno"> 10 </span><span class="attribute">        </span><span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"match_parent"</span>
+</pre>
+
+<span class="location"><a href="../../src/main/res/layout/activity_fake_call.xml">../../src/main/res/layout/activity_fake_call.xml</a>:6</span>: <span class="message">Possible overdraw: Root element paints background <code>@color/primary</code> with a theme that also paints a background (inferred theme is <code>@style/Theme_AppCompat_NoActionBar</code>)</span><br /><pre class="errorlines">
+<span class="lineno">  3 </span>    <span class="prefix">xmlns:</span><span class="attribute">app</span>=<span class="value">"http://schemas.android.com/apk/res-auto"</span>
+<span class="lineno">  4 </span>    <span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"match_parent"</span>
+<span class="lineno">  5 </span>    <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"match_parent"</span>
+<span class="caretline"><span class="lineno">  6 </span>    <span class="warning"><span class="prefix">android:</span><span class="attribute">background</span>=<span class="value">"@color/primary"</span></span>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  7 </span>
+<span class="lineno">  8 </span>    <span class="tag">&lt;ImageView</span><span class="attribute">
+</span><span class="lineno">  9 </span><span class="attribute">        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/callerImageView"</span>
+</pre>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationOverdraw" style="display: none;">
+If you set a background drawable on a root view, then you should use a custom theme where the theme background is null. Otherwise, the theme background will be painted first, only to have your custom background completely cover it; this is called "overdraw".<br/>
+<br/>
+NOTE: This detector relies on figuring out which layouts are associated with which activities based on scanning the Java code, and it's currently doing that using an inexact pattern matching algorithm. Therefore, it can incorrectly conclude which activity the layout is associated with and then wrongly complain that a background-theme is hidden.<br/>
+<br/>
+If you want your custom background on multiple pages, then you should consider making a custom theme with your custom background and just using that theme instead of a root element background.<br/>
+<br/>
+Of course it's possible that your custom drawable is translucent and you want it to be mixed with the background. However, you will get better performance if you pre-mix the background with your drawable and use that resulting image or color as a custom theme background instead.<br/>To suppress this error, use the issue id "Overdraw" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Overdraw</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Performance</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 3/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationOverdrawLink" onclick="reveal('explanationOverdraw');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="OverdrawCardLink" onclick="hideid('OverdrawCard');">
+Dismiss</button>            </div>
+            </div>
           </section><a name="UnusedResources"></a>
 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="UnusedResourcesCard" style="display: block;">
             <div class="mdl-card mdl-cell mdl-cell--12-col">
@@ -388,6 +537,45 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
+<span class="location"><a href="../../src/main/res/drawable/circle_background.xml">../../src/main/res/drawable/circle_background.xml</a>:2</span>: <span class="message">The resource <code>R.drawable.circle_background</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 1 </span><span class="prologue">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="caretline"><span class="lineno"> 2 </span><span class="warning"><span class="tag">&lt;shape</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 3 </span>    <span class="prefix">android:</span><span class="attribute">shape</span>=<span class="value">"oval"</span>>
+<span class="lineno"> 4 </span>    <span class="tag">&lt;solid</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">color</span>=<span class="value">"#444444"</span> />
+<span class="lineno"> 5 </span><span class="tag">&lt;/shape></span> </pre>
+
+<span class="location"><a href="../../src/main/res/drawable/circle_button_green.xml">../../src/main/res/drawable/circle_button_green.xml</a>:2</span>: <span class="message">The resource <code>R.drawable.circle_button_green</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 1 </span><span class="prologue">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="caretline"><span class="lineno"> 2 </span><span class="warning"><span class="tag">&lt;ripple</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 3 </span>    <span class="prefix">android:</span><span class="attribute">color</span>=<span class="value">"?attr/colorControlHighlight"</span>>
+<span class="lineno"> 4 </span>    <span class="tag">&lt;item></span>
+<span class="lineno"> 5 </span>        <span class="tag">&lt;shape</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">shape</span>=<span class="value">"oval"</span>>
+</pre>
+
+<span class="location"><a href="../../src/main/res/drawable/circle_button_red.xml">../../src/main/res/drawable/circle_button_red.xml</a>:2</span>: <span class="message">The resource <code>R.drawable.circle_button_red</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 1 </span><span class="prologue">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="caretline"><span class="lineno"> 2 </span><span class="warning"><span class="tag">&lt;ripple</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 3 </span>    <span class="prefix">android:</span><span class="attribute">color</span>=<span class="value">"?attr/colorControlHighlight"</span>>
+<span class="lineno"> 4 </span>    <span class="tag">&lt;item></span>
+<span class="lineno"> 5 </span>        <span class="tag">&lt;shape</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">shape</span>=<span class="value">"oval"</span>>
+</pre>
+
+<span class="location"><a href="../../src/main/res/drawable/circle_green.xml">../../src/main/res/drawable/circle_green.xml</a>:2</span>: <span class="message">The resource <code>R.drawable.circle_green</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 1 </span><span class="prologue">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="caretline"><span class="lineno"> 2 </span><span class="warning"><span class="tag">&lt;shape</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 3 </span>    <span class="prefix">android:</span><span class="attribute">shape</span>=<span class="value">"oval"</span>>
+<span class="lineno"> 4 </span>    <span class="tag">&lt;solid</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">color</span>=<span class="value">"#4CAF50"</span> />
+<span class="lineno"> 5 </span><span class="tag">&lt;/shape></span> </pre>
+
+<span class="location"><a href="../../src/main/res/drawable/circle_red.xml">../../src/main/res/drawable/circle_red.xml</a>:2</span>: <span class="message">The resource <code>R.drawable.circle_red</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 1 </span><span class="prologue">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="caretline"><span class="lineno"> 2 </span><span class="warning"><span class="tag">&lt;shape</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 3 </span>    <span class="prefix">android:</span><span class="attribute">shape</span>=<span class="value">"oval"</span>>
+<span class="lineno"> 4 </span>    <span class="tag">&lt;solid</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">color</span>=<span class="value">"#FF0000"</span> />
+<span class="lineno"> 5 </span><span class="tag">&lt;/shape></span> </pre>
+
+<button class="mdl-button mdl-js-button mdl-button--primary" id="UnusedResourcesDivLink" onclick="reveal('UnusedResourcesDiv');" />+ 46 More Occurrences...</button>
+<div id="UnusedResourcesDiv" style="display: none">
 <span class="location"><a href="../../src/main/res/values/colors.xml">../../src/main/res/values/colors.xml</a>:16</span>: <span class="message">The resource <code>R.color.gray</code> appears to be unused</span><br /><pre class="errorlines">
 <span class="lineno"> 13 </span>    <span class="comment">&lt;!-- Basic colors --></span>
 <span class="lineno"> 14 </span>    <span class="tag">&lt;color</span><span class="attribute"> name</span>=<span class="value">"white"</span>>#FFFFFF<span class="tag">&lt;/color></span>
@@ -436,14 +624,27 @@ Dismiss</button>            </div>
 <span class="lineno"> 24 </span>    <span class="tag">&lt;color</span><span class="attribute"> name</span>=<span class="value">"info"</span>>#2196F3<span class="tag">&lt;/color></span>
 <span class="lineno"> 25 </span><span class="tag">&lt;/resources></span> </pre>
 
-<button class="mdl-button mdl-js-button mdl-button--primary" id="UnusedResourcesDivLink" onclick="reveal('UnusedResourcesDiv');" />+ 13 More Occurrences...</button>
-<div id="UnusedResourcesDiv" style="display: none">
 <span class="location"><a href="../../src/main/res/values/colors.xml">../../src/main/res/values/colors.xml</a>:24</span>: <span class="message">The resource <code>R.color.info</code> appears to be unused</span><br /><pre class="errorlines">
 <span class="lineno"> 21 </span>    <span class="tag">&lt;color</span><span class="attribute"> name</span>=<span class="value">"success"</span>>#4CAF50<span class="tag">&lt;/color></span>
 <span class="lineno"> 22 </span>    <span class="tag">&lt;color</span><span class="attribute"> name</span>=<span class="value">"error"</span>>#F44336<span class="tag">&lt;/color></span>
 <span class="lineno"> 23 </span>    <span class="tag">&lt;color</span><span class="attribute"> name</span>=<span class="value">"warning"</span>>#FFC107<span class="tag">&lt;/color></span>
 <span class="caretline"><span class="lineno"> 24 </span>    <span class="tag">&lt;color</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"info"</span></span>>#2196F3<span class="tag">&lt;/color></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno"> 25 </span><span class="tag">&lt;/resources></span> </pre>
+
+<span class="location"><a href="../../src/main/res/drawable/default_caller_image.xml">../../src/main/res/drawable/default_caller_image.xml</a>:2</span>: <span class="message">The resource <code>R.drawable.default_caller_image</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno">  1 </span><span class="prologue">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="caretline"><span class="lineno">  2 </span><span class="warning"><span class="tag">&lt;vector</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  3 </span>    <span class="prefix">android:</span><span class="attribute">width</span>=<span class="value">"120dp"</span>
+<span class="lineno">  4 </span>    <span class="prefix">android:</span><span class="attribute">height</span>=<span class="value">"120dp"</span>
+<span class="lineno">  5 </span>    <span class="prefix">android:</span><span class="attribute">viewportWidth</span>=<span class="value">"120"</span>
+</pre>
+
+<span class="location"><a href="../../src/main/res/drawable/green_circle_button.xml">../../src/main/res/drawable/green_circle_button.xml</a>:2</span>: <span class="message">The resource <code>R.drawable.green_circle_button</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 1 </span><span class="prologue">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="caretline"><span class="lineno"> 2 </span><span class="warning"><span class="tag">&lt;shape</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 3 </span>    <span class="prefix">android:</span><span class="attribute">shape</span>=<span class="value">"oval"</span>>
+<span class="lineno"> 4 </span>    <span class="tag">&lt;solid</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">color</span>=<span class="value">"#43A047"</span> />
+<span class="lineno"> 5 </span><span class="tag">&lt;/shape></span> </pre>
 
 <span class="location"><a href="../../src/main/res/drawable/ic_bug.xml">../../src/main/res/drawable/ic_bug.xml</a>:2</span>: <span class="message">The resource <code>R.drawable.ic_bug</code> appears to be unused</span><br /><pre class="errorlines">
 <span class="lineno">  1 </span><span class="prologue">&lt;?xml version="1.0" encoding="utf-8"?></span>
@@ -453,7 +654,15 @@ Dismiss</button>            </div>
 <span class="lineno">  5 </span>    <span class="prefix">android:</span><span class="attribute">viewportWidth</span>=<span class="value">"24"</span>
 </pre>
 
-<span class="location"><a href="../../src/main/res/drawable/ic_emergency.xml">../../src/main/res/drawable/ic_emergency.xml</a>:2</span>: <span class="message">The resource <code>R.drawable.ic_emergency</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="location"><a href="../../src/main/res/drawable/ic_call_answer.xml">../../src/main/res/drawable/ic_call_answer.xml</a>:2</span>: <span class="message">The resource <code>R.drawable.ic_call_answer</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno">  1 </span><span class="prologue">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="caretline"><span class="lineno">  2 </span><span class="warning"><span class="tag">&lt;vector</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  3 </span>    <span class="prefix">android:</span><span class="attribute">width</span>=<span class="value">"24dp"</span>
+<span class="lineno">  4 </span>    <span class="prefix">android:</span><span class="attribute">height</span>=<span class="value">"24dp"</span>
+<span class="lineno">  5 </span>    <span class="prefix">android:</span><span class="attribute">viewportWidth</span>=<span class="value">"24"</span>
+</pre>
+
+<span class="location"><a href="../../src/main/res/drawable/ic_call_end.xml">../../src/main/res/drawable/ic_call_end.xml</a>:2</span>: <span class="message">The resource <code>R.drawable.ic_call_end</code> appears to be unused</span><br /><pre class="errorlines">
 <span class="lineno">  1 </span><span class="prologue">&lt;?xml version="1.0" encoding="utf-8"?></span>
 <span class="caretline"><span class="lineno">  2 </span><span class="warning"><span class="tag">&lt;vector</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno">  3 </span>    <span class="prefix">android:</span><span class="attribute">width</span>=<span class="value">"24dp"</span>
@@ -469,6 +678,22 @@ Dismiss</button>            </div>
 <span class="lineno">  5 </span>    <span class="prefix">android:</span><span class="attribute">viewportWidth</span>=<span class="value">"24"</span>
 </pre>
 
+<span class="location"><a href="../../src/main/res/drawable/ic_phone.xml">../../src/main/res/drawable/ic_phone.xml</a>:2</span>: <span class="message">The resource <code>R.drawable.ic_phone</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno">  1 </span><span class="prologue">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="caretline"><span class="lineno">  2 </span><span class="warning"><span class="tag">&lt;vector</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  3 </span>    <span class="prefix">android:</span><span class="attribute">width</span>=<span class="value">"24dp"</span>
+<span class="lineno">  4 </span>    <span class="prefix">android:</span><span class="attribute">height</span>=<span class="value">"24dp"</span>
+<span class="lineno">  5 </span>    <span class="prefix">android:</span><span class="attribute">viewportWidth</span>=<span class="value">"24"</span>
+</pre>
+
+<span class="location"><a href="../../src/main/res/drawable/ic_shield.xml">../../src/main/res/drawable/ic_shield.xml</a>:2</span>: <span class="message">The resource <code>R.drawable.ic_shield</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno">  1 </span><span class="prologue">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="caretline"><span class="lineno">  2 </span><span class="warning"><span class="tag">&lt;vector</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  3 </span>    <span class="prefix">android:</span><span class="attribute">width</span>=<span class="value">"24dp"</span>
+<span class="lineno">  4 </span>    <span class="prefix">android:</span><span class="attribute">height</span>=<span class="value">"24dp"</span>
+<span class="lineno">  5 </span>    <span class="prefix">android:</span><span class="attribute">viewportWidth</span>=<span class="value">"24"</span>
+</pre>
+
 <span class="location"><a href="../../src/main/res/drawable/ic_sos.xml">../../src/main/res/drawable/ic_sos.xml</a>:2</span>: <span class="message">The resource <code>R.drawable.ic_sos</code> appears to be unused</span><br /><pre class="errorlines">
 <span class="lineno">  1 </span><span class="prologue">&lt;?xml version="1.0" encoding="utf-8"?></span>
 <span class="caretline"><span class="lineno">  2 </span><span class="warning"><span class="tag">&lt;vector</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -477,6 +702,14 @@ Dismiss</button>            </div>
 <span class="lineno">  5 </span>    <span class="prefix">android:</span><span class="attribute">viewportWidth</span>=<span class="value">"24"</span>
 </pre>
 
+<span class="location"><a href="../../src/main/res/drawable/red_circle_button.xml">../../src/main/res/drawable/red_circle_button.xml</a>:2</span>: <span class="message">The resource <code>R.drawable.red_circle_button</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 1 </span><span class="prologue">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="caretline"><span class="lineno"> 2 </span><span class="warning"><span class="tag">&lt;shape</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 3 </span>    <span class="prefix">android:</span><span class="attribute">shape</span>=<span class="value">"oval"</span>>
+<span class="lineno"> 4 </span>    <span class="tag">&lt;solid</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">color</span>=<span class="value">"#E53935"</span> />
+<span class="lineno"> 5 </span><span class="tag">&lt;/shape></span> </pre>
+
+<span class="location"><a href="../../src/main/res/raw/ringtone.mp3">../../src/main/res/raw/ringtone.mp3</a></span>: <span class="message">The resource <code>R.raw.ringtone</code> appears to be unused</span><br />
 <span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:7</span>: <span class="message">The resource <code>R.string.emergency_button</code> appears to be unused</span><br /><pre class="errorlines">
 <span class="lineno">  4 </span>    
 <span class="lineno">  5 </span>    <span class="comment">&lt;!-- Main UI --></span>
@@ -487,77 +720,271 @@ Dismiss</button>            </div>
 <span class="lineno"> 10 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"status_title"</span>>Status<span class="tag">&lt;/string></span>
 </pre>
 
-<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:32</span>: <span class="message">The resource <code>R.string.msg_emergency</code> appears to be unused</span><br /><pre class="errorlines">
-<span class="lineno"> 29 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"test_crash"</span>>Test Crash<span class="tag">&lt;/string></span>
-<span class="lineno"> 30 </span>    
-<span class="lineno"> 31 </span>    <span class="comment">&lt;!-- Test Messages --></span>
-<span class="caretline"><span class="lineno"> 32 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"msg_emergency"</span></span>>Emergency Alert Triggered<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 33 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_fake_call"</span>>Fake Call Triggered<span class="tag">&lt;/string></span>
-<span class="lineno"> 34 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_cyber_cell"</span>>Cyber Cell Alert Triggered<span class="tag">&lt;/string></span>
-<span class="lineno"> 35 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_alert"</span>>Alert Mode Triggered<span class="tag">&lt;/string></span>
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:11</span>: <span class="message">The resource <code>R.string.status_bluetooth_description</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno">  8 </span>    
+<span class="lineno">  9 </span>    <span class="comment">&lt;!-- Status Section --></span>
+<span class="lineno"> 10 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"status_title"</span>>Status<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 11 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"status_bluetooth_description"</span></span>>Bluetooth Status<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 12 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"status_bluetooth_disabled"</span>>Bluetooth is disabled<span class="tag">&lt;/string></span>
+<span class="lineno"> 13 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"status_battery_description"</span>>Battery Status<span class="tag">&lt;/string></span>
+<span class="lineno"> 14 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"status_bluetooth_icon"</span>>Bluetooth Status<span class="tag">&lt;/string></span>
 </pre>
 
-<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:33</span>: <span class="message">The resource <code>R.string.msg_fake_call</code> appears to be unused</span><br /><pre class="errorlines">
-<span class="lineno"> 30 </span>    
-<span class="lineno"> 31 </span>    <span class="comment">&lt;!-- Test Messages --></span>
-<span class="lineno"> 32 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_emergency"</span>>Emergency Alert Triggered<span class="tag">&lt;/string></span>
-<span class="caretline"><span class="lineno"> 33 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"msg_fake_call"</span></span>>Fake Call Triggered<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 34 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_cyber_cell"</span>>Cyber Cell Alert Triggered<span class="tag">&lt;/string></span>
-<span class="lineno"> 35 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_alert"</span>>Alert Mode Triggered<span class="tag">&lt;/string></span>
-<span class="lineno"> 36 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_offline"</span>>Offline Mode Active<span class="tag">&lt;/string></span>
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:13</span>: <span class="message">The resource <code>R.string.status_battery_description</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 10 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"status_title"</span>>Status<span class="tag">&lt;/string></span>
+<span class="lineno"> 11 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"status_bluetooth_description"</span>>Bluetooth Status<span class="tag">&lt;/string></span>
+<span class="lineno"> 12 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"status_bluetooth_disabled"</span>>Bluetooth is disabled<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 13 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"status_battery_description"</span></span>>Battery Status<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 14 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"status_bluetooth_icon"</span>>Bluetooth Status<span class="tag">&lt;/string></span>
+<span class="lineno"> 15 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"status_battery_icon"</span>>Battery Status<span class="tag">&lt;/string></span>
+<span class="lineno"> 16 </span>    
 </pre>
 
-<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:34</span>: <span class="message">The resource <code>R.string.msg_cyber_cell</code> appears to be unused</span><br /><pre class="errorlines">
-<span class="lineno"> 31 </span>    <span class="comment">&lt;!-- Test Messages --></span>
-<span class="lineno"> 32 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_emergency"</span>>Emergency Alert Triggered<span class="tag">&lt;/string></span>
-<span class="lineno"> 33 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_fake_call"</span>>Fake Call Triggered<span class="tag">&lt;/string></span>
-<span class="caretline"><span class="lineno"> 34 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"msg_cyber_cell"</span></span>>Cyber Cell Alert Triggered<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 35 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_alert"</span>>Alert Mode Triggered<span class="tag">&lt;/string></span>
-<span class="lineno"> 36 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_offline"</span>>Offline Mode Active<span class="tag">&lt;/string></span>
-<span class="lineno"> 37 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_crash"</span>>Testing Crash Recovery<span class="tag">&lt;/string></span>
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:18</span>: <span class="message">The resource <code>R.string.emergency_features</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 15 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"status_battery_icon"</span>>Battery Status<span class="tag">&lt;/string></span>
+<span class="lineno"> 16 </span>    
+<span class="lineno"> 17 </span>    <span class="comment">&lt;!-- Emergency Features --></span>
+<span class="caretline"><span class="lineno"> 18 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"emergency_features"</span></span>>Emergency Features<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 19 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"emergency_features_title"</span>>Emergency Features<span class="tag">&lt;/string></span>
+<span class="lineno"> 20 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"menu_contacts"</span>>Emergency Contacts<span class="tag">&lt;/string></span>
+<span class="lineno"> 21 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"emergency_contacts"</span>>Emergency Contacts<span class="tag">&lt;/string></span>
 </pre>
 
-<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:35</span>: <span class="message">The resource <code>R.string.msg_alert</code> appears to be unused</span><br /><pre class="errorlines">
-<span class="lineno"> 32 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_emergency"</span>>Emergency Alert Triggered<span class="tag">&lt;/string></span>
-<span class="lineno"> 33 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_fake_call"</span>>Fake Call Triggered<span class="tag">&lt;/string></span>
-<span class="lineno"> 34 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_cyber_cell"</span>>Cyber Cell Alert Triggered<span class="tag">&lt;/string></span>
-<span class="caretline"><span class="lineno"> 35 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"msg_alert"</span></span>>Alert Mode Triggered<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 36 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_offline"</span>>Offline Mode Active<span class="tag">&lt;/string></span>
-<span class="lineno"> 37 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_crash"</span>>Testing Crash Recovery<span class="tag">&lt;/string></span>
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:28</span>: <span class="message">The resource <code>R.string.debug_tools</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 25 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"settings"</span>>Settings<span class="tag">&lt;/string></span>
+<span class="lineno"> 26 </span>    
+<span class="lineno"> 27 </span>    <span class="comment">&lt;!-- Debug Tools --></span>
+<span class="caretline"><span class="lineno"> 28 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"debug_tools"</span></span>>Debug Tools<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 29 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"debug_tools_title"</span>>Debug Tools<span class="tag">&lt;/string></span>
+<span class="lineno"> 30 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"test_emergency_call"</span>>Test Emergency Call<span class="tag">&lt;/string></span>
+<span class="lineno"> 31 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"test_cyber_cell"</span>>Test Cyber Cell<span class="tag">&lt;/string></span>
+</pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:37</span>: <span class="message">The resource <code>R.string.test_crash</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 34 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"test_fake_call"</span>>Test Fake Call<span class="tag">&lt;/string></span>
+<span class="lineno"> 35 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"test_alert"</span>>Test Alert<span class="tag">&lt;/string></span>
+<span class="lineno"> 36 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"test_offline"</span>>Test Offline<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 37 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"test_crash"</span></span>>Test Crash<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
 <span class="lineno"> 38 </span>    
+<span class="lineno"> 39 </span>    <span class="comment">&lt;!-- Test Messages --></span>
+<span class="lineno"> 40 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_emergency"</span>>Emergency Alert Triggered<span class="tag">&lt;/string></span>
 </pre>
 
-<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:36</span>: <span class="message">The resource <code>R.string.msg_offline</code> appears to be unused</span><br /><pre class="errorlines">
-<span class="lineno"> 33 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_fake_call"</span>>Fake Call Triggered<span class="tag">&lt;/string></span>
-<span class="lineno"> 34 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_cyber_cell"</span>>Cyber Cell Alert Triggered<span class="tag">&lt;/string></span>
-<span class="lineno"> 35 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_alert"</span>>Alert Mode Triggered<span class="tag">&lt;/string></span>
-<span class="caretline"><span class="lineno"> 36 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"msg_offline"</span></span>>Offline Mode Active<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 37 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_crash"</span>>Testing Crash Recovery<span class="tag">&lt;/string></span>
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:40</span>: <span class="message">The resource <code>R.string.msg_emergency</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 37 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"test_crash"</span>>Test Crash<span class="tag">&lt;/string></span>
 <span class="lineno"> 38 </span>    
-<span class="lineno"> 39 </span>    <span class="comment">&lt;!-- Behaviors --></span>
+<span class="lineno"> 39 </span>    <span class="comment">&lt;!-- Test Messages --></span>
+<span class="caretline"><span class="lineno"> 40 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"msg_emergency"</span></span>>Emergency Alert Triggered<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 41 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_fake_call"</span>>Fake Call Triggered<span class="tag">&lt;/string></span>
+<span class="lineno"> 42 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_cyber_cell"</span>>Cyber Cell Alert Triggered<span class="tag">&lt;/string></span>
+<span class="lineno"> 43 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_alert"</span>>Alert Mode Triggered<span class="tag">&lt;/string></span>
 </pre>
 
-<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:37</span>: <span class="message">The resource <code>R.string.msg_crash</code> appears to be unused</span><br /><pre class="errorlines">
-<span class="lineno"> 34 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_cyber_cell"</span>>Cyber Cell Alert Triggered<span class="tag">&lt;/string></span>
-<span class="lineno"> 35 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_alert"</span>>Alert Mode Triggered<span class="tag">&lt;/string></span>
-<span class="lineno"> 36 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_offline"</span>>Offline Mode Active<span class="tag">&lt;/string></span>
-<span class="caretline"><span class="lineno"> 37 </span>  <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"msg_crash"</span></span>>Testing Crash Recovery<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 38 </span>  
-<span class="lineno"> 39 </span>  <span class="comment">&lt;!-- Behaviors --></span>
-<span class="lineno"> 40 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"appbar_scrolling_view_behavior"</span>>com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior<span class="tag">&lt;/string></span>
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:41</span>: <span class="message">The resource <code>R.string.msg_fake_call</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 38 </span>    
+<span class="lineno"> 39 </span>    <span class="comment">&lt;!-- Test Messages --></span>
+<span class="lineno"> 40 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_emergency"</span>>Emergency Alert Triggered<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 41 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"msg_fake_call"</span></span>>Fake Call Triggered<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 42 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_cyber_cell"</span>>Cyber Cell Alert Triggered<span class="tag">&lt;/string></span>
+<span class="lineno"> 43 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_alert"</span>>Alert Mode Triggered<span class="tag">&lt;/string></span>
+<span class="lineno"> 44 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_offline"</span>>Offline Mode Active<span class="tag">&lt;/string></span>
 </pre>
 
-<span class="location"><a href="../../src/main/res/values/themes.xml">../../src/main/res/values/themes.xml</a>:4</span>: <span class="message">The resource <code>R.style.Theme_EmerBand</code> appears to be unused</span><br /><pre class="errorlines">
-<span class="lineno">  1 </span><span class="prologue">&lt;?xml version="1.0" encoding="utf-8"?></span>
-<span class="lineno">  2 </span><span class="tag">&lt;resources></span>
-<span class="lineno">  3 </span>    <span class="comment">&lt;!-- Base application theme --></span>
-<span class="caretline"><span class="lineno">  4 </span>    <span class="tag">&lt;style</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"Theme.EmerBand"</span></span> <span class="attribute">parent</span>=<span class="value">"Theme.MaterialComponents.Light.NoActionBar"</span>>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  5 </span>        <span class="comment">&lt;!-- Primary brand color --></span>
-<span class="lineno">  6 </span>        <span class="tag">&lt;item</span><span class="attribute"> name</span>=<span class="value">"colorPrimary"</span>>@color/primary<span class="tag">&lt;/item></span>
-<span class="lineno">  7 </span>        <span class="tag">&lt;item</span><span class="attribute"> name</span>=<span class="value">"colorPrimaryVariant"</span>>@color/primary_dark<span class="tag">&lt;/item></span>
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:42</span>: <span class="message">The resource <code>R.string.msg_cyber_cell</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 39 </span>    <span class="comment">&lt;!-- Test Messages --></span>
+<span class="lineno"> 40 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_emergency"</span>>Emergency Alert Triggered<span class="tag">&lt;/string></span>
+<span class="lineno"> 41 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_fake_call"</span>>Fake Call Triggered<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 42 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"msg_cyber_cell"</span></span>>Cyber Cell Alert Triggered<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 43 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_alert"</span>>Alert Mode Triggered<span class="tag">&lt;/string></span>
+<span class="lineno"> 44 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_offline"</span>>Offline Mode Active<span class="tag">&lt;/string></span>
+<span class="lineno"> 45 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_crash"</span>>Testing Crash Recovery<span class="tag">&lt;/string></span>
 </pre>
 
-</div>
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:43</span>: <span class="message">The resource <code>R.string.msg_alert</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 40 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_emergency"</span>>Emergency Alert Triggered<span class="tag">&lt;/string></span>
+<span class="lineno"> 41 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_fake_call"</span>>Fake Call Triggered<span class="tag">&lt;/string></span>
+<span class="lineno"> 42 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_cyber_cell"</span>>Cyber Cell Alert Triggered<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 43 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"msg_alert"</span></span>>Alert Mode Triggered<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 44 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_offline"</span>>Offline Mode Active<span class="tag">&lt;/string></span>
+<span class="lineno"> 45 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_crash"</span>>Testing Crash Recovery<span class="tag">&lt;/string></span>
+<span class="lineno"> 46 </span>    
+</pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:44</span>: <span class="message">The resource <code>R.string.msg_offline</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 41 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_fake_call"</span>>Fake Call Triggered<span class="tag">&lt;/string></span>
+<span class="lineno"> 42 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_cyber_cell"</span>>Cyber Cell Alert Triggered<span class="tag">&lt;/string></span>
+<span class="lineno"> 43 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_alert"</span>>Alert Mode Triggered<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 44 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"msg_offline"</span></span>>Offline Mode Active<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 45 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_crash"</span>>Testing Crash Recovery<span class="tag">&lt;/string></span>
+<span class="lineno"> 46 </span>    
+<span class="lineno"> 47 </span>    <span class="comment">&lt;!-- Behaviors --></span>
+</pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:45</span>: <span class="message">The resource <code>R.string.msg_crash</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 42 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_cyber_cell"</span>>Cyber Cell Alert Triggered<span class="tag">&lt;/string></span>
+<span class="lineno"> 43 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_alert"</span>>Alert Mode Triggered<span class="tag">&lt;/string></span>
+<span class="lineno"> 44 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_offline"</span>>Offline Mode Active<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 45 </span>  <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"msg_crash"</span></span>>Testing Crash Recovery<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 46 </span>  
+<span class="lineno"> 47 </span>  <span class="comment">&lt;!-- Behaviors --></span>
+<span class="lineno"> 48 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"appbar_scrolling_view_behavior"</span>>com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior<span class="tag">&lt;/string></span>
+</pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:63</span>: <span class="message">The resource <code>R.string.incoming_call</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 60 </span>    
+<span class="lineno"> 61 </span>    <span class="comment">&lt;!-- Fake Call Screen --></span>
+<span class="lineno"> 62 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"emergency_caller"</span>>Emergency Contact<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 63 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"incoming_call"</span></span>>Incoming Call<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 64 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"incoming_mobile_call"</span>>Mobile Call<span class="tag">&lt;/string></span>
+<span class="lineno"> 65 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"caller_photo"</span>>Caller Photo<span class="tag">&lt;/string></span>
+<span class="lineno"> 66 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"answer_call"</span>>Answer Call<span class="tag">&lt;/string></span>
+</pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:68</span>: <span class="message">The resource <code>R.string.reject_call</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 65 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"caller_photo"</span>>Caller Photo<span class="tag">&lt;/string></span>
+<span class="lineno"> 66 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"answer_call"</span>>Answer Call<span class="tag">&lt;/string></span>
+<span class="lineno"> 67 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"decline_call"</span>>Decline Call<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 68 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"reject_call"</span></span>>Reject Call<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 69 </span>    
+<span class="lineno"> 70 </span>    <span class="comment">&lt;!-- Alert Screen --></span>
+<span class="lineno"> 71 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"emergency_alert"</span>>EMERGENCY ALERT<span class="tag">&lt;/string></span>
+</pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:76</span>: <span class="message">The resource <code>R.string.emergency_title</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 73 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"stop_alarm"</span>>STOP ALARM<span class="tag">&lt;/string></span>
+<span class="lineno"> 74 </span>    
+<span class="lineno"> 75 </span>    <span class="comment">&lt;!-- Emergency Dialog --></span>
+<span class="caretline"><span class="lineno"> 76 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"emergency_title"</span></span>>Emergency Alert<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 77 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"emergency_message"</span>>Do you want to trigger the emergency alert?<span class="tag">&lt;/string></span>
+<span class="lineno"> 78 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"emergency_confirm"</span>>Yes, Send Alert<span class="tag">&lt;/string></span>
+<span class="lineno"> 79 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"emergency_cancel"</span>>Cancel<span class="tag">&lt;/string></span>
+</pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:77</span>: <span class="message">The resource <code>R.string.emergency_message</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 74 </span>    
+<span class="lineno"> 75 </span>    <span class="comment">&lt;!-- Emergency Dialog --></span>
+<span class="lineno"> 76 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"emergency_title"</span>>Emergency Alert<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 77 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"emergency_message"</span></span>>Do you want to trigger the emergency alert?<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 78 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"emergency_confirm"</span>>Yes, Send Alert<span class="tag">&lt;/string></span>
+<span class="lineno"> 79 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"emergency_cancel"</span>>Cancel<span class="tag">&lt;/string></span>
+<span class="lineno"> 80 </span>    
+</pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:78</span>: <span class="message">The resource <code>R.string.emergency_confirm</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 75 </span>    <span class="comment">&lt;!-- Emergency Dialog --></span>
+<span class="lineno"> 76 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"emergency_title"</span>>Emergency Alert<span class="tag">&lt;/string></span>
+<span class="lineno"> 77 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"emergency_message"</span>>Do you want to trigger the emergency alert?<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 78 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"emergency_confirm"</span></span>>Yes, Send Alert<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 79 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"emergency_cancel"</span>>Cancel<span class="tag">&lt;/string></span>
+<span class="lineno"> 80 </span>    
+<span class="lineno"> 81 </span>    <span class="comment">&lt;!-- Location Dialog --></span>
+</pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:79</span>: <span class="message">The resource <code>R.string.emergency_cancel</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 76 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"emergency_title"</span>>Emergency Alert<span class="tag">&lt;/string></span>
+<span class="lineno"> 77 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"emergency_message"</span>>Do you want to trigger the emergency alert?<span class="tag">&lt;/string></span>
+<span class="lineno"> 78 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"emergency_confirm"</span>>Yes, Send Alert<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 79 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"emergency_cancel"</span></span>>Cancel<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 80 </span>    
+<span class="lineno"> 81 </span>    <span class="comment">&lt;!-- Location Dialog --></span>
+<span class="lineno"> 82 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"location_title"</span>>Current Location<span class="tag">&lt;/string></span>
+</pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:82</span>: <span class="message">The resource <code>R.string.location_title</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 79 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"emergency_cancel"</span>>Cancel<span class="tag">&lt;/string></span>
+<span class="lineno"> 80 </span>    
+<span class="lineno"> 81 </span>    <span class="comment">&lt;!-- Location Dialog --></span>
+<span class="caretline"><span class="lineno"> 82 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"location_title"</span></span>>Current Location<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 83 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"location_error"</span>>Could not get location<span class="tag">&lt;/string></span>
+<span class="lineno"> 84 </span>    
+<span class="lineno"> 85 </span>    <span class="comment">&lt;!-- Permissions --></span>
+</pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:83</span>: <span class="message">The resource <code>R.string.location_error</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 80 </span>    
+<span class="lineno"> 81 </span>    <span class="comment">&lt;!-- Location Dialog --></span>
+<span class="lineno"> 82 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"location_title"</span>>Current Location<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 83 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"location_error"</span></span>>Could not get location<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 84 </span>    
+<span class="lineno"> 85 </span>    <span class="comment">&lt;!-- Permissions --></span>
+<span class="lineno"> 86 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"permission_required"</span>>Permission Required<span class="tag">&lt;/string></span>
+</pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:86</span>: <span class="message">The resource <code>R.string.permission_required</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 83 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"location_error"</span>>Could not get location<span class="tag">&lt;/string></span>
+<span class="lineno"> 84 </span>  
+<span class="lineno"> 85 </span>  <span class="comment">&lt;!-- Permissions --></span>
+<span class="caretline"><span class="lineno"> 86 </span>  <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"permission_required"</span></span>>Permission Required<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 87 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"permission_call_required"</span>>Call permission is required for this feature<span class="tag">&lt;/string></span>
+<span class="lineno"> 88 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"permission_location_required"</span>>Location permission is required for this feature<span class="tag">&lt;/string></span>
+<span class="lineno"> 89 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"permission_sms_required"</span>>SMS permission is required for this feature<span class="tag">&lt;/string></span>
+</pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:87</span>: <span class="message">The resource <code>R.string.permission_call_required</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 84 </span>  
+<span class="lineno"> 85 </span>  <span class="comment">&lt;!-- Permissions --></span>
+<span class="lineno"> 86 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"permission_required"</span>>Permission Required<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 87 </span>  <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"permission_call_required"</span></span>>Call permission is required for this feature<span class="tag">&lt;/string></span>&nbsp;&nbsp;</span>
+<span class="lineno"> 88 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"permission_location_required"</span>>Location permission is required for this feature<span class="tag">&lt;/string></span>
+<span class="lineno"> 89 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"permission_sms_required"</span>>SMS permission is required for this feature<span class="tag">&lt;/string></span>
+<span class="lineno"> 90 </span>  
+</pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:88</span>: <span class="message">The resource <code>R.string.permission_location_required</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 85 </span>  <span class="comment">&lt;!-- Permissions --></span>
+<span class="lineno"> 86 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"permission_required"</span>>Permission Required<span class="tag">&lt;/string></span>
+<span class="lineno"> 87 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"permission_call_required"</span>>Call permission is required for this feature<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 88 </span>  <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"permission_location_required"</span></span>>Location permission is required for this feature<span class="tag">&lt;/string></span></span>
+<span class="lineno"> 89 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"permission_sms_required"</span>>SMS permission is required for this feature<span class="tag">&lt;/string></span>
+<span class="lineno"> 90 </span>  
+<span class="lineno"> 91 </span>  <span class="comment">&lt;!-- Offline Mode --></span>
+</pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:89</span>: <span class="message">The resource <code>R.string.permission_sms_required</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 86 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"permission_required"</span>>Permission Required<span class="tag">&lt;/string></span>
+<span class="lineno"> 87 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"permission_call_required"</span>>Call permission is required for this feature<span class="tag">&lt;/string></span>
+<span class="lineno"> 88 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"permission_location_required"</span>>Location permission is required for this feature<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 89 </span>  <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"permission_sms_required"</span></span>>SMS permission is required for this feature<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 90 </span>  
+<span class="lineno"> 91 </span>  <span class="comment">&lt;!-- Offline Mode --></span>
+<span class="lineno"> 92 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"offline_mode_title"</span>>Enable Airplane Mode<span class="tag">&lt;/string></span>
+</pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:92</span>: <span class="message">The resource <code>R.string.offline_mode_title</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 89 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"permission_sms_required"</span>>SMS permission is required for this feature<span class="tag">&lt;/string></span>
+<span class="lineno"> 90 </span>  
+<span class="lineno"> 91 </span>  <span class="comment">&lt;!-- Offline Mode --></span>
+<span class="caretline"><span class="lineno"> 92 </span>  <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"offline_mode_title"</span></span>>Enable Airplane Mode<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 93 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"offline_mode_message"</span>>Please enable airplane mode to test offline functionality<span class="tag">&lt;/string></span>
+<span class="lineno"> 94 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"offline_mode_enable"</span>>Open Settings<span class="tag">&lt;/string></span>
+<span class="lineno"> 95 </span>  <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"offline_mode_cancel"</span>>Cancel<span class="tag">&lt;/string></span>
+</pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:93</span>: <span class="message">The resource <code>R.string.offline_mode_message</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 90 </span>    
+<span class="lineno"> 91 </span>    <span class="comment">&lt;!-- Offline Mode --></span>
+<span class="lineno"> 92 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"offline_mode_title"</span>>Enable Airplane Mode<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 93 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"offline_mode_message"</span></span>>Please enable airplane mode to test offline functionality<span class="tag">&lt;/string></span></span>
+<span class="lineno"> 94 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"offline_mode_enable"</span>>Open Settings<span class="tag">&lt;/string></span>
+<span class="lineno"> 95 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"offline_mode_cancel"</span>>Cancel<span class="tag">&lt;/string></span>
+<span class="lineno"> 96 </span><span class="tag">&lt;/resources></span> </pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:94</span>: <span class="message">The resource <code>R.string.offline_mode_enable</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 91 </span>    <span class="comment">&lt;!-- Offline Mode --></span>
+<span class="lineno"> 92 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"offline_mode_title"</span>>Enable Airplane Mode<span class="tag">&lt;/string></span>
+<span class="lineno"> 93 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"offline_mode_message"</span>>Please enable airplane mode to test offline functionality<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 94 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"offline_mode_enable"</span></span>>Open Settings<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 95 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"offline_mode_cancel"</span>>Cancel<span class="tag">&lt;/string></span>
+<span class="lineno"> 96 </span><span class="tag">&lt;/resources></span> </pre>
+
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:95</span>: <span class="message">The resource <code>R.string.offline_mode_cancel</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 92 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"offline_mode_title"</span>>Enable Airplane Mode<span class="tag">&lt;/string></span>
+<span class="lineno"> 93 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"offline_mode_message"</span>>Please enable airplane mode to test offline functionality<span class="tag">&lt;/string></span>
+<span class="lineno"> 94 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"offline_mode_enable"</span>>Open Settings<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 95 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"offline_mode_cancel"</span></span>>Cancel<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 96 </span><span class="tag">&lt;/resources></span> </pre>
+
+<br/><b>NOTE: 1 results omitted.</b><br/><br/></div>
 </div>
 <div class="metadata"><div class="explanation" id="explanationUnusedResources" style="display: none;">
 Unused resources make applications larger and slow down builds.<br/>
@@ -592,6 +1019,62 @@ Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id
 Dismiss</button>            </div>
             </div>
           </section>
+<a name="Usability:Icons"></a>
+<a name="MonochromeLauncherIcon"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="MonochromeLauncherIconCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Monochrome icon is not defined</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/res/mipmap-anydpi-v26/ic_launcher.xml">../../src/main/res/mipmap-anydpi-v26/ic_launcher.xml</a>:2</span>: <span class="message">The application adaptive icon is missing a monochrome tag</span><br /><pre class="errorlines">
+<span class="lineno"> 1 </span><span class="prologue">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="caretline"><span class="lineno"> 2 </span><span class="warning"><span class="tag">&lt;adaptive-icon</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 3 </span>    <span class="tag">&lt;background</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">drawable</span>=<span class="value">"@color/ic_launcher_background"</span>/>
+<span class="lineno"> 4 </span>    <span class="tag">&lt;foreground</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">drawable</span>=<span class="value">"@drawable/ic_launcher_foreground"</span>/>
+<span class="lineno"> 5 </span><span class="tag">&lt;/adaptive-icon></span> </pre>
+
+<span class="location"><a href="../../src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml">../../src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml</a>:2</span>: <span class="message">The application adaptive roundIcon is missing a monochrome tag</span><br /><pre class="errorlines">
+<span class="lineno"> 1 </span><span class="prologue">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="caretline"><span class="lineno"> 2 </span><span class="warning"><span class="tag">&lt;adaptive-icon</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span>></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 3 </span>    <span class="tag">&lt;background</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">drawable</span>=<span class="value">"@color/ic_launcher_background"</span>/>
+<span class="lineno"> 4 </span>    <span class="tag">&lt;foreground</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">drawable</span>=<span class="value">"@drawable/ic_launcher_foreground"</span>/>
+<span class="lineno"> 5 </span><span class="tag">&lt;/adaptive-icon></span> </pre>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationMonochromeLauncherIcon" style="display: none;">
+If <code>android:roundIcon</code> and <code>android:icon</code> are both in your manifest, you must either remove the reference to <code>android:roundIcon</code> if it is not needed; or, supply the monochrome icon in the drawable defined by the <code>android:roundIcon</code> and <code>android:icon</code> attribute.<br/>
+<br/>
+For example, if <code>android:roundIcon</code> and <code>android:icon</code> are both in the manifest, a launcher might choose to use <code>android:roundIcon</code> over <code>android:icon</code> to display the adaptive app icon. Therefore, your themed application iconwill not show if your monochrome attribute is not also specified in <code>android:roundIcon</code>.<br/>To suppress this error, use the issue id "MonochromeLauncherIcon" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">MonochromeLauncherIcon</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Icons</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Usability</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 6/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationMonochromeLauncherIconLink" onclick="reveal('explanationMonochromeLauncherIcon');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="MonochromeLauncherIconCardLink" onclick="hideid('MonochromeLauncherIconCard');">
+Dismiss</button>            </div>
+            </div>
+          </section>
 <a name="Productivity"></a>
 <a name="KtxExtensionAvailable"></a>
 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="KtxExtensionAvailableCard" style="display: block;">
@@ -602,14 +1085,14 @@ Dismiss</button>            </div>
               <div class="mdl-card__supporting-text">
 <div class="issue">
 <div class="warningslist">
-<span class="location"><a href="../../build.gradle">../../build.gradle</a>:89</span>: <span class="message">Add suffix <code>-ktx</code> to enable the Kotlin extensions for this library</span><br /><pre class="errorlines">
-<span class="lineno">  86 </span>    implementation <span class="string">'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'</span>
-<span class="lineno">  87 </span>    implementation <span class="string">'androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0'</span>
-<span class="lineno">  88 </span>    implementation <span class="string">'androidx.lifecycle:lifecycle-livedata-ktx:2.7.0'</span>
-<span class="caretline"><span class="lineno">  89 </span>    implementation <span class="warning"><span class="string">'androidx.fragment:fragment:1.6.2'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno">  90 </span>    
-<span class="lineno">  91 </span>    <span class="comment">// Room for database</span>
-<span class="lineno">  92 </span>    implementation <span class="string">'androidx.room:room-runtime:2.6.1'</span>
+<span class="location"><a href="../../build.gradle">../../build.gradle</a>:90</span>: <span class="message">Add suffix <code>-ktx</code> to enable the Kotlin extensions for this library</span><br /><pre class="errorlines">
+<span class="lineno">  87 </span>    implementation <span class="string">'androidx.lifecycle:lifecycle-runtime-ktx:2.7.0'</span>
+<span class="lineno">  88 </span>    implementation <span class="string">'androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0'</span>
+<span class="lineno">  89 </span>    implementation <span class="string">'androidx.lifecycle:lifecycle-livedata-ktx:2.7.0'</span>
+<span class="caretline"><span class="lineno">  90 </span>    implementation <span class="warning"><span class="string">'androidx.fragment:fragment:1.6.2'</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  91 </span>    
+<span class="lineno">  92 </span>    <span class="comment">// Room for database</span>
+<span class="lineno">  93 </span>    implementation <span class="string">'androidx.room:room-runtime:2.6.1'</span>
 </pre>
 
 </div>
