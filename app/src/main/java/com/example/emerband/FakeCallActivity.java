@@ -1,19 +1,26 @@
 package com.example.emerband;
 
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageButton;
-import android.widget.ImageView;
+import android.os.Handler;
+import android.os.Looper;
 import android.widget.TextView;
-
 import androidx.appcompat.app.AppCompatActivity;
+import com.example.emerband.utils.EmergencyUtils;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import java.util.Locale;
 
 public class FakeCallActivity extends AppCompatActivity {
-    private ImageView callerImageView;
-    private TextView callerNameTextView;
-    private TextView callTypeTextView;
-    private ImageButton btnAnswer;
-    private ImageButton btnReject;
+    private TextView callDurationText;
+    private Handler handler;
+    private int seconds = 0;
+    private final Runnable timerRunnable = new Runnable() {
+        @Override
+        public void run() {
+            seconds++;
+            updateTimer();
+            handler.postDelayed(this, 1000);
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,33 +28,37 @@ public class FakeCallActivity extends AppCompatActivity {
         setContentView(R.layout.activity_fake_call);
 
         // Initialize views
-        callerImageView = findViewById(R.id.callerImageView);
-        callerNameTextView = findViewById(R.id.callerNameTextView);
-        callTypeTextView = findViewById(R.id.callTypeTextView);
-        btnAnswer = findViewById(R.id.btnAnswer);
-        btnReject = findViewById(R.id.btnReject);
+        callDurationText = findViewById(R.id.callDurationText);
+        FloatingActionButton endCallButton = findViewById(R.id.endCallButton);
 
-        // Set up click listeners
-        btnAnswer.setOnClickListener(v -> handleAnswerCall());
-        btnReject.setOnClickListener(v -> handleRejectCall());
+        // Set up end call button
+        endCallButton.setOnClickListener(v -> {
+            EmergencyUtils.stopFakeCall();
+            finish();
+        });
 
-        // Set up initial UI
-        setupCallUI();
+        // Initialize handler for timer
+        handler = new Handler(Looper.getMainLooper());
+        startTimer();
     }
 
-    private void setupCallUI() {
-        callerNameTextView.setText(getString(R.string.emergency_caller));
-        callTypeTextView.setText(getString(R.string.incoming_mobile_call));
-        callerImageView.setImageResource(R.drawable.ic_person);
+    private void startTimer() {
+        handler.post(timerRunnable);
     }
 
-    private void handleAnswerCall() {
-        // Add call answer logic here
-        finish();
+    private void updateTimer() {
+        int minutes = seconds / 60;
+        int secs = seconds % 60;
+        String time = String.format(Locale.getDefault(), "%02d:%02d", minutes, secs);
+        callDurationText.setText(time);
     }
 
-    private void handleRejectCall() {
-        // Add call reject logic here
-        finish();
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (handler != null) {
+            handler.removeCallbacks(timerRunnable);
+        }
+        EmergencyUtils.stopFakeCall();
     }
 }

@@ -43,7 +43,7 @@ public class AlertActivity extends AppCompatActivity {
     private static final int DARK_RED = Color.rgb(150, 0, 0); // Darker red for contrast
     
     private FrameLayout alertBackground;
-    private Button stopAlertButton;
+    private Button btnStopAlert;
     private MediaPlayer mediaPlayer;
     private Vibrator vibrator;
     private Handler handler;
@@ -79,13 +79,16 @@ public class AlertActivity extends AppCompatActivity {
         
         // Initialize views
         alertBackground = findViewById(R.id.alertBackground);
-        stopAlertButton = findViewById(R.id.stopAlertButton);
+        btnStopAlert = findViewById(R.id.btnStopAlert);
         
         // Store the alert timestamp
         saveAlertTimestamp();
         
         // Set up the button click listener
-        stopAlertButton.setOnClickListener(v -> stopAlert());
+        btnStopAlert.setOnClickListener(v -> {
+            stopAlert();
+            finish();
+        });
         
         // Initialize handler for background blinking
         handler = new Handler(Looper.getMainLooper());

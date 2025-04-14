@@ -178,6 +178,196 @@
     </incident>
 
     <incident
+        id="UseAppTint"
+        severity="error"
+        message="Must use `app:tint` instead of `android:tint`">
+        <fix-composite>
+            <fix-attribute
+                description="Set tint=&quot;@android:color/white&quot;"
+                namespace="http://schemas.android.com/apk/res-auto"
+                attribute="tint"
+                value="@android:color/white"/>
+            <fix-attribute
+                description="Delete tint"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="tint"/>
+        </fix-composite>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_fake_call.xml"
+            line="23"
+            column="13"
+            startOffset="958"
+            endLine="23"
+            endColumn="48"
+            endOffset="993"/>
+    </incident>
+
+    <incident
+        id="ContentDescription"
+        severity="warning"
+        message="Missing `contentDescription` attribute on image">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set contentDescription"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="contentDescription"
+                value="TODO"
+                dot="4"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAccessibility=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAccessibility"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_fake_call.xml"
+            line="17"
+            column="10"
+            startOffset="694"
+            endLine="17"
+            endColumn="19"
+            endOffset="703"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Wi-Fi call&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_fake_call.xml"
+            line="28"
+            column="13"
+            startOffset="1129"
+            endLine="28"
+            endColumn="38"
+            endOffset="1154"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;112&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_fake_call.xml"
+            line="36"
+            column="13"
+            startOffset="1426"
+            endLine="36"
+            endColumn="31"
+            endOffset="1444"/>
+    </incident>
+
+    <incident
+        id="UseCompoundDrawables"
+        severity="warning"
+        message="This tag and its children can be replaced by one `&lt;TextView/>` and a compound drawable">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_fake_call.xml"
+            line="42"
+            column="10"
+            startOffset="1633"
+            endLine="42"
+            endColumn="22"
+            endOffset="1645"/>
+    </incident>
+
+    <incident
+        id="UseAppTint"
+        severity="error"
+        message="Must use `app:tint` instead of `android:tint`">
+        <fix-composite>
+            <fix-attribute
+                description="Set tint=&quot;@android:color/white&quot;"
+                namespace="http://schemas.android.com/apk/res-auto"
+                attribute="tint"
+                value="@android:color/white"/>
+            <fix-attribute
+                description="Delete tint"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="tint"/>
+        </fix-composite>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_fake_call.xml"
+            line="53"
+            column="17"
+            startOffset="2060"
+            endLine="53"
+            endColumn="52"
+            endOffset="2095"/>
+    </incident>
+
+    <incident
+        id="ContentDescription"
+        severity="warning"
+        message="Missing `contentDescription` attribute on image">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set contentDescription"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="contentDescription"
+                value="TODO"
+                dot="4"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAccessibility=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAccessibility"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_fake_call.xml"
+            line="49"
+            column="14"
+            startOffset="1891"
+            endLine="49"
+            endColumn="23"
+            endOffset="1900"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;00:00&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_fake_call.xml"
+            line="59"
+            column="17"
+            startOffset="2299"
+            endLine="59"
+            endColumn="37"
+            endOffset="2319"/>
+    </incident>
+
+    <incident
+        id="ContentDescription"
+        severity="warning"
+        message="Missing `contentDescription` attribute on image">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set contentDescription"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="contentDescription"
+                value="TODO"
+                dot="4"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAccessibility=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAccessibility"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_fake_call.xml"
+            line="66"
+            column="6"
+            startOffset="2525"
+            endLine="66"
+            endColumn="75"
+            endOffset="2594"/>
+    </incident>
+
+    <incident
         id="UseCompoundDrawables"
         severity="warning"
         message="This tag and its children can be replaced by one `&lt;TextView/>` and a compound drawable">
@@ -391,12 +581,12 @@
         <fix-data conditional="true"/>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/AlertActivity.java"
-            line="205"
+            line="208"
             column="21"
-            startOffset="6753"
-            endLine="205"
+            startOffset="6788"
+            endLine="208"
             endColumn="74"
-            endOffset="6806"/>
+            endOffset="6841"/>
     </incident>
 
     <incident
@@ -423,20 +613,20 @@
         message="The id `R.id.debugHeader` has already been looked up in this method; possible cut &amp; paste error?">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/MainActivity.java"
-            line="124"
+            line="129"
             column="36"
-            startOffset="4497"
-            endLine="124"
+            startOffset="4642"
+            endLine="129"
             endColumn="66"
-            endOffset="4527"/>
+            endOffset="4672"/>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/MainActivity.java"
-            line="119"
+            line="124"
             column="27"
-            startOffset="4251"
-            endLine="119"
+            startOffset="4396"
+            endLine="124"
             endColumn="57"
-            endOffset="4281"
+            endOffset="4426"
             message="First usage here"/>
     </incident>
 
@@ -446,20 +636,20 @@
         message="The id `R.id.debugContent` has already been looked up in this method; possible cut &amp; paste error?">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/MainActivity.java"
-            line="125"
+            line="130"
             column="37"
-            startOffset="4565"
-            endLine="125"
+            startOffset="4710"
+            endLine="130"
             endColumn="68"
-            endOffset="4596"/>
+            endOffset="4741"/>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/MainActivity.java"
-            line="120"
+            line="125"
             column="28"
-            startOffset="4310"
-            endLine="120"
+            startOffset="4455"
+            endLine="125"
             endColumn="59"
-            endOffset="4341"
+            endOffset="4486"
             message="First usage here"/>
     </incident>
 
@@ -856,15 +1046,15 @@
     <incident
         id="Overdraw"
         severity="warning"
-        message="Possible overdraw: Root element paints background `@color/primary` with a theme that also paints a background (inferred theme is `@style/Theme_AppCompat_NoActionBar`)">
+        message="Possible overdraw: Root element paints background `@android:color/black` with a theme that also paints a background (inferred theme is `@style/Theme_AppCompat_NoActionBar`)">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_fake_call.xml"
             line="6"
             column="5"
             startOffset="295"
             endLine="6"
-            endColumn="40"
-            endOffset="330"/>
+            endColumn="46"
+            endOffset="336"/>
     </incident>
 
 </incidents>

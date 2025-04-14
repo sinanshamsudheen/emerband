@@ -24,6 +24,7 @@ import android.os.Bundle;
 import android.util.Log;
 
 public class EmergencyUtils {
+    private static final String TAG = "EmergencyUtils";
     private static final String EMERGENCY_NUMBER = "112";
     private static final String CYBER_CELL_NUMBER = "1930";
     private static MediaPlayer mediaPlayer;

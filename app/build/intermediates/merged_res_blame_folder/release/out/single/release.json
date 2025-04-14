@@ -76,6 +76,10 @@
         "source": "com.example.emerband.app-main-47:/layout/activity_cyber_cell.xml"
     },
     {
+        "merged": "com.example.emerband.app-merged_res-46:/drawable_ic_signal.xml.flat",
+        "source": "com.example.emerband.app-main-47:/drawable/ic_signal.xml"
+    },
+    {
         "merged": "com.example.emerband.app-merged_res-46:/layout_activity_emergency_contacts.xml.flat",
         "source": "com.example.emerband.app-main-47:/layout/activity_emergency_contacts.xml"
     },
@@ -122,6 +126,10 @@
     {
         "merged": "com.example.emerband.app-merged_res-46:/drawable_ic_bug.xml.flat",
         "source": "com.example.emerband.app-main-47:/drawable/ic_bug.xml"
+    },
+    {
+        "merged": "com.example.emerband.app-merged_res-46:/drawable_ic_profile_placeholder.xml.flat",
+        "source": "com.example.emerband.app-main-47:/drawable/ic_profile_placeholder.xml"
     },
     {
         "merged": "com.example.emerband.app-merged_res-46:/layout_activity_fake_call.xml.flat",

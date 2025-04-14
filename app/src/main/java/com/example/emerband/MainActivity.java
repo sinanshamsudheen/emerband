@@ -304,7 +304,8 @@ public class MainActivity extends AppCompatActivity {
                     Toast.makeText(this, "Fake call stopped", Toast.LENGTH_SHORT).show();
                 } else {
                     EmergencyUtils.playFakeCall(this);
-                    Toast.makeText(this, "Fake call started", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(this, FakeCallActivity.class);
+                    startActivity(intent);
                 }
             } catch (Exception e) {
                 Toast.makeText(this, "Error with fake call: " + e.getMessage(), Toast.LENGTH_SHORT).show();

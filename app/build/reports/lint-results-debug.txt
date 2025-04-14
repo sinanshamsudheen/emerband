@@ -1,14 +1,14 @@
-C:\Users\Abhay\Desktop\EmerBand\app\lint-baseline.xml: Information: 21 errors and 38 warnings were filtered out because they are listed in the baseline file, lint-baseline.xml
+C:\Users\Abhay\Desktop\EmerBand\app\lint-baseline.xml: Information: 21 errors and 39 warnings were filtered out because they are listed in the baseline file, lint-baseline.xml
  [LintBaseline]
-C:\Users\Abhay\Desktop\EmerBand\app\lint-baseline.xml: Information: 35 errors/warnings were listed in the baseline file (lint-baseline.xml) but not found in the project; perhaps they have been fixed? Another possible explanation is that lint recently stopped analyzing (and including results from) dependent projects by default. You can turn this back on with android.lintOptions.checkDependencies=true. Unmatched issue types: ButtonStyle (2), ContentDescription, HardcodedText (8), ObsoleteSdkInt, Overdraw (2), PrivateResource, SetTextI18n (5), UnusedAttribute (2), UnusedResources (13) [LintBaseline]
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\java\com\example\emerband\MainActivity.java:124: Warning: The id R.id.debugHeader has already been looked up in this method; possible cut & paste error? [CutPasteId]
+C:\Users\Abhay\Desktop\EmerBand\app\lint-baseline.xml: Information: 34 errors/warnings were listed in the baseline file (lint-baseline.xml) but not found in the project; perhaps they have been fixed? Another possible explanation is that lint recently stopped analyzing (and including results from) dependent projects by default. You can turn this back on with android.lintOptions.checkDependencies=true. Unmatched issue types: ButtonStyle (2), HardcodedText (8), ObsoleteSdkInt, Overdraw (2), PrivateResource, SetTextI18n (5), UnusedAttribute (2), UnusedResources (13) [LintBaseline]
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\java\com\example\emerband\MainActivity.java:129: Warning: The id R.id.debugHeader has already been looked up in this method; possible cut & paste error? [CutPasteId]
             View debugHeaderView = findViewById(R.id.debugHeader);
                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    C:\Users\Abhay\Desktop\EmerBand\app\src\main\java\com\example\emerband\MainActivity.java:119: First usage here
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\java\com\example\emerband\MainActivity.java:125: Warning: The id R.id.debugContent has already been looked up in this method; possible cut & paste error? [CutPasteId]
+    C:\Users\Abhay\Desktop\EmerBand\app\src\main\java\com\example\emerband\MainActivity.java:124: First usage here
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\java\com\example\emerband\MainActivity.java:130: Warning: The id R.id.debugContent has already been looked up in this method; possible cut & paste error? [CutPasteId]
             View debugContentView = findViewById(R.id.debugContent);
                                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    C:\Users\Abhay\Desktop\EmerBand\app\src\main\java\com\example\emerband\MainActivity.java:120: First usage here
+    C:\Users\Abhay\Desktop\EmerBand\app\src\main\java\com\example\emerband\MainActivity.java:125: First usage here
 
    Explanation for issues of type "CutPasteId":
    This lint check looks for cases where you have cut & pasted calls to
@@ -39,6 +39,12 @@ C:\Users\Abhay\Desktop\EmerBand\app\build.gradle:118: Warning: A newer version o
    However, you may simply not be aware that a more recent version is
    available, and that is what this lint check helps find.
 
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_fake_call.xml:23: Error: Must use app:tint instead of android:tint [UseAppTint from androidx.appcompat]
+            android:tint="@android:color/white"/>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_fake_call.xml:53: Error: Must use app:tint instead of android:tint [UseAppTint from androidx.appcompat]
+                android:tint="@android:color/white"/>
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:64: Error: Must use app:tint instead of android:tint [UseAppTint from androidx.appcompat]
                         android:tint="@android:color/white"
                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -50,7 +56,7 @@ C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:64: Er
    Identifier: androidx.appcompat
    Feedback: https://issuetracker.google.com/issues/new?component=460343
 
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\java\com\example\emerband\AlertActivity.java:205: Warning: Unnecessary; SDK_INT is always >= 21 [ObsoleteSdkInt]
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\java\com\example\emerband\AlertActivity.java:208: Warning: Unnecessary; SDK_INT is always >= 21 [ObsoleteSdkInt]
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -63,6 +69,9 @@ C:\Users\Abhay\Desktop\EmerBand\app\src\main\java\com\example\emerband\AlertActi
    where the version qualifier is less than or equal to the minSdkVersion,
    where the contents should be merged into the best folder.
 
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_fake_call.xml:42: Warning: This tag and its children can be replaced by one <TextView/> and a compound drawable [UseCompoundDrawables]
+        <LinearLayout
+         ~~~~~~~~~~~~
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:52: Warning: This tag and its children can be replaced by one <TextView/> and a compound drawable [UseCompoundDrawables]
                 <LinearLayout
                  ~~~~~~~~~~~~
@@ -96,9 +105,9 @@ C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\drawable\ic_settings.xml:9: War
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_alert.xml:7: Warning: Possible overdraw: Root element paints background @color/error with a theme that also paints a background (inferred theme is @style/Theme_AppCompat_NoActionBar) [Overdraw]
     android:background="@color/error">
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_fake_call.xml:6: Warning: Possible overdraw: Root element paints background @color/primary with a theme that also paints a background (inferred theme is @style/Theme_AppCompat_NoActionBar) [Overdraw]
-    android:background="@color/primary">
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_fake_call.xml:6: Warning: Possible overdraw: Root element paints background @android:color/black with a theme that also paints a background (inferred theme is @style/Theme_AppCompat_NoActionBar) [Overdraw]
+    android:background="@android:color/black">
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
    Explanation for issues of type "Overdraw":
    If you set a background drawable on a root view, then you should use a
@@ -121,9 +130,6 @@ C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_fake_call.xml:6
    performance if you pre-mix the background with your drawable and use that
    resulting image or color as a custom theme background instead.
 
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\drawable\circle_background.xml:2: Warning: The resource R.drawable.circle_background appears to be unused [UnusedResources]
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-^
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\drawable\circle_button_green.xml:2: Warning: The resource R.drawable.circle_button_green appears to be unused [UnusedResources]
 <ripple xmlns:android="http://schemas.android.com/apk/res/android"
 ^
@@ -166,13 +172,16 @@ C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\drawable\ic_battery_full.xml:2:
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\drawable\ic_bug.xml:2: Warning: The resource R.drawable.ic_bug appears to be unused [UnusedResources]
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
 ^
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\drawable\ic_call.xml:2: Warning: The resource R.drawable.ic_call appears to be unused [UnusedResources]
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+^
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\drawable\ic_call_answer.xml:2: Warning: The resource R.drawable.ic_call_answer appears to be unused [UnusedResources]
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
 ^
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\drawable\ic_call_end.xml:2: Warning: The resource R.drawable.ic_call_end appears to be unused [UnusedResources]
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\drawable\ic_offline.xml:2: Warning: The resource R.drawable.ic_offline appears to be unused [UnusedResources]
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
 ^
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\drawable\ic_offline.xml:2: Warning: The resource R.drawable.ic_offline appears to be unused [UnusedResources]
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\drawable\ic_person.xml:2: Warning: The resource R.drawable.ic_person appears to be unused [UnusedResources]
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
 ^
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\drawable\ic_phone.xml:2: Warning: The resource R.drawable.ic_phone appears to be unused [UnusedResources]
@@ -187,7 +196,6 @@ C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\drawable\ic_sos.xml:2: Warning:
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\drawable\red_circle_button.xml:2: Warning: The resource R.drawable.red_circle_button appears to be unused [UnusedResources]
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
 ^
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\raw\ringtone.mp3: Warning: The resource R.raw.ringtone appears to be unused [UnusedResources]
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:6: Warning: The resource R.string.emergency appears to be unused [UnusedResources]
     <string name="emergency">Emergency</string>
             ~~~~~~~~~~~~~~~~
@@ -224,9 +232,24 @@ C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:44: Warning:
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:45: Warning: The resource R.string.msg_crash appears to be unused [UnusedResources]
     <string name="msg_crash">Testing Crash Recovery</string>
             ~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:62: Warning: The resource R.string.emergency_caller appears to be unused [UnusedResources]
+    <string name="emergency_caller">Emergency Contact</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:63: Warning: The resource R.string.incoming_call appears to be unused [UnusedResources]
     <string name="incoming_call">Incoming Call</string>
             ~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:64: Warning: The resource R.string.incoming_mobile_call appears to be unused [UnusedResources]
+    <string name="incoming_mobile_call">Mobile Call</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:65: Warning: The resource R.string.caller_photo appears to be unused [UnusedResources]
+    <string name="caller_photo">Caller Photo</string>
+            ~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:66: Warning: The resource R.string.answer_call appears to be unused [UnusedResources]
+    <string name="answer_call">Answer Call</string>
+            ~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:67: Warning: The resource R.string.decline_call appears to be unused [UnusedResources]
+    <string name="decline_call">Decline Call</string>
+            ~~~~~~~~~~~~~~~~~~~
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:68: Warning: The resource R.string.reject_call appears to be unused [UnusedResources]
     <string name="reject_call">Reject Call</string>
             ~~~~~~~~~~~~~~~~~~
@@ -324,6 +347,41 @@ C:\Users\Abhay\Desktop\EmerBand\app\build.gradle:90: Information: Add suffix -kt
 
    https://developer.android.com/kotlin/ktx
 
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_fake_call.xml:49: Warning: Missing contentDescription attribute on image [ContentDescription]
+            <ImageView
+             ~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_fake_call.xml:66: Warning: Missing contentDescription attribute on image [ContentDescription]
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "ContentDescription":
+   Non-textual widgets like ImageViews and ImageButtons should use the
+   contentDescription attribute to specify a textual description of the widget
+   such that screen readers and other accessibility tools can adequately
+   describe the user interface.
+
+   Note that elements in application screens that are purely decorative and do
+   not provide any content or enable a user action should not have
+   accessibility content descriptions. In this case, set their descriptions to
+   @null. If your app's minSdkVersion is 16 or higher, you can instead set
+   these graphical elements' android:importantForAccessibility attributes to
+   no.
+
+   Note that for text fields, you should not set both the hint and the
+   contentDescription attributes since the hint will never be shown. Just set
+   the hint.
+
+   https://developer.android.com/guide/topics/ui/accessibility/apps#special-cases
+
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_fake_call.xml:28: Warning: Hardcoded string "Wi-Fi call", should use @string resource [HardcodedText]
+            android:text="Wi-Fi call"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_fake_call.xml:36: Warning: Hardcoded string "112", should use @string resource [HardcodedText]
+            android:text="112"
+            ~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_fake_call.xml:59: Warning: Hardcoded string "00:00", should use @string resource [HardcodedText]
+                android:text="00:00"
+                ~~~~~~~~~~~~~~~~~~~~
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\dialog_emergency.xml:11: Warning: Hardcoded string "Emergency Alert", should use @string resource [HardcodedText]
         android:text="Emergency Alert"
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -351,4 +409,4 @@ C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\dialog_emergency.xml:43:
    There are quickfixes to automatically extract this hardcoded string into a
    resource lookup.
 
-1 errors, 70 warnings (21 errors, 38 warnings filtered by baseline lint-baseline.xml)
+3 errors, 80 warnings (21 errors, 39 warnings filtered by baseline lint-baseline.xml)

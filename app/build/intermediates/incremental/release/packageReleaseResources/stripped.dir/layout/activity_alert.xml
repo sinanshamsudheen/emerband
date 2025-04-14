@@ -31,12 +31,12 @@
             android:layout_marginBottom="64dp"/>
 
         <Button
-            android:id="@+id/stopAlertButton"
-            android:layout_width="200dp"
-            android:layout_height="80dp"
-            android:text="@string/stop_alarm"
-            android:textSize="20sp"
-            android:textStyle="bold"/>
+            android:id="@+id/btnStopAlert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/stop_alert"
+            android:layout_marginTop="16dp"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
 
     </LinearLayout>
 

@@ -23,13 +23,13 @@ public final class ActivityAlertBinding implements ViewBinding {
   public final FrameLayout alertBackground;
 
   @NonNull
-  public final Button stopAlertButton;
+  public final Button btnStopAlert;
 
   private ActivityAlertBinding(@NonNull FrameLayout rootView, @NonNull FrameLayout alertBackground,
-      @NonNull Button stopAlertButton) {
+      @NonNull Button btnStopAlert) {
     this.rootView = rootView;
     this.alertBackground = alertBackground;
-    this.stopAlertButton = stopAlertButton;
+    this.btnStopAlert = btnStopAlert;
   }
 
   @Override
@@ -61,13 +61,13 @@ public final class ActivityAlertBinding implements ViewBinding {
     missingId: {
       FrameLayout alertBackground = (FrameLayout) rootView;
 
-      id = R.id.stopAlertButton;
-      Button stopAlertButton = ViewBindings.findChildViewById(rootView, id);
-      if (stopAlertButton == null) {
+      id = R.id.btnStopAlert;
+      Button btnStopAlert = ViewBindings.findChildViewById(rootView, id);
+      if (btnStopAlert == null) {
         break missingId;
       }
 
-      return new ActivityAlertBinding((FrameLayout) rootView, alertBackground, stopAlertButton);
+      return new ActivityAlertBinding((FrameLayout) rootView, alertBackground, btnStopAlert);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

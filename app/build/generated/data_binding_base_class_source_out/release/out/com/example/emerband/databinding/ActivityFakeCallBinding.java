@@ -4,8 +4,6 @@ package com.example.emerband.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -13,6 +11,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.emerband.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
@@ -22,30 +21,16 @@ public final class ActivityFakeCallBinding implements ViewBinding {
   private final ConstraintLayout rootView;
 
   @NonNull
-  public final ImageButton btnAnswer;
+  public final TextView callDurationText;
 
   @NonNull
-  public final ImageButton btnReject;
-
-  @NonNull
-  public final TextView callTypeTextView;
-
-  @NonNull
-  public final ImageView callerImageView;
-
-  @NonNull
-  public final TextView callerNameTextView;
+  public final FloatingActionButton endCallButton;
 
   private ActivityFakeCallBinding(@NonNull ConstraintLayout rootView,
-      @NonNull ImageButton btnAnswer, @NonNull ImageButton btnReject,
-      @NonNull TextView callTypeTextView, @NonNull ImageView callerImageView,
-      @NonNull TextView callerNameTextView) {
+      @NonNull TextView callDurationText, @NonNull FloatingActionButton endCallButton) {
     this.rootView = rootView;
-    this.btnAnswer = btnAnswer;
-    this.btnReject = btnReject;
-    this.callTypeTextView = callTypeTextView;
-    this.callerImageView = callerImageView;
-    this.callerNameTextView = callerNameTextView;
+    this.callDurationText = callDurationText;
+    this.endCallButton = endCallButton;
   }
 
   @Override
@@ -75,38 +60,20 @@ public final class ActivityFakeCallBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.btnAnswer;
-      ImageButton btnAnswer = ViewBindings.findChildViewById(rootView, id);
-      if (btnAnswer == null) {
+      id = R.id.callDurationText;
+      TextView callDurationText = ViewBindings.findChildViewById(rootView, id);
+      if (callDurationText == null) {
         break missingId;
       }
 
-      id = R.id.btnReject;
-      ImageButton btnReject = ViewBindings.findChildViewById(rootView, id);
-      if (btnReject == null) {
+      id = R.id.endCallButton;
+      FloatingActionButton endCallButton = ViewBindings.findChildViewById(rootView, id);
+      if (endCallButton == null) {
         break missingId;
       }
 
-      id = R.id.callTypeTextView;
-      TextView callTypeTextView = ViewBindings.findChildViewById(rootView, id);
-      if (callTypeTextView == null) {
-        break missingId;
-      }
-
-      id = R.id.callerImageView;
-      ImageView callerImageView = ViewBindings.findChildViewById(rootView, id);
-      if (callerImageView == null) {
-        break missingId;
-      }
-
-      id = R.id.callerNameTextView;
-      TextView callerNameTextView = ViewBindings.findChildViewById(rootView, id);
-      if (callerNameTextView == null) {
-        break missingId;
-      }
-
-      return new ActivityFakeCallBinding((ConstraintLayout) rootView, btnAnswer, btnReject,
-          callTypeTextView, callerImageView, callerNameTextView);
+      return new ActivityFakeCallBinding((ConstraintLayout) rootView, callDurationText,
+          endCallButton);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
