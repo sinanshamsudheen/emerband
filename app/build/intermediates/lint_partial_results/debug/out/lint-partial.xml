@@ -30,12 +30,12 @@
                     <map id="android.bluetooth.adapter.action.REQUEST_ENABLE (used to start an activity)">
                         <location id="0"
                             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/MainActivity.java"
-                            line="477"
+                            line="479"
                             column="41"
-                            startOffset="19245"
-                            endLine="477"
+                            startOffset="19351"
+                            endLine="479"
                             endColumn="91"
-                            endOffset="19295"/>
+                            endOffset="19401"/>
                     </map>
                     <map id="android.settings.AIRPLANE_MODE_SETTINGS (used to start an activity)">
                         <location id="0"
@@ -73,6 +73,14 @@
                             endColumn="67"
                             endOffset="9434"/>
                         <location id="3"
+                            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/MainActivity.java"
+                            line="287"
+                            column="37"
+                            startOffset="11431"
+                            endLine="287"
+                            endColumn="67"
+                            endOffset="11461"/>
+                        <location id="4"
                             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/utils/EmergencyUtils.java"
                             line="35"
                             column="25"
@@ -80,7 +88,7 @@
                             endLine="35"
                             endColumn="55"
                             endOffset="1199"/>
-                        <location id="4"
+                        <location id="5"
                             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/utils/EmergencyUtils.java"
                             line="48"
                             column="25"

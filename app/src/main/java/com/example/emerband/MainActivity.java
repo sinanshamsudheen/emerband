@@ -284,15 +284,17 @@ public class MainActivity extends AppCompatActivity {
         // Test Emergency Button
         btnTestEmergency.setOnClickListener(v -> {
             try {
-                EmergencyUtils.getCurrentLocation(this, location -> {
-                    String locationStr = "http://maps.google.com/?q=" + 
-                                      location.getLatitude() + "," + 
-                                      location.getLongitude();
-                    EmergencyUtils.sendEmergencyMessage(this, locationStr);
-                });
+                Intent callIntent = new Intent(Intent.ACTION_CALL);
+                callIntent.setData(Uri.parse("tel:112"));
+                if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
+                    startActivity(callIntent);
+                } else {
+                    Toast.makeText(this, "Call permission required", Toast.LENGTH_SHORT).show();
+                    checkPermissions();
+                }
             } catch (Exception e) {
-                Toast.makeText(this, "Error sending emergency message: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                Log.e(TAG, "Error sending emergency message", e);
+                Toast.makeText(this, "Error making emergency call: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.e(TAG, "Error making emergency call", e);
             }
         });
 
