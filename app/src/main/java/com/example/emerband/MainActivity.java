@@ -7,8 +7,10 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.media.MediaPlayer;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -84,6 +86,9 @@ public class MainActivity extends AppCompatActivity {
     private Button btnCyberCell;
     private Button btnLocation;
     private Button btnSettings;
+
+    private boolean isAlertPlaying = false;
+    private MediaPlayer sirenMediaPlayer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -234,7 +239,14 @@ public class MainActivity extends AppCompatActivity {
         // Emergency Call Button
         btnEmergencyCall.setOnClickListener(v -> {
             try {
-                EmergencyUtils.makeEmergencyCall(this);
+                Intent callIntent = new Intent(Intent.ACTION_CALL);
+                callIntent.setData(Uri.parse("tel:112"));
+                if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
+                    startActivity(callIntent);
+                } else {
+                    Toast.makeText(this, "Call permission required", Toast.LENGTH_SHORT).show();
+                    checkPermissions();
+                }
             } catch (Exception e) {
                 Toast.makeText(this, "Error making emergency call: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 Log.e(TAG, "Error making emergency call", e);
@@ -287,20 +299,34 @@ public class MainActivity extends AppCompatActivity {
         // Fake Call Button
         btnTestFakeCall.setOnClickListener(v -> {
             try {
-                EmergencyUtils.playFakeCall(this);
+                if (EmergencyUtils.isPlayingFakeCall()) {
+                    EmergencyUtils.stopFakeCall();
+                    Toast.makeText(this, "Fake call stopped", Toast.LENGTH_SHORT).show();
+                } else {
+                    EmergencyUtils.playFakeCall(this);
+                    Toast.makeText(this, "Fake call started", Toast.LENGTH_SHORT).show();
+                }
             } catch (Exception e) {
-                Toast.makeText(this, "Error initiating fake call: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                Log.e(TAG, "Error initiating fake call", e);
+                Toast.makeText(this, "Error with fake call: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.e(TAG, "Error with fake call", e);
             }
         });
 
         // Alert Button
         btnTestAlert.setOnClickListener(v -> {
             try {
-                EmergencyUtils.playSiren(this);
+                if (isAlertPlaying) {
+                    stopSiren();
+                    btnTestAlert.setText(R.string.test_alert);
+                    isAlertPlaying = false;
+                } else {
+                    startSiren();
+                    btnTestAlert.setText(R.string.stop_alert);
+                    isAlertPlaying = true;
+                }
             } catch (Exception e) {
-                Toast.makeText(this, "Error playing siren: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                Log.e(TAG, "Error playing siren", e);
+                Toast.makeText(this, "Error with alert: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                Log.e(TAG, "Error with alert", e);
             }
         });
 
@@ -494,5 +520,37 @@ public class MainActivity extends AppCompatActivity {
         }
         
         return super.onOptionsItemSelected(item);
+    }
+
+    private void startSiren() {
+        try {
+            if (sirenMediaPlayer == null) {
+                sirenMediaPlayer = MediaPlayer.create(this, R.raw.siren);
+                sirenMediaPlayer.setLooping(true);
+            }
+            sirenMediaPlayer.start();
+        } catch (Exception e) {
+            Log.e(TAG, "Error starting siren", e);
+            Toast.makeText(this, "Error starting siren", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void stopSiren() {
+        try {
+            if (sirenMediaPlayer != null) {
+                sirenMediaPlayer.stop();
+                sirenMediaPlayer.release();
+                sirenMediaPlayer = null;
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "Error stopping siren", e);
+            Toast.makeText(this, "Error stopping siren", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        stopSiren();
     }
 } 

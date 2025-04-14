@@ -21,11 +21,14 @@ import android.Manifest;
 import android.content.pm.PackageManager;
 import android.location.LocationListener;
 import android.os.Bundle;
+import android.util.Log;
 
 public class EmergencyUtils {
     private static final String EMERGENCY_NUMBER = "112";
     private static final String CYBER_CELL_NUMBER = "1930";
     private static MediaPlayer mediaPlayer;
+    private static MediaPlayer fakeCallPlayer;
+    private static boolean isPlayingFakeCall = false;
 
     public static void makeEmergencyCall(Context context) {
         Intent intent = new Intent(Intent.ACTION_CALL);
@@ -98,15 +101,35 @@ public class EmergencyUtils {
     }
 
     public static void playFakeCall(Context context) {
-        stopCurrentAudio();
-        mediaPlayer = MediaPlayer.create(context, Uri.parse("android.resource://" + context.getPackageName() + "/raw/ringtone"));
-        mediaPlayer.setLooping(true);
-        mediaPlayer.start();
+        try {
+            if (fakeCallPlayer == null) {
+                fakeCallPlayer = MediaPlayer.create(context, R.raw.ringtone);
+                fakeCallPlayer.setOnCompletionListener(mp -> stopFakeCall());
+            }
+            fakeCallPlayer.start();
+            isPlayingFakeCall = true;
+        } catch (Exception e) {
+            Log.e(TAG, "Error playing fake call", e);
+            throw new RuntimeException("Failed to play fake call", e);
+        }
+    }
 
-        // Show fake call UI
-        Intent intent = new Intent(context, FakeCallActivity.class);
-        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        context.startActivity(intent);
+    public static void stopFakeCall() {
+        try {
+            if (fakeCallPlayer != null) {
+                fakeCallPlayer.stop();
+                fakeCallPlayer.release();
+                fakeCallPlayer = null;
+            }
+            isPlayingFakeCall = false;
+        } catch (Exception e) {
+            Log.e(TAG, "Error stopping fake call", e);
+            throw new RuntimeException("Failed to stop fake call", e);
+        }
+    }
+
+    public static boolean isPlayingFakeCall() {
+        return isPlayingFakeCall;
     }
 
     public static void playSiren(Context context) {
