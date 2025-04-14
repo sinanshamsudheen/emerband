@@ -28,4 +28,11 @@
         <item name="materialCardViewStyle">@style/Widget.MaterialComponents.CardView</item>
         <item name="toolbarStyle">@style/Widget.MaterialComponents.Toolbar.Primary</item>
     </style>
+
+    <style name="PopupMenuStyle" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:background">@android:color/black</item>
+        <item name="android:itemBackground">@android:color/black</item>
+        <item name="android:popupBackground">@android:color/black</item>
+    </style>
 </resources> 

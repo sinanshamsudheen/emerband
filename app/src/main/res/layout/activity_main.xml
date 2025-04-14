@@ -11,16 +11,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="?attr/colorPrimary"
-        app:liftOnScroll="true">
+        app:elevation="0dp">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:elevation="0dp"
-            app:title="@string/app_name"
-            app:titleTextColor="?attr/colorOnPrimary"
-            app:layout_scrollFlags="scroll|enterAlways|snap"/>
+            android:theme="@style/ThemeOverlay.AppCompat.Light"
+            app:popupTheme="@style/PopupMenuStyle"
+            app:titleTextColor="@android:color/black"/>
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -62,6 +61,7 @@
                         android:layout_width="24dp"
                         android:layout_height="24dp"
                         android:src="@drawable/ic_bluetooth_disabled"
+                        android:tint="@android:color/white"
                         android:contentDescription="@string/status_bluetooth_icon"/>
 
                     <TextView
@@ -71,13 +71,6 @@
                         android:layout_weight="1"
                         android:layout_marginStart="8dp"
                         android:text="@string/status_bluetooth_disabled"/>
-
-                    <ImageView
-                        android:id="@+id/ivBatteryStatus"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:src="@drawable/ic_battery_full"
-                        android:contentDescription="@string/status_battery_icon"/>
 
                 </LinearLayout>
 
@@ -124,14 +117,6 @@
 
             </com.google.android.material.card.MaterialCardView>
 
-            <!-- Debug Tools Section -->
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/debug_tools_title"
-                android:textAppearance="?attr/textAppearanceHeadline6"
-                android:layout_marginBottom="8dp"/>
-
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/debugCard"
                 android:layout_width="match_parent"
@@ -142,63 +127,101 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
+                    android:orientation="vertical">
 
-                    <Button
-                        android:id="@+id/btnEmergencyCall"
+                    <!-- Debug Tools Header -->
+                    <LinearLayout
+                        android:id="@+id/debugHeader"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/test_emergency_call"
-                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:padding="16dp"
+                        android:clickable="true"
+                        android:focusable="true">
 
-                    <Button
-                        android:id="@+id/btnCyberCell"
+                        <ImageView
+                            android:id="@+id/ivDebugExpand"
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:src="@drawable/ic_expand_more"
+                            android:contentDescription="@string/debug_tools_expand"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginStart="8dp"
+                            android:text="@string/debug_tools"
+                            android:textAppearance="?attr/textAppearanceSubtitle1"/>
+
+                    </LinearLayout>
+
+                    <!-- Debug Tools Content -->
+                    <LinearLayout
+                        android:id="@+id/debugContent"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/test_cyber_cell"
-                        android:layout_marginTop="8dp"
-                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+                        android:orientation="vertical"
+                        android:padding="16dp"
+                        android:visibility="gone">
 
-                    <Button
-                        android:id="@+id/btnLocation"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/test_location"
-                        android:layout_marginTop="8dp"
-                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+                        <Button
+                            android:id="@+id/btnEmergencyCall"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/test_emergency_call"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
 
-                    <Button
-                        android:id="@+id/btnTestEmergency"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/test_emergency"
-                        android:layout_marginTop="8dp"
-                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+                        <Button
+                            android:id="@+id/btnCyberCell"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/test_cyber_cell"
+                            android:layout_marginTop="8dp"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
 
-                    <Button
-                        android:id="@+id/btnTestFakeCall"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/test_fake_call"
-                        android:layout_marginTop="8dp"
-                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+                        <Button
+                            android:id="@+id/btnLocation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/test_location"
+                            android:layout_marginTop="8dp"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
 
-                    <Button
-                        android:id="@+id/btnTestAlert"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/test_alert"
-                        android:layout_marginTop="8dp"
-                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+                        <Button
+                            android:id="@+id/btnTestEmergency"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/test_emergency"
+                            android:layout_marginTop="8dp"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
 
-                    <Button
-                        android:id="@+id/btnTestOffline"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/test_offline"
-                        android:layout_marginTop="8dp"
-                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+                        <Button
+                            android:id="@+id/btnTestFakeCall"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/test_fake_call"
+                            android:layout_marginTop="8dp"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+                        <Button
+                            android:id="@+id/btnTestAlert"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/test_alert"
+                            android:layout_marginTop="8dp"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+                        <Button
+                            android:id="@+id/btnTestOffline"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="@string/test_offline"
+                            android:layout_marginTop="8dp"
+                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+                    </LinearLayout>
 
                 </LinearLayout>
 
@@ -214,8 +237,9 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
-        android:contentDescription="@string/emergency"
+        android:tint="@android:color/black"
+        android:backgroundTint="?attr/colorPrimary"
         app:srcCompat="@drawable/ic_emergency"
-        app:backgroundTint="?attr/colorError"/>
+        android:contentDescription="@string/emergency_button"/>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout> 

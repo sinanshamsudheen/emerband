@@ -32,6 +32,7 @@ drawable ic_call_answer
 drawable ic_call_end
 drawable ic_contacts
 drawable ic_emergency
+drawable ic_expand_more
 drawable ic_help
 drawable ic_launcher_foreground
 drawable ic_location
@@ -64,11 +65,13 @@ id coordinatorLayout
 id cyberAlertMessageEditText
 id cyberCellNumberEditText
 id debugCard
+id debugContent
+id debugHeader
 id fabAdd
 id fabEmergency
 id instructionTextView
-id ivBatteryStatus
 id ivBluetoothStatus
+id ivDebugExpand
 id menu_contacts
 id menu_help
 id menu_location
@@ -102,6 +105,7 @@ string appbar_scrolling_view_behavior
 string caller_photo
 string cyber_cell_description
 string debug_tools
+string debug_tools_expand
 string debug_tools_title
 string decline_call
 string emergency
@@ -151,7 +155,6 @@ string status_bluetooth_icon
 string status_title
 string stop_alarm
 string test_alert
-string test_crash
 string test_cyber_cell
 string test_emergency
 string test_emergency_call
@@ -159,4 +162,5 @@ string test_fake_call
 string test_location
 string test_offline
 style AppTheme
+style PopupMenuStyle
 style Theme.EmerBand

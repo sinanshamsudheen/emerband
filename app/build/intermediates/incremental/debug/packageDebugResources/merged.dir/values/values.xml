@@ -23,6 +23,7 @@
     <string name="caller_photo">Caller Photo</string>
     <string name="cyber_cell_description">Cyber Cell settings and information will be displayed here.</string>
     <string name="debug_tools">Debug Tools</string>
+    <string name="debug_tools_expand">Expand/Collapse Debug Tools</string>
     <string name="debug_tools_title">Debug Tools</string>
     <string name="decline_call">Decline Call</string>
     <string name="emergency">Emergency</string>
@@ -72,13 +73,12 @@
     <string name="status_title">Status</string>
     <string name="stop_alarm">STOP ALARM</string>
     <string name="test_alert">Test Alert</string>
-    <string name="test_crash">Test Crash</string>
     <string name="test_cyber_cell">Test Cyber Cell</string>
     <string name="test_emergency">Test Emergency</string>
     <string name="test_emergency_call">Test Emergency Call</string>
     <string name="test_fake_call">Test Fake Call</string>
     <string name="test_location">Test Location</string>
-    <string name="test_offline">Test Offline</string>
+    <string name="test_offline">Test Offline Mode</string>
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
         
         <item name="colorPrimary">@color/primary</item>
@@ -105,6 +105,12 @@
         <item name="extendedFloatingActionButtonStyle">@style/Widget.MaterialComponents.ExtendedFloatingActionButton</item>
         <item name="materialCardViewStyle">@style/Widget.MaterialComponents.CardView</item>
         <item name="toolbarStyle">@style/Widget.MaterialComponents.Toolbar.Primary</item>
+    </style>
+    <style name="PopupMenuStyle" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:background">@android:color/black</item>
+        <item name="android:itemBackground">@android:color/black</item>
+        <item name="android:popupBackground">@android:color/black</item>
     </style>
     <style name="Theme.EmerBand" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         

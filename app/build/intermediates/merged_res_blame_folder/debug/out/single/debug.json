@@ -152,6 +152,10 @@
         "source": "com.example.emerband.app-main-48:/drawable/ic_bluetooth_disabled.xml"
     },
     {
+        "merged": "com.example.emerband.app-merged_res-46:/drawable_ic_expand_more.xml.flat",
+        "source": "com.example.emerband.app-main-48:/drawable/ic_expand_more.xml"
+    },
+    {
         "merged": "com.example.emerband.app-merged_res-46:/layout_activity_settings.xml.flat",
         "source": "com.example.emerband.app-main-48:/layout/activity_settings.xml"
     },

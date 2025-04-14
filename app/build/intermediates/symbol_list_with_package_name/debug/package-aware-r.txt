@@ -3072,6 +3072,7 @@ drawable ic_clear_black_24
 drawable ic_clock_black_24dp
 drawable ic_contacts
 drawable ic_emergency
+drawable ic_expand_more
 drawable ic_help
 drawable ic_keyboard_black_24dp
 drawable ic_launcher_foreground
@@ -3336,6 +3337,8 @@ id cyberCellNumberEditText
 id dark
 id date_picker_actions
 id debugCard
+id debugContent
+id debugHeader
 id decelerate
 id decelerateAndComplete
 id decor_content_parent
@@ -3431,8 +3434,8 @@ id invisible
 id inward
 id italic
 id item_touch_helper_previous_elevation
-id ivBatteryStatus
 id ivBluetoothStatus
+id ivDebugExpand
 id jumpToEnd
 id jumpToStart
 id labeled
@@ -4015,6 +4018,7 @@ string common_signin_button_text
 string common_signin_button_text_long
 string cyber_cell_description
 string debug_tools
+string debug_tools_expand
 string debug_tools_title
 string decline_call
 string emergency
@@ -4191,7 +4195,6 @@ string status_bluetooth_icon
 string status_title
 string stop_alarm
 string test_alert
-string test_crash
 string test_cyber_cell
 string test_emergency
 string test_emergency_call
@@ -4524,6 +4527,7 @@ style Platform_V21_AppCompat_Light
 style Platform_V25_AppCompat
 style Platform_V25_AppCompat_Light
 style Platform_Widget_AppCompat_Spinner
+style PopupMenuStyle
 style RtlOverlay_DialogWindowTitle_AppCompat
 style RtlOverlay_Widget_AppCompat_ActionBar_TitleItem
 style RtlOverlay_Widget_AppCompat_DialogTitle_Icon

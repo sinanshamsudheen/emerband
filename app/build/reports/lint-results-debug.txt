@@ -1,6 +1,24 @@
 C:\Users\Abhay\Desktop\EmerBand\app\lint-baseline.xml: Information: 21 errors and 38 warnings were filtered out because they are listed in the baseline file, lint-baseline.xml
  [LintBaseline]
 C:\Users\Abhay\Desktop\EmerBand\app\lint-baseline.xml: Information: 35 errors/warnings were listed in the baseline file (lint-baseline.xml) but not found in the project; perhaps they have been fixed? Another possible explanation is that lint recently stopped analyzing (and including results from) dependent projects by default. You can turn this back on with android.lintOptions.checkDependencies=true. Unmatched issue types: ButtonStyle (2), ContentDescription, HardcodedText (8), ObsoleteSdkInt, Overdraw (2), PrivateResource, SetTextI18n (5), UnusedAttribute (2), UnusedResources (13) [LintBaseline]
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\java\com\example\emerband\MainActivity.java:124: Warning: The id R.id.debugHeader has already been looked up in this method; possible cut & paste error? [CutPasteId]
+            View debugHeaderView = findViewById(R.id.debugHeader);
+                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    C:\Users\Abhay\Desktop\EmerBand\app\src\main\java\com\example\emerband\MainActivity.java:119: First usage here
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\java\com\example\emerband\MainActivity.java:125: Warning: The id R.id.debugContent has already been looked up in this method; possible cut & paste error? [CutPasteId]
+            View debugContentView = findViewById(R.id.debugContent);
+                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    C:\Users\Abhay\Desktop\EmerBand\app\src\main\java\com\example\emerband\MainActivity.java:120: First usage here
+
+   Explanation for issues of type "CutPasteId":
+   This lint check looks for cases where you have cut & pasted calls to
+   findViewById but have forgotten to update the R.id field. It's possible
+   that your code is simply (redundantly) looking up the field repeatedly, but
+   lint cannot distinguish that from a case where you for example want to
+   initialize fields prev and next and you cut & pasted
+   findViewById(R.id.prev) and forgot to update the second initialization to
+   R.id.next.
+
 C:\Users\Abhay\Desktop\EmerBand\app\build.gradle:90: Warning: A newer version of androidx.fragment:fragment than 1.6.2 is available: 1.8.6 [GradleDependency]
     implementation 'androidx.fragment:fragment:1.6.2'
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -21,6 +39,17 @@ C:\Users\Abhay\Desktop\EmerBand\app\build.gradle:118: Warning: A newer version o
    However, you may simply not be aware that a more recent version is
    available, and that is what this lint check helps find.
 
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:64: Error: Must use app:tint instead of android:tint [UseAppTint from androidx.appcompat]
+                        android:tint="@android:color/white"
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "UseAppTint":
+   ImageView or ImageButton uses android:tint instead of app:tint
+
+   Vendor: Android Open Source Project
+   Identifier: androidx.appcompat
+   Feedback: https://issuetracker.google.com/issues/new?component=460343
+
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\java\com\example\emerband\AlertActivity.java:205: Warning: Unnecessary; SDK_INT is always >= 21 [ObsoleteSdkInt]
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -33,6 +62,24 @@ C:\Users\Abhay\Desktop\EmerBand\app\src\main\java\com\example\emerband\AlertActi
    Similarly, it also looks for resources in -vNN folders, such as values-v14
    where the version qualifier is less than or equal to the minSdkVersion,
    where the contents should be merged into the best folder.
+
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:52: Warning: This tag and its children can be replaced by one <TextView/> and a compound drawable [UseCompoundDrawables]
+                <LinearLayout
+                 ~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:133: Warning: This tag and its children can be replaced by one <TextView/> and a compound drawable [UseCompoundDrawables]
+                    <LinearLayout
+                     ~~~~~~~~~~~~
+
+   Explanation for issues of type "UseCompoundDrawables":
+   A LinearLayout which contains an ImageView and a TextView can be more
+   efficiently handled as a compound drawable (a single TextView, using the
+   drawableTop, drawableLeft, drawableRight and/or drawableBottom attributes
+   to draw one or more images adjacent to the text).
+
+   If the two widgets are offset from each other with margins, this can be
+   replaced with a drawablePadding attribute.
+
+   There's a lint quickfix to perform this conversion in the Eclipse plugin.
 
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\drawable\ic_settings.xml:9: Warning: Very long vector path (904 characters), which is bad for performance. Considering reducing precision, removing minor details or rasterizing vector. [VectorPath]
         android:pathData="M19.14,12.94c0.04,-0.3 0.06,-0.61 0.06,-0.94c0,-0.32 -0.02,-0.64 -0.07,-0.94l2.03,-1.58c0.18,-0.14 0.23,-0.41 0.12,-0.61l-1.92,-3.32c-0.12,-0.22 -0.37,-0.29 -0.59,-0.22l-2.39,0.96c-0.5,-0.38 -1.03,-0.7 -1.62,-0.94L14.4,2.81c-0.04,-0.24 -0.24,-0.41 -0.48,-0.41h-3.84c-0.24,0 -0.43,0.17 -0.47,0.41L9.25,5.35C8.66,5.59 8.12,5.92 7.63,6.29L5.24,5.33c-0.22,-0.08 -0.47,0 -0.59,0.22L2.74,8.87C2.62,9.08 2.66,9.34 2.86,9.48l2.03,1.58C4.84,11.36 4.8,11.69 4.8,12s0.02,0.64 0.07,0.94l-2.03,1.58c-0.18,0.14 -0.23,0.41 -0.12,0.61l1.92,3.32c0.12,0.22 0.37,0.29 0.59,0.22l2.39,-0.96c0.5,0.38 1.03,0.7 1.62,0.94l0.36,2.54c0.05,0.24 0.24,0.41 0.48,0.41h3.84c0.24,0 0.44,-0.17 0.47,-0.41l0.36,-2.54c0.59,-0.24 1.13,-0.56 1.62,-0.94l2.39,0.96c0.22,0.08 0.47,0 0.59,-0.22l1.92,-3.32c0.12,-0.22 0.07,-0.47 -0.12,-0.61L19.14,12.94zM12,15.6c-1.98,0 -3.6,-1.62 -3.6,-3.6s1.62,-3.6 3.6,-3.6s3.6,1.62 3.6,3.6S13.98,15.6 12,15.6z"/>
@@ -113,6 +160,9 @@ C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\drawable\default_caller_image.x
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\drawable\green_circle_button.xml:2: Warning: The resource R.drawable.green_circle_button appears to be unused [UnusedResources]
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
 ^
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\drawable\ic_battery_full.xml:2: Warning: The resource R.drawable.ic_battery_full appears to be unused [UnusedResources]
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+^
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\drawable\ic_bug.xml:2: Warning: The resource R.drawable.ic_bug appears to be unused [UnusedResources]
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
 ^
@@ -138,24 +188,24 @@ C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\drawable\red_circle_button.xml:
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
 ^
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\raw\ringtone.mp3: Warning: The resource R.raw.ringtone appears to be unused [UnusedResources]
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:7: Warning: The resource R.string.emergency_button appears to be unused [UnusedResources]
-    <string name="emergency_button">Emergency Button</string>
-            ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:6: Warning: The resource R.string.emergency appears to be unused [UnusedResources]
+    <string name="emergency">Emergency</string>
+            ~~~~~~~~~~~~~~~~
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:11: Warning: The resource R.string.status_bluetooth_description appears to be unused [UnusedResources]
     <string name="status_bluetooth_description">Bluetooth Status</string>
             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:13: Warning: The resource R.string.status_battery_description appears to be unused [UnusedResources]
     <string name="status_battery_description">Battery Status</string>
             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:15: Warning: The resource R.string.status_battery_icon appears to be unused [UnusedResources]
+    <string name="status_battery_icon">Battery Status</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:18: Warning: The resource R.string.emergency_features appears to be unused [UnusedResources]
     <string name="emergency_features">Emergency Features</string>
             ~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:28: Warning: The resource R.string.debug_tools appears to be unused [UnusedResources]
-    <string name="debug_tools">Debug Tools</string>
-            ~~~~~~~~~~~~~~~~~~
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:37: Warning: The resource R.string.test_crash appears to be unused [UnusedResources]
-    <string name="test_crash">Test Crash</string>
-            ~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:28: Warning: The resource R.string.debug_tools_title appears to be unused [UnusedResources]
+    <string name="debug_tools_title">Debug Tools</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:40: Warning: The resource R.string.msg_emergency appears to be unused [UnusedResources]
     <string name="msg_emergency">Emergency Alert Triggered</string>
             ~~~~~~~~~~~~~~~~~~~~
@@ -301,4 +351,4 @@ C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\dialog_emergency.xml:43:
    There are quickfixes to automatically extract this hardcoded string into a
    resource lookup.
 
-0 errors, 65 warnings (21 errors, 38 warnings filtered by baseline lint-baseline.xml)
+1 errors, 70 warnings (21 errors, 38 warnings filtered by baseline lint-baseline.xml)

@@ -178,6 +178,59 @@
     </incident>
 
     <incident
+        id="UseCompoundDrawables"
+        severity="warning"
+        message="This tag and its children can be replaced by one `&lt;TextView/>` and a compound drawable">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="52"
+            column="18"
+            startOffset="2110"
+            endLine="52"
+            endColumn="30"
+            endOffset="2122"/>
+    </incident>
+
+    <incident
+        id="UseAppTint"
+        severity="error"
+        message="Must use `app:tint` instead of `android:tint`">
+        <fix-composite>
+            <fix-attribute
+                description="Set tint=&quot;@android:color/white&quot;"
+                namespace="http://schemas.android.com/apk/res-auto"
+                attribute="tint"
+                value="@android:color/white"/>
+            <fix-attribute
+                description="Delete tint"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="tint"/>
+        </fix-composite>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="64"
+            column="25"
+            startOffset="2690"
+            endLine="64"
+            endColumn="60"
+            endOffset="2725"/>
+    </incident>
+
+    <incident
+        id="UseCompoundDrawables"
+        severity="warning"
+        message="This tag and its children can be replaced by one `&lt;TextView/>` and a compound drawable">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="133"
+            column="22"
+            startOffset="5743"
+            endLine="133"
+            endColumn="34"
+            endOffset="5755"/>
+    </incident>
+
+    <incident
         id="HardcodedText"
         severity="warning"
         message="Hardcoded string &quot;Please enter your name to continue.&quot;, should use `@string` resource">
@@ -362,6 +415,52 @@
             endLine="184"
             endColumn="31"
             endOffset="7256"/>
+    </incident>
+
+    <incident
+        id="CutPasteId"
+        severity="warning"
+        message="The id `R.id.debugHeader` has already been looked up in this method; possible cut &amp; paste error?">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/MainActivity.java"
+            line="124"
+            column="36"
+            startOffset="4497"
+            endLine="124"
+            endColumn="66"
+            endOffset="4527"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/MainActivity.java"
+            line="119"
+            column="27"
+            startOffset="4251"
+            endLine="119"
+            endColumn="57"
+            endOffset="4281"
+            message="First usage here"/>
+    </incident>
+
+    <incident
+        id="CutPasteId"
+        severity="warning"
+        message="The id `R.id.debugContent` has already been looked up in this method; possible cut &amp; paste error?">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/MainActivity.java"
+            line="125"
+            column="37"
+            startOffset="4565"
+            endLine="125"
+            endColumn="68"
+            endOffset="4596"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/MainActivity.java"
+            line="120"
+            column="28"
+            startOffset="4310"
+            endLine="120"
+            endColumn="59"
+            endOffset="4341"
+            message="First usage here"/>
     </incident>
 
     <incident

@@ -177,9 +177,9 @@ document.getElementById(id).style.display = 'none';
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
   <header class="mdl-layout__header">
     <div class="mdl-layout__header-row">
-      <span class="mdl-layout-title">Lint Report: 65 warnings</span>
+      <span class="mdl-layout-title">Lint Report: 1 error and 70 warnings</span>
       <div class="mdl-layout-spacer"></div>
-      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Sun Apr 13 12:53:48 IST 2025 by AGP (8.2.0)</nav>
+      <nav class="mdl-navigation mdl-layout--large-screen-only">Check performed at Mon Apr 14 11:51:04 IST 2025 by AGP (8.2.0)</nav>
     </div>
   </header>
   <div class="mdl-layout__drawer">
@@ -187,11 +187,14 @@ document.getElementById(id).style.display = 'none';
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link" href="#overview"><i class="material-icons">dashboard</i>Overview</a>
       <a class="mdl-navigation__link" href="#LintBaseline"><i class="material-icons warning-icon">warning</i>Baseline Issues (2)</a>
+      <a class="mdl-navigation__link" href="#CutPasteId"><i class="material-icons warning-icon">warning</i>Likely cut &amp; paste mistakes (2)</a>
       <a class="mdl-navigation__link" href="#GradleDependency"><i class="material-icons warning-icon">warning</i>Obsolete Gradle Dependency (4)</a>
+      <a class="mdl-navigation__link" href="#UseAppTint"><i class="material-icons error-icon">error</i><code>app:tint</code> attribute should be used on <code>ImageView</code> and <code>ImageButton</code> (1)</a>
       <a class="mdl-navigation__link" href="#ObsoleteSdkInt"><i class="material-icons warning-icon">warning</i>Obsolete SDK_INT Version Check (1)</a>
+      <a class="mdl-navigation__link" href="#UseCompoundDrawables"><i class="material-icons warning-icon">warning</i>Node can be replaced by a <code>TextView</code> with compound drawables (2)</a>
       <a class="mdl-navigation__link" href="#VectorPath"><i class="material-icons warning-icon">warning</i>Long vector paths (1)</a>
       <a class="mdl-navigation__link" href="#Overdraw"><i class="material-icons warning-icon">warning</i>Overdraw: Painting regions more than once (2)</a>
-      <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (51)</a>
+      <a class="mdl-navigation__link" href="#UnusedResources"><i class="material-icons warning-icon">warning</i>Unused resources (52)</a>
       <a class="mdl-navigation__link" href="#MonochromeLauncherIcon"><i class="material-icons warning-icon">warning</i>Monochrome icon is not defined (2)</a>
       <a class="mdl-navigation__link" href="#KtxExtensionAvailable"><i class="material-icons warning-icon">warning</i>KTX Extension Available (1)</a>
       <a class="mdl-navigation__link" href="#HardcodedText"><i class="material-icons warning-icon">warning</i>Hardcoded text (4)</a>
@@ -215,13 +218,22 @@ document.getElementById(id).style.display = 'none';
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Correctness">Correctness</a>
 </td></tr>
 <tr>
+<td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#CutPasteId">CutPasteId</a>: Likely cut &amp; paste mistakes</td></tr>
+<tr>
 <td class="countColumn">4</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#GradleDependency">GradleDependency</a>: Obsolete Gradle Dependency</td></tr>
+<tr>
+<td class="countColumn">1</td><td class="issueColumn"><i class="material-icons error-icon">error</i>
+<a href="#UseAppTint">UseAppTint</a>: <code>app:tint</code> attribute should be used on <code>ImageView</code> and <code>ImageButton</code></td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Performance">Performance</a>
 </td></tr>
 <tr>
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#ObsoleteSdkInt">ObsoleteSdkInt</a>: Obsolete SDK_INT Version Check</td></tr>
+<tr>
+<td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<a href="#UseCompoundDrawables">UseCompoundDrawables</a>: Node can be replaced by a <code>TextView</code> with compound drawables</td></tr>
 <tr>
 <td class="countColumn">1</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#VectorPath">VectorPath</a>: Long vector paths</td></tr>
@@ -229,7 +241,7 @@ document.getElementById(id).style.display = 'none';
 <td class="countColumn">2</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#Overdraw">Overdraw</a>: Overdraw: Painting regions more than once</td></tr>
 <tr>
-<td class="countColumn">51</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
+<td class="countColumn">52</td><td class="issueColumn"><i class="material-icons warning-icon">warning</i>
 <a href="#UnusedResources">UnusedResources</a>: Unused resources</td></tr>
 <tr><td class="countColumn"></td><td class="categoryColumn"><a href="#Usability:Icons">Usability:Icons</a>
 </td></tr>
@@ -299,7 +311,78 @@ Dismiss</button>            </div>
             </div>
           </section>
 <a name="Correctness"></a>
-<a name="GradleDependency"></a>
+<a name="CutPasteId"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="CutPasteIdCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Likely cut &amp; paste mistakes</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/java/com/example/emerband/MainActivity.java">../../src/main/java/com/example/emerband/MainActivity.java</a>:124</span>: <span class="message">The id <code>R.id.debugHeader</code> has already been looked up in this method; possible cut &amp; paste error?</span><br /><pre class="errorlines">
+<span class="lineno"> 121 </span>            ivDebugExpand = findViewById(R.id.ivDebugExpand);
+<span class="lineno"> 122 </span>            
+<span class="lineno"> 123 </span>            <span class="comment">// Initialize debug tools views</span>
+<span class="caretline"><span class="lineno"> 124 </span>            View debugHeaderView = <span class="warning">findViewById(R.id.debugHeader)</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 125 </span>            View debugContentView = findViewById(R.id.debugContent);
+<span class="lineno"> 126 </span>            
+<span class="lineno"> 127 </span>            <span class="comment">// Set up debug tools expand/collapse</span></pre>
+
+<ul><span class="location"><a href="../../src/main/java/com/example/emerband/MainActivity.java">../../src/main/java/com/example/emerband/MainActivity.java</a>:119</span>: <span class="message">First usage here</span><br /><pre class="errorlines">
+<span class="lineno"> 116 </span>            tvBluetoothStatus = findViewById(R.id.tvBluetoothStatus);
+<span class="lineno"> 117 </span>            
+<span class="lineno"> 118 </span>            <span class="comment">// Debug views</span>
+<span class="caretline"><span class="lineno"> 119 </span>            debugHeader = <span class="warning">findViewById(R.id.debugHeader)</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 120 </span>            debugContent = findViewById(R.id.debugContent);
+<span class="lineno"> 121 </span>            ivDebugExpand = findViewById(R.id.ivDebugExpand);
+<span class="lineno"> 122 </span>            
+</pre>
+</ul><span class="location"><a href="../../src/main/java/com/example/emerband/MainActivity.java">../../src/main/java/com/example/emerband/MainActivity.java</a>:125</span>: <span class="message">The id <code>R.id.debugContent</code> has already been looked up in this method; possible cut &amp; paste error?</span><br /><pre class="errorlines">
+<span class="lineno"> 122 </span>            
+<span class="lineno"> 123 </span>            <span class="comment">// Initialize debug tools views</span>
+<span class="lineno"> 124 </span>            View debugHeaderView = findViewById(R.id.debugHeader);
+<span class="caretline"><span class="lineno"> 125 </span>            View debugContentView = <span class="warning">findViewById(R.id.debugContent)</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 126 </span>            
+<span class="lineno"> 127 </span>            <span class="comment">// Set up debug tools expand/collapse</span>
+<span class="lineno"> 128 </span>            debugHeaderView.setOnClickListener(v -> {
+</pre>
+
+<ul><span class="location"><a href="../../src/main/java/com/example/emerband/MainActivity.java">../../src/main/java/com/example/emerband/MainActivity.java</a>:120</span>: <span class="message">First usage here</span><br /><pre class="errorlines">
+<span class="lineno"> 117 </span>            
+<span class="lineno"> 118 </span>            <span class="comment">// Debug views</span>
+<span class="lineno"> 119 </span>            debugHeader = findViewById(R.id.debugHeader);
+<span class="caretline"><span class="lineno"> 120 </span>            debugContent = <span class="warning">findViewById(R.id.debugContent)</span>;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 121 </span>            ivDebugExpand = findViewById(R.id.ivDebugExpand);
+<span class="lineno"> 122 </span>            
+<span class="lineno"> 123 </span>            <span class="comment">// Initialize debug tools views</span></pre>
+</ul></div>
+<div class="metadata"><div class="explanation" id="explanationCutPasteId" style="display: none;">
+This lint check looks for cases where you have cut &amp; pasted calls to <code>findViewById</code> but have forgotten to update the R.id field. It's possible that your code is simply (redundantly) looking up the field repeatedly, but lint cannot distinguish that from a case where you for example want to initialize fields <code>prev</code> and <code>next</code> and you cut &amp; pasted <code>findViewById(R.id.prev)</code> and forgot to update the second initialization to <code>R.id.next</code>.<br/>To suppress this error, use the issue id "CutPasteId" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">CutPasteId</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Correctness</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 6/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationCutPasteIdLink" onclick="reveal('explanationCutPasteId');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="CutPasteIdCardLink" onclick="hideid('CutPasteIdCard');">
+Dismiss</button>            </div>
+            </div>
+          </section><a name="GradleDependency"></a>
 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="GradleDependencyCard" style="display: block;">
             <div class="mdl-card mdl-cell mdl-cell--12-col">
   <div class="mdl-card__title">
@@ -371,6 +454,56 @@ To suppress this error, use the issue id "GradleDependency" as explained in the 
 Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="GradleDependencyCardLink" onclick="hideid('GradleDependencyCard');">
 Dismiss</button>            </div>
             </div>
+          </section><a name="UseAppTint"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="UseAppTintCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">app:tint attribute should be used on ImageView and ImageButton</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/res/layout/activity_main.xml">../../src/main/res/layout/activity_main.xml</a>:64</span>: <span class="message">Must use <code>app:tint</code> instead of <code>android:tint</code></span><br /><pre class="errorlines">
+<span class="lineno">  61 </span>                 <span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"24dp"</span>
+<span class="lineno">  62 </span>                 <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"24dp"</span>
+<span class="lineno">  63 </span>                 <span class="prefix">android:</span><span class="attribute">src</span>=<span class="value">"@drawable/ic_bluetooth_disabled"</span>
+<span class="caretline"><span class="lineno">  64 </span>                 <span class="error"><span class="prefix">android:</span><span class="attribute">tint</span>=<span class="value">"@android:color/white"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  65 </span>                 <span class="prefix">android:</span><span class="attribute">contentDescription</span>=<span class="value">"@string/status_bluetooth_icon"</span>/>
+<span class="lineno">  66 </span>
+<span class="lineno">  67 </span>             <span class="tag">&lt;TextView</span><span class="attribute">
+</span></pre>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationUseAppTint" style="display: none;">
+<code>ImageView</code> or <code>ImageButton</code> uses <code>android:tint</code> instead of <code>app:tint</code><br/>To suppress this error, use the issue id "UseAppTint" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="vendor">
+Vendor: Android Open Source Project<br/>
+Identifier: androidx.appcompat<br/>
+Feedback: <a href="https://issuetracker.google.com/issues/new?component=460343">https://issuetracker.google.com/issues/new?component=460343</a><br/>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">UseAppTint</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Correctness</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Error</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 1/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationUseAppTintLink" onclick="reveal('explanationUseAppTint');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="UseAppTintCardLink" onclick="hideid('UseAppTintCard');">
+Dismiss</button>            </div>
+            </div>
           </section>
 <a name="Performance"></a>
 <a name="ObsoleteSdkInt"></a>
@@ -419,6 +552,65 @@ To suppress this error, use the issue id "ObsoleteSdkInt" as explained in the <a
               <div class="mdl-card__actions mdl-card--border">
 <button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationObsoleteSdkIntLink" onclick="reveal('explanationObsoleteSdkInt');">
 Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="ObsoleteSdkIntCardLink" onclick="hideid('ObsoleteSdkIntCard');">
+Dismiss</button>            </div>
+            </div>
+          </section><a name="UseCompoundDrawables"></a>
+<section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp" id="UseCompoundDrawablesCard" style="display: block;">
+            <div class="mdl-card mdl-cell mdl-cell--12-col">
+  <div class="mdl-card__title">
+    <h2 class="mdl-card__title-text">Node can be replaced by a TextView with compound drawables</h2>
+  </div>
+              <div class="mdl-card__supporting-text">
+<div class="issue">
+<div class="warningslist">
+<span class="location"><a href="../../src/main/res/layout/activity_main.xml">../../src/main/res/layout/activity_main.xml</a>:52</span>: <span class="message">This tag and its children can be replaced by one <code>&lt;TextView/></code> and a compound drawable</span><br /><pre class="errorlines">
+<span class="lineno">  49 </span>                <span class="prefix">android:</span><span class="attribute">layout_marginBottom</span>=<span class="value">"16dp"</span>
+<span class="lineno">  50 </span>                <span class="prefix">app:</span><span class="attribute">cardElevation</span>=<span class="value">"1dp"</span>>
+<span class="lineno">  51 </span>
+<span class="caretline"><span class="lineno">  52 </span>                <span class="tag">&lt;</span><span class="warning"><span class="tag">LinearLayout</span></span><span class="attribute"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
+</span><span class="lineno">  53 </span><span class="attribute">                    </span><span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"match_parent"</span>
+<span class="lineno">  54 </span>                    <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"wrap_content"</span>
+<span class="lineno">  55 </span>                    <span class="prefix">android:</span><span class="attribute">orientation</span>=<span class="value">"horizontal"</span>
+</pre>
+
+<span class="location"><a href="../../src/main/res/layout/activity_main.xml">../../src/main/res/layout/activity_main.xml</a>:133</span>: <span class="message">This tag and its children can be replaced by one <code>&lt;TextView/></code> and a compound drawable</span><br /><pre class="errorlines">
+<span class="lineno"> 130 </span>                    <span class="prefix">android:</span><span class="attribute">orientation</span>=<span class="value">"vertical"</span>>
+<span class="lineno"> 131 </span>
+<span class="lineno"> 132 </span>                    <span class="comment">&lt;!-- Debug Tools Header --></span>
+<span class="caretline"><span class="lineno"> 133 </span>                    <span class="tag">&lt;</span><span class="warning"><span class="tag">LinearLayout</span></span><span class="attribute"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="attribute">
+</span><span class="lineno"> 134 </span><span class="attribute">                        </span><span class="prefix">android:</span><span class="attribute">id</span>=<span class="value">"@+id/debugHeader"</span>
+<span class="lineno"> 135 </span>                        <span class="prefix">android:</span><span class="attribute">layout_width</span>=<span class="value">"match_parent"</span>
+<span class="lineno"> 136 </span>                        <span class="prefix">android:</span><span class="attribute">layout_height</span>=<span class="value">"wrap_content"</span>
+</pre>
+
+</div>
+<div class="metadata"><div class="explanation" id="explanationUseCompoundDrawables" style="display: none;">
+A <code>LinearLayout</code> which contains an <code>ImageView</code> and a <code>TextView</code> can be more efficiently handled as a compound drawable (a single TextView, using the <code>drawableTop</code>, <code>drawableLeft</code>, <code>drawableRight</code> and/or <code>drawableBottom</code> attributes to draw one or more images adjacent to the text).<br/>
+<br/>
+If the two widgets are offset from each other with margins, this can be replaced with a <code>drawablePadding</code> attribute.<br/>
+<br/>
+There's a lint quickfix to perform this conversion in the Eclipse plugin.<br/>To suppress this error, use the issue id "UseCompoundDrawables" as explained in the <a href="#SuppressInfo">Suppressing Warnings and Errors</a> section.<br/>
+<br/></div>
+</div>
+</div>
+<div class="chips">
+<span class="mdl-chip">
+    <span class="mdl-chip__text">UseCompoundDrawables</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Performance</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Warning</span>
+</span>
+<span class="mdl-chip">
+    <span class="mdl-chip__text">Priority 6/10</span>
+</span>
+</div>
+              </div>
+              <div class="mdl-card__actions mdl-card--border">
+<button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="explanationUseCompoundDrawablesLink" onclick="reveal('explanationUseCompoundDrawables');">
+Explain</button><button class="mdl-button mdl-js-button mdl-js-ripple-effect" id="UseCompoundDrawablesCardLink" onclick="hideid('UseCompoundDrawablesCard');">
 Dismiss</button>            </div>
             </div>
           </section><a name="VectorPath"></a>
@@ -574,7 +766,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 4 </span>    <span class="tag">&lt;solid</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">color</span>=<span class="value">"#FF0000"</span> />
 <span class="lineno"> 5 </span><span class="tag">&lt;/shape></span> </pre>
 
-<button class="mdl-button mdl-js-button mdl-button--primary" id="UnusedResourcesDivLink" onclick="reveal('UnusedResourcesDiv');" />+ 46 More Occurrences...</button>
+<button class="mdl-button mdl-js-button mdl-button--primary" id="UnusedResourcesDivLink" onclick="reveal('UnusedResourcesDiv');" />+ 47 More Occurrences...</button>
 <div id="UnusedResourcesDiv" style="display: none">
 <span class="location"><a href="../../src/main/res/values/colors.xml">../../src/main/res/values/colors.xml</a>:16</span>: <span class="message">The resource <code>R.color.gray</code> appears to be unused</span><br /><pre class="errorlines">
 <span class="lineno"> 13 </span>    <span class="comment">&lt;!-- Basic colors --></span>
@@ -646,6 +838,14 @@ Dismiss</button>            </div>
 <span class="lineno"> 4 </span>    <span class="tag">&lt;solid</span><span class="attribute"> </span><span class="prefix">android:</span><span class="attribute">color</span>=<span class="value">"#43A047"</span> />
 <span class="lineno"> 5 </span><span class="tag">&lt;/shape></span> </pre>
 
+<span class="location"><a href="../../src/main/res/drawable/ic_battery_full.xml">../../src/main/res/drawable/ic_battery_full.xml</a>:2</span>: <span class="message">The resource <code>R.drawable.ic_battery_full</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno">  1 </span><span class="prologue">&lt;?xml version="1.0" encoding="utf-8"?></span>
+<span class="caretline"><span class="lineno">  2 </span><span class="warning"><span class="tag">&lt;vector</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  3 </span>    <span class="prefix">android:</span><span class="attribute">width</span>=<span class="value">"24dp"</span>
+<span class="lineno">  4 </span>    <span class="prefix">android:</span><span class="attribute">height</span>=<span class="value">"24dp"</span>
+<span class="lineno">  5 </span>    <span class="prefix">android:</span><span class="attribute">viewportWidth</span>=<span class="value">"24"</span>
+</pre>
+
 <span class="location"><a href="../../src/main/res/drawable/ic_bug.xml">../../src/main/res/drawable/ic_bug.xml</a>:2</span>: <span class="message">The resource <code>R.drawable.ic_bug</code> appears to be unused</span><br /><pre class="errorlines">
 <span class="lineno">  1 </span><span class="prologue">&lt;?xml version="1.0" encoding="utf-8"?></span>
 <span class="caretline"><span class="lineno">  2 </span><span class="warning"><span class="tag">&lt;vector</span><span class="attribute"> </span><span class="prefix">xmlns:</span><span class="attribute">android</span>=<span class="value">"http://schemas.android.com/apk/res/android"</span></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -710,14 +910,14 @@ Dismiss</button>            </div>
 <span class="lineno"> 5 </span><span class="tag">&lt;/shape></span> </pre>
 
 <span class="location"><a href="../../src/main/res/raw/ringtone.mp3">../../src/main/res/raw/ringtone.mp3</a></span>: <span class="message">The resource <code>R.raw.ringtone</code> appears to be unused</span><br />
-<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:7</span>: <span class="message">The resource <code>R.string.emergency_button</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:6</span>: <span class="message">The resource <code>R.string.emergency</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno">  3 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"app_name"</span>>EmerBand<span class="tag">&lt;/string></span>
 <span class="lineno">  4 </span>    
 <span class="lineno">  5 </span>    <span class="comment">&lt;!-- Main UI --></span>
-<span class="lineno">  6 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"emergency"</span>>Emergency<span class="tag">&lt;/string></span>
-<span class="caretline"><span class="lineno">  7 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"emergency_button"</span></span>>Emergency Button<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="caretline"><span class="lineno">  6 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"emergency"</span></span>>Emergency<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno">  7 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"emergency_button"</span>>Emergency Button<span class="tag">&lt;/string></span>
 <span class="lineno">  8 </span>    
 <span class="lineno">  9 </span>    <span class="comment">&lt;!-- Status Section --></span>
-<span class="lineno"> 10 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"status_title"</span>>Status<span class="tag">&lt;/string></span>
 </pre>
 
 <span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:11</span>: <span class="message">The resource <code>R.string.status_bluetooth_description</code> appears to be unused</span><br /><pre class="errorlines">
@@ -740,6 +940,16 @@ Dismiss</button>            </div>
 <span class="lineno"> 16 </span>    
 </pre>
 
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:15</span>: <span class="message">The resource <code>R.string.status_battery_icon</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="lineno"> 12 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"status_bluetooth_disabled"</span>>Bluetooth is disabled<span class="tag">&lt;/string></span>
+<span class="lineno"> 13 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"status_battery_description"</span>>Battery Status<span class="tag">&lt;/string></span>
+<span class="lineno"> 14 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"status_bluetooth_icon"</span>>Bluetooth Status<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 15 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"status_battery_icon"</span></span>>Battery Status<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 16 </span>    
+<span class="lineno"> 17 </span>    <span class="comment">&lt;!-- Emergency Features --></span>
+<span class="lineno"> 18 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"emergency_features"</span>>Emergency Features<span class="tag">&lt;/string></span>
+</pre>
+
 <span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:18</span>: <span class="message">The resource <code>R.string.emergency_features</code> appears to be unused</span><br /><pre class="errorlines">
 <span class="lineno"> 15 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"status_battery_icon"</span>>Battery Status<span class="tag">&lt;/string></span>
 <span class="lineno"> 16 </span>    
@@ -750,28 +960,18 @@ Dismiss</button>            </div>
 <span class="lineno"> 21 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"emergency_contacts"</span>>Emergency Contacts<span class="tag">&lt;/string></span>
 </pre>
 
-<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:28</span>: <span class="message">The resource <code>R.string.debug_tools</code> appears to be unused</span><br /><pre class="errorlines">
+<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:28</span>: <span class="message">The resource <code>R.string.debug_tools_title</code> appears to be unused</span><br /><pre class="errorlines">
 <span class="lineno"> 25 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"settings"</span>>Settings<span class="tag">&lt;/string></span>
 <span class="lineno"> 26 </span>    
 <span class="lineno"> 27 </span>    <span class="comment">&lt;!-- Debug Tools --></span>
-<span class="caretline"><span class="lineno"> 28 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"debug_tools"</span></span>>Debug Tools<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 29 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"debug_tools_title"</span>>Debug Tools<span class="tag">&lt;/string></span>
-<span class="lineno"> 30 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"test_emergency_call"</span>>Test Emergency Call<span class="tag">&lt;/string></span>
-<span class="lineno"> 31 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"test_cyber_cell"</span>>Test Cyber Cell<span class="tag">&lt;/string></span>
-</pre>
-
-<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:37</span>: <span class="message">The resource <code>R.string.test_crash</code> appears to be unused</span><br /><pre class="errorlines">
-<span class="lineno"> 34 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"test_fake_call"</span>>Test Fake Call<span class="tag">&lt;/string></span>
-<span class="lineno"> 35 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"test_alert"</span>>Test Alert<span class="tag">&lt;/string></span>
-<span class="lineno"> 36 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"test_offline"</span>>Test Offline<span class="tag">&lt;/string></span>
-<span class="caretline"><span class="lineno"> 37 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"test_crash"</span></span>>Test Crash<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 38 </span>    
-<span class="lineno"> 39 </span>    <span class="comment">&lt;!-- Test Messages --></span>
-<span class="lineno"> 40 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"msg_emergency"</span>>Emergency Alert Triggered<span class="tag">&lt;/string></span>
+<span class="caretline"><span class="lineno"> 28 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"debug_tools_title"</span></span>>Debug Tools<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<span class="lineno"> 29 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"debug_tools"</span>>Debug Tools<span class="tag">&lt;/string></span>
+<span class="lineno"> 30 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"debug_tools_expand"</span>>Expand/Collapse Debug Tools<span class="tag">&lt;/string></span>
+<span class="lineno"> 31 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"test_emergency"</span>>Test Emergency<span class="tag">&lt;/string></span>
 </pre>
 
 <span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:40</span>: <span class="message">The resource <code>R.string.msg_emergency</code> appears to be unused</span><br /><pre class="errorlines">
-<span class="lineno"> 37 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"test_crash"</span>>Test Crash<span class="tag">&lt;/string></span>
+<span class="lineno"> 37 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"test_location"</span>>Test Location<span class="tag">&lt;/string></span>
 <span class="lineno"> 38 </span>    
 <span class="lineno"> 39 </span>    <span class="comment">&lt;!-- Test Messages --></span>
 <span class="caretline"><span class="lineno"> 40 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"msg_emergency"</span></span>>Emergency Alert Triggered<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
@@ -977,14 +1177,7 @@ Dismiss</button>            </div>
 <span class="lineno"> 95 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"offline_mode_cancel"</span>>Cancel<span class="tag">&lt;/string></span>
 <span class="lineno"> 96 </span><span class="tag">&lt;/resources></span> </pre>
 
-<span class="location"><a href="../../src/main/res/values/strings.xml">../../src/main/res/values/strings.xml</a>:95</span>: <span class="message">The resource <code>R.string.offline_mode_cancel</code> appears to be unused</span><br /><pre class="errorlines">
-<span class="lineno"> 92 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"offline_mode_title"</span>>Enable Airplane Mode<span class="tag">&lt;/string></span>
-<span class="lineno"> 93 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"offline_mode_message"</span>>Please enable airplane mode to test offline functionality<span class="tag">&lt;/string></span>
-<span class="lineno"> 94 </span>    <span class="tag">&lt;string</span><span class="attribute"> name</span>=<span class="value">"offline_mode_enable"</span>>Open Settings<span class="tag">&lt;/string></span>
-<span class="caretline"><span class="lineno"> 95 </span>    <span class="tag">&lt;string</span><span class="attribute"> </span><span class="warning"><span class="attribute">name</span>=<span class="value">"offline_mode_cancel"</span></span>>Cancel<span class="tag">&lt;/string></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-<span class="lineno"> 96 </span><span class="tag">&lt;/resources></span> </pre>
-
-<br/><b>NOTE: 1 results omitted.</b><br/><br/></div>
+<br/><b>NOTE: 2 results omitted.</b><br/><br/></div>
 </div>
 <div class="metadata"><div class="explanation" id="explanationUnusedResources" style="display: none;">
 Unused resources make applications larger and slow down builds.<br/>

@@ -14,6 +14,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.activity.result.ActivityResultLauncher;
@@ -67,9 +68,11 @@ public class MainActivity extends AppCompatActivity {
     // UI Elements
     private ImageView ivBluetoothStatus;
     private TextView tvBluetoothStatus;
-    private ImageView ivBatteryStatus;
-    private MaterialCardView debugCard;
+    private ImageView ivDebugExpand;
+    private LinearLayout debugHeader;
+    private LinearLayout debugContent;
     private FloatingActionButton fabEmergency;
+    private MaterialCardView debugCard;
     private Button btnTestEmergency;
     private Button btnTestFakeCall;
     private Button btnTestAlert;
@@ -111,9 +114,22 @@ public class MainActivity extends AppCompatActivity {
         try {
             ivBluetoothStatus = findViewById(R.id.ivBluetoothStatus);
             tvBluetoothStatus = findViewById(R.id.tvBluetoothStatus);
-            ivBatteryStatus = findViewById(R.id.ivBatteryStatus);
-            debugCard = findViewById(R.id.debugCard);
-            fabEmergency = findViewById(R.id.fabEmergency);
+            
+            // Debug views
+            debugHeader = findViewById(R.id.debugHeader);
+            debugContent = findViewById(R.id.debugContent);
+            ivDebugExpand = findViewById(R.id.ivDebugExpand);
+            
+            // Initialize debug tools views
+            View debugHeaderView = findViewById(R.id.debugHeader);
+            View debugContentView = findViewById(R.id.debugContent);
+            
+            // Set up debug tools expand/collapse
+            debugHeaderView.setOnClickListener(v -> {
+                boolean isExpanded = debugContentView.getVisibility() == View.VISIBLE;
+                debugContentView.setVisibility(isExpanded ? View.GONE : View.VISIBLE);
+                ivDebugExpand.setRotation(isExpanded ? 0 : 180);
+            });
             
             // Initialize emergency feature buttons
             btnEmergencyCall = findViewById(R.id.btnEmergencyCall);
@@ -127,6 +143,9 @@ public class MainActivity extends AppCompatActivity {
             btnTestAlert = findViewById(R.id.btnTestAlert);
             btnTestOffline = findViewById(R.id.btnTestOffline);
             toolbar = findViewById(R.id.toolbar);
+            
+            // Initialize emergency feature button
+            fabEmergency = findViewById(R.id.fabEmergency);
         } catch (Exception e) {
             throw new RuntimeException("Failed to initialize views: " + e.getMessage(), e);
         }

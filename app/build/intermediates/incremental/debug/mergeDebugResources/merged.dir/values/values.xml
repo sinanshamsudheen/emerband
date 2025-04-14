@@ -2044,6 +2044,7 @@
     <string name="common_signin_button_text_long">Sign in with Google</string>
     <string name="cyber_cell_description">Cyber Cell settings and information will be displayed here.</string>
     <string name="debug_tools">Debug Tools</string>
+    <string name="debug_tools_expand">Expand/Collapse Debug Tools</string>
     <string name="debug_tools_title">Debug Tools</string>
     <string name="decline_call">Decline Call</string>
     <string name="emergency">Emergency</string>
@@ -2230,13 +2231,12 @@
     <string name="status_title">Status</string>
     <string name="stop_alarm">STOP ALARM</string>
     <string name="test_alert">Test Alert</string>
-    <string name="test_crash">Test Crash</string>
     <string name="test_cyber_cell">Test Cyber Cell</string>
     <string name="test_emergency">Test Emergency</string>
     <string name="test_emergency_call">Test Emergency Call</string>
     <string name="test_fake_call">Test Fake Call</string>
     <string name="test_location">Test Location</string>
-    <string name="test_offline">Test Offline</string>
+    <string name="test_offline">Test Offline Mode</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>
@@ -5934,6 +5934,12 @@
         <item name="android:dropDownItemStyle">@style/Widget.AppCompat.DropDownItem.Spinner</item>
     </style>
     <style name="Platform.Widget.AppCompat.Spinner" parent="android:Widget.Holo.Spinner"/>
+    <style name="PopupMenuStyle" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textColor">?attr/colorPrimary</item>
+        <item name="android:background">@android:color/black</item>
+        <item name="android:itemBackground">@android:color/black</item>
+        <item name="android:popupBackground">@android:color/black</item>
+    </style>
     <style name="RtlOverlay.DialogWindowTitle.AppCompat" parent="Base.DialogWindowTitle.AppCompat">
     </style>
     <style name="RtlOverlay.Widget.AppCompat.ActionBar.TitleItem" parent="android:Widget">
