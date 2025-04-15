@@ -98,7 +98,7 @@
                     android:id="@+id/btnSettings"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="SETTINGS"
+                    android:text="About"
                     android:backgroundTint="@color/accent_light"
                     android:textColor="@color/black"
                     style="@style/Widget.MaterialComponents.Button" />

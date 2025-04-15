@@ -108,4 +108,7 @@
     <string name="name_required">Name is required</string>
     <string name="phone_required">Phone number is required</string>
     <string name="invalid_phone">Invalid phone number</string>
+    
+    <!-- New Resource -->
+    <string name="action_about">About</string>
 </resources> 

@@ -12,6 +12,10 @@
         "source": "com.example.emerband.app-main-49:/layout/activity_setup.xml"
     },
     {
+        "merged": "com.example.emerband.app-mergeDebugResources-46:/layout/activity_help_support.xml",
+        "source": "com.example.emerband.app-main-49:/layout/activity_help_support.xml"
+    },
+    {
         "merged": "com.example.emerband.app-mergeDebugResources-46:/layout/activity_cyber_cell_settings.xml",
         "source": "com.example.emerband.app-main-49:/layout/activity_cyber_cell_settings.xml"
     },

@@ -4,6 +4,10 @@ color accent
 color accent_dark
 color accent_light
 color black
+color colorAccent
+color colorOnPrimary
+color colorPrimary
+color colorPrimaryDark
 color error
 color gray
 color gray_dark
@@ -51,6 +55,8 @@ drawable ic_signal
 drawable ic_sos
 drawable red_circle_button
 drawable rounded_background_dark
+id aboutDescription
+id action_about
 id alertBackground
 id btnCancel
 id btnCyberCell
@@ -88,7 +94,6 @@ id ivDebugExpand
 id menu_contacts
 id menu_help
 id menu_location
-id menu_settings
 id nameEditText
 id recyclerView
 id saveButton
@@ -101,6 +106,7 @@ layout activity_cyber_cell
 layout activity_cyber_cell_settings
 layout activity_emergency_contacts
 layout activity_fake_call
+layout activity_help_support
 layout activity_location_settings
 layout activity_main
 layout activity_settings
@@ -115,6 +121,7 @@ mipmap ic_launcher_round
 raw ringtone
 raw siren
 raw sound_files_info
+string action_about
 string add_contact
 string answer_call
 string app_name
@@ -191,4 +198,6 @@ string test_location
 string test_offline
 style AppTheme
 style PopupMenuStyle
+style Theme_App_Dark
+style Theme_App_Light
 style Theme.EmerBand

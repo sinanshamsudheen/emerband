@@ -1,210 +1,218 @@
 [
     {
-        "merged": "com.example.emerband.app-merged_res-47:/drawable_circle_button_red.xml.flat",
-        "source": "com.example.emerband.app-main-49:/drawable/circle_button_red.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\drawable_ic_contacts.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\drawable\\ic_contacts.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/layout_activity_cyber_cell_settings.xml.flat",
-        "source": "com.example.emerband.app-main-49:/layout/activity_cyber_cell_settings.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\drawable_red_circle_button.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\drawable\\red_circle_button.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/layout_activity_setup.xml.flat",
-        "source": "com.example.emerband.app-main-49:/layout/activity_setup.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\drawable_ic_call.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\drawable\\ic_call.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/drawable_ic_location.xml.flat",
-        "source": "com.example.emerband.app-main-49:/drawable/ic_location.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\drawable_ic_call_end.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\drawable\\ic_call_end.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/layout_activity_settings.xml.flat",
-        "source": "com.example.emerband.app-main-49:/layout/activity_settings.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\drawable_ic_call_answer.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\drawable\\ic_call_answer.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/drawable_ic_expand_more.xml.flat",
-        "source": "com.example.emerband.app-main-49:/drawable/ic_expand_more.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\layout_item_contact.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\layout\\item_contact.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/drawable_circle_green.xml.flat",
-        "source": "com.example.emerband.app-main-49:/drawable/circle_green.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\drawable_ic_emergency.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\drawable\\ic_emergency.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/drawable_ic_phone.xml.flat",
-        "source": "com.example.emerband.app-main-49:/drawable/ic_phone.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\layout_activity_cyber_cell_settings.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\layout\\activity_cyber_cell_settings.xml"
+    },
+    {
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\drawable_ic_person.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\drawable\\ic_person.xml"
+    },
+    {
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\drawable_circle_button_green.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\drawable\\circle_button_green.xml"
+    },
+    {
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\drawable_ic_bluetooth_disabled.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\drawable\\ic_bluetooth_disabled.xml"
     },
     {
         "merged": "com.example.emerband.app-merged_res-47:/menu_main_menu.xml.flat",
         "source": "com.example.emerband.app-main-49:/menu/main_menu.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/raw_sound_files_info.txt.flat",
-        "source": "com.example.emerband.app-main-49:/raw/sound_files_info.txt"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\layout_activity_settings.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\layout\\activity_settings.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/raw_siren.mp3.flat",
-        "source": "com.example.emerband.app-main-49:/raw/siren.mp3"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\drawable_green_circle_button.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\drawable\\green_circle_button.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/layout_activity_emergency_contacts.xml.flat",
-        "source": "com.example.emerband.app-main-49:/layout/activity_emergency_contacts.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\layout_activity_location_settings.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\layout\\activity_location_settings.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/layout_activity_fake_call.xml.flat",
-        "source": "com.example.emerband.app-main-49:/layout/activity_fake_call.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\drawable_ic_signal.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\drawable\\ic_signal.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/layout_dialog_emergency.xml.flat",
-        "source": "com.example.emerband.app-main-49:/layout/dialog_emergency.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\drawable_ic_phone.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\drawable\\ic_phone.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/drawable_circle_red.xml.flat",
-        "source": "com.example.emerband.app-main-49:/drawable/circle_red.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\layout_item_emergency_contact.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\layout\\item_emergency_contact.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/drawable_ic_call_answer.xml.flat",
-        "source": "com.example.emerband.app-main-49:/drawable/ic_call_answer.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\drawable_ic_profile_placeholder.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\drawable\\ic_profile_placeholder.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/drawable_ic_profile_placeholder.xml.flat",
-        "source": "com.example.emerband.app-main-49:/drawable/ic_profile_placeholder.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\raw_siren.mp3.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\raw\\siren.mp3"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/drawable_circle_background.xml.flat",
-        "source": "com.example.emerband.app-main-49:/drawable/circle_background.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\drawable_ic_bluetooth.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\drawable\\ic_bluetooth.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/drawable_ic_battery_full.xml.flat",
-        "source": "com.example.emerband.app-main-49:/drawable/ic_battery_full.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\drawable\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/drawable_green_circle_button.xml.flat",
-        "source": "com.example.emerband.app-main-49:/drawable/green_circle_button.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/drawable_ic_call.xml.flat",
-        "source": "com.example.emerband.app-main-49:/drawable/ic_call.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\drawable_ic_location.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\drawable\\ic_location.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/layout_activity_main.xml.flat",
-        "source": "com.example.emerband.app-main-49:/layout/activity_main.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\drawable_rounded_background_dark.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\drawable\\rounded_background_dark.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/drawable_rounded_background_dark.xml.flat",
-        "source": "com.example.emerband.app-main-49:/drawable/rounded_background_dark.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\drawable_circle_green.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\drawable\\circle_green.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/drawable_ic_shield.xml.flat",
-        "source": "com.example.emerband.app-main-49:/drawable/ic_shield.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\drawable_circle_red.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\drawable\\circle_red.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/drawable_circle_button_green.xml.flat",
-        "source": "com.example.emerband.app-main-49:/drawable/circle_button_green.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\layout_activity_fake_call.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\layout\\activity_fake_call.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/mipmap-anydpi-v26_ic_launcher_round.xml.flat",
-        "source": "com.example.emerband.app-main-49:/mipmap-anydpi-v26/ic_launcher_round.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\drawable_ic_offline.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\drawable\\ic_offline.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/layout_activity_location_settings.xml.flat",
-        "source": "com.example.emerband.app-main-49:/layout/activity_location_settings.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\menu_main_menu.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\menu\\main_menu.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/drawable_ic_person.xml.flat",
-        "source": "com.example.emerband.app-main-49:/drawable/ic_person.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\drawable_circle_button_red.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\drawable\\circle_button_red.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/layout_dialog_add_contact.xml.flat",
-        "source": "com.example.emerband.app-main-49:/layout/dialog_add_contact.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\drawable_ic_delete.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\drawable\\ic_delete.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/drawable_ic_call_end.xml.flat",
-        "source": "com.example.emerband.app-main-49:/drawable/ic_call_end.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\drawable_ic_help.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\drawable\\ic_help.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/drawable_default_caller_image.xml.flat",
-        "source": "com.example.emerband.app-main-49:/drawable/default_caller_image.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\drawable_ic_sos.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\drawable\\ic_sos.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/drawable_red_circle_button.xml.flat",
-        "source": "com.example.emerband.app-main-49:/drawable/red_circle_button.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\layout_dialog_emergency.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\layout\\dialog_emergency.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/drawable_ic_sos.xml.flat",
-        "source": "com.example.emerband.app-main-49:/drawable/ic_sos.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\layout_activity_help_support.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\layout\\activity_help_support.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/mipmap-anydpi-v26_ic_launcher.xml.flat",
-        "source": "com.example.emerband.app-main-49:/mipmap-anydpi-v26/ic_launcher.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\drawable_circle_background.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\drawable\\circle_background.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "com.example.emerband.app-main-49:/drawable/ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\drawable_ic_expand_more.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\drawable\\ic_expand_more.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/layout_activity_alert.xml.flat",
-        "source": "com.example.emerband.app-main-49:/layout/activity_alert.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\layout_activity_setup.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\layout\\activity_setup.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/layout_activity_cyber_cell.xml.flat",
-        "source": "com.example.emerband.app-main-49:/layout/activity_cyber_cell.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\drawable_ic_add.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\drawable\\ic_add.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/drawable_delete_button_background.xml.flat",
-        "source": "com.example.emerband.app-main-49:/drawable/delete_button_background.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\drawable_ic_settings.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\drawable\\ic_settings.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/drawable_ic_settings.xml.flat",
-        "source": "com.example.emerband.app-main-49:/drawable/ic_settings.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\raw_ringtone.mp3.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\raw\\ringtone.mp3"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/drawable_ic_contacts.xml.flat",
-        "source": "com.example.emerband.app-main-49:/drawable/ic_contacts.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\raw_sound_files_info.txt.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\raw\\sound_files_info.txt"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/drawable_ic_help.xml.flat",
-        "source": "com.example.emerband.app-main-49:/drawable/ic_help.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\drawable_default_caller_image.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\drawable\\default_caller_image.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/drawable_ic_delete.xml.flat",
-        "source": "com.example.emerband.app-main-49:/drawable/ic_delete.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\drawable_ic_battery_full.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\drawable\\ic_battery_full.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/drawable_ic_emergency.xml.flat",
-        "source": "com.example.emerband.app-main-49:/drawable/ic_emergency.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\layout\\activity_main.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/drawable_ic_offline.xml.flat",
-        "source": "com.example.emerband.app-main-49:/drawable/ic_offline.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\layout_activity_alert.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\layout\\activity_alert.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/layout_item_contact.xml.flat",
-        "source": "com.example.emerband.app-main-49:/layout/item_contact.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\layout_dialog_add_contact.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\layout\\dialog_add_contact.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/drawable_ic_bluetooth_disabled.xml.flat",
-        "source": "com.example.emerband.app-main-49:/drawable/ic_bluetooth_disabled.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\layout_activity_emergency_contacts.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\layout\\activity_emergency_contacts.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/drawable_ic_bluetooth.xml.flat",
-        "source": "com.example.emerband.app-main-49:/drawable/ic_bluetooth.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\drawable_ic_bug.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\drawable\\ic_bug.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/raw_ringtone.mp3.flat",
-        "source": "com.example.emerband.app-main-49:/raw/ringtone.mp3"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\layout_activity_cyber_cell.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\layout\\activity_cyber_cell.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/drawable_ic_add.xml.flat",
-        "source": "com.example.emerband.app-main-49:/drawable/ic_add.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\mipmap-anydpi-v26\\ic_launcher.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/drawable_ic_bug.xml.flat",
-        "source": "com.example.emerband.app-main-49:/drawable/ic_bug.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\drawable_delete_button_background.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\drawable\\delete_button_background.xml"
     },
     {
-        "merged": "com.example.emerband.app-merged_res-47:/drawable_ic_signal.xml.flat",
-        "source": "com.example.emerband.app-main-49:/drawable/ic_signal.xml"
-    },
-    {
-        "merged": "com.example.emerband.app-merged_res-47:/layout_item_emergency_contact.xml.flat",
-        "source": "com.example.emerband.app-main-49:/layout/item_emergency_contact.xml"
+        "merged": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-merged_res-47:\\drawable_ic_shield.xml.flat",
+        "source": "C:\\Users\\USER\\.gradle\\daemon\\8.2\\com.example.emerband.app-main-49:\\drawable\\ic_shield.xml"
     }
 ]

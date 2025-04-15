@@ -185,13 +185,14 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
-            // Settings button
+            // Change Settings button to About button
+            btnSettings.setText("About"); // Change button text to "About"
             btnSettings.setOnClickListener(v -> {
                 try {
-                    Intent intent = new Intent(this, SettingsActivity.class);
+                    Intent intent = new Intent(this, SettingsActivity.class); // This is now the About activity
                     startActivity(intent);
                 } catch (Exception e) {
-                    Toast.makeText(this, "Error opening Settings: " + e.getMessage(), 
+                    Toast.makeText(this, "Error opening About: " + e.getMessage(), 
                         Toast.LENGTH_SHORT).show();
                 }
             });
@@ -356,13 +357,16 @@ public class MainActivity extends AppCompatActivity {
             openEmergencyContacts();
             return true;
         } else if (id == R.id.menu_location) {
-            openLocationSettings();
+            Intent intent = new Intent(this, LocationSettingsActivity.class);
+            startActivity(intent);
             return true;
         } else if (id == R.id.menu_help) {
-            openCyberCell();
+            Intent intent = new Intent(this, HelpSupportActivity.class);
+            startActivity(intent);
             return true;
-        } else if (id == R.id.menu_settings) {
-            openSettings();
+        } else if (id == R.id.action_about) {
+            Intent intent = new Intent(this, SettingsActivity.class); // This should be the About activity
+            startActivity(intent);
             return true;
         }
         

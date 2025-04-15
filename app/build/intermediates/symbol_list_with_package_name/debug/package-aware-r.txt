@@ -1382,6 +1382,10 @@ color cardview_dark_background
 color cardview_light_background
 color cardview_shadow_end_color
 color cardview_shadow_start_color
+color colorAccent
+color colorOnPrimary
+color colorPrimary
+color colorPrimaryDark
 color common_google_signin_btn_text_dark
 color common_google_signin_btn_text_dark_default
 color common_google_signin_btn_text_dark_disabled
@@ -3194,6 +3198,7 @@ id SHOW_PROGRESS
 id SYM
 id TOP_END
 id TOP_START
+id aboutDescription
 id accelerate
 id accessibility_action_clickable_span
 id accessibility_custom_action_0
@@ -3232,6 +3237,7 @@ id action0
 id actionDown
 id actionDownUp
 id actionUp
+id action_about
 id action_bar
 id action_bar_activity_content
 id action_bar_container
@@ -3493,7 +3499,6 @@ id media_actions
 id menu_contacts
 id menu_help
 id menu_location
-id menu_settings
 id message
 id messageText
 id middle
@@ -3862,6 +3867,7 @@ layout activity_cyber_cell
 layout activity_cyber_cell_settings
 layout activity_emergency_contacts
 layout activity_fake_call
+layout activity_help_support
 layout activity_location_settings
 layout activity_main
 layout activity_settings
@@ -3994,6 +4000,7 @@ string abc_searchview_description_voice
 string abc_shareactionprovider_share_with
 string abc_shareactionprovider_share_with_application
 string abc_toolbar_collapse_description
+string action_about
 string add_contact
 string androidx_startup
 string answer_call
@@ -4979,6 +4986,8 @@ style ThemeOverlay_MaterialComponents_TimePicker_Display_TextInputEditText
 style ThemeOverlay_MaterialComponents_Toolbar_Popup_Primary
 style ThemeOverlay_MaterialComponents_Toolbar_Primary
 style ThemeOverlay_MaterialComponents_Toolbar_Surface
+style Theme_App_Dark
+style Theme_App_Light
 style Widget_AppCompat_ActionBar
 style Widget_AppCompat_ActionBar_Solid
 style Widget_AppCompat_ActionBar_TabBar

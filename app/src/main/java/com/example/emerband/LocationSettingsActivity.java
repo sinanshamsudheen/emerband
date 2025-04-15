@@ -14,7 +14,9 @@ public class LocationSettingsActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-            getSupportActionBar().setTitle(R.string.menu_location);
+            getSupportActionBar().setTitle("Location Settings");
         }
+
+        // Implement location settings functionality here
     }
 } 
