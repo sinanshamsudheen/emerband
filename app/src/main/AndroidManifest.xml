@@ -37,6 +37,9 @@
     <!-- Flashlight permission for alert system -->
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.FLASHLIGHT" />
+
+    <!-- Contacts permission -->
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
     
     <!-- Feature declarations -->
     <uses-feature android:name="android.hardware.bluetooth_le" android:required="true" />

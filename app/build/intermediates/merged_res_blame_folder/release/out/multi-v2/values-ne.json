@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.emerband.app-mergeReleaseResources-44:/values-ne/values-ne.xml",
+            "outputFile": "com.example.emerband.app-mergeReleaseResources-45:/values-ne/values-ne.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Abhay\\.gradle\\caches\\transforms-3\\1e2f861312ad42faf7384aadd6209d49\\transformed\\appcompat-1.6.1\\res\\values-ne\\values-ne.xml",

@@ -1,24 +1,6 @@
-C:\Users\Abhay\Desktop\EmerBand\app\lint-baseline.xml: Information: 21 errors and 39 warnings were filtered out because they are listed in the baseline file, lint-baseline.xml
+C:\Users\Abhay\Desktop\EmerBand\app\lint-baseline.xml: Information: 16 errors and 39 warnings were filtered out because they are listed in the baseline file, lint-baseline.xml
  [LintBaseline]
-C:\Users\Abhay\Desktop\EmerBand\app\lint-baseline.xml: Information: 34 errors/warnings were listed in the baseline file (lint-baseline.xml) but not found in the project; perhaps they have been fixed? Another possible explanation is that lint recently stopped analyzing (and including results from) dependent projects by default. You can turn this back on with android.lintOptions.checkDependencies=true. Unmatched issue types: ButtonStyle (2), HardcodedText (8), ObsoleteSdkInt, Overdraw (2), PrivateResource, SetTextI18n (5), UnusedAttribute (2), UnusedResources (13) [LintBaseline]
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\java\com\example\emerband\MainActivity.java:129: Warning: The id R.id.debugHeader has already been looked up in this method; possible cut & paste error? [CutPasteId]
-            View debugHeaderView = findViewById(R.id.debugHeader);
-                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    C:\Users\Abhay\Desktop\EmerBand\app\src\main\java\com\example\emerband\MainActivity.java:124: First usage here
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\java\com\example\emerband\MainActivity.java:130: Warning: The id R.id.debugContent has already been looked up in this method; possible cut & paste error? [CutPasteId]
-            View debugContentView = findViewById(R.id.debugContent);
-                                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    C:\Users\Abhay\Desktop\EmerBand\app\src\main\java\com\example\emerband\MainActivity.java:125: First usage here
-
-   Explanation for issues of type "CutPasteId":
-   This lint check looks for cases where you have cut & pasted calls to
-   findViewById but have forgotten to update the R.id field. It's possible
-   that your code is simply (redundantly) looking up the field repeatedly, but
-   lint cannot distinguish that from a case where you for example want to
-   initialize fields prev and next and you cut & pasted
-   findViewById(R.id.prev) and forgot to update the second initialization to
-   R.id.next.
-
+C:\Users\Abhay\Desktop\EmerBand\app\lint-baseline.xml: Information: 39 errors/warnings were listed in the baseline file (lint-baseline.xml) but not found in the project; perhaps they have been fixed? Another possible explanation is that lint recently stopped analyzing (and including results from) dependent projects by default. You can turn this back on with android.lintOptions.checkDependencies=true. Unmatched issue types: ButtonStyle (2), HardcodedText (8), NewApi (5), ObsoleteSdkInt, Overdraw (2), PrivateResource, SetTextI18n (5), UnusedAttribute (2), UnusedResources (13) [LintBaseline]
 C:\Users\Abhay\Desktop\EmerBand\app\build.gradle:90: Warning: A newer version of androidx.fragment:fragment than 1.6.2 is available: 1.8.6 [GradleDependency]
     implementation 'androidx.fragment:fragment:1.6.2'
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -31,6 +13,9 @@ C:\Users\Abhay\Desktop\EmerBand\app\build.gradle:116: Warning: A newer version o
 C:\Users\Abhay\Desktop\EmerBand\app\build.gradle:118: Warning: A newer version of com.google.android.gms:play-services-location than 21.1.0 is available: 21.3.0 [GradleDependency]
     implementation 'com.google.android.gms:play-services-location:21.1.0'
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\build.gradle:121: Warning: A newer version of androidx.recyclerview:recyclerview than 1.3.2 is available: 1.4.0 [GradleDependency]
+    implementation 'androidx.recyclerview:recyclerview:1.3.2'
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
    Explanation for issues of type "GradleDependency":
    This detector looks for usages of libraries where the version you are using
@@ -45,9 +30,12 @@ C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_fake_call.xml:2
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_fake_call.xml:53: Error: Must use app:tint instead of android:tint [UseAppTint from androidx.appcompat]
                 android:tint="@android:color/white"/>
                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:64: Error: Must use app:tint instead of android:tint [UseAppTint from androidx.appcompat]
-                        android:tint="@android:color/white"
-                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:60: Error: Must use app:tint instead of android:tint [UseAppTint from androidx.appcompat]
+                    android:tint="@color/white" />
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:138: Error: Must use app:tint instead of android:tint [UseAppTint from androidx.appcompat]
+                            android:tint="@color/white" />
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
    Explanation for issues of type "UseAppTint":
    ImageView or ImageButton uses android:tint instead of app:tint
@@ -56,9 +44,29 @@ C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:64: Er
    Identifier: androidx.appcompat
    Feedback: https://issuetracker.google.com/issues/new?component=460343
 
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\java\com\example\emerband\AlertActivity.java:208: Warning: Unnecessary; SDK_INT is always >= 21 [ObsoleteSdkInt]
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\java\com\example\emerband\adapters\ContactAdapter.java:59: Warning: It will always be more efficient to use more specific change events if you can. Rely on notifyDataSetChanged as a last resort. [NotifyDataSetChanged]
+        notifyDataSetChanged();
+        ~~~~~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "NotifyDataSetChanged":
+   The RecyclerView adapter's onNotifyDataSetChanged method does not specify
+   what about the data set has changed, forcing any observers to assume that
+   all existing items and structure may no longer be valid. `LayoutManager`s
+   will be forced to fully rebind and relayout all visible views.
+
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\java\com\example\emerband\AlertActivity.java:112: Warning: Unnecessary; SDK_INT is always >= 24 [ObsoleteSdkInt]
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\java\com\example\emerband\AlertActivity.java:208: Warning: Unnecessary; SDK_INT is always >= 24 [ObsoleteSdkInt]
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\java\com\example\emerband\AlertActivity.java:283: Warning: Unnecessary; SDK_INT is never < 24 [ObsoleteSdkInt]
+        if (!hasFlash || Build.VERSION.SDK_INT < Build.VERSION_CODES.M) {
+                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\java\com\example\emerband\utils\ConnectivityUtils.java:35: Warning: Unnecessary; SDK_INT is always >= 24 [ObsoleteSdkInt]
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values-v23: Warning: This folder configuration (v23) is unnecessary; minSdkVersion is 24. Merge all the resources in this folder into values. [ObsoleteSdkInt]
 
    Explanation for issues of type "ObsoleteSdkInt":
    This check flags version checks that are not necessary, because the
@@ -72,12 +80,6 @@ C:\Users\Abhay\Desktop\EmerBand\app\src\main\java\com\example\emerband\AlertActi
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_fake_call.xml:42: Warning: This tag and its children can be replaced by one <TextView/> and a compound drawable [UseCompoundDrawables]
         <LinearLayout
          ~~~~~~~~~~~~
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:52: Warning: This tag and its children can be replaced by one <TextView/> and a compound drawable [UseCompoundDrawables]
-                <LinearLayout
-                 ~~~~~~~~~~~~
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:133: Warning: This tag and its children can be replaced by one <TextView/> and a compound drawable [UseCompoundDrawables]
-                    <LinearLayout
-                     ~~~~~~~~~~~~
 
    Explanation for issues of type "UseCompoundDrawables":
    A LinearLayout which contains an ImageView and a TextView can be more
@@ -108,6 +110,9 @@ C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_alert.xml:7: Wa
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_fake_call.xml:6: Warning: Possible overdraw: Root element paints background @android:color/black with a theme that also paints a background (inferred theme is @style/Theme_AppCompat_NoActionBar) [Overdraw]
     android:background="@android:color/black">
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:8: Warning: Possible overdraw: Root element paints background @color/black with a theme that also paints a background (inferred theme is @style/Theme.EmerBand) [Overdraw]
+    android:background="@color/black"
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
    Explanation for issues of type "Overdraw":
    If you set a background drawable on a root view, then you should use a
@@ -148,9 +153,6 @@ C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\colors.xml:16: Warning: 
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\colors.xml:17: Warning: The resource R.color.gray_light appears to be unused [UnusedResources]
     <color name="gray_light">#EEEEEE</color>
            ~~~~~~~~~~~~~~~~~
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\colors.xml:18: Warning: The resource R.color.gray_dark appears to be unused [UnusedResources]
-    <color name="gray_dark">#424242</color>
-           ~~~~~~~~~~~~~~~~
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\colors.xml:21: Warning: The resource R.color.success appears to be unused [UnusedResources]
     <color name="success">#4CAF50</color>
            ~~~~~~~~~~~~~~
@@ -160,13 +162,25 @@ C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\colors.xml:23: Warning: 
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\colors.xml:24: Warning: The resource R.color.info appears to be unused [UnusedResources]
     <color name="info">#2196F3</color>
            ~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\colors.xml:27: Warning: The resource R.color.red appears to be unused [UnusedResources]
+    <color name="red">#F44336</color>
+           ~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\colors.xml:30: Warning: The resource R.color.lavender appears to be unused [UnusedResources]
+    <color name="lavender">#E5CBFF</color>
+           ~~~~~~~~~~~~~~~
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\drawable\default_caller_image.xml:2: Warning: The resource R.drawable.default_caller_image appears to be unused [UnusedResources]
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
+^
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\drawable\delete_button_background.xml:2: Warning: The resource R.drawable.delete_button_background appears to be unused [UnusedResources]
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
 ^
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\drawable\green_circle_button.xml:2: Warning: The resource R.drawable.green_circle_button appears to be unused [UnusedResources]
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
 ^
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\drawable\ic_battery_full.xml:2: Warning: The resource R.drawable.ic_battery_full appears to be unused [UnusedResources]
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+^
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\drawable\ic_bluetooth_disabled.xml:2: Warning: The resource R.drawable.ic_bluetooth_disabled appears to be unused [UnusedResources]
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
 ^
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\drawable\ic_bug.xml:2: Warning: The resource R.drawable.ic_bug appears to be unused [UnusedResources]
@@ -193,27 +207,72 @@ C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\drawable\ic_shield.xml:2: Warni
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\drawable\ic_sos.xml:2: Warning: The resource R.drawable.ic_sos appears to be unused [UnusedResources]
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
 ^
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\item_emergency_contact.xml:2: Warning: The resource R.layout.item_emergency_contact appears to be unused [UnusedResources]
+<com.google.android.material.card.MaterialCardView
+^
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\drawable\red_circle_button.xml:2: Warning: The resource R.drawable.red_circle_button appears to be unused [UnusedResources]
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
 ^
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:6: Warning: The resource R.string.emergency appears to be unused [UnusedResources]
     <string name="emergency">Emergency</string>
             ~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:7: Warning: The resource R.string.emergency_button appears to be unused [UnusedResources]
+    <string name="emergency_button">Emergency Button</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:10: Warning: The resource R.string.status_title appears to be unused [UnusedResources]
+    <string name="status_title">Status</string>
+            ~~~~~~~~~~~~~~~~~~~
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:11: Warning: The resource R.string.status_bluetooth_description appears to be unused [UnusedResources]
     <string name="status_bluetooth_description">Bluetooth Status</string>
             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:12: Warning: The resource R.string.status_bluetooth_disabled appears to be unused [UnusedResources]
+    <string name="status_bluetooth_disabled">Bluetooth is disabled</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:13: Warning: The resource R.string.status_battery_description appears to be unused [UnusedResources]
     <string name="status_battery_description">Battery Status</string>
             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:14: Warning: The resource R.string.status_bluetooth_icon appears to be unused [UnusedResources]
+    <string name="status_bluetooth_icon">Bluetooth Status</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:15: Warning: The resource R.string.status_battery_icon appears to be unused [UnusedResources]
     <string name="status_battery_icon">Battery Status</string>
             ~~~~~~~~~~~~~~~~~~~~~~~~~~
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:18: Warning: The resource R.string.emergency_features appears to be unused [UnusedResources]
     <string name="emergency_features">Emergency Features</string>
             ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:19: Warning: The resource R.string.emergency_features_title appears to be unused [UnusedResources]
+    <string name="emergency_features_title">Emergency Features</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:25: Warning: The resource R.string.settings appears to be unused [UnusedResources]
+    <string name="settings">Settings</string>
+            ~~~~~~~~~~~~~~~
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:28: Warning: The resource R.string.debug_tools_title appears to be unused [UnusedResources]
     <string name="debug_tools_title">Debug Tools</string>
             ~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:29: Warning: The resource R.string.debug_tools appears to be unused [UnusedResources]
+    <string name="debug_tools">Debug Tools</string>
+            ~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:30: Warning: The resource R.string.debug_tools_expand appears to be unused [UnusedResources]
+    <string name="debug_tools_expand">Expand/Collapse Debug Tools</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:31: Warning: The resource R.string.test_emergency appears to be unused [UnusedResources]
+    <string name="test_emergency">Test Emergency</string>
+            ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:32: Warning: The resource R.string.test_fake_call appears to be unused [UnusedResources]
+    <string name="test_fake_call">Test Fake Call</string>
+            ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:33: Warning: The resource R.string.test_cyber_cell appears to be unused [UnusedResources]
+    <string name="test_cyber_cell">Test Cyber Cell</string>
+            ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:35: Warning: The resource R.string.test_offline appears to be unused [UnusedResources]
+    <string name="test_offline">TEST OFFLINE MODE</string>
+            ~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:36: Warning: The resource R.string.test_emergency_call appears to be unused [UnusedResources]
+    <string name="test_emergency_call">Test Emergency Call</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:37: Warning: The resource R.string.test_location appears to be unused [UnusedResources]
+    <string name="test_location">Test Location</string>
+            ~~~~~~~~~~~~~~~~~~~~
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:40: Warning: The resource R.string.msg_emergency appears to be unused [UnusedResources]
     <string name="msg_emergency">Emergency Alert Triggered</string>
             ~~~~~~~~~~~~~~~~~~~~
@@ -232,6 +291,9 @@ C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:44: Warning:
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:45: Warning: The resource R.string.msg_crash appears to be unused [UnusedResources]
     <string name="msg_crash">Testing Crash Recovery</string>
             ~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:51: Warning: The resource R.string.emergency_contacts_description appears to be unused [UnusedResources]
+    <string name="emergency_contacts_description">Add emergency contacts who will be notified when you trigger an alert.</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:62: Warning: The resource R.string.emergency_caller appears to be unused [UnusedResources]
     <string name="emergency_caller">Emergency Contact</string>
             ~~~~~~~~~~~~~~~~~~~~~~~
@@ -295,9 +357,15 @@ C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:94: Warning:
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:95: Warning: The resource R.string.offline_mode_cancel appears to be unused [UnusedResources]
     <string name="offline_mode_cancel">Cancel</string>
             ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:105: Warning: The resource R.string.enter_contact_details appears to be unused [UnusedResources]
+    <string name="enter_contact_details">Enter contact details</string>
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\styles.xml:4: Warning: The resource R.style.AppTheme appears to be unused [UnusedResources]
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
            ~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\styles.xml:32: Warning: The resource R.style.PopupMenuStyle appears to be unused [UnusedResources]
+    <style name="PopupMenuStyle" parent="ThemeOverlay.AppCompat.Light">
+           ~~~~~~~~~~~~~~~~~~~~~
 
    Explanation for issues of type "UnusedResources":
    Unused resources make applications larger and slow down builds.
@@ -353,6 +421,15 @@ C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_fake_call.xml:4
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_fake_call.xml:66: Warning: Missing contentDescription attribute on image [ContentDescription]
     <com.google.android.material.floatingactionbutton.FloatingActionButton
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:55: Warning: Missing contentDescription attribute on image [ContentDescription]
+                <ImageView
+                 ~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:133: Warning: Missing contentDescription attribute on image [ContentDescription]
+                        <ImageView
+                         ~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:232: Warning: Missing contentDescription attribute on image [ContentDescription]
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
    Explanation for issues of type "ContentDescription":
    Non-textual widgets like ImageViews and ImageButtons should use the
@@ -382,6 +459,45 @@ C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_fake_call.xml:3
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_fake_call.xml:59: Warning: Hardcoded string "00:00", should use @string resource [HardcodedText]
                 android:text="00:00"
                 ~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:42: Warning: Hardcoded string "Status", should use @string resource [HardcodedText]
+                android:text="Status"
+                ~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:67: Warning: Hardcoded string "Bluetooth Status", should use @string resource [HardcodedText]
+                    android:text="Bluetooth Status"
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:75: Warning: Hardcoded string "Emergency Features", should use @string resource [HardcodedText]
+                android:text="Emergency Features"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:91: Warning: Hardcoded string "EMERGENCY CONTACTS", should use @string resource [HardcodedText]
+                    android:text="EMERGENCY CONTACTS"
+                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:101: Warning: Hardcoded string "SETTINGS", should use @string resource [HardcodedText]
+                    android:text="SETTINGS"
+                    ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:144: Warning: Hardcoded string "Debug Tools", should use @string resource [HardcodedText]
+                            android:text="Debug Tools"
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:161: Warning: Hardcoded string "Test Emergency", should use @string resource [HardcodedText]
+                            android:text="Test Emergency"
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:171: Warning: Hardcoded string "Emergency Call", should use @string resource [HardcodedText]
+                            android:text="Emergency Call"
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:181: Warning: Hardcoded string "Cyber Cell", should use @string resource [HardcodedText]
+                            android:text="Cyber Cell"
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:191: Warning: Hardcoded string "Location", should use @string resource [HardcodedText]
+                            android:text="Location"
+                            ~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:201: Warning: Hardcoded string "Test Fake Call", should use @string resource [HardcodedText]
+                            android:text="Test Fake Call"
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:211: Warning: Hardcoded string "Test Alert", should use @string resource [HardcodedText]
+                            android:text="Test Alert"
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:221: Warning: Hardcoded string "Test Offline", should use @string resource [HardcodedText]
+                            android:text="Test Offline"
+                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\dialog_emergency.xml:11: Warning: Hardcoded string "Emergency Alert", should use @string resource [HardcodedText]
         android:text="Emergency Alert"
         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -394,6 +510,9 @@ C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\dialog_emergency.xml:35:
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\dialog_emergency.xml:43: Warning: Hardcoded string "Proceed", should use @string resource [HardcodedText]
             android:text="Proceed" />
             ~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\item_emergency_contact.xml:46: Warning: Hardcoded string "Delete contact", should use @string resource [HardcodedText]
+            android:contentDescription="Delete contact"
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
    Explanation for issues of type "HardcodedText":
    Hardcoding text attributes directly in layout files is bad for several
@@ -409,4 +528,4 @@ C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\dialog_emergency.xml:43:
    There are quickfixes to automatically extract this hardcoded string into a
    resource lookup.
 
-3 errors, 80 warnings (21 errors, 39 warnings filtered by baseline lint-baseline.xml)
+4 errors, 121 warnings (16 errors, 39 warnings filtered by baseline lint-baseline.xml)

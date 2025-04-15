@@ -42,6 +42,11 @@ import java.util.List;
 
 import androidx.annotation.NonNull;
 
+import com.example.emerband.database.DatabaseHelper;
+import com.example.emerband.models.Contact;
+import android.location.Location;
+import android.location.LocationManager;
+
 public class MainActivity extends AppCompatActivity {
     
     private static final String TAG = "MainActivity";
@@ -75,10 +80,10 @@ public class MainActivity extends AppCompatActivity {
     private LinearLayout debugContent;
     private FloatingActionButton fabEmergency;
     private MaterialCardView debugCard;
-    private Button btnTestEmergency;
     private Button btnTestFakeCall;
     private Button btnTestAlert;
     private Button btnTestOffline;
+    private Button btnTestEmergency;
     private Toolbar toolbar;
 
     // Additional UI Elements
@@ -86,14 +91,28 @@ public class MainActivity extends AppCompatActivity {
     private Button btnCyberCell;
     private Button btnLocation;
     private Button btnSettings;
+    private Button btnEmergencyContacts;
 
     private boolean isAlertPlaying = false;
     private MediaPlayer sirenMediaPlayer;
+
+    private static final int PERMISSION_SEND_SMS = 123;
+    private static final int PERMISSION_CALL_PHONE = 124;
+    private static final int PERMISSION_LOCATION = 125;
+    private static final int PERMISSION_BLUETOOTH = 126;
+    private static final int PERMISSION_CAMERA = 127;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        
+        // Set up the toolbar
+        toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setDisplayShowTitleEnabled(true);
+        }
         
         // Enable test mode for development
         TestingUtils.setTestMode(true);
@@ -101,8 +120,6 @@ public class MainActivity extends AppCompatActivity {
         
         try {
             initializeViews();
-            setupToolbar();
-            checkPermissions();
             setupClickListeners();
             showDebugSection();
             
@@ -117,248 +134,75 @@ public class MainActivity extends AppCompatActivity {
     
     private void initializeViews() {
         try {
-            ivBluetoothStatus = findViewById(R.id.ivBluetoothStatus);
+            // Initialize status views
             tvBluetoothStatus = findViewById(R.id.tvBluetoothStatus);
-            
-            // Debug views
+            ivBluetoothStatus = findViewById(R.id.ivBluetoothStatus);
+
+            // Initialize emergency features buttons
+            btnEmergencyContacts = findViewById(R.id.btnEmergencyContacts);
+            btnSettings = findViewById(R.id.btnSettings);
+
+            // Initialize debug tools views
+            debugCard = findViewById(R.id.debugCard);
             debugHeader = findViewById(R.id.debugHeader);
             debugContent = findViewById(R.id.debugContent);
             ivDebugExpand = findViewById(R.id.ivDebugExpand);
-            
-            // Initialize debug tools views
-            View debugHeaderView = findViewById(R.id.debugHeader);
-            View debugContentView = findViewById(R.id.debugContent);
-            
-            // Set up debug tools expand/collapse
-            debugHeaderView.setOnClickListener(v -> {
-                boolean isExpanded = debugContentView.getVisibility() == View.VISIBLE;
-                debugContentView.setVisibility(isExpanded ? View.GONE : View.VISIBLE);
-                ivDebugExpand.setRotation(isExpanded ? 0 : 180);
-            });
-            
-            // Initialize emergency feature buttons
+            btnTestEmergency = findViewById(R.id.btnTestEmergency);
             btnEmergencyCall = findViewById(R.id.btnEmergencyCall);
             btnCyberCell = findViewById(R.id.btnCyberCell);
             btnLocation = findViewById(R.id.btnLocation);
-            btnSettings = findViewById(R.id.btnSettings);
-            
-            // Initialize debug buttons
-            btnTestEmergency = findViewById(R.id.btnTestEmergency);
             btnTestFakeCall = findViewById(R.id.btnTestFakeCall);
             btnTestAlert = findViewById(R.id.btnTestAlert);
             btnTestOffline = findViewById(R.id.btnTestOffline);
-            toolbar = findViewById(R.id.toolbar);
-            
-            // Initialize emergency feature button
+
+            // Initialize FAB
             fabEmergency = findViewById(R.id.fabEmergency);
         } catch (Exception e) {
             throw new RuntimeException("Failed to initialize views: " + e.getMessage(), e);
         }
     }
     
-    private void setupToolbar() {
-        try {
-            setSupportActionBar(toolbar);
-            if (getSupportActionBar() != null) {
-                getSupportActionBar().setTitle(R.string.app_name);
-            }
-        } catch (Exception e) {
-            Toast.makeText(this, "Error setting up toolbar: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-        }
-    }
-    
-    private void checkPermissions() {
-        try {
-            boolean allPermissionsGranted = true;
-            
-            // Check basic permissions
-            for (String permission : requiredPermissions) {
-                if (ContextCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED) {
-                    allPermissionsGranted = false;
-                    break;
-                }
-            }
-            
-            // Check Android 12+ specific permissions
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-                for (String permission : androidSPermissions) {
-                    if (ContextCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED) {
-                        allPermissionsGranted = false;
-                        break;
-                    }
-                }
-            }
-            
-            if (!allPermissionsGranted) {
-                // Request all necessary permissions
-                String[] permissions = Build.VERSION.SDK_INT >= Build.VERSION_CODES.S
-                        ? combineArrays(requiredPermissions, androidSPermissions)
-                        : requiredPermissions;
-                        
-                ActivityCompat.requestPermissions(this, permissions, PERMISSION_REQUEST_CODE);
-            } else {
-                startBLEService();
-            }
-        } catch (Exception e) {
-            Toast.makeText(this, "Error checking permissions: " + e.getMessage(), Toast.LENGTH_LONG).show();
-            Log.e(TAG, "Error checking permissions", e);
-        }
-    }
-    
-    private String[] combineArrays(String[] arr1, String[] arr2) {
-        String[] result = new String[arr1.length + arr2.length];
-        System.arraycopy(arr1, 0, result, 0, arr1.length);
-        System.arraycopy(arr2, 0, result, arr1.length, arr2.length);
-        return result;
-    }
-    
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        
-        if (requestCode == PERMISSION_REQUEST_CODE) {
-            boolean allGranted = true;
-            for (int result : grantResults) {
-                if (result != PackageManager.PERMISSION_GRANTED) {
-                    allGranted = false;
-                    break;
-                }
-            }
-            
-            if (allGranted) {
-                startBLEService();
-            } else {
-                Snackbar.make(findViewById(android.R.id.content),
-                        "Required permissions not granted. Some features may not work.",
-                        Snackbar.LENGTH_LONG).show();
-            }
-        }
-    }
-    
     private void setupClickListeners() {
-        // Emergency Call Button
-        btnEmergencyCall.setOnClickListener(v -> {
-            try {
-                Intent callIntent = new Intent(Intent.ACTION_CALL);
-                callIntent.setData(Uri.parse("tel:112"));
-                if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
-                    startActivity(callIntent);
-                } else {
-                    Toast.makeText(this, "Call permission required", Toast.LENGTH_SHORT).show();
-                    checkPermissions();
-                }
-            } catch (Exception e) {
-                Toast.makeText(this, "Error making emergency call: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                Log.e(TAG, "Error making emergency call", e);
-            }
-        });
+        try {
+            // Debug Tools expand/collapse
+            debugHeader.setOnClickListener(v -> {
+                boolean isExpanded = debugContent.getVisibility() == View.VISIBLE;
+                debugContent.setVisibility(isExpanded ? View.GONE : View.VISIBLE);
+                ivDebugExpand.animate()
+                    .rotation(isExpanded ? 0 : 180)
+                    .setDuration(200)
+                    .start();
+            });
 
-        // Cyber Cell Button
-        btnCyberCell.setOnClickListener(v -> {
-            try {
-                EmergencyUtils.makeCyberCellCall(this);
-            } catch (Exception e) {
-                Toast.makeText(this, "Error calling cyber cell: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                Log.e(TAG, "Error calling cyber cell", e);
-            }
-        });
-
-        // Location Button
-        btnLocation.setOnClickListener(v -> {
-            try {
-                EmergencyUtils.getCurrentLocation(this, location -> {
-                    String locationStr = "Latitude: " + location.getLatitude() + 
-                                      "\nLongitude: " + location.getLongitude();
-                    new AlertDialog.Builder(this)
-                        .setTitle("Current Location")
-                        .setMessage(locationStr)
-                        .setPositiveButton("OK", null)
-                        .show();
-                });
-            } catch (Exception e) {
-                Toast.makeText(this, "Error getting location: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                Log.e(TAG, "Error getting location", e);
-            }
-        });
-
-        // Test Emergency Button
-        btnTestEmergency.setOnClickListener(v -> {
-            try {
-                Intent callIntent = new Intent(Intent.ACTION_CALL);
-                callIntent.setData(Uri.parse("tel:112"));
-                if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
-                    startActivity(callIntent);
-                } else {
-                    Toast.makeText(this, "Call permission required", Toast.LENGTH_SHORT).show();
-                    checkPermissions();
-                }
-            } catch (Exception e) {
-                Toast.makeText(this, "Error making emergency call: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                Log.e(TAG, "Error making emergency call", e);
-            }
-        });
-
-        // Fake Call Button
-        btnTestFakeCall.setOnClickListener(v -> {
-            try {
-                if (EmergencyUtils.isPlayingFakeCall()) {
-                    EmergencyUtils.stopFakeCall();
-                    Toast.makeText(this, "Fake call stopped", Toast.LENGTH_SHORT).show();
-                } else {
-                    EmergencyUtils.playFakeCall(this);
-                    Intent intent = new Intent(this, FakeCallActivity.class);
+            // Emergency Contacts button
+            btnEmergencyContacts.setOnClickListener(v -> {
+                try {
+                    Intent intent = new Intent(this, EmergencyContactsActivity.class);
                     startActivity(intent);
+                } catch (Exception e) {
+                    Toast.makeText(this, "Error opening Emergency Contacts: " + e.getMessage(), 
+                        Toast.LENGTH_SHORT).show();
                 }
-            } catch (Exception e) {
-                Toast.makeText(this, "Error with fake call: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                Log.e(TAG, "Error with fake call", e);
-            }
-        });
+            });
 
-        // Alert Button
-        btnTestAlert.setOnClickListener(v -> {
-            try {
-                if (isAlertPlaying) {
-                    stopSiren();
-                    btnTestAlert.setText(R.string.test_alert);
-                    isAlertPlaying = false;
-                } else {
-                    startSiren();
-                    btnTestAlert.setText(R.string.stop_alert);
-                    isAlertPlaying = true;
+            // Settings button
+            btnSettings.setOnClickListener(v -> {
+                try {
+                    Intent intent = new Intent(this, SettingsActivity.class);
+                    startActivity(intent);
+                } catch (Exception e) {
+                    Toast.makeText(this, "Error opening Settings: " + e.getMessage(), 
+                        Toast.LENGTH_SHORT).show();
                 }
-            } catch (Exception e) {
-                Toast.makeText(this, "Error with alert: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                Log.e(TAG, "Error with alert", e);
-            }
-        });
+            });
 
-        // Offline Mode Button
-        btnTestOffline.setOnClickListener(v -> {
-            try {
-                new AlertDialog.Builder(this)
-                    .setTitle("Enable Airplane Mode")
-                    .setMessage("Please enable airplane mode to test offline functionality")
-                    .setPositiveButton("Open Settings", (dialog, which) -> {
-                        EmergencyUtils.toggleAirplaneMode(this);
-                    })
-                    .setNegativeButton("Cancel", null)
-                    .show();
-            } catch (Exception e) {
-                Toast.makeText(this, "Error toggling airplane mode: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                Log.e(TAG, "Error toggling airplane mode", e);
-            }
-        });
+            // Debug buttons click listeners
+            setupDebugButtonListeners();
 
-        // Emergency FAB
-        fabEmergency.setOnClickListener(v -> {
-            try {
-                handleEmergency();
-            } catch (Exception e) {
-                Toast.makeText(this, "Error handling emergency: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                Log.e(TAG, "Error handling emergency", e);
-            }
-        });
+        } catch (Exception e) {
+            Toast.makeText(this, "Error setting up click listeners: " + e.getMessage(), 
+                Toast.LENGTH_SHORT).show();
+        }
     }
     
     private void showDebugSection() {
@@ -555,5 +399,130 @@ public class MainActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         stopSiren();
+    }
+
+    private void setupDebugButtonListeners() {
+        // Test Emergency Button
+        btnTestEmergency.setOnClickListener(v -> {
+            try {
+                // Check for SMS permission
+                if (ContextCompat.checkSelfPermission(this, Manifest.permission.SEND_SMS)
+                        != PackageManager.PERMISSION_GRANTED) {
+                    ActivityCompat.requestPermissions(this,
+                            new String[]{Manifest.permission.SEND_SMS},
+                            PERMISSION_SEND_SMS);
+                    return;
+                }
+
+                // Send emergency SMS directly
+                EmergencyUtils.sendEmergencyMessage(this, "");
+
+            } catch (Exception e) {
+                Toast.makeText(this, "Error sending emergency messages: " + e.getMessage(), 
+                    Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // Emergency Call Button
+        btnEmergencyCall.setOnClickListener(v -> {
+            try {
+                Intent callIntent = new Intent(Intent.ACTION_CALL);
+                callIntent.setData(Uri.parse("tel:112"));
+                startActivity(callIntent);
+            } catch (Exception e) {
+                Toast.makeText(this, "Error making emergency call: " + e.getMessage(), 
+                    Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // Cyber Cell Button
+        btnCyberCell.setOnClickListener(v -> {
+            try {
+                EmergencyUtils.makeCyberCellCall(this);
+            } catch (Exception e) {
+                Toast.makeText(this, "Error calling cyber cell: " + e.getMessage(), 
+                    Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // Location Button
+        btnLocation.setOnClickListener(v -> {
+            try {
+                EmergencyUtils.getCurrentLocation(this, location -> {
+                    String locationStr = "Latitude: " + location.getLatitude() + 
+                                      "\nLongitude: " + location.getLongitude();
+                    new AlertDialog.Builder(this)
+                        .setTitle("Current Location")
+                        .setMessage(locationStr)
+                        .setPositiveButton("OK", null)
+                        .show();
+                });
+            } catch (Exception e) {
+                Toast.makeText(this, "Error getting location: " + e.getMessage(), 
+                    Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // Test Fake Call Button
+        btnTestFakeCall.setOnClickListener(v -> {
+            try {
+                if (EmergencyUtils.isPlayingFakeCall()) {
+                    EmergencyUtils.stopFakeCall();
+                    Toast.makeText(this, "Fake call stopped", Toast.LENGTH_SHORT).show();
+                } else {
+                    EmergencyUtils.playFakeCall(this);
+                    Intent intent = new Intent(this, FakeCallActivity.class);
+                    startActivity(intent);
+                }
+            } catch (Exception e) {
+                Toast.makeText(this, "Error with fake call: " + e.getMessage(), 
+                    Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // Alert Button
+        btnTestAlert.setOnClickListener(v -> {
+            try {
+                if (isAlertPlaying) {
+                    stopSiren();
+                    btnTestAlert.setText(R.string.test_alert);
+                    isAlertPlaying = false;
+                } else {
+                    startSiren();
+                    btnTestAlert.setText(R.string.stop_alert);
+                    isAlertPlaying = true;
+                }
+            } catch (Exception e) {
+                Toast.makeText(this, "Error with alert: " + e.getMessage(), 
+                    Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // Offline Mode Button
+        btnTestOffline.setOnClickListener(v -> {
+            try {
+                new AlertDialog.Builder(this)
+                    .setTitle("Enable Airplane Mode")
+                    .setMessage("Please enable airplane mode to test offline functionality")
+                    .setPositiveButton("Open Settings", (dialog, which) -> {
+                        EmergencyUtils.toggleAirplaneMode(this);
+                    })
+                    .setNegativeButton("Cancel", null)
+                    .show();
+            } catch (Exception e) {
+                Toast.makeText(this, "Error toggling airplane mode: " + e.getMessage(), 
+                    Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        // Emergency FAB
+        fabEmergency.setOnClickListener(v -> {
+            try {
+                handleEmergency();
+            } catch (Exception e) {
+                Toast.makeText(this, "Error handling emergency: " + e.getMessage(), 
+                    Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 } 

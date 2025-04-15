@@ -5,21 +5,21 @@
     android:id="@+id/coordinatorLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/black"
     android:fitsSystemWindows="true">
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?attr/colorPrimary"
-        app:elevation="0dp">
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:theme="@style/ThemeOverlay.AppCompat.Light"
-            app:popupTheme="@style/PopupMenuStyle"
-            app:titleTextColor="@android:color/black"/>
+            android:background="@color/accent_light"
+            app:titleTextColor="@color/black"
+            app:title="EmerBand" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -39,97 +39,86 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/status_title"
-                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:text="Status"
+                android:textColor="@color/white"
+                android:textSize="18sp"
                 android:layout_marginBottom="8dp"/>
 
-            <com.google.android.material.card.MaterialCardView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                app:cardElevation="1dp">
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:padding="8dp"
+                android:background="@drawable/rounded_background_dark">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
+                <ImageView
+                    android:id="@+id/ivBluetoothStatus"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_bluetooth"
+                    android:tint="@color/white" />
+
+                <TextView
+                    android:id="@+id/tvBluetoothStatus"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:padding="16dp">
-
-                    <ImageView
-                        android:id="@+id/ivBluetoothStatus"
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:src="@drawable/ic_bluetooth_disabled"
-                        android:tint="@android:color/white"
-                        android:contentDescription="@string/status_bluetooth_icon"/>
-
-                    <TextView
-                        android:id="@+id/tvBluetoothStatus"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:layout_marginStart="8dp"
-                        android:text="@string/status_bluetooth_disabled"/>
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
+                    android:layout_marginStart="8dp"
+                    android:text="Bluetooth Status"
+                    android:textColor="@color/white" />
+            </LinearLayout>
 
             <!-- Emergency Features Section -->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/emergency_features_title"
-                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:text="Emergency Features"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:layout_marginTop="16dp"
                 android:layout_marginBottom="8dp"/>
 
-            <com.google.android.material.card.MaterialCardView
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                app:cardElevation="1dp">
+                android:orientation="vertical"
+                android:layout_marginTop="8dp">
 
-                <LinearLayout
+                <Button
+                    android:id="@+id/btnEmergencyContacts"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp">
+                    android:text="EMERGENCY CONTACTS"
+                    android:layout_marginBottom="8dp"
+                    android:backgroundTint="@color/accent_light"
+                    android:textColor="@color/black"
+                    style="@style/Widget.MaterialComponents.Button" />
 
-                    <Button
-                        android:id="@+id/btnEmergencyContacts"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/emergency_contacts"
-                        android:drawableStart="@drawable/ic_contacts"
-                        android:drawablePadding="8dp"/>
+                <Button
+                    android:id="@+id/btnSettings"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="SETTINGS"
+                    android:backgroundTint="@color/accent_light"
+                    android:textColor="@color/black"
+                    style="@style/Widget.MaterialComponents.Button" />
+            </LinearLayout>
 
-                    <Button
-                        android:id="@+id/btnSettings"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="@string/settings"
-                        android:drawableStart="@drawable/ic_settings"
-                        android:drawablePadding="8dp"
-                        android:layout_marginTop="8dp"/>
-
-                </LinearLayout>
-
-            </com.google.android.material.card.MaterialCardView>
-
+            <!-- Debug Tools Section -->
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/debugCard"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                app:cardElevation="1dp">
+                android:layout_marginTop="16dp"
+                app:cardBackgroundColor="@color/gray_dark"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <!-- Debug Tools Header -->
                     <LinearLayout
                         android:id="@+id/debugHeader"
                         android:layout_width="match_parent"
@@ -138,95 +127,104 @@
                         android:gravity="center_vertical"
                         android:padding="16dp"
                         android:clickable="true"
-                        android:focusable="true">
+                        android:focusable="true"
+                        android:background="?attr/selectableItemBackground">
 
                         <ImageView
                             android:id="@+id/ivDebugExpand"
                             android:layout_width="24dp"
                             android:layout_height="24dp"
                             android:src="@drawable/ic_expand_more"
-                            android:contentDescription="@string/debug_tools_expand"/>
+                            android:tint="@color/white" />
 
                         <TextView
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
                             android:layout_marginStart="8dp"
-                            android:text="@string/debug_tools"
-                            android:textAppearance="?attr/textAppearanceSubtitle1"/>
-
+                            android:text="Debug Tools"
+                            android:textColor="@color/white"
+                            android:textSize="16sp"/>
                     </LinearLayout>
 
-                    <!-- Debug Tools Content -->
                     <LinearLayout
                         android:id="@+id/debugContent"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="vertical"
-                        android:padding="16dp"
-                        android:visibility="gone">
-
-                        <Button
-                            android:id="@+id/btnEmergencyCall"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/test_emergency_call"
-                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
-
-                        <Button
-                            android:id="@+id/btnCyberCell"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/test_cyber_cell"
-                            android:layout_marginTop="8dp"
-                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
-
-                        <Button
-                            android:id="@+id/btnLocation"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="@string/test_location"
-                            android:layout_marginTop="8dp"
-                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+                        android:visibility="gone"
+                        android:padding="16dp">
 
                         <Button
                             android:id="@+id/btnTestEmergency"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/test_emergency"
-                            android:layout_marginTop="8dp"
-                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+                            android:text="Test Emergency"
+                            android:layout_marginBottom="8dp"
+                            android:backgroundTint="@color/accent_light"
+                            android:textColor="@color/black"
+                            style="@style/Widget.MaterialComponents.Button" />
+
+                        <Button
+                            android:id="@+id/btnEmergencyCall"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Emergency Call"
+                            android:layout_marginBottom="8dp"
+                            android:backgroundTint="@color/accent_light"
+                            android:textColor="@color/black"
+                            style="@style/Widget.MaterialComponents.Button" />
+
+                        <Button
+                            android:id="@+id/btnCyberCell"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Cyber Cell"
+                            android:layout_marginBottom="8dp"
+                            android:backgroundTint="@color/accent_light"
+                            android:textColor="@color/black"
+                            style="@style/Widget.MaterialComponents.Button" />
+
+                        <Button
+                            android:id="@+id/btnLocation"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Location"
+                            android:layout_marginBottom="8dp"
+                            android:backgroundTint="@color/accent_light"
+                            android:textColor="@color/black"
+                            style="@style/Widget.MaterialComponents.Button" />
 
                         <Button
                             android:id="@+id/btnTestFakeCall"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/test_fake_call"
-                            android:layout_marginTop="8dp"
-                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+                            android:text="Test Fake Call"
+                            android:layout_marginBottom="8dp"
+                            android:backgroundTint="@color/accent_light"
+                            android:textColor="@color/black"
+                            style="@style/Widget.MaterialComponents.Button" />
 
                         <Button
                             android:id="@+id/btnTestAlert"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/test_alert"
-                            android:layout_marginTop="8dp"
-                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+                            android:text="Test Alert"
+                            android:layout_marginBottom="8dp"
+                            android:backgroundTint="@color/accent_light"
+                            android:textColor="@color/black"
+                            style="@style/Widget.MaterialComponents.Button" />
 
                         <Button
                             android:id="@+id/btnTestOffline"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="@string/test_offline"
-                            android:layout_marginTop="8dp"
-                            style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
-
+                            android:text="Test Offline"
+                            android:backgroundTint="@color/accent_light"
+                            android:textColor="@color/black"
+                            style="@style/Widget.MaterialComponents.Button" />
                     </LinearLayout>
-
                 </LinearLayout>
-
             </com.google.android.material.card.MaterialCardView>
-
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
@@ -237,9 +235,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
-        android:tint="@android:color/black"
-        android:backgroundTint="?attr/colorPrimary"
-        app:srcCompat="@drawable/ic_emergency"
-        android:contentDescription="@string/emergency_button"/>
+        android:src="@drawable/ic_emergency"
+        app:tint="@color/white"
+        app:backgroundTint="@color/error" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout> 

@@ -636,7 +636,7 @@
     <color name="abc_search_url_text_selected">@android:color/black</color>
     <color name="accent">#FF4081</color>
     <color name="accent_dark">#F50057</color>
-    <color name="accent_light">#FF80AB</color>
+    <color name="accent_light">#E5CBFF</color>
     <color name="accent_material_dark">@color/material_deep_teal_200</color>
     <color name="accent_material_light">@color/material_deep_teal_500</color>
     <color name="androidx_core_ripple_material_light">#1f000000</color>
@@ -719,6 +719,7 @@
     <color name="highlighted_text_material_light">#66009688</color>
     <color name="ic_launcher_background">#FFFFFF</color>
     <color name="info">#2196F3</color>
+    <color name="lavender">#E5CBFF</color>
     <color name="m3_ref_palette_black">#ff000000</color>
     <color name="m3_ref_palette_error0">#ff000000</color>
     <color name="m3_ref_palette_error10">#ff410e0b</color>
@@ -974,6 +975,7 @@
     <color name="primary_text_default_material_light">#de000000</color>
     <color name="primary_text_disabled_material_dark">#4Dffffff</color>
     <color name="primary_text_disabled_material_light">#39000000</color>
+    <color name="red">#F44336</color>
     <color name="ripple_material_dark">#33ffffff</color>
     <color name="ripple_material_light">#1f000000</color>
     <color name="secondary_text_default_material_dark">#b3ffffff</color>
@@ -1834,6 +1836,7 @@
     <item name="ghost_view" type="id"/>
     <item name="ghost_view_holder" type="id"/>
     <item name="home" type="id"/>
+    <item name="is_pooling_container_tag" type="id"/>
     <item name="item_touch_helper_previous_elevation" type="id"/>
     <item name="line1" type="id"/>
     <item name="line3" type="id"/>
@@ -1854,6 +1857,7 @@
     <item name="navigation_bar_item_large_label_view" type="id"/>
     <item name="navigation_bar_item_small_label_view" type="id"/>
     <item name="parent_matrix" type="id"/>
+    <item name="pooling_container_listener_holder_tag" type="id"/>
     <item name="progress_circular" type="id"/>
     <item name="progress_horizontal" type="id"/>
     <item name="report_drawn" type="id"/>
@@ -2020,6 +2024,7 @@
     <string name="call_notification_ongoing_text">Ongoing call</string>
     <string name="call_notification_screening_text">Screening an incoming call</string>
     <string name="caller_photo">Caller Photo</string>
+    <string name="cancel">Cancel</string>
     <string name="character_counter_content_description">Characters entered %1$d of %2$d</string>
     <string name="character_counter_overflowed_content_description">Character limit exceeded %1$d of %2$d</string>
     <string name="character_counter_pattern" translatable="false">%1$d/%2$d</string>
@@ -2042,11 +2047,14 @@
     <string name="common_open_on_phone">Open on phone</string>
     <string name="common_signin_button_text">Sign in</string>
     <string name="common_signin_button_text_long">Sign in with Google</string>
+    <string name="contact_added">Contact added successfully</string>
+    <string name="contact_name">Contact Name</string>
     <string name="cyber_cell_description">Cyber Cell settings and information will be displayed here.</string>
     <string name="debug_tools">Debug Tools</string>
     <string name="debug_tools_expand">Expand/Collapse Debug Tools</string>
     <string name="debug_tools_title">Debug Tools</string>
     <string name="decline_call">Decline Call</string>
+    <string name="delete_contact">Delete contact</string>
     <string name="emergency">Emergency</string>
     <string name="emergency_alert">EMERGENCY ALERT</string>
     <string name="emergency_alert_message">Emergency alert has been activated.\nHelp is on the way!</string>
@@ -2055,14 +2063,16 @@
     <string name="emergency_cancel">Cancel</string>
     <string name="emergency_confirm">Yes, Send Alert</string>
     <string name="emergency_contacts">Emergency Contacts</string>
-    <string name="emergency_contacts_description">Manage your emergency contacts here. Add, edit, or remove contacts that will be notified in case of an emergency.</string>
+    <string name="emergency_contacts_description">Add emergency contacts who will be notified when you trigger an alert.</string>
     <string name="emergency_features">Emergency Features</string>
     <string name="emergency_features_title">Emergency Features</string>
     <string name="emergency_message">Do you want to trigger the emergency alert?</string>
     <string name="emergency_title">Emergency Alert</string>
+    <string name="enter_contact_details">Enter contact details</string>
     <string description="Screen reader announcement for when a checkbox is on error. [CHAR LIMIT=NONE]" name="error_a11y_label">
     Error: invalid
   </string>
+    <string name="error_adding_contact">Error adding contact</string>
     <string name="error_icon_content_description">Error</string>
     <string name="exposed_dropdown_menu_content_description">Show dropdown menu</string>
     <string name="fab_transformation_scrim_behavior" translatable="false">com.google.android.material.transformation.FabTransformationScrimBehavior</string>
@@ -2071,6 +2081,7 @@
     <string description="Content description for an icon that appears in the title area of a dialog" name="icon_content_description">Dialog Icon</string>
     <string name="incoming_call">Incoming Call</string>
     <string name="incoming_mobile_call">Mobile Call</string>
+    <string name="invalid_phone">Invalid phone number</string>
     <string name="item_view_role_description">Tab</string>
     <string name="location_error">Could not get location</string>
     <string name="location_settings_description">Configure your location settings and permissions here.</string>
@@ -2191,6 +2202,7 @@
     <string name="mtrl_switch_track_path" translatable="false">M0,16 A16,16 0 0,1 16,0 H36 A16,16 0 0,1 36,32 H16 A16,16 0 0,1 0,16</string>
     <string description="Button text to indicate that the widget will ignore the user&apos;s selection [CHAR_LIMIT=16]" name="mtrl_timepicker_cancel">Cancel</string>
     <string description="Button text to indicate that the widget will save the user&apos;s selection [CHAR_LIMIT=16]" name="mtrl_timepicker_confirm">OK</string>
+    <string name="name_required">Name is required</string>
     <string name="offline_mode_cancel">Cancel</string>
     <string name="offline_mode_enable">Open Settings</string>
     <string name="offline_mode_message">Please enable airplane mode to test offline functionality</string>
@@ -2211,7 +2223,10 @@
     <string name="permissionx_request_install_packages">Install unknown apps</string>
     <string name="permissionx_system_alert_window">Display over other apps</string>
     <string name="permissionx_write_settings">Modify system settings</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="phone_required">Phone number is required</string>
     <string name="reject_call">Reject Call</string>
+    <string name="save">Save</string>
     <string name="search_menu_title">Search</string>
     <string name="searchbar_scrolling_view_behavior" translatable="false">
     com.google.android.material.search.SearchBar$ScrollingViewBehavior

@@ -368,17 +368,17 @@
     </incident>
 
     <incident
-        id="UseCompoundDrawables"
+        id="HardcodedText"
         severity="warning"
-        message="This tag and its children can be replaced by one `&lt;TextView/>` and a compound drawable">
+        message="Hardcoded string &quot;Status&quot;, should use `@string` resource">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-            line="52"
-            column="18"
-            startOffset="2110"
-            endLine="52"
-            endColumn="30"
-            endOffset="2122"/>
+            line="42"
+            column="17"
+            startOffset="1657"
+            endLine="42"
+            endColumn="38"
+            endOffset="1678"/>
     </incident>
 
     <incident
@@ -387,10 +387,10 @@
         message="Must use `app:tint` instead of `android:tint`">
         <fix-composite>
             <fix-attribute
-                description="Set tint=&quot;@android:color/white&quot;"
+                description="Set tint=&quot;@color/white&quot;"
                 namespace="http://schemas.android.com/apk/res-auto"
                 attribute="tint"
-                value="@android:color/white"/>
+                value="@color/white"/>
             <fix-attribute
                 description="Delete tint"
                 namespace="http://schemas.android.com/apk/res/android"
@@ -398,26 +398,289 @@
         </fix-composite>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-            line="64"
-            column="25"
-            startOffset="2690"
-            endLine="64"
-            endColumn="60"
-            endOffset="2725"/>
+            line="60"
+            column="21"
+            startOffset="2437"
+            endLine="60"
+            endColumn="48"
+            endOffset="2464"/>
     </incident>
 
     <incident
-        id="UseCompoundDrawables"
+        id="ContentDescription"
         severity="warning"
-        message="This tag and its children can be replaced by one `&lt;TextView/>` and a compound drawable">
+        message="Missing `contentDescription` attribute on image">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set contentDescription"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="contentDescription"
+                value="TODO"
+                dot="4"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAccessibility=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAccessibility"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="55"
+            column="18"
+            startOffset="2192"
+            endLine="55"
+            endColumn="27"
+            endOffset="2201"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Bluetooth Status&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="67"
+            column="21"
+            startOffset="2744"
+            endLine="67"
+            endColumn="52"
+            endOffset="2775"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Emergency Features&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="75"
+            column="17"
+            startOffset="3060"
+            endLine="75"
+            endColumn="50"
+            endOffset="3093"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;EMERGENCY CONTACTS&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="91"
+            column="21"
+            startOffset="3743"
+            endLine="91"
+            endColumn="54"
+            endOffset="3776"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;SETTINGS&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="101"
+            column="21"
+            startOffset="4238"
+            endLine="101"
+            endColumn="44"
+            endOffset="4261"/>
+    </incident>
+
+    <incident
+        id="UseAppTint"
+        severity="error"
+        message="Must use `app:tint` instead of `android:tint`">
+        <fix-composite>
+            <fix-attribute
+                description="Set tint=&quot;@color/white&quot;"
+                namespace="http://schemas.android.com/apk/res-auto"
+                attribute="tint"
+                value="@color/white"/>
+            <fix-attribute
+                description="Delete tint"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="tint"/>
+        </fix-composite>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="138"
+            column="29"
+            startOffset="6008"
+            endLine="138"
+            endColumn="56"
+            endOffset="6035"/>
+    </incident>
+
+    <incident
+        id="ContentDescription"
+        severity="warning"
+        message="Missing `contentDescription` attribute on image">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set contentDescription"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="contentDescription"
+                value="TODO"
+                dot="4"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAccessibility=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAccessibility"
+                value="no"/>
+        </fix-alternatives>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
             line="133"
-            column="22"
-            startOffset="5743"
+            column="26"
+            startOffset="5725"
             endLine="133"
-            endColumn="34"
-            endOffset="5755"/>
+            endColumn="35"
+            endOffset="5734"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Debug Tools&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="144"
+            column="29"
+            startOffset="6298"
+            endLine="144"
+            endColumn="55"
+            endOffset="6324"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Test Emergency&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="161"
+            column="29"
+            startOffset="7110"
+            endLine="161"
+            endColumn="58"
+            endOffset="7139"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Emergency Call&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="171"
+            column="29"
+            startOffset="7678"
+            endLine="171"
+            endColumn="58"
+            endOffset="7707"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Cyber Cell&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="181"
+            column="29"
+            startOffset="8242"
+            endLine="181"
+            endColumn="54"
+            endOffset="8267"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Location&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="191"
+            column="29"
+            startOffset="8801"
+            endLine="191"
+            endColumn="52"
+            endOffset="8824"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Test Fake Call&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="201"
+            column="29"
+            startOffset="9362"
+            endLine="201"
+            endColumn="58"
+            endOffset="9391"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Test Alert&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="211"
+            column="29"
+            startOffset="9926"
+            endLine="211"
+            endColumn="54"
+            endOffset="9951"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Test Offline&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="221"
+            column="29"
+            startOffset="10488"
+            endLine="221"
+            endColumn="56"
+            endOffset="10515"/>
+    </incident>
+
+    <incident
+        id="ContentDescription"
+        severity="warning"
+        message="Missing `contentDescription` attribute on image">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set contentDescription"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="contentDescription"
+                value="TODO"
+                dot="4"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAccessibility=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAccessibility"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="232"
+            column="6"
+            startOffset="10949"
+            endLine="232"
+            endColumn="75"
+            endOffset="11018"/>
     </incident>
 
     <incident
@@ -547,6 +810,20 @@
     </incident>
 
     <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Delete contact&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/item_emergency_contact.xml"
+            line="46"
+            column="13"
+            startOffset="1776"
+            endLine="46"
+            endColumn="56"
+            endOffset="1819"/>
+    </incident>
+
+    <incident
         id="MonochromeLauncherIcon"
         severity="warning"
         message="The application adaptive icon is missing a monochrome tag">
@@ -577,7 +854,45 @@
     <incident
         id="ObsoleteSdkInt"
         severity="warning"
-        message="Unnecessary; SDK_INT is always >= 21">
+        message="This folder configuration (`v23`) is unnecessary; `minSdkVersion` is 24. Merge all the resources in this folder into `values`.">
+        <fix-data file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values-v23" folderName="values" requiresApi="24"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/values-v23"/>
+    </incident>
+
+    <incident
+        id="NotifyDataSetChanged"
+        severity="warning"
+        message="It will always be more efficient to use more specific change events if you can. Rely on `notifyDataSetChanged` as a last resort.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/adapters/ContactAdapter.java"
+            line="59"
+            column="9"
+            startOffset="1897"
+            endLine="59"
+            endColumn="31"
+            endOffset="1919"/>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; SDK_INT is always >= 24">
+        <fix-data conditional="true"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/AlertActivity.java"
+            line="112"
+            column="13"
+            startOffset="3908"
+            endLine="112"
+            endColumn="59"
+            endOffset="3954"/>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; SDK_INT is always >= 24">
         <fix-data conditional="true"/>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/AlertActivity.java"
@@ -587,6 +902,21 @@
             endLine="208"
             endColumn="74"
             endOffset="6841"/>
+    </incident>
+
+    <incident
+        id="ObsoleteSdkInt"
+        severity="warning"
+        message="Unnecessary; SDK_INT is never &lt; 24">
+        <fix-data conditional="false"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/AlertActivity.java"
+            line="283"
+            column="26"
+            startOffset="9363"
+            endLine="283"
+            endColumn="71"
+            endOffset="9408"/>
     </incident>
 
     <incident
@@ -608,49 +938,18 @@
     </incident>
 
     <incident
-        id="CutPasteId"
+        id="ObsoleteSdkInt"
         severity="warning"
-        message="The id `R.id.debugHeader` has already been looked up in this method; possible cut &amp; paste error?">
+        message="Unnecessary; SDK_INT is always >= 24">
+        <fix-data conditional="true"/>
         <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/MainActivity.java"
-            line="129"
-            column="36"
-            startOffset="4642"
-            endLine="129"
-            endColumn="66"
-            endOffset="4672"/>
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/MainActivity.java"
-            line="124"
-            column="27"
-            startOffset="4396"
-            endLine="124"
-            endColumn="57"
-            endOffset="4426"
-            message="First usage here"/>
-    </incident>
-
-    <incident
-        id="CutPasteId"
-        severity="warning"
-        message="The id `R.id.debugContent` has already been looked up in this method; possible cut &amp; paste error?">
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/MainActivity.java"
-            line="130"
-            column="37"
-            startOffset="4710"
-            endLine="130"
-            endColumn="68"
-            endOffset="4741"/>
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/MainActivity.java"
-            line="125"
-            column="28"
-            startOffset="4455"
-            endLine="125"
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/utils/ConnectivityUtils.java"
+            line="35"
+            column="13"
+            startOffset="1061"
+            endLine="35"
             endColumn="59"
-            endOffset="4486"
-            message="First usage here"/>
+            endOffset="1107"/>
     </incident>
 
     <incident
@@ -1030,6 +1329,25 @@
     </incident>
 
     <incident
+        id="GradleDependency"
+        severity="warning"
+        message="A newer version of androidx.recyclerview:recyclerview than 1.3.2 is available: 1.4.0">
+        <fix-replace
+            description="Change to 1.4.0"
+            family="Update versions"
+            oldString="1.3.2"
+            replacement="1.4.0"/>
+        <location
+            file="${:app*projectDir}/build.gradle"
+            line="121"
+            column="20"
+            startOffset="3657"
+            endLine="121"
+            endColumn="62"
+            endOffset="3699"/>
+    </incident>
+
+    <incident
         id="Overdraw"
         severity="warning"
         message="Possible overdraw: Root element paints background `@color/error` with a theme that also paints a background (inferred theme is `@style/Theme_AppCompat_NoActionBar`)">
@@ -1055,6 +1373,20 @@
             endLine="6"
             endColumn="46"
             endOffset="336"/>
+    </incident>
+
+    <incident
+        id="Overdraw"
+        severity="warning"
+        message="Possible overdraw: Root element paints background `@color/black` with a theme that also paints a background (inferred theme is `@style/Theme.EmerBand`)">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="8"
+            column="5"
+            startOffset="343"
+            endLine="8"
+            endColumn="38"
+            endOffset="376"/>
     </incident>
 
 </incidents>

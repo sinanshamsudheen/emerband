@@ -48,7 +48,7 @@
     <string name="appbar_scrolling_view_behavior">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
     
     <!-- Emergency Contacts Description -->
-    <string name="emergency_contacts_description">Manage your emergency contacts here. Add, edit, or remove contacts that will be notified in case of an emergency.</string>
+    <string name="emergency_contacts_description">Add emergency contacts who will be notified when you trigger an alert.</string>
     
     <!-- Activity Descriptions -->
     <string name="cyber_cell_description">Cyber Cell settings and information will be displayed here.</string>
@@ -93,4 +93,19 @@
     <string name="offline_mode_message">Please enable airplane mode to test offline functionality</string>
     <string name="offline_mode_enable">Open Settings</string>
     <string name="offline_mode_cancel">Cancel</string>
+    
+    <!-- New Resource -->
+    <string name="delete_contact">Delete contact</string>
+    
+    <!-- Add Contact Dialog -->
+    <string name="contact_name">Contact Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="enter_contact_details">Enter contact details</string>
+    <string name="contact_added">Contact added successfully</string>
+    <string name="error_adding_contact">Error adding contact</string>
+    <string name="name_required">Name is required</string>
+    <string name="phone_required">Phone number is required</string>
+    <string name="invalid_phone">Invalid phone number</string>
 </resources> 

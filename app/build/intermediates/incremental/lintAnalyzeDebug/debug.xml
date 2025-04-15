@@ -1,7 +1,7 @@
 <variant
     name="debug"
     package="com.example.emerband"
-    minSdkVersion="21"
+    minSdkVersion="24"
     targetSdkVersion="34"
     debuggable="true"
     mergedManifest="build\intermediates\merged_manifest\debug\AndroidManifest.xml"

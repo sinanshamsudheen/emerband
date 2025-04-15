@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:2:1-113:12
-INJECTED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:2:1-113:12
-INJECTED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:2:1-113:12
-INJECTED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:2:1-113:12
+ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:2:1-116:12
+INJECTED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:2:1-116:12
+INJECTED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:2:1-116:12
+INJECTED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:2:1-116:12
 MERGED from [com.guolindev.permissionx:permissionx:1.7.1] C:\Users\Abhay\.gradle\caches\transforms-3\f1762a667b792e1a449084fc5d470a28\transformed\jetified-permissionx-1.7.1\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.databinding:viewbinding:8.2.0] C:\Users\Abhay\.gradle\caches\transforms-3\17fbe7d8a48c64081f0a1635390233fe\transformed\jetified-viewbinding-8.2.0\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\Abhay\.gradle\caches\transforms-3\9ed5f16cbcd27bf9ff2227301560040d\transformed\material-1.11.0\AndroidManifest.xml:17:1-24:12
@@ -11,11 +11,12 @@ MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Abhay\.g
 MERGED from [androidx.appcompat:appcompat-resources:1.6.1] C:\Users\Abhay\.gradle\caches\transforms-3\64ee5266bb8eaa2702a6b4ccb056096e\transformed\jetified-appcompat-resources-1.6.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\Abhay\.gradle\caches\transforms-3\1e2f861312ad42faf7384aadd6209d49\transformed\appcompat-1.6.1\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\Abhay\.gradle\caches\transforms-3\aad2e0fecf2eee561e864b669ccc8908\transformed\legacy-support-v4-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Abhay\.gradle\caches\transforms-3\b73440644b1b536bc82995911f401354\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-location:21.1.0] C:\Users\Abhay\.gradle\caches\transforms-3\df529ef6da79d5542856e4ad63f62da8\transformed\jetified-play-services-location-21.1.0\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\Abhay\.gradle\caches\transforms-3\b448a4b039d03095657a943bf4e7c53f\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:16:1-24:12
 MERGED from [com.google.android.gms:play-services-tasks:18.0.2] C:\Users\Abhay\.gradle\caches\transforms-3\d645f769ff8a0d164665548df4071fa0\transformed\jetified-play-services-tasks-18.0.2\AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\Abhay\.gradle\caches\transforms-3\7910a28a2295501891fef3965dec0f62\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:16:1-26:12
+MERGED from [androidx.recyclerview:recyclerview:1.3.2] C:\Users\Abhay\.gradle\caches\transforms-3\125b2b5a5abf0f38aaef2fbd041541ad\transformed\recyclerview-1.3.2\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager2:viewpager2:1.1.0-beta02] C:\Users\Abhay\.gradle\caches\transforms-3\85de26920b8a8d1125a78b4350827e91\transformed\jetified-viewpager2-1.1.0-beta02\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.fragment:fragment:1.6.2] C:\Users\Abhay\.gradle\caches\transforms-3\5169af741b7be1b2fab9431338707024\transformed\fragment-1.6.2\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\Abhay\.gradle\caches\transforms-3\48d5dc9a293383493ca55102717255ed\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.2.0] C:\Users\Abhay\.gradle\caches\transforms-3\7df98b2eb17a7ea7aa917f8e120b0da9\transformed\coordinatorlayout-1.2.0\AndroidManifest.xml:17:1-24:12
@@ -33,7 +34,6 @@ MERGED from [androidx.viewpager:viewpager:1.0.0] C:\Users\Abhay\.gradle\caches\t
 MERGED from [androidx.work:work-runtime-ktx:2.9.0] C:\Users\Abhay\.gradle\caches\transforms-3\1cbaef7f69881dcfbb0afad62df5d1a0\transformed\work-runtime-ktx-2.9.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\Abhay\.gradle\caches\transforms-3\325f6767ec2a02f277c040c84c2835de\transformed\work-runtime-2.9.0\AndroidManifest.xml:17:1-145:12
 MERGED from [androidx.media:media:1.0.0] C:\Users\Abhay\.gradle\caches\transforms-3\9a55396e17753c208afbb020ced326bf\transformed\media-1.0.0\AndroidManifest.xml:17:1-22:12
-MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\Abhay\.gradle\caches\transforms-3\5c8fc46914125d0119d65d9e22f7426c\transformed\recyclerview-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\Abhay\.gradle\caches\transforms-3\63c6bb76457f3f251008892635b9c8e9\transformed\slidingpanelayout-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.customview:customview:1.1.0] C:\Users\Abhay\.gradle\caches\transforms-3\476694efd41c7b37e0328704cec2ea7f\transformed\customview-1.1.0\AndroidManifest.xml:17:1-24:12
 MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] C:\Users\Abhay\.gradle\caches\transforms-3\2a8cc1a0374191bafdddb35e7f9ab9d8\transformed\swiperefreshlayout-1.0.0\AndroidManifest.xml:17:1-22:12
@@ -51,6 +51,7 @@ MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0] C:\Users\Abhay\.g
 MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.7.0] C:\Users\Abhay\.gradle\caches\transforms-3\afa90ff02c15d0557315e459b581d35e\transformed\jetified-lifecycle-runtime-ktx-2.7.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.7.0] C:\Users\Abhay\.gradle\caches\transforms-3\dbfb97bde472e2e96d8ec5f61e8a77ea\transformed\jetified-lifecycle-livedata-ktx-2.7.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0] C:\Users\Abhay\.gradle\caches\transforms-3\25d5abb5bc05a1f7d4930b6e3d18cbd2\transformed\jetified-lifecycle-viewmodel-savedstate-2.7.0\AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\Abhay\.gradle\caches\transforms-3\8f37d78aa98f96dfaa576897f7b4e7d9\transformed\jetified-customview-poolingcontainer-1.0.0\AndroidManifest.xml:17:1-23:12
 MERGED from [androidx.core:core-ktx:1.12.0] C:\Users\Abhay\.gradle\caches\transforms-3\c97e5ceaf73ba9acc05068e4bf364d45\transformed\jetified-core-ktx-1.12.0\AndroidManifest.xml:2:1-7:12
 MERGED from [androidx.room:room-runtime:2.6.1] C:\Users\Abhay\.gradle\caches\transforms-3\58216954261a6b2d01d5759377530731\transformed\room-runtime-2.6.1\AndroidManifest.xml:17:1-31:12
 MERGED from [androidx.room:room-ktx:2.6.1] C:\Users\Abhay\.gradle\caches\transforms-3\f1b0c1a27cd7f538fb4c2853b7d5ada3\transformed\jetified-room-ktx-2.6.1\AndroidManifest.xml:17:1-22:12
@@ -147,27 +148,31 @@ uses-permission#android.permission.FLASHLIGHT
 ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:39:5-69
 	android:name
 		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:39:22-66
+uses-permission#android.permission.READ_CONTACTS
+ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:42:5-72
+	android:name
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:42:22-69
 uses-feature#android.hardware.bluetooth_le
-ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:42:5-90
+ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:45:5-90
 	android:required
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:42:64-87
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:45:64-87
 	android:name
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:42:19-63
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:45:19-63
 uses-feature#android.hardware.bluetooth
-ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:43:5-87
+ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:46:5-87
 	android:required
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:43:61-84
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:46:61-84
 	android:name
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:43:19-60
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:46:19-60
 uses-feature#android.hardware.camera.flash
-ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:44:5-91
+ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:47:5-91
 	android:required
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:44:64-88
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:47:64-88
 	android:name
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:44:19-63
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:47:19-63
 application
-ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:46:5-111:19
-INJECTED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:46:5-111:19
+ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:49:5-114:19
+INJECTED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:49:5-114:19
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\Abhay\.gradle\caches\transforms-3\9ed5f16cbcd27bf9ff2227301560040d\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\Abhay\.gradle\caches\transforms-3\9ed5f16cbcd27bf9ff2227301560040d\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Abhay\.gradle\caches\transforms-3\aad55ffcee58ccc831f05327108ea51c\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -201,117 +206,117 @@ MERGED from [androidx.startup:startup-runtime:1.1.1] C:\Users\Abhay\.gradle\cach
 	android:appComponentFactory
 		ADDED from [androidx.core:core:1.12.0] C:\Users\Abhay\.gradle\caches\transforms-3\8775ed491970576126584cf24be3fe11\transformed\core-1.12.0\AndroidManifest.xml:28:18-86
 	android:supportsRtl
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:51:9-35
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:54:9-35
 	android:label
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:49:9-41
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:52:9-41
 	android:roundIcon
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:50:9-54
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:53:9-54
 	android:icon
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:48:9-43
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:51:9-43
 	android:allowBackup
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:47:9-35
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:50:9-35
 	android:theme
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:52:9-46
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:55:9-46
 activity#com.example.emerband.MainActivity
-ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:54:9-61:20
+ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:57:9-64:20
 	android:exported
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:56:13-36
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:59:13-36
 	android:name
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:55:13-41
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:58:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:57:13-60:29
+ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:60:13-63:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:58:17-69
+ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:61:17-69
 	android:name
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:58:25-66
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:61:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:59:17-77
+ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:62:17-77
 	android:name
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:59:27-74
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:62:27-74
 activity#com.example.emerband.EmergencyContactsActivity
-ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:63:9-66:58
+ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:66:9-69:58
 	android:parentActivityName
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:66:13-55
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:69:13-55
 	android:label
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:65:13-50
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:68:13-50
 	android:name
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:64:13-54
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:67:13-54
 activity#com.example.emerband.SettingsActivity
-ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:68:9-71:58
+ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:71:9-74:58
 	android:parentActivityName
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:71:13-55
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:74:13-55
 	android:label
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:70:13-50
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:73:13-50
 	android:name
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:69:13-45
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:72:13-45
 activity#com.example.emerband.FakeCallActivity
-ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:73:9-76:52
+ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:76:9-79:52
 	android:screenOrientation
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:76:13-49
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:79:13-49
 	android:theme
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:75:13-63
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:78:13-63
 	android:name
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:74:13-45
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:77:13-45
 activity#com.example.emerband.AlertActivity
-ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:78:9-81:52
+ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:81:9-84:52
 	android:screenOrientation
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:81:13-49
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:84:13-49
 	android:theme
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:80:13-63
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:83:13-63
 	android:name
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:79:13-42
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:82:13-42
 service#com.example.emerband.BLEBackgroundService
-ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:84:9-87:40
+ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:87:9-90:40
 	android:enabled
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:86:13-35
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:89:13-35
 	android:exported
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:87:13-37
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:90:13-37
 	android:name
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:85:13-49
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:88:13-49
 receiver#com.example.emerband.BootCompletedReceiver
-ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:90:9-98:20
+ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:93:9-101:20
 	android:enabled
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:92:13-35
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:95:13-35
 	android:exported
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:93:13-36
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:96:13-36
 	android:name
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:91:13-50
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:94:13-50
 intent-filter#action:name:android.intent.action.BOOT_COMPLETED+category:name:android.intent.category.DEFAULT
-ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:94:13-97:29
+ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:97:13-100:29
 action#android.intent.action.BOOT_COMPLETED
-ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:95:17-79
+ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:98:17-79
 	android:name
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:95:25-76
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:98:25-76
 category#android.intent.category.DEFAULT
-ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:96:17-76
+ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:99:17-76
 	android:name
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:96:27-73
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:99:27-73
 activity#com.example.emerband.CyberCellActivity
-ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:100:9-102:58
-	android:parentActivityName
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:102:13-55
-	android:label
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:101:13-46
-	android:name
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:100:19-52
-activity#com.example.emerband.LocationSettingsActivity
 ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:103:9-105:58
 	android:parentActivityName
 		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:105:13-55
 	android:label
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:104:13-50
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:104:13-46
 	android:name
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:103:19-59
-activity#com.example.emerband.CyberCellSettingsActivity
-ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:106:9-109:40
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:103:19-52
+activity#com.example.emerband.LocationSettingsActivity
+ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:106:9-108:58
 	android:parentActivityName
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:107:13-55
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:108:13-55
 	android:label
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:108:13-48
-	android:exported
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:109:13-37
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:107:13-50
 	android:name
-		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:106:19-60
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:106:19-59
+activity#com.example.emerband.CyberCellSettingsActivity
+ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:109:9-112:40
+	android:parentActivityName
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:110:13-55
+	android:label
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:111:13-48
+	android:exported
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:112:13-37
+	android:name
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:109:19-60
 uses-sdk
 INJECTED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml
@@ -330,8 +335,6 @@ MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\Abhay\.gradle\caches\t
 MERGED from [androidx.appcompat:appcompat:1.6.1] C:\Users\Abhay\.gradle\caches\transforms-3\1e2f861312ad42faf7384aadd6209d49\transformed\appcompat-1.6.1\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\Abhay\.gradle\caches\transforms-3\aad2e0fecf2eee561e864b669ccc8908\transformed\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-v4:1.0.0] C:\Users\Abhay\.gradle\caches\transforms-3\aad2e0fecf2eee561e864b669ccc8908\transformed\legacy-support-v4-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Abhay\.gradle\caches\transforms-3\b73440644b1b536bc82995911f401354\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.viewpager2:viewpager2:1.0.0] C:\Users\Abhay\.gradle\caches\transforms-3\b73440644b1b536bc82995911f401354\transformed\jetified-viewpager2-1.0.0\AndroidManifest.xml:20:5-22:41
 MERGED from [com.google.android.gms:play-services-location:21.1.0] C:\Users\Abhay\.gradle\caches\transforms-3\df529ef6da79d5542856e4ad63f62da8\transformed\jetified-play-services-location-21.1.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-location:21.1.0] C:\Users\Abhay\.gradle\caches\transforms-3\df529ef6da79d5542856e4ad63f62da8\transformed\jetified-play-services-location-21.1.0\AndroidManifest.xml:5:5-44
 MERGED from [com.google.android.gms:play-services-base:18.1.0] C:\Users\Abhay\.gradle\caches\transforms-3\b448a4b039d03095657a943bf4e7c53f\transformed\jetified-play-services-base-18.1.0\AndroidManifest.xml:18:5-43
@@ -340,6 +343,10 @@ MERGED from [com.google.android.gms:play-services-tasks:18.0.2] C:\Users\Abhay\.
 MERGED from [com.google.android.gms:play-services-tasks:18.0.2] C:\Users\Abhay\.gradle\caches\transforms-3\d645f769ff8a0d164665548df4071fa0\transformed\jetified-play-services-tasks-18.0.2\AndroidManifest.xml:4:5-43
 MERGED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\Abhay\.gradle\caches\transforms-3\7910a28a2295501891fef3965dec0f62\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:18:5-43
 MERGED from [com.google.android.gms:play-services-basement:18.1.0] C:\Users\Abhay\.gradle\caches\transforms-3\7910a28a2295501891fef3965dec0f62\transformed\jetified-play-services-basement-18.1.0\AndroidManifest.xml:18:5-43
+MERGED from [androidx.recyclerview:recyclerview:1.3.2] C:\Users\Abhay\.gradle\caches\transforms-3\125b2b5a5abf0f38aaef2fbd041541ad\transformed\recyclerview-1.3.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.3.2] C:\Users\Abhay\.gradle\caches\transforms-3\125b2b5a5abf0f38aaef2fbd041541ad\transformed\recyclerview-1.3.2\AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.1.0-beta02] C:\Users\Abhay\.gradle\caches\transforms-3\85de26920b8a8d1125a78b4350827e91\transformed\jetified-viewpager2-1.1.0-beta02\AndroidManifest.xml:5:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.1.0-beta02] C:\Users\Abhay\.gradle\caches\transforms-3\85de26920b8a8d1125a78b4350827e91\transformed\jetified-viewpager2-1.1.0-beta02\AndroidManifest.xml:5:5-44
 MERGED from [androidx.fragment:fragment:1.6.2] C:\Users\Abhay\.gradle\caches\transforms-3\5169af741b7be1b2fab9431338707024\transformed\fragment-1.6.2\AndroidManifest.xml:20:5-44
 MERGED from [androidx.fragment:fragment:1.6.2] C:\Users\Abhay\.gradle\caches\transforms-3\5169af741b7be1b2fab9431338707024\transformed\fragment-1.6.2\AndroidManifest.xml:20:5-44
 MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] C:\Users\Abhay\.gradle\caches\transforms-3\48d5dc9a293383493ca55102717255ed\transformed\legacy-support-core-ui-1.0.0\AndroidManifest.xml:20:5-44
@@ -374,8 +381,6 @@ MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\Abhay\.gradle\caches\tra
 MERGED from [androidx.work:work-runtime:2.9.0] C:\Users\Abhay\.gradle\caches\transforms-3\325f6767ec2a02f277c040c84c2835de\transformed\work-runtime-2.9.0\AndroidManifest.xml:21:5-44
 MERGED from [androidx.media:media:1.0.0] C:\Users\Abhay\.gradle\caches\transforms-3\9a55396e17753c208afbb020ced326bf\transformed\media-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.media:media:1.0.0] C:\Users\Abhay\.gradle\caches\transforms-3\9a55396e17753c208afbb020ced326bf\transformed\media-1.0.0\AndroidManifest.xml:20:5-44
-MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\Abhay\.gradle\caches\transforms-3\5c8fc46914125d0119d65d9e22f7426c\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
-MERGED from [androidx.recyclerview:recyclerview:1.1.0] C:\Users\Abhay\.gradle\caches\transforms-3\5c8fc46914125d0119d65d9e22f7426c\transformed\recyclerview-1.1.0\AndroidManifest.xml:20:5-22:41
 MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\Abhay\.gradle\caches\transforms-3\63c6bb76457f3f251008892635b9c8e9\transformed\slidingpanelayout-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] C:\Users\Abhay\.gradle\caches\transforms-3\63c6bb76457f3f251008892635b9c8e9\transformed\slidingpanelayout-1.0.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.customview:customview:1.1.0] C:\Users\Abhay\.gradle\caches\transforms-3\476694efd41c7b37e0328704cec2ea7f\transformed\customview-1.1.0\AndroidManifest.xml:20:5-22:41
@@ -410,6 +415,8 @@ MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.7.0] C:\Users\Abhay\.gr
 MERGED from [androidx.lifecycle:lifecycle-livedata-ktx:2.7.0] C:\Users\Abhay\.gradle\caches\transforms-3\dbfb97bde472e2e96d8ec5f61e8a77ea\transformed\jetified-lifecycle-livedata-ktx-2.7.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0] C:\Users\Abhay\.gradle\caches\transforms-3\25d5abb5bc05a1f7d4930b6e3d18cbd2\transformed\jetified-lifecycle-viewmodel-savedstate-2.7.0\AndroidManifest.xml:20:5-44
 MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.7.0] C:\Users\Abhay\.gradle\caches\transforms-3\25d5abb5bc05a1f7d4930b6e3d18cbd2\transformed\jetified-lifecycle-viewmodel-savedstate-2.7.0\AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\Abhay\.gradle\caches\transforms-3\8f37d78aa98f96dfaa576897f7b4e7d9\transformed\jetified-customview-poolingcontainer-1.0.0\AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] C:\Users\Abhay\.gradle\caches\transforms-3\8f37d78aa98f96dfaa576897f7b4e7d9\transformed\jetified-customview-poolingcontainer-1.0.0\AndroidManifest.xml:20:5-21:38
 MERGED from [androidx.core:core-ktx:1.12.0] C:\Users\Abhay\.gradle\caches\transforms-3\c97e5ceaf73ba9acc05068e4bf364d45\transformed\jetified-core-ktx-1.12.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.core:core-ktx:1.12.0] C:\Users\Abhay\.gradle\caches\transforms-3\c97e5ceaf73ba9acc05068e4bf364d45\transformed\jetified-core-ktx-1.12.0\AndroidManifest.xml:5:5-44
 MERGED from [androidx.room:room-runtime:2.6.1] C:\Users\Abhay\.gradle\caches\transforms-3\58216954261a6b2d01d5759377530731\transformed\room-runtime-2.6.1\AndroidManifest.xml:21:5-44

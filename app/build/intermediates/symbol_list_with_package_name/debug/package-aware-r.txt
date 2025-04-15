@@ -1447,6 +1447,7 @@ color highlighted_text_material_dark
 color highlighted_text_material_light
 color ic_launcher_background
 color info
+color lavender
 color m3_appbar_overlay_color
 color m3_assist_chip_icon_tint_color
 color m3_assist_chip_stroke_color
@@ -2116,6 +2117,7 @@ color primary_text_default_material_dark
 color primary_text_default_material_light
 color primary_text_disabled_material_dark
 color primary_text_disabled_material_light
+color red
 color ripple_material_dark
 color ripple_material_light
 color secondary_text_default_material_dark
@@ -3047,6 +3049,7 @@ drawable common_google_signin_btn_text_light_focused
 drawable common_google_signin_btn_text_light_normal
 drawable common_google_signin_btn_text_light_normal_background
 drawable default_caller_image
+drawable delete_button_background
 drawable design_fab_background
 drawable design_ic_visibility
 drawable design_ic_visibility_off
@@ -3058,6 +3061,7 @@ drawable green_circle_button
 drawable ic_add
 drawable ic_arrow_back_black_24
 drawable ic_battery_full
+drawable ic_bluetooth
 drawable ic_bluetooth_disabled
 drawable ic_bug
 drawable ic_call
@@ -3071,6 +3075,7 @@ drawable ic_call_end
 drawable ic_clear_black_24
 drawable ic_clock_black_24dp
 drawable ic_contacts
+drawable ic_delete
 drawable ic_emergency
 drawable ic_expand_more
 drawable ic_help
@@ -3171,6 +3176,7 @@ drawable permissionx_ic_install
 drawable permissionx_ic_notification
 drawable permissionx_ic_setting
 drawable red_circle_button
+drawable rounded_background_dark
 drawable test_level_drawable
 drawable tooltip_frame_dark
 drawable tooltip_frame_light
@@ -3278,10 +3284,12 @@ id bounceEnd
 id bounceStart
 id btnCancel
 id btnCyberCell
+id btnDelete
 id btnEmergencyCall
 id btnEmergencyContacts
 id btnLocation
 id btnProceed
+id btnSave
 id btnSettings
 id btnStopAlert
 id btnTestAlert
@@ -3316,6 +3324,8 @@ id collapseActionView
 id compress
 id confirm_button
 id constraint
+id contact_name
+id contact_number
 id container
 id content
 id contentPanel
@@ -3342,6 +3352,7 @@ id decelerate
 id decelerateAndComplete
 id decor_content_parent
 id default_activity_button
+id delete_button
 id deltaRelative
 id dependency_ordering
 id design_bottom_sheet
@@ -3381,6 +3392,8 @@ id endToStart
 id end_padder
 id enterAlways
 id enterAlwaysCollapsed
+id etContactName
+id etPhoneNumber
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -3432,6 +3445,7 @@ id info
 id instructionTextView
 id invisible
 id inward
+id is_pooling_container_tag
 id italic
 id item_touch_helper_previous_elevation
 id ivBluetoothStatus
@@ -3571,6 +3585,7 @@ id permissionIcon
 id permissionText
 id permissionsLayout
 id pin
+id pooling_container_listener_holder_tag
 id position
 id positiveBtn
 id positiveLayout
@@ -3701,6 +3716,8 @@ id transition_scene_layoutid_cache
 id transition_transform
 id triangle
 id tvBluetoothStatus
+id tvContactName
+id tvPhoneNumber
 id unchecked
 id uniform
 id unlabeled
@@ -3865,9 +3882,12 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout dialog_add_contact
 layout dialog_emergency
 layout ime_base_split_test_activity
 layout ime_secondary_split_test_activity
+layout item_contact
+layout item_emergency_contact
 layout m3_alert_dialog
 layout m3_alert_dialog_actions
 layout m3_alert_dialog_title
@@ -3993,6 +4013,7 @@ string call_notification_incoming_text
 string call_notification_ongoing_text
 string call_notification_screening_text
 string caller_photo
+string cancel
 string character_counter_content_description
 string character_counter_overflowed_content_description
 string character_counter_pattern
@@ -4015,11 +4036,14 @@ string common_google_play_services_wear_update_text
 string common_open_on_phone
 string common_signin_button_text
 string common_signin_button_text_long
+string contact_added
+string contact_name
 string cyber_cell_description
 string debug_tools
 string debug_tools_expand
 string debug_tools_title
 string decline_call
+string delete_contact
 string emergency
 string emergency_alert
 string emergency_alert_message
@@ -4033,7 +4057,9 @@ string emergency_features
 string emergency_features_title
 string emergency_message
 string emergency_title
+string enter_contact_details
 string error_a11y_label
+string error_adding_contact
 string error_icon_content_description
 string exposed_dropdown_menu_content_description
 string fab_transformation_scrim_behavior
@@ -4042,6 +4068,7 @@ string hide_bottom_view_on_scroll_behavior
 string icon_content_description
 string incoming_call
 string incoming_mobile_call
+string invalid_phone
 string item_view_role_description
 string location_error
 string location_settings_description
@@ -4156,6 +4183,7 @@ string mtrl_switch_track_decoration_path
 string mtrl_switch_track_path
 string mtrl_timepicker_cancel
 string mtrl_timepicker_confirm
+string name_required
 string offline_mode_cancel
 string offline_mode_enable
 string offline_mode_message
@@ -4176,7 +4204,10 @@ string permissionx_post_notification
 string permissionx_request_install_packages
 string permissionx_system_alert_window
 string permissionx_write_settings
+string phone_number
+string phone_required
 string reject_call
+string save
 string search_menu_title
 string searchbar_scrolling_view_behavior
 string searchview_clear_text_content_description

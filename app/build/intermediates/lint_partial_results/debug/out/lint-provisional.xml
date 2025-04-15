@@ -68,12 +68,12 @@
             value="fullSensor"/>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*manifest*0}"
-            line="76"
+            line="79"
             column="13"
-            startOffset="3293"
-            endLine="76"
+            startOffset="3402"
+            endLine="79"
             endColumn="49"
-            endOffset="3329"/>
+            endOffset="3438"/>
         <map>
             <condition library="false"/>
         </map>
@@ -92,12 +92,12 @@
             value="fullSensor"/>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*manifest*0}"
-            line="81"
+            line="84"
             column="13"
-            startOffset="3475"
-            endLine="81"
+            startOffset="3584"
+            endLine="84"
             endColumn="49"
-            endOffset="3511"/>
+            endOffset="3620"/>
         <map>
             <condition library="false"/>
         </map>
@@ -566,69 +566,21 @@
     </incident>
 
     <incident
-        id="NewApi"
-        severity="error"
-        message="">
-        <fix-data minSdk="fffffffffff00000" requiresApi="ffffffffffc00000"/>
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/CyberCellHandler.kt"
-            line="133"
-            column="38"
-            startOffset="4835"
-            endLine="133"
-            endColumn="54"
-            endOffset="4851"/>
-        <map>
-            <api-levels id="minSdk"
-                value="fffffffffff00000"/>
-            <api-levels id="requiresApi"
-                value="ffffffffffc00000"/>
-            <entry
-                name="message"
-                string="Call requires API level 23 (current min is %1$s): `android.content.Context#getSystemService`"/>
-        </map>
-    </incident>
-
-    <incident
-        id="NewApi"
-        severity="error"
-        message="">
-        <fix-data minSdk="fffffffffff00000" requiresApi="ffffffffffc00000"/>
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/EmergencyHandler.kt"
-            line="181"
-            column="38"
-            startOffset="6103"
-            endLine="181"
-            endColumn="54"
-            endOffset="6119"/>
-        <map>
-            <api-levels id="minSdk"
-                value="fffffffffff00000"/>
-            <api-levels id="requiresApi"
-                value="ffffffffffc00000"/>
-            <entry
-                name="message"
-                string="Call requires API level 23 (current min is %1$s): `android.content.Context#getSystemService`"/>
-        </map>
-    </incident>
-
-    <incident
         id="InlinedApi"
         severity="warning"
         message="">
-        <fix-data minSdk="fffffffffff00000" requiresApi="ffffffffc0000000"/>
+        <fix-data minSdk="ffffffffff800000" requiresApi="ffffffffc0000000"/>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/MainActivity.java"
-            line="66"
+            line="71"
             column="13"
-            startOffset="2464"
-            endLine="66"
+            startOffset="2637"
+            endLine="71"
             endColumn="50"
-            endOffset="2501"/>
+            endOffset="2674"/>
         <map>
             <api-levels id="minSdk"
-                value="fffffffffff00000"/>
+                value="ffffffffff800000"/>
             <api-levels id="requiresApi"
                 value="ffffffffc0000000"/>
             <entry
@@ -641,18 +593,18 @@
         id="InlinedApi"
         severity="warning"
         message="">
-        <fix-data minSdk="fffffffffff00000" requiresApi="ffffffffc0000000"/>
+        <fix-data minSdk="ffffffffff800000" requiresApi="ffffffffc0000000"/>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/MainActivity.java"
-            line="67"
+            line="72"
             column="13"
-            startOffset="2515"
-            endLine="67"
+            startOffset="2688"
+            endLine="72"
             endColumn="47"
-            endOffset="2549"/>
+            endOffset="2722"/>
         <map>
             <api-levels id="minSdk"
-                value="fffffffffff00000"/>
+                value="ffffffffff800000"/>
             <api-levels id="requiresApi"
                 value="ffffffffc0000000"/>
             <entry
@@ -734,7 +686,7 @@
         id="InlinedApi"
         severity="warning"
         message="">
-        <fix-data minSdk="fffffffffff00000" requiresApi="ffffffffc0000000"/>
+        <fix-data minSdk="ffffffffff800000" requiresApi="ffffffffc0000000"/>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/utils/PermissionManager.java"
             line="49"
@@ -745,7 +697,7 @@
             endOffset="1589"/>
         <map>
             <api-levels id="minSdk"
-                value="fffffffffff00000"/>
+                value="ffffffffff800000"/>
             <api-levels id="requiresApi"
                 value="ffffffffc0000000"/>
             <entry
@@ -758,7 +710,7 @@
         id="InlinedApi"
         severity="warning"
         message="">
-        <fix-data minSdk="fffffffffff00000" requiresApi="ffffffffc0000000"/>
+        <fix-data minSdk="ffffffffff800000" requiresApi="ffffffffc0000000"/>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/utils/PermissionManager.java"
             line="50"
@@ -769,7 +721,7 @@
             endOffset="1637"/>
         <map>
             <api-levels id="minSdk"
-                value="fffffffffff00000"/>
+                value="ffffffffff800000"/>
             <api-levels id="requiresApi"
                 value="ffffffffc0000000"/>
             <entry
@@ -782,7 +734,7 @@
         id="InlinedApi"
         severity="warning"
         message="">
-        <fix-data minSdk="fffffffffff00000" requiresApi="fffffffff8000000"/>
+        <fix-data minSdk="ffffffffff800000" requiresApi="fffffffff8000000"/>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/utils/PermissionManager.java"
             line="54"
@@ -793,7 +745,7 @@
             endOffset="1760"/>
         <map>
             <api-levels id="minSdk"
-                value="fffffffffff00000"/>
+                value="ffffffffff800000"/>
             <api-levels id="requiresApi"
                 value="fffffffff8000000"/>
             <entry
@@ -806,79 +758,7 @@
         id="NewApi"
         severity="error"
         message="">
-        <fix-data minSdk="fffffffffff00000" requiresApi="ffffffffffc00000"/>
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/utils/ResourceManager.java"
-            line="278"
-            column="27"
-            startOffset="10015"
-            endLine="278"
-            endColumn="39"
-            endOffset="10027"/>
-        <map>
-            <api-levels id="minSdk"
-                value="fffffffffff00000"/>
-            <api-levels id="requiresApi"
-                value="ffffffffffc00000"/>
-            <entry
-                name="message"
-                string="Call requires API level 23 (current min is %1$s): `android.hardware.camera2.CameraManager#setTorchMode`"/>
-        </map>
-    </incident>
-
-    <incident
-        id="NewApi"
-        severity="error"
-        message="">
-        <fix-data minSdk="fffffffffff00000" requiresApi="ffffffffffc00000"/>
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/utils/ResourceManager.java"
-            line="307"
-            column="27"
-            startOffset="10923"
-            endLine="307"
-            endColumn="39"
-            endOffset="10935"/>
-        <map>
-            <api-levels id="minSdk"
-                value="fffffffffff00000"/>
-            <api-levels id="requiresApi"
-                value="ffffffffffc00000"/>
-            <entry
-                name="message"
-                string="Call requires API level 23 (current min is %1$s): `android.hardware.camera2.CameraManager#setTorchMode`"/>
-        </map>
-    </incident>
-
-    <incident
-        id="NewApi"
-        severity="error"
-        message="">
-        <fix-data minSdk="fffffffffff00000" requiresApi="ffffffffffc00000"/>
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/utils/ResourceManager.java"
-            line="332"
-            column="27"
-            startOffset="11652"
-            endLine="332"
-            endColumn="39"
-            endOffset="11664"/>
-        <map>
-            <api-levels id="minSdk"
-                value="fffffffffff00000"/>
-            <api-levels id="requiresApi"
-                value="ffffffffffc00000"/>
-            <entry
-                name="message"
-                string="Call requires API level 23 (current min is %1$s): `android.hardware.camera2.CameraManager#setTorchMode`"/>
-        </map>
-    </incident>
-
-    <incident
-        id="NewApi"
-        severity="error"
-        message="">
-        <fix-data minSdk="fffffffffff00000" requiresApi="fffffffffe000000"/>
+        <fix-data minSdk="ffffffffff800000" requiresApi="fffffffffe000000"/>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/utils/TestingUtils.java"
             line="159"
@@ -889,7 +769,7 @@
             endOffset="6007"/>
         <map>
             <api-levels id="minSdk"
-                value="fffffffffff00000"/>
+                value="ffffffffff800000"/>
             <api-levels id="requiresApi"
                 value="fffffffffe000000"/>
             <entry

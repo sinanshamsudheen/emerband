@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "com.example.emerband.app-mergeReleaseResources-44:/values-en-rGB/values-en-rGB.xml",
+            "outputFile": "com.example.emerband.app-mergeReleaseResources-45:/values-en-rGB/values-en-rGB.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Abhay\\.gradle\\caches\\transforms-3\\7910a28a2295501891fef3965dec0f62\\transformed\\jetified-play-services-basement-18.1.0\\res\\values-en-rGB\\values.xml",

@@ -23,6 +23,11 @@ import android.location.LocationListener;
 import android.os.Bundle;
 import android.util.Log;
 
+import java.util.List;
+
+import com.example.emerband.models.Contact;
+import com.example.emerband.database.DatabaseHelper;
+
 public class EmergencyUtils {
     private static final String TAG = "EmergencyUtils";
     private static final String EMERGENCY_NUMBER = "112";
@@ -30,6 +35,7 @@ public class EmergencyUtils {
     private static MediaPlayer mediaPlayer;
     private static MediaPlayer fakeCallPlayer;
     private static boolean isPlayingFakeCall = false;
+    private static final String EMERGENCY_MESSAGE = "EMERGENCY: I need immediate assistance! This is an automated emergency alert from EmerBand.";
 
     public static void makeEmergencyCall(Context context) {
         Intent intent = new Intent(Intent.ACTION_CALL);
@@ -82,23 +88,37 @@ public class EmergencyUtils {
     }
 
     public static void sendEmergencyMessage(Context context, String location) {
-        if (TestingUtils.isTestMode()) {
-            Toast.makeText(context, "TEST MODE: Would send message with location: " + location, Toast.LENGTH_LONG).show();
+        // Get contacts from database
+        DatabaseHelper databaseHelper = new DatabaseHelper(context);
+        List<Contact> contacts = databaseHelper.getAllContacts();
+        
+        if (contacts.isEmpty()) {
+            Toast.makeText(context, "No emergency contacts found. Please add contacts in settings.", Toast.LENGTH_LONG).show();
             return;
         }
-
-        SharedPreferences prefs = context.getSharedPreferences("EmerbandPrefs", Context.MODE_PRIVATE);
-        String emergencyContacts = prefs.getString("emergency_contacts", "");
-        String[] contacts = emergencyContacts.split(",");
         
+        String message = "EMERGENCY! I need help!";
+        if (!location.isEmpty()) {
+            message += " My current location is: " + location;
+        }
+        
+        // Send SMS to all contacts
         SmsManager smsManager = SmsManager.getDefault();
-        String message = "EMERGENCY! I need help! My current location is: " + location;
+        int successCount = 0;
         
-        for (String contact : contacts) {
-            if (!contact.isEmpty()) {
-                smsManager.sendTextMessage(contact, null, message, null, null);
+        for (Contact contact : contacts) {
+            try {
+                smsManager.sendTextMessage(contact.getPhone(), null, message, null, null);
+                Log.d(TAG, "SMS sent to: " + contact.getName() + " (" + contact.getPhone() + ")");
+                successCount++;
+            } catch (Exception e) {
+                Log.e(TAG, "Failed to send SMS to " + contact.getName(), e);
+                Toast.makeText(context, "Failed to send SMS to " + contact.getName(), Toast.LENGTH_SHORT).show();
             }
         }
+        
+        // Show confirmation message
+        Toast.makeText(context, "Emergency triggered! Message sent to " + successCount + " contact(s)", Toast.LENGTH_LONG).show();
     }
 
     public static void playFakeCall(Context context) {
@@ -173,6 +193,20 @@ public class EmergencyUtils {
             return false;
         }
         return true;
+    }
+
+    public static void sendEmergencySMS(Context context, List<Contact> emergencyContacts) {
+        SmsManager smsManager = SmsManager.getDefault();
+        for (Contact contact : emergencyContacts) {
+            try {
+                smsManager.sendTextMessage(contact.getPhone(), null, EMERGENCY_MESSAGE, null, null);
+                Log.d(TAG, "SMS sent to " + contact.getName());
+            } catch (Exception e) {
+                Log.e(TAG, "Failed to send SMS to " + contact.getName(), e);
+                Toast.makeText(context, "Failed to send SMS to " + contact.getName(), Toast.LENGTH_SHORT).show();
+            }
+        }
+        Toast.makeText(context, "Emergency alerts sent to all contacts", Toast.LENGTH_SHORT).show();
     }
 
     public interface LocationCallback {
