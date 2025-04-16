@@ -57,7 +57,7 @@
                     android:layout_width="24dp"
                     android:layout_height="24dp"
                     android:src="@drawable/ic_bluetooth"
-                    android:tint="@color/white" />
+                    app:tint="@color/white" />
 
                 <TextView
                     android:id="@+id/tvBluetoothStatus"
@@ -98,7 +98,7 @@
                     android:id="@+id/btnSettings"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="SETTINGS"
+                    android:text="About"
                     android:backgroundTint="@color/accent_light"
                     android:textColor="@color/black"
                     style="@style/Widget.MaterialComponents.Button" />
@@ -228,15 +228,5 @@
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fabEmergency"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="16dp"
-        android:src="@drawable/ic_emergency"
-        app:tint="@color/white"
-        app:backgroundTint="@color/error" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout> 

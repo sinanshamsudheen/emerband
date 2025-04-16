@@ -4,7 +4,7 @@
             "outputFile": "com.example.emerband.app-mergeDebugResources-45:/values-zh/values-zh.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\USER\\.gradle\\caches\\transforms-3\\f1762a667b792e1a449084fc5d470a28\\transformed\\jetified-permissionx-1.7.1\\res\\values-zh\\values-zh.xml",
+                    "source": "C:\\Users\\Abhay\\.gradle\\caches\\transforms-3\\f1762a667b792e1a449084fc5d470a28\\transformed\\jetified-permissionx-1.7.1\\res\\values-zh\\values-zh.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8",
                         "startColumns": "4,4,4,4,4,4,4",

@@ -660,6 +660,10 @@
     <color name="cardview_light_background">#FFFFFFFF</color>
     <color name="cardview_shadow_end_color">#03000000</color>
     <color name="cardview_shadow_start_color">#37000000</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
     <color name="common_google_signin_btn_text_dark_default">@android:color/white</color>
     <color name="common_google_signin_btn_text_dark_disabled">#1F000000</color>
     <color name="common_google_signin_btn_text_dark_focused">@android:color/black</color>
@@ -2005,11 +2009,16 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with <ns2:g example="Mail" id="application_name">%s</ns2:g></string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
+    <string name="about">About</string>
+    <string name="action_about">About</string>
     <string name="add_contact">Add Contact</string>
     <string name="androidx_startup" translatable="false">androidx.startup</string>
     <string name="answer_call">Answer Call</string>
+    <string name="app_description">EmerBand is a comprehensive emergency solution designed to keep you safe. It works with a BLE smart watch to monitor your safety and trigger emergency protocols when needed. The app provides multiple safety features including fake calls, connecting cyber cell, and sending emergency alerts with GPS coordinates.</string>
     <string name="app_name">EmerBand</string>
+    <string name="app_settings">App Settings</string>
     <string name="appbar_scrolling_view_behavior">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
+    <string name="background_location">Allow Background Location</string>
     <string name="bottom_sheet_behavior" translatable="false">com.google.android.material.bottomsheet.BottomSheetBehavior</string>
     <string description="A description of an accessibility action to collapse the bottom sheet [CHAR LIMIT=NONE]" name="bottomsheet_action_collapse">Collapse the bottom sheet</string>
     <string description="A description of an accessibility action to expand the bottom sheet [CHAR LIMIT=NONE]" name="bottomsheet_action_expand">Expand the bottom sheet</string>
@@ -2028,6 +2037,7 @@
     <string name="character_counter_content_description">Characters entered %1$d of %2$d</string>
     <string name="character_counter_overflowed_content_description">Character limit exceeded %1$d of %2$d</string>
     <string name="character_counter_pattern" translatable="false">%1$d/%2$d</string>
+    <string name="check_location_permissions">Check Location Permissions</string>
     <string name="clear_text_end_icon_content_description">Clear text</string>
     <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Enable</string>
     <string msgid="227660514972886228" name="common_google_play_services_enable_text"><ns2:g id="app_name">%1$s</ns2:g> won\'t work unless you enable Google Play services.</string>
@@ -2049,12 +2059,16 @@
     <string name="common_signin_button_text_long">Sign in with Google</string>
     <string name="contact_added">Contact added successfully</string>
     <string name="contact_name">Contact Name</string>
+    <string name="contact_support">Contact Support</string>
     <string name="cyber_cell_description">Cyber Cell settings and information will be displayed here.</string>
+    <string name="dark_mode">Dark Mode</string>
     <string name="debug_tools">Debug Tools</string>
     <string name="debug_tools_expand">Expand/Collapse Debug Tools</string>
     <string name="debug_tools_title">Debug Tools</string>
     <string name="decline_call">Decline Call</string>
     <string name="delete_contact">Delete contact</string>
+    <string name="developed_by">Developed by Abhay</string>
+    <string name="email_support">Email Support</string>
     <string name="emergency">Emergency</string>
     <string name="emergency_alert">EMERGENCY ALERT</string>
     <string name="emergency_alert_message">Emergency alert has been activated.\nHelp is on the way!</string>
@@ -2068,6 +2082,7 @@
     <string name="emergency_features_title">Emergency Features</string>
     <string name="emergency_message">Do you want to trigger the emergency alert?</string>
     <string name="emergency_title">Emergency Alert</string>
+    <string name="enable_notifications">Enable Notifications</string>
     <string name="enter_contact_details">Enter contact details</string>
     <string description="Screen reader announcement for when a checkbox is on error. [CHAR LIMIT=NONE]" name="error_a11y_label">
     Error: invalid
@@ -2077,14 +2092,26 @@
     <string name="exposed_dropdown_menu_content_description">Show dropdown menu</string>
     <string name="fab_transformation_scrim_behavior" translatable="false">com.google.android.material.transformation.FabTransformationScrimBehavior</string>
     <string name="fab_transformation_sheet_behavior" translatable="false">com.google.android.material.transformation.FabTransformationSheetBehavior</string>
+    <string name="faq_1_content">When you trigger an emergency alert, the app automatically sends your current location to your emergency contacts via SMS and initiates an emergency call. The app also activates a loud siren to attract attention.</string>
+    <string name="faq_1_title">How does the emergency alert system work?</string>
+    <string name="faq_2_content">First, ensure Bluetooth is enabled on your phone. If the issue persists, try disconnecting and reconnecting your smartwatch. For further assistance, contact our support team.</string>
+    <string name="faq_2_title">What should I do if the app isn\'t detecting my smartwatch?</string>
+    <string name="faqs">Frequently Asked Questions</string>
+    <string name="features_list">• Emergency alerts with GPS coordinates\n• Fake call simulation for distress signals\n• Cyber cell alert for digital threats\n• SMS/Location alerts system for emergencies\n• Offline mode for storing emergency events</string>
     <string name="hide_bottom_view_on_scroll_behavior" translatable="false">com.google.android.material.behavior.HideBottomViewOnScrollBehavior</string>
+    <string name="high_accuracy_description">When enabled, the app will use cached location data from your phone for faster response during emergencies.</string>
+    <string name="high_accuracy_mode">High Accuracy Mode</string>
     <string description="Content description for an icon that appears in the title area of a dialog" name="icon_content_description">Dialog Icon</string>
     <string name="incoming_call">Incoming Call</string>
     <string name="incoming_mobile_call">Mobile Call</string>
     <string name="invalid_phone">Invalid phone number</string>
     <string name="item_view_role_description">Tab</string>
+    <string name="key_features">Key Features:</string>
     <string name="location_error">Could not get location</string>
+    <string name="location_services">Location Services</string>
     <string name="location_settings_description">Configure your location settings and permissions here.</string>
+    <string name="location_share_description">When enabled, your location will be shared with emergency contacts during an emergency.</string>
+    <string name="location_sharing">Location Sharing</string>
     <string name="location_title">Current Location</string>
     <string name="m3_exceed_max_badge_text_suffix" translatable="false"><ns2:g example="Some te" id="part of a long text">%1$s</ns2:g><ns2:g example="…" id="suffix">%2$s</ns2:g></string>
     <string name="m3_ref_typeface_brand_medium" translatable="false">sans-serif-medium</string>
@@ -2235,6 +2262,7 @@
     <string description="Content description for the navigation button to return to the previous screen [CHAR_LIMIT=NONE]" name="searchview_navigation_content_description">Back</string>
     <string name="settings">Settings</string>
     <string name="settings_description">Configure your app settings and preferences here.</string>
+    <string name="share_with_contacts">Share Location with Emergency Contacts</string>
     <string description="Title of the side sheet&apos;s accessibility pane that is spoken by TalkBack when the side sheet appears on screen. [CHAR_LIMIT=NONE]" name="side_sheet_accessibility_pane_title">Side Sheet</string>
     <string name="side_sheet_behavior" translatable="false">com.google.android.material.sidesheet.SideSheetBehavior</string>
     <string name="status_bar_notification_info_overflow">999+</string>
@@ -2252,6 +2280,7 @@
     <string name="test_fake_call">Test Fake Call</string>
     <string name="test_location">Test Location</string>
     <string name="test_offline">TEST OFFLINE MODE</string>
+    <string name="whatsapp_support">WhatsApp Support</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>
     <style name="Animation.AppCompat.Dialog" parent="Base.Animation.AppCompat.Dialog"/>
@@ -6557,30 +6586,35 @@
     <item name="windowActionBar">false</item>
     <item name="windowNoTitle">true</item>
   </style>
-    <style name="Theme.EmerBand" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Theme.EmerBand" parent="Theme.MaterialComponents.Light.NoActionBar">
         
         <item name="colorPrimary">@color/primary</item>
         <item name="colorPrimaryVariant">@color/primary_dark</item>
-        <item name="colorPrimaryContainer">@color/primary_light</item>
         <item name="colorOnPrimary">@color/white</item>
         
         
         <item name="colorSecondary">@color/accent</item>
         <item name="colorSecondaryVariant">@color/accent_dark</item>
-        <item name="colorSecondaryContainer">@color/accent_light</item>
-        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorOnSecondary">@color/black</item>
         
         
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        
+        
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:textColorSecondary">@color/gray_dark</item>
+        
+        
+        <item name="android:windowBackground">@color/white</item>
         <item name="android:colorBackground">@color/white</item>
+        
+        
         <item name="colorSurface">@color/white</item>
         <item name="colorOnSurface">@color/black</item>
         
         
         <item name="colorError">@color/error</item>
         <item name="colorOnError">@color/white</item>
-        
-        
-        <item name="android:statusBarColor">?attr/colorPrimary</item>
         
         
         <item name="materialButtonStyle">@style/Widget.MaterialComponents.Button.UnelevatedButton</item>
@@ -7277,6 +7311,18 @@
     <item name="colorControlNormal">@color/material_on_surface_emphasis_medium</item>
     <item name="actionMenuTextColor">@color/material_on_surface_emphasis_medium</item>
   </style>
+    <style name="Theme_App_Dark" parent="Theme.MaterialComponents.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryVariant">@color/colorPrimary</item>
+        <item name="colorOnPrimary">@android:color/black</item>
+        <item name="android:windowBackground">@android:color/black</item>
+    </style>
+    <style name="Theme_App_Light" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="android:windowBackground">@android:color/white</item>
+    </style>
     <style name="Widget.AppCompat.ActionBar" parent="Base.Widget.AppCompat.ActionBar">
     </style>
     <style name="Widget.AppCompat.ActionBar.Solid" parent="Base.Widget.AppCompat.ActionBar.Solid">

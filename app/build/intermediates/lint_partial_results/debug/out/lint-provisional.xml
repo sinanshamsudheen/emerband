@@ -8,12 +8,12 @@
         <fix-data featureName="android.hardware.telephony"/>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*manifest*0}"
-            line="26"
+            line="27"
             column="6"
-            startOffset="1197"
-            endLine="26"
+            startOffset="1233"
+            endLine="27"
             endColumn="21"
-            endOffset="1212"/>
+            endOffset="1248"/>
         <map>
             <condition library="false"/>
         </map>
@@ -26,12 +26,12 @@
         <fix-data featureName="android.hardware.telephony"/>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*manifest*0}"
-            line="29"
+            line="30"
             column="6"
-            startOffset="1327"
-            endLine="29"
+            startOffset="1363"
+            endLine="30"
             endColumn="21"
-            endOffset="1342"/>
+            endOffset="1378"/>
         <map>
             <condition library="false"/>
         </map>
@@ -44,12 +44,12 @@
         <fix-data featureName="android.hardware.camera"/>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*manifest*0}"
-            line="38"
+            line="39"
             column="6"
-            startOffset="1730"
-            endLine="38"
+            startOffset="1766"
+            endLine="39"
             endColumn="21"
-            endOffset="1745"/>
+            endOffset="1781"/>
         <map>
             <condition library="false"/>
         </map>
@@ -68,12 +68,12 @@
             value="fullSensor"/>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*manifest*0}"
-            line="79"
+            line="80"
             column="13"
-            startOffset="3402"
-            endLine="79"
+            startOffset="3438"
+            endLine="80"
             endColumn="49"
-            endOffset="3438"/>
+            endOffset="3474"/>
         <map>
             <condition library="false"/>
         </map>
@@ -92,12 +92,12 @@
             value="fullSensor"/>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*manifest*0}"
-            line="84"
+            line="85"
             column="13"
-            startOffset="3584"
-            endLine="84"
+            startOffset="3620"
+            endLine="85"
             endColumn="49"
-            endOffset="3620"/>
+            endOffset="3656"/>
         <map>
             <condition library="false"/>
         </map>
@@ -276,6 +276,62 @@
         severity="warning"
         message="">
         <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/drawable/ic_email.xml"
+            line="7"
+            column="19"
+            startOffset="244"
+            endLine="7"
+            endColumn="37"
+            endOffset="262"/>
+        <map>
+            <entry
+                name="folderVersion"
+                int="-1"/>
+            <entry
+                name="containsFillType"
+                boolean="false"/>
+            <entry
+                name="message"
+                string="Resource references will not work correctly in images generated for this vector icon for API &lt; %1$d; check generated icon to make sure it looks acceptable"/>
+            <entry
+                name="containsGradient"
+                boolean="false"/>
+        </map>
+    </incident>
+
+    <incident
+        id="VectorRaster"
+        severity="warning"
+        message="">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/drawable/ic_email.xml"
+            line="9"
+            column="28"
+            startOffset="304"
+            endLine="9"
+            endColumn="48"
+            endOffset="324"/>
+        <map>
+            <entry
+                name="folderVersion"
+                int="-1"/>
+            <entry
+                name="containsFillType"
+                boolean="false"/>
+            <entry
+                name="message"
+                string="Resource references will not work correctly in images generated for this vector icon for API &lt; %1$d; check generated icon to make sure it looks acceptable"/>
+            <entry
+                name="containsGradient"
+                boolean="false"/>
+        </map>
+    </incident>
+
+    <incident
+        id="VectorRaster"
+        severity="warning"
+        message="">
+        <location
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/drawable/ic_expand_more.xml"
             line="7"
             column="19"
@@ -367,6 +423,118 @@
             endLine="9"
             endColumn="48"
             endOffset="330"/>
+        <map>
+            <entry
+                name="folderVersion"
+                int="-1"/>
+            <entry
+                name="containsFillType"
+                boolean="false"/>
+            <entry
+                name="message"
+                string="Resource references will not work correctly in images generated for this vector icon for API &lt; %1$d; check generated icon to make sure it looks acceptable"/>
+            <entry
+                name="containsGradient"
+                boolean="false"/>
+        </map>
+    </incident>
+
+    <incident
+        id="VectorRaster"
+        severity="warning"
+        message="">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/drawable/ic_phone.xml"
+            line="7"
+            column="19"
+            startOffset="244"
+            endLine="7"
+            endColumn="37"
+            endOffset="262"/>
+        <map>
+            <entry
+                name="folderVersion"
+                int="-1"/>
+            <entry
+                name="containsFillType"
+                boolean="false"/>
+            <entry
+                name="message"
+                string="Resource references will not work correctly in images generated for this vector icon for API &lt; %1$d; check generated icon to make sure it looks acceptable"/>
+            <entry
+                name="containsGradient"
+                boolean="false"/>
+        </map>
+    </incident>
+
+    <incident
+        id="VectorRaster"
+        severity="warning"
+        message="">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/drawable/ic_phone.xml"
+            line="9"
+            column="28"
+            startOffset="304"
+            endLine="9"
+            endColumn="48"
+            endOffset="324"/>
+        <map>
+            <entry
+                name="folderVersion"
+                int="-1"/>
+            <entry
+                name="containsFillType"
+                boolean="false"/>
+            <entry
+                name="message"
+                string="Resource references will not work correctly in images generated for this vector icon for API &lt; %1$d; check generated icon to make sure it looks acceptable"/>
+            <entry
+                name="containsGradient"
+                boolean="false"/>
+        </map>
+    </incident>
+
+    <incident
+        id="VectorRaster"
+        severity="warning"
+        message="">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/drawable/ic_whatsapp.xml"
+            line="7"
+            column="19"
+            startOffset="244"
+            endLine="7"
+            endColumn="37"
+            endOffset="262"/>
+        <map>
+            <entry
+                name="folderVersion"
+                int="-1"/>
+            <entry
+                name="containsFillType"
+                boolean="false"/>
+            <entry
+                name="message"
+                string="Resource references will not work correctly in images generated for this vector icon for API &lt; %1$d; check generated icon to make sure it looks acceptable"/>
+            <entry
+                name="containsGradient"
+                boolean="false"/>
+        </map>
+    </incident>
+
+    <incident
+        id="VectorRaster"
+        severity="warning"
+        message="">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/drawable/ic_whatsapp.xml"
+            line="9"
+            column="28"
+            startOffset="304"
+            endLine="9"
+            endColumn="48"
+            endOffset="324"/>
         <map>
             <entry
                 name="folderVersion"
@@ -572,12 +740,12 @@
         <fix-data minSdk="ffffffffff800000" requiresApi="ffffffffc0000000"/>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/MainActivity.java"
-            line="71"
+            line="74"
             column="13"
-            startOffset="2637"
-            endLine="71"
+            startOffset="2735"
+            endLine="74"
             endColumn="50"
-            endOffset="2674"/>
+            endOffset="2772"/>
         <map>
             <api-levels id="minSdk"
                 value="ffffffffff800000"/>
@@ -596,12 +764,12 @@
         <fix-data minSdk="ffffffffff800000" requiresApi="ffffffffc0000000"/>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/MainActivity.java"
-            line="72"
+            line="75"
             column="13"
-            startOffset="2688"
-            endLine="72"
+            startOffset="2786"
+            endLine="75"
             endColumn="47"
-            endOffset="2722"/>
+            endOffset="2820"/>
         <map>
             <api-levels id="minSdk"
                 value="ffffffffff800000"/>

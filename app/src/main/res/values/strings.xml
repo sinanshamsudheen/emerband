@@ -111,4 +111,32 @@
     
     <!-- New Resource -->
     <string name="action_about">About</string>
+    <string name="about">About</string>
+    <string name="app_description">EmerBand is a comprehensive emergency solution designed to keep you safe. It works with a BLE smart watch to monitor your safety and trigger emergency protocols when needed. The app provides multiple safety features including fake calls, connecting cyber cell, and sending emergency alerts with GPS coordinates.</string>
+    <string name="key_features">Key Features:</string>
+    <string name="features_list">• Emergency alerts with GPS coordinates\n• Fake call simulation for distress signals\n• Cyber cell alert for digital threats\n• SMS/Location alerts system for emergencies\n• Offline mode for storing emergency events</string>
+    <string name="developed_by">Developed by Abhay</string>
+    
+    <!-- Location Settings -->
+    <string name="location_services">Location Services</string>
+    <string name="high_accuracy_mode">High Accuracy Mode</string>
+    <string name="high_accuracy_description">When enabled, the app will use cached location data from your phone for faster response during emergencies.</string>
+    <string name="background_location">Allow Background Location</string>
+    <string name="location_sharing">Location Sharing</string>
+    <string name="share_with_contacts">Share Location with Emergency Contacts</string>
+    <string name="location_share_description">When enabled, your location will be shared with emergency contacts during an emergency.</string>
+    <string name="check_location_permissions">Check Location Permissions</string>
+
+    <!-- Help & Support -->
+    <string name="contact_support">Contact Support</string>
+    <string name="email_support">Email Support</string>
+    <string name="whatsapp_support">WhatsApp Support</string>
+    <string name="app_settings">App Settings</string>
+    <string name="dark_mode">Dark Mode</string>
+    <string name="enable_notifications">Enable Notifications</string>
+    <string name="faqs">Frequently Asked Questions</string>
+    <string name="faq_1_title">How does the emergency alert system work?</string>
+    <string name="faq_1_content">When you trigger an emergency alert, the app automatically sends your current location to your emergency contacts via SMS and initiates an emergency call. The app also activates a loud siren to attract attention.</string>
+    <string name="faq_2_title">What should I do if the app isn\'t detecting my smartwatch?</string>
+    <string name="faq_2_content">First, ensure Bluetooth is enabled on your phone. If the issue persists, try disconnecting and reconnecting your smartwatch. For further assistance, contact our support team.</string>
 </resources> 

@@ -36,6 +36,10 @@
         "source": "com.example.emerband.app-main-48:/menu/main_menu.xml"
     },
     {
+        "merged": "com.example.emerband.app-merged_res-47:/layout_activity_about.xml.flat",
+        "source": "com.example.emerband.app-main-48:/layout/activity_about.xml"
+    },
+    {
         "merged": "com.example.emerband.app-merged_res-47:/raw_sound_files_info.txt.flat",
         "source": "com.example.emerband.app-main-48:/raw/sound_files_info.txt"
     },
@@ -144,8 +148,20 @@
         "source": "com.example.emerband.app-main-48:/layout/activity_alert.xml"
     },
     {
+        "merged": "com.example.emerband.app-merged_res-47:/drawable_ic_email.xml.flat",
+        "source": "com.example.emerband.app-main-48:/drawable/ic_email.xml"
+    },
+    {
         "merged": "com.example.emerband.app-merged_res-47:/layout_activity_cyber_cell.xml.flat",
         "source": "com.example.emerband.app-main-48:/layout/activity_cyber_cell.xml"
+    },
+    {
+        "merged": "com.example.emerband.app-merged_res-47:/drawable_ic_arrow_back.xml.flat",
+        "source": "com.example.emerband.app-main-48:/drawable/ic_arrow_back.xml"
+    },
+    {
+        "merged": "com.example.emerband.app-merged_res-47:/drawable_ic_whatsapp.xml.flat",
+        "source": "com.example.emerband.app-main-48:/drawable/ic_whatsapp.xml"
     },
     {
         "merged": "com.example.emerband.app-merged_res-47:/drawable_delete_button_background.xml.flat",
@@ -174,6 +190,10 @@
     {
         "merged": "com.example.emerband.app-merged_res-47:/drawable_ic_offline.xml.flat",
         "source": "com.example.emerband.app-main-48:/drawable/ic_offline.xml"
+    },
+    {
+        "merged": "com.example.emerband.app-merged_res-47:/layout_activity_help_support.xml.flat",
+        "source": "com.example.emerband.app-main-48:/layout/activity_help_support.xml"
     },
     {
         "merged": "com.example.emerband.app-merged_res-47:/layout_item_contact.xml.flat",

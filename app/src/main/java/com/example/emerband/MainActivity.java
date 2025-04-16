@@ -46,6 +46,9 @@ import com.example.emerband.database.DatabaseHelper;
 import com.example.emerband.models.Contact;
 import android.location.Location;
 import android.location.LocationManager;
+import android.location.LocationListener;
+import android.os.Handler;
+import android.graphics.Color;
 
 public class MainActivity extends AppCompatActivity {
     
@@ -54,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String KEY_USER_NAME = "userName";
     
     // Permission request code
-    private static final int PERMISSION_REQUEST_CODE = 123;
+    private static final int PERMISSION_REQUEST_CODE = 1;
     
     // Required permissions for Android < 12
     private final String[] requiredPermissions = {
@@ -97,10 +100,13 @@ public class MainActivity extends AppCompatActivity {
     private MediaPlayer sirenMediaPlayer;
 
     private static final int PERMISSION_SEND_SMS = 123;
-    private static final int PERMISSION_CALL_PHONE = 124;
+    private static final int PERMISSION_CALL_PHONE = 2;
     private static final int PERMISSION_LOCATION = 125;
     private static final int PERMISSION_BLUETOOTH = 126;
     private static final int PERMISSION_CAMERA = 127;
+    private static final int REQUEST_ENABLE_BT = 3;
+
+    private BluetoothAdapter bluetoothAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -155,8 +161,7 @@ public class MainActivity extends AppCompatActivity {
             btnTestAlert = findViewById(R.id.btnTestAlert);
             btnTestOffline = findViewById(R.id.btnTestOffline);
 
-            // Initialize FAB
-            fabEmergency = findViewById(R.id.fabEmergency);
+            // Remove FAB initialization since we removed it from layout
         } catch (Exception e) {
             throw new RuntimeException("Failed to initialize views: " + e.getMessage(), e);
         }
@@ -313,7 +318,7 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
             
-            BluetoothAdapter bluetoothAdapter = bluetoothManager.getAdapter();
+            bluetoothAdapter = bluetoothManager.getAdapter();
             if (bluetoothAdapter == null) {
                 Toast.makeText(this, "Bluetooth is not available on this device", Toast.LENGTH_LONG).show();
                 return;
@@ -452,15 +457,7 @@ public class MainActivity extends AppCompatActivity {
         // Location Button
         btnLocation.setOnClickListener(v -> {
             try {
-                EmergencyUtils.getCurrentLocation(this, location -> {
-                    String locationStr = "Latitude: " + location.getLatitude() + 
-                                      "\nLongitude: " + location.getLongitude();
-                    new AlertDialog.Builder(this)
-                        .setTitle("Current Location")
-                        .setMessage(locationStr)
-                        .setPositiveButton("OK", null)
-                        .show();
-                });
+                testLocation();
             } catch (Exception e) {
                 Toast.makeText(this, "Error getting location: " + e.getMessage(), 
                     Toast.LENGTH_SHORT).show();
@@ -528,5 +525,69 @@ public class MainActivity extends AppCompatActivity {
                     Toast.LENGTH_SHORT).show();
             }
         });
+    }
+
+    private void testLocation() {
+        try {
+            if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION)
+                    != PackageManager.PERMISSION_GRANTED) {
+                ActivityCompat.requestPermissions(this,
+                        new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                        PERMISSION_LOCATION);
+                return;
+            }
+
+            SharedPreferences prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
+            boolean highAccuracy = LocationSettingsActivity.isHighAccuracyEnabled(prefs);
+
+            LocationManager locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+            if (locationManager != null) {
+                Location lastKnownLocation = null;
+                
+                if (highAccuracy) {
+                    // Try to get cached location first
+                    lastKnownLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+                    if (lastKnownLocation == null) {
+                        lastKnownLocation = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+                    }
+                }
+
+                if (lastKnownLocation != null) {
+                    String locationStr = "Latitude: " + lastKnownLocation.getLatitude() +
+                            "\nLongitude: " + lastKnownLocation.getLongitude();
+                    Toast.makeText(this, locationStr, Toast.LENGTH_LONG).show();
+                } else {
+                    // If no cached location or high accuracy is off, request location updates
+                    locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0,
+                            new LocationListener() {
+                                @Override
+                                public void onLocationChanged(Location location) {
+                                    String locationStr = "Latitude: " + location.getLatitude() +
+                                            "\nLongitude: " + location.getLongitude();
+                                    Toast.makeText(MainActivity.this, locationStr, Toast.LENGTH_LONG).show();
+                                    locationManager.removeUpdates(this);
+                                }
+
+                                @Override
+                                public void onStatusChanged(String provider, int status, Bundle extras) {}
+
+                                @Override
+                                public void onProviderEnabled(String provider) {}
+
+                                @Override
+                                public void onProviderDisabled(String provider) {
+                                    Toast.makeText(MainActivity.this, "Please enable GPS", Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                }
+            }
+        } catch (Exception e) {
+            Toast.makeText(this, "Error getting location: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+            Log.e(TAG, "Error getting location", e);
+        }
+    }
+
+    private void setupEmergencyButton() {
+        // Emergency button functionality moved to Test Emergency button
     }
 } 

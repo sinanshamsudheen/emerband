@@ -178,31 +178,6 @@
     </incident>
 
     <incident
-        id="UseAppTint"
-        severity="error"
-        message="Must use `app:tint` instead of `android:tint`">
-        <fix-composite>
-            <fix-attribute
-                description="Set tint=&quot;@android:color/white&quot;"
-                namespace="http://schemas.android.com/apk/res-auto"
-                attribute="tint"
-                value="@android:color/white"/>
-            <fix-attribute
-                description="Delete tint"
-                namespace="http://schemas.android.com/apk/res/android"
-                attribute="tint"/>
-        </fix-composite>
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_fake_call.xml"
-            line="23"
-            column="13"
-            startOffset="958"
-            endLine="23"
-            endColumn="48"
-            endOffset="993"/>
-    </incident>
-
-    <incident
         id="ContentDescription"
         severity="warning"
         message="Missing `contentDescription` attribute on image">
@@ -238,10 +213,10 @@
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_fake_call.xml"
             line="28"
             column="13"
-            startOffset="1129"
+            startOffset="1117"
             endLine="28"
             endColumn="38"
-            endOffset="1154"/>
+            endOffset="1142"/>
     </incident>
 
     <incident
@@ -252,10 +227,10 @@
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_fake_call.xml"
             line="36"
             column="13"
-            startOffset="1426"
+            startOffset="1414"
             endLine="36"
             endColumn="31"
-            endOffset="1444"/>
+            endOffset="1432"/>
     </incident>
 
     <incident
@@ -266,35 +241,10 @@
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_fake_call.xml"
             line="42"
             column="10"
-            startOffset="1633"
+            startOffset="1621"
             endLine="42"
             endColumn="22"
-            endOffset="1645"/>
-    </incident>
-
-    <incident
-        id="UseAppTint"
-        severity="error"
-        message="Must use `app:tint` instead of `android:tint`">
-        <fix-composite>
-            <fix-attribute
-                description="Set tint=&quot;@android:color/white&quot;"
-                namespace="http://schemas.android.com/apk/res-auto"
-                attribute="tint"
-                value="@android:color/white"/>
-            <fix-attribute
-                description="Delete tint"
-                namespace="http://schemas.android.com/apk/res/android"
-                attribute="tint"/>
-        </fix-composite>
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_fake_call.xml"
-            line="53"
-            column="17"
-            startOffset="2060"
-            endLine="53"
-            endColumn="52"
-            endOffset="2095"/>
+            endOffset="1633"/>
     </incident>
 
     <incident
@@ -319,10 +269,10 @@
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_fake_call.xml"
             line="49"
             column="14"
-            startOffset="1891"
+            startOffset="1879"
             endLine="49"
             endColumn="23"
-            endOffset="1900"/>
+            endOffset="1888"/>
     </incident>
 
     <incident
@@ -333,10 +283,10 @@
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_fake_call.xml"
             line="59"
             column="17"
-            startOffset="2299"
+            startOffset="2275"
             endLine="59"
             endColumn="37"
-            endOffset="2319"/>
+            endOffset="2295"/>
     </incident>
 
     <incident
@@ -361,10 +311,24 @@
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_fake_call.xml"
             line="66"
             column="6"
-            startOffset="2525"
+            startOffset="2501"
             endLine="66"
             endColumn="75"
-            endOffset="2594"/>
+            endOffset="2570"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Not Available as of Now&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_help_support.xml"
+            line="20"
+            column="9"
+            startOffset="796"
+            endLine="20"
+            endColumn="47"
+            endOffset="834"/>
     </incident>
 
     <incident
@@ -379,31 +343,6 @@
             endLine="42"
             endColumn="38"
             endOffset="1678"/>
-    </incident>
-
-    <incident
-        id="UseAppTint"
-        severity="error"
-        message="Must use `app:tint` instead of `android:tint`">
-        <fix-composite>
-            <fix-attribute
-                description="Set tint=&quot;@color/white&quot;"
-                namespace="http://schemas.android.com/apk/res-auto"
-                attribute="tint"
-                value="@color/white"/>
-            <fix-attribute
-                description="Delete tint"
-                namespace="http://schemas.android.com/apk/res/android"
-                attribute="tint"/>
-        </fix-composite>
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-            line="60"
-            column="21"
-            startOffset="2437"
-            endLine="60"
-            endColumn="48"
-            endOffset="2464"/>
     </incident>
 
     <incident
@@ -442,10 +381,10 @@
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
             line="67"
             column="21"
-            startOffset="2744"
+            startOffset="2740"
             endLine="67"
             endColumn="52"
-            endOffset="2775"/>
+            endOffset="2771"/>
     </incident>
 
     <incident
@@ -456,10 +395,10 @@
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
             line="75"
             column="17"
-            startOffset="3060"
+            startOffset="3056"
             endLine="75"
             endColumn="50"
-            endOffset="3093"/>
+            endOffset="3089"/>
     </incident>
 
     <incident
@@ -470,49 +409,24 @@
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
             line="91"
             column="21"
-            startOffset="3743"
+            startOffset="3739"
             endLine="91"
             endColumn="54"
-            endOffset="3776"/>
+            endOffset="3772"/>
     </incident>
 
     <incident
         id="HardcodedText"
         severity="warning"
-        message="Hardcoded string &quot;SETTINGS&quot;, should use `@string` resource">
+        message="Hardcoded string &quot;About&quot;, should use `@string` resource">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
             line="101"
             column="21"
-            startOffset="4238"
+            startOffset="4234"
             endLine="101"
-            endColumn="44"
-            endOffset="4261"/>
-    </incident>
-
-    <incident
-        id="UseAppTint"
-        severity="error"
-        message="Must use `app:tint` instead of `android:tint`">
-        <fix-composite>
-            <fix-attribute
-                description="Set tint=&quot;@color/white&quot;"
-                namespace="http://schemas.android.com/apk/res-auto"
-                attribute="tint"
-                value="@color/white"/>
-            <fix-attribute
-                description="Delete tint"
-                namespace="http://schemas.android.com/apk/res/android"
-                attribute="tint"/>
-        </fix-composite>
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-            line="138"
-            column="29"
-            startOffset="6008"
-            endLine="138"
-            endColumn="56"
-            endOffset="6035"/>
+            endColumn="41"
+            endOffset="4254"/>
     </incident>
 
     <incident
@@ -537,10 +451,35 @@
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
             line="133"
             column="26"
-            startOffset="5725"
+            startOffset="5718"
             endLine="133"
             endColumn="35"
-            endOffset="5734"/>
+            endOffset="5727"/>
+    </incident>
+
+    <incident
+        id="UseAppTint"
+        severity="error"
+        message="Must use `app:tint` instead of `android:tint`">
+        <fix-composite>
+            <fix-attribute
+                description="Set tint=&quot;@color/white&quot;"
+                namespace="http://schemas.android.com/apk/res-auto"
+                attribute="tint"
+                value="@color/white"/>
+            <fix-attribute
+                description="Delete tint"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="tint"/>
+        </fix-composite>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="138"
+            column="29"
+            startOffset="6001"
+            endLine="138"
+            endColumn="56"
+            endOffset="6028"/>
     </incident>
 
     <incident
@@ -551,10 +490,10 @@
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
             line="144"
             column="29"
-            startOffset="6298"
+            startOffset="6291"
             endLine="144"
             endColumn="55"
-            endOffset="6324"/>
+            endOffset="6317"/>
     </incident>
 
     <incident
@@ -565,10 +504,10 @@
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
             line="161"
             column="29"
-            startOffset="7110"
+            startOffset="7103"
             endLine="161"
             endColumn="58"
-            endOffset="7139"/>
+            endOffset="7132"/>
     </incident>
 
     <incident
@@ -579,10 +518,10 @@
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
             line="171"
             column="29"
-            startOffset="7678"
+            startOffset="7671"
             endLine="171"
             endColumn="58"
-            endOffset="7707"/>
+            endOffset="7700"/>
     </incident>
 
     <incident
@@ -593,10 +532,10 @@
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
             line="181"
             column="29"
-            startOffset="8242"
+            startOffset="8235"
             endLine="181"
             endColumn="54"
-            endOffset="8267"/>
+            endOffset="8260"/>
     </incident>
 
     <incident
@@ -607,10 +546,10 @@
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
             line="191"
             column="29"
-            startOffset="8801"
+            startOffset="8794"
             endLine="191"
             endColumn="52"
-            endOffset="8824"/>
+            endOffset="8817"/>
     </incident>
 
     <incident
@@ -621,10 +560,10 @@
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
             line="201"
             column="29"
-            startOffset="9362"
+            startOffset="9355"
             endLine="201"
             endColumn="58"
-            endOffset="9391"/>
+            endOffset="9384"/>
     </incident>
 
     <incident
@@ -635,10 +574,10 @@
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
             line="211"
             column="29"
-            startOffset="9926"
+            startOffset="9919"
             endLine="211"
             endColumn="54"
-            endOffset="9951"/>
+            endOffset="9944"/>
     </incident>
 
     <incident
@@ -649,38 +588,24 @@
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
             line="221"
             column="29"
-            startOffset="10488"
+            startOffset="10481"
             endLine="221"
             endColumn="56"
-            endOffset="10515"/>
+            endOffset="10508"/>
     </incident>
 
     <incident
-        id="ContentDescription"
+        id="HardcodedText"
         severity="warning"
-        message="Missing `contentDescription` attribute on image">
-        <fix-alternatives>
-            <fix-attribute
-                description="Set contentDescription"
-                namespace="http://schemas.android.com/apk/res/android"
-                attribute="contentDescription"
-                value="TODO"
-                dot="4"
-                mark="0"/>
-            <fix-attribute
-                description="Set importantForAccessibility=&quot;no&quot;"
-                namespace="http://schemas.android.com/apk/res/android"
-                attribute="importantForAccessibility"
-                value="no"/>
-        </fix-alternatives>
+        message="Hardcoded string &quot;About&quot;, should use `@string` resource">
         <location
-            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-            line="232"
-            column="6"
-            startOffset="10949"
-            endLine="232"
-            endColumn="75"
-            endOffset="11018"/>
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_settings.xml"
+            line="35"
+            column="17"
+            startOffset="1385"
+            endLine="35"
+            endColumn="37"
+            endOffset="1405"/>
     </incident>
 
     <incident
@@ -935,6 +860,20 @@
             endLine="184"
             endColumn="31"
             endOffset="7256"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/MainActivity.java"
+            line="194"
+            column="33"
+            startOffset="7430"
+            endLine="194"
+            endColumn="40"
+            endOffset="7437"/>
     </incident>
 
     <incident
@@ -1350,6 +1289,20 @@
     <incident
         id="Overdraw"
         severity="warning"
+        message="Possible overdraw: Root element paints background `?android:colorBackground` with a theme that also paints a background (inferred theme is `@style/Theme.EmerBand`)">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_about.xml"
+            line="6"
+            column="5"
+            startOffset="256"
+            endLine="6"
+            endColumn="50"
+            endOffset="301"/>
+    </incident>
+
+    <incident
+        id="Overdraw"
+        severity="warning"
         message="Possible overdraw: Root element paints background `@color/error` with a theme that also paints a background (inferred theme is `@style/Theme_AppCompat_NoActionBar`)">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_alert.xml"
@@ -1373,6 +1326,34 @@
             endLine="6"
             endColumn="46"
             endOffset="336"/>
+    </incident>
+
+    <incident
+        id="Overdraw"
+        severity="warning"
+        message="Possible overdraw: Root element paints background `?android:colorBackground` with a theme that also paints a background (inferred theme is `@style/Theme.EmerBand`)">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_help_support.xml"
+            line="7"
+            column="5"
+            startOffset="294"
+            endLine="7"
+            endColumn="50"
+            endOffset="339"/>
+    </incident>
+
+    <incident
+        id="Overdraw"
+        severity="warning"
+        message="Possible overdraw: Root element paints background `?android:colorBackground` with a theme that also paints a background (inferred theme is `@style/Theme.EmerBand`)">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_location_settings.xml"
+            line="7"
+            column="5"
+            startOffset="294"
+            endLine="7"
+            endColumn="50"
+            endOffset="339"/>
     </incident>
 
     <incident

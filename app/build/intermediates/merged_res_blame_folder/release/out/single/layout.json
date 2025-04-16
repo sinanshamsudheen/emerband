@@ -12,6 +12,14 @@
         "source": "com.example.emerband.app-main-48:/layout/activity_setup.xml"
     },
     {
+        "merged": "com.example.emerband.app-mergeReleaseResources-46:/layout/activity_about.xml",
+        "source": "com.example.emerband.app-main-48:/layout/activity_about.xml"
+    },
+    {
+        "merged": "com.example.emerband.app-mergeReleaseResources-46:/layout/activity_help_support.xml",
+        "source": "com.example.emerband.app-main-48:/layout/activity_help_support.xml"
+    },
+    {
         "merged": "com.example.emerband.app-mergeReleaseResources-46:/layout/item_contact.xml",
         "source": "com.example.emerband.app-main-48:/layout/item_contact.xml"
     },

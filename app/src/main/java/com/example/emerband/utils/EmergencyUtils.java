@@ -1,32 +1,30 @@
 package com.example.emerband.utils;
 
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.location.Location;
-import android.media.MediaPlayer;
-import android.net.Uri;
-import android.provider.Settings;
-import android.widget.Toast;
-
-import com.example.emerband.FakeCallActivity;
-import com.example.emerband.R;
-
+import android.location.LocationListener;
 import android.location.LocationManager;
 import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.net.Uri;
+import android.os.Bundle;
+import android.provider.Settings;
 import android.telephony.SmsManager;
-import android.content.SharedPreferences;
+import android.util.Log;
+import android.widget.Toast;
+
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
-import android.Manifest;
-import android.content.pm.PackageManager;
-import android.location.LocationListener;
-import android.os.Bundle;
-import android.util.Log;
 
-import java.util.List;
-
+import com.example.emerband.R;
 import com.example.emerband.models.Contact;
 import com.example.emerband.database.DatabaseHelper;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class EmergencyUtils {
     private static final String TAG = "EmergencyUtils";
@@ -97,9 +95,25 @@ public class EmergencyUtils {
             return;
         }
         
-        String message = "EMERGENCY! I need help!";
+        // Get current location if not provided
+        if (location.isEmpty() && checkLocationPermission(context)) {
+            LocationManager locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
+            if (locationManager != null) {
+                try {
+                    Location lastLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
+                    if (lastLocation != null) {
+                        location = "http://maps.google.com/?q=" + lastLocation.getLatitude() + "," + lastLocation.getLongitude();
+                    }
+                } catch (SecurityException e) {
+                    Log.e(TAG, "Error getting location", e);
+                }
+            }
+        }
+        
+        // Prepare message
+        String message = "🚨 EMERGENCY ALERT! I need help!";
         if (!location.isEmpty()) {
-            message += " My current location is: " + location;
+            message += "\nMy current location: " + location;
         }
         
         // Send SMS to all contacts
@@ -108,7 +122,9 @@ public class EmergencyUtils {
         
         for (Contact contact : contacts) {
             try {
-                smsManager.sendTextMessage(contact.getPhone(), null, message, null, null);
+                // Split message if too long
+                ArrayList<String> parts = smsManager.divideMessage(message);
+                smsManager.sendMultipartTextMessage(contact.getPhone(), null, parts, null, null);
                 Log.d(TAG, "SMS sent to: " + contact.getName() + " (" + contact.getPhone() + ")");
                 successCount++;
             } catch (Exception e) {

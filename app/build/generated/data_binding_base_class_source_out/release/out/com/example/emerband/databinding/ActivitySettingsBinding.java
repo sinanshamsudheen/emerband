@@ -4,6 +4,7 @@ package com.example.emerband.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
@@ -20,10 +21,15 @@ public final class ActivitySettingsBinding implements ViewBinding {
   private final CoordinatorLayout rootView;
 
   @NonNull
+  public final TextView aboutDescription;
+
+  @NonNull
   public final Toolbar toolbar;
 
-  private ActivitySettingsBinding(@NonNull CoordinatorLayout rootView, @NonNull Toolbar toolbar) {
+  private ActivitySettingsBinding(@NonNull CoordinatorLayout rootView,
+      @NonNull TextView aboutDescription, @NonNull Toolbar toolbar) {
     this.rootView = rootView;
+    this.aboutDescription = aboutDescription;
     this.toolbar = toolbar;
   }
 
@@ -54,13 +60,19 @@ public final class ActivitySettingsBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.aboutDescription;
+      TextView aboutDescription = ViewBindings.findChildViewById(rootView, id);
+      if (aboutDescription == null) {
+        break missingId;
+      }
+
       id = R.id.toolbar;
       Toolbar toolbar = ViewBindings.findChildViewById(rootView, id);
       if (toolbar == null) {
         break missingId;
       }
 
-      return new ActivitySettingsBinding((CoordinatorLayout) rootView, toolbar);
+      return new ActivitySettingsBinding((CoordinatorLayout) rootView, aboutDescription, toolbar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

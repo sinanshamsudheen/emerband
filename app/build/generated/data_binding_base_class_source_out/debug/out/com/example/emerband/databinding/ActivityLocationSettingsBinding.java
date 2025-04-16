@@ -4,33 +4,38 @@ package com.example.emerband.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
-import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.example.emerband.R;
+import com.google.android.material.switchmaterial.SwitchMaterial;
 import java.lang.NullPointerException;
 import java.lang.Override;
 import java.lang.String;
 
 public final class ActivityLocationSettingsBinding implements ViewBinding {
   @NonNull
-  private final CoordinatorLayout rootView;
+  private final LinearLayout rootView;
+
+  @NonNull
+  public final SwitchMaterial switchHighAccuracy;
 
   @NonNull
   public final Toolbar toolbar;
 
-  private ActivityLocationSettingsBinding(@NonNull CoordinatorLayout rootView,
-      @NonNull Toolbar toolbar) {
+  private ActivityLocationSettingsBinding(@NonNull LinearLayout rootView,
+      @NonNull SwitchMaterial switchHighAccuracy, @NonNull Toolbar toolbar) {
     this.rootView = rootView;
+    this.switchHighAccuracy = switchHighAccuracy;
     this.toolbar = toolbar;
   }
 
   @Override
   @NonNull
-  public CoordinatorLayout getRoot() {
+  public LinearLayout getRoot() {
     return rootView;
   }
 
@@ -55,13 +60,20 @@ public final class ActivityLocationSettingsBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.switchHighAccuracy;
+      SwitchMaterial switchHighAccuracy = ViewBindings.findChildViewById(rootView, id);
+      if (switchHighAccuracy == null) {
+        break missingId;
+      }
+
       id = R.id.toolbar;
       Toolbar toolbar = ViewBindings.findChildViewById(rootView, id);
       if (toolbar == null) {
         break missingId;
       }
 
-      return new ActivityLocationSettingsBinding((CoordinatorLayout) rootView, toolbar);
+      return new ActivityLocationSettingsBinding((LinearLayout) rootView, switchHighAccuracy,
+          toolbar);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
