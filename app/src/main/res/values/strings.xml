@@ -139,4 +139,5 @@
     <string name="faq_1_content">When you trigger an emergency alert, the app automatically sends your current location to your emergency contacts via SMS and initiates an emergency call. The app also activates a loud siren to attract attention.</string>
     <string name="faq_2_title">What should I do if the app isn\'t detecting my smartwatch?</string>
     <string name="faq_2_content">First, ensure Bluetooth is enabled on your phone. If the issue persists, try disconnecting and reconnecting your smartwatch. For further assistance, contact our support team.</string>
+    <string name="bluetooth_icon_desc">Bluetooth Status Icon</string>
 </resources> 

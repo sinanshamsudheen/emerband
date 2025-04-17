@@ -31,6 +31,7 @@
     <string name="app_settings">App Settings</string>
     <string name="appbar_scrolling_view_behavior">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
     <string name="background_location">Allow Background Location</string>
+    <string name="bluetooth_icon_desc">Bluetooth Status Icon</string>
     <string name="caller_photo">Caller Photo</string>
     <string name="cancel">Cancel</string>
     <string name="check_location_permissions">Check Location Permissions</string>

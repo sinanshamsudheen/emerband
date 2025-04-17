@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
     };
 
     // UI Elements
-    private ImageView ivBluetoothStatus;
+    private ImageView ivBluetoothIcon;
     private TextView tvBluetoothStatus;
     private ImageView ivDebugExpand;
     private LinearLayout debugHeader;
@@ -126,11 +126,15 @@ public class MainActivity extends AppCompatActivity {
         
         try {
             initializeViews();
+            checkAndRequestPermissions();
             setupClickListeners();
             showDebugSection();
             
             // Check if we're coming from an emergency notification
             handleIntent(getIntent());
+
+            // Check Bluetooth status
+            updateBluetoothStatus();
         } catch (Exception e) {
             String error = "Error initializing app: " + e.getMessage();
             Toast.makeText(this, error, Toast.LENGTH_LONG).show();
@@ -141,8 +145,8 @@ public class MainActivity extends AppCompatActivity {
     private void initializeViews() {
         try {
             // Initialize status views
-            tvBluetoothStatus = findViewById(R.id.tvBluetoothStatus);
-            ivBluetoothStatus = findViewById(R.id.ivBluetoothStatus);
+            ivBluetoothIcon = findViewById(R.id.iv_bluetooth_icon);
+            tvBluetoothStatus = findViewById(R.id.tv_bluetooth_status);
 
             // Initialize emergency features buttons
             btnEmergencyContacts = findViewById(R.id.btnEmergencyContacts);
@@ -589,5 +593,43 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupEmergencyButton() {
         // Emergency button functionality moved to Test Emergency button
+    }
+
+    private void checkAndRequestPermissions() {
+        List<String> permissionsNeeded = new ArrayList<>();
+
+        // Check for required permissions
+        for (String permission : requiredPermissions) {
+            if (ContextCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED) {
+                permissionsNeeded.add(permission);
+            }
+        }
+
+        // Check for additional permissions for Android 12+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            for (String permission : androidSPermissions) {
+                if (ContextCompat.checkSelfPermission(this, permission) != PackageManager.PERMISSION_GRANTED) {
+                    permissionsNeeded.add(permission);
+                }
+            }
+        }
+
+        // Request permissions if needed
+        if (!permissionsNeeded.isEmpty()) {
+            ActivityCompat.requestPermissions(this, permissionsNeeded.toArray(new String[0]), PERMISSION_REQUEST_CODE);
+        }
+    }
+
+    private void updateBluetoothStatus() {
+        BluetoothManager bluetoothManager = (BluetoothManager) getSystemService(Context.BLUETOOTH_SERVICE);
+        BluetoothAdapter bluetoothAdapter = bluetoothManager.getAdapter();
+
+        if (bluetoothAdapter != null && bluetoothAdapter.isEnabled()) {
+            ivBluetoothIcon.setImageResource(R.drawable.ic_bluetooth); // Set active Bluetooth icon
+            tvBluetoothStatus.setText("Bluetooth is ON"); // Ensure this text is correct
+        } else {
+            ivBluetoothIcon.setImageResource(R.drawable.ic_bluetooth_disabled); // Set disabled Bluetooth icon
+            tvBluetoothStatus.setText("Bluetooth is OFF");
+        }
     }
 } 

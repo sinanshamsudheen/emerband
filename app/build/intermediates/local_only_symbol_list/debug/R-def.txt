@@ -76,6 +76,7 @@ id btnTestEmergency
 id btnTestFakeCall
 id btnTestOffline
 id callDurationText
+id card_bluetooth_status
 id contact_name
 id contact_number
 id continueButton
@@ -86,13 +87,14 @@ id debugCard
 id debugContent
 id debugHeader
 id delete_button
+id device_list
 id endCallButton
 id etContactName
 id etPhoneNumber
 id fabAdd
 id instructionTextView
-id ivBluetoothStatus
 id ivDebugExpand
+id iv_bluetooth_icon
 id menu_contacts
 id menu_help
 id menu_location
@@ -101,13 +103,14 @@ id recyclerView
 id saveButton
 id switchHighAccuracy
 id toolbar
-id tvBluetoothStatus
 id tvContactName
 id tvPhoneNumber
+id tv_bluetooth_status
 layout activity_about
 layout activity_alert
 layout activity_cyber_cell
 layout activity_cyber_cell_settings
+layout activity_device_list
 layout activity_emergency_contacts
 layout activity_fake_call
 layout activity_help_support
@@ -134,6 +137,7 @@ string app_name
 string app_settings
 string appbar_scrolling_view_behavior
 string background_location
+string bluetooth_icon_desc
 string caller_photo
 string cancel
 string check_location_permissions

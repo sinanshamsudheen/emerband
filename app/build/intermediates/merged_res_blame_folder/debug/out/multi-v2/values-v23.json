@@ -4,26 +4,7 @@
             "outputFile": "com.example.emerband.app-mergeDebugResources-45:/values-v23/values-v23.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Abhay\\.gradle\\caches\\transforms-3\\9ed5f16cbcd27bf9ff2227301560040d\\transformed\\material-1.11.0\\res\\values-v23\\values-v23.xml",
-                    "from": {
-                        "startLines": "2,5,9,13,16,19,22,25,28,32",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,271,413,574,784,991,1198,1401,1603,1868",
-                        "endLines": "4,8,12,15,18,21,24,27,31,35",
-                        "endColumns": "10,10,10,10,10,10,10,10,10,10",
-                        "endOffsets": "266,408,569,779,986,1193,1396,1598,1863,2136"
-                    },
-                    "to": {
-                        "startLines": "60,63,67,71,74,77,80,83,86,90",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "3746,3962,4104,4265,4475,4682,4889,5092,5294,5559",
-                        "endLines": "62,66,70,73,76,79,82,85,89,93",
-                        "endColumns": "10,10,10,10,10,10,10,10,10,10",
-                        "endOffsets": "3957,4099,4260,4470,4677,4884,5087,5289,5554,5827"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Abhay\\.gradle\\caches\\transforms-3\\22e26384dd04e6d50684989214aa0c1b\\transformed\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\Acer\\.gradle\\caches\\transforms-3\\22e26384dd04e6d50684989214aa0c1b\\transformed\\cardview-1.0.0\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -42,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Abhay\\Desktop\\EmerBand\\app\\src\\main\\res\\values-v23\\themes.xml",
+                    "source": "C:\\Users\\Acer\\Desktop\\Emerband\\emerband\\app\\src\\main\\res\\values-v23\\themes.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -61,7 +42,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Abhay\\.gradle\\caches\\transforms-3\\1e2f861312ad42faf7384aadd6209d49\\transformed\\appcompat-1.6.1\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\Acer\\.gradle\\caches\\transforms-3\\1e2f861312ad42faf7384aadd6209d49\\transformed\\appcompat-1.6.1\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,20,34,35,36,39,43,44,45,46",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -80,7 +61,26 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Abhay\\.gradle\\caches\\transforms-3\\325f6767ec2a02f277c040c84c2835de\\transformed\\work-runtime-2.9.0\\res\\values-v23\\values-v23.xml",
+                    "source": "C:\\Users\\Acer\\.gradle\\caches\\transforms-3\\9ed5f16cbcd27bf9ff2227301560040d\\transformed\\material-1.11.0\\res\\values-v23\\values-v23.xml",
+                    "from": {
+                        "startLines": "2,5,9,13,16,19,22,25,28,32",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,271,413,574,784,991,1198,1401,1603,1868",
+                        "endLines": "4,8,12,15,18,21,24,27,31,35",
+                        "endColumns": "10,10,10,10,10,10,10,10,10,10",
+                        "endOffsets": "266,408,569,779,986,1193,1396,1598,1863,2136"
+                    },
+                    "to": {
+                        "startLines": "60,63,67,71,74,77,80,83,86,90",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "3746,3962,4104,4265,4475,4682,4889,5092,5294,5559",
+                        "endLines": "62,66,70,73,76,79,82,85,89,93",
+                        "endColumns": "10,10,10,10,10,10,10,10,10,10",
+                        "endOffsets": "3957,4099,4260,4470,4677,4884,5087,5289,5554,5827"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Acer\\.gradle\\caches\\transforms-3\\325f6767ec2a02f277c040c84c2835de\\transformed\\work-runtime-2.9.0\\res\\values-v23\\values-v23.xml",
                     "from": {
                         "startLines": "2,3",
                         "startColumns": "4,4",
