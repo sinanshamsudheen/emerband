@@ -75,6 +75,7 @@ id btnTestAlert
 id btnTestEmergency
 id btnTestFakeCall
 id btnTestOffline
+id button_bluetooth_devices
 id callDurationText
 id card_bluetooth_status
 id contact_name

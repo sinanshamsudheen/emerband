@@ -112,6 +112,7 @@
             android:label="Cyber Cell Settings"
             android:exported="false" />
         <activity android:name=".HelpSupportActivity" />
+        <activity android:name=".BluetoothDeviceListActivity" />
             
     </application>
 

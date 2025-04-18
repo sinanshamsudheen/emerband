@@ -1615,6 +1615,7 @@ com.example.emerband:id/search_edit_frame = 0x7f0801ba
 com.example.emerband:style/Base.Theme.AppCompat.Light = 0x7f120053
 com.example.emerband:dimen/appcompat_dialog_background_inset = 0x7f060051
 com.example.emerband:id/search_badge = 0x7f0801b6
+com.example.emerband:id/button_bluetooth_devices = 0x7f080235
 com.example.emerband:id/mtrl_picker_fullscreen = 0x7f080154
 com.example.emerband:style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored = 0x7f1201bd
 com.example.emerband:style/TextAppearance.AppCompat.Light.Widget.PopupMenu.Small = 0x7f1201a6

@@ -236,6 +236,13 @@
                     </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
+
+            <Button
+                android:id="@+id/button_bluetooth_devices"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bluetooth Devices"
+                android:layout_marginTop="16dp" />
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>

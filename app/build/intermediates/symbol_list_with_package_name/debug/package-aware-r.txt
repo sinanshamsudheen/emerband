@@ -3306,6 +3306,7 @@ id btnTestEmergency
 id btnTestFakeCall
 id btnTestOffline
 id buttonPanel
+id button_bluetooth_devices
 id cache_measures
 id callDurationText
 id callMeasure

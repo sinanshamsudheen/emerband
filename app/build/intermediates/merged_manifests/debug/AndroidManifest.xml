@@ -138,6 +138,7 @@
             android:label="Cyber Cell Settings"
             android:parentActivityName="com.example.emerband.MainActivity" />
         <activity android:name="com.example.emerband.HelpSupportActivity" />
+        <activity android:name="com.example.emerband.BluetoothDeviceListActivity" />
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
             android:exported="false"

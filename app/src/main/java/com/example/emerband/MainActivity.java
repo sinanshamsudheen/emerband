@@ -135,6 +135,15 @@ public class MainActivity extends AppCompatActivity {
 
             // Check Bluetooth status
             updateBluetoothStatus();
+
+            Button bluetoothDevicesButton = findViewById(R.id.button_bluetooth_devices);
+            bluetoothDevicesButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(MainActivity.this, BluetoothDeviceListActivity.class);
+                    startActivity(intent);
+                }
+            });
         } catch (Exception e) {
             String error = "Error initializing app: " + e.getMessage();
             Toast.makeText(this, error, Toast.LENGTH_LONG).show();

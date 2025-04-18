@@ -3305,6 +3305,7 @@ int id btnTestEmergency 0x7f080073
 int id btnTestFakeCall 0x7f080074
 int id btnTestOffline 0x7f080075
 int id buttonPanel 0x7f080076
+int id button_bluetooth_devices 0x7f080235
 int id cache_measures 0x7f080077
 int id callDurationText 0x7f080078
 int id callMeasure 0x7f080079
