@@ -346,31 +346,17 @@
     </incident>
 
     <incident
-        id="ContentDescription"
+        id="UseCompoundDrawables"
         severity="warning"
-        message="Missing `contentDescription` attribute on image">
-        <fix-alternatives>
-            <fix-attribute
-                description="Set contentDescription"
-                namespace="http://schemas.android.com/apk/res/android"
-                attribute="contentDescription"
-                value="TODO"
-                dot="4"
-                mark="0"/>
-            <fix-attribute
-                description="Set importantForAccessibility=&quot;no&quot;"
-                namespace="http://schemas.android.com/apk/res/android"
-                attribute="importantForAccessibility"
-                value="no"/>
-        </fix-alternatives>
+        message="This tag and its children can be replaced by one `&lt;TextView/>` and a compound drawable">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
             line="55"
             column="18"
-            startOffset="2192"
+            startOffset="2201"
             endLine="55"
-            endColumn="27"
-            endOffset="2201"/>
+            endColumn="30"
+            endOffset="2213"/>
     </incident>
 
     <incident
@@ -379,12 +365,12 @@
         message="Hardcoded string &quot;Bluetooth Status&quot;, should use `@string` resource">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-            line="67"
-            column="21"
-            startOffset="2740"
-            endLine="67"
-            endColumn="52"
-            endOffset="2771"/>
+            line="73"
+            column="25"
+            startOffset="3086"
+            endLine="73"
+            endColumn="56"
+            endOffset="3117"/>
     </incident>
 
     <incident
@@ -393,12 +379,12 @@
         message="Hardcoded string &quot;Emergency Features&quot;, should use `@string` resource">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-            line="75"
+            line="86"
             column="17"
-            startOffset="3056"
-            endLine="75"
+            startOffset="3655"
+            endLine="86"
             endColumn="50"
-            endOffset="3089"/>
+            endOffset="3688"/>
     </incident>
 
     <incident
@@ -407,12 +393,12 @@
         message="Hardcoded string &quot;EMERGENCY CONTACTS&quot;, should use `@string` resource">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-            line="91"
+            line="102"
             column="21"
-            startOffset="3739"
-            endLine="91"
+            startOffset="4338"
+            endLine="102"
             endColumn="54"
-            endOffset="3772"/>
+            endOffset="4371"/>
     </incident>
 
     <incident
@@ -421,40 +407,12 @@
         message="Hardcoded string &quot;About&quot;, should use `@string` resource">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-            line="101"
+            line="112"
             column="21"
-            startOffset="4234"
-            endLine="101"
+            startOffset="4833"
+            endLine="112"
             endColumn="41"
-            endOffset="4254"/>
-    </incident>
-
-    <incident
-        id="ContentDescription"
-        severity="warning"
-        message="Missing `contentDescription` attribute on image">
-        <fix-alternatives>
-            <fix-attribute
-                description="Set contentDescription"
-                namespace="http://schemas.android.com/apk/res/android"
-                attribute="contentDescription"
-                value="TODO"
-                dot="4"
-                mark="0"/>
-            <fix-attribute
-                description="Set importantForAccessibility=&quot;no&quot;"
-                namespace="http://schemas.android.com/apk/res/android"
-                attribute="importantForAccessibility"
-                value="no"/>
-        </fix-alternatives>
-        <location
-            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-            line="133"
-            column="26"
-            startOffset="5718"
-            endLine="133"
-            endColumn="35"
-            endOffset="5727"/>
+            endOffset="4853"/>
     </incident>
 
     <incident
@@ -474,12 +432,40 @@
         </fix-composite>
         <location
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-            line="138"
+            line="149"
             column="29"
-            startOffset="6001"
-            endLine="138"
+            startOffset="6600"
+            endLine="149"
             endColumn="56"
-            endOffset="6028"/>
+            endOffset="6627"/>
+    </incident>
+
+    <incident
+        id="ContentDescription"
+        severity="warning"
+        message="Missing `contentDescription` attribute on image">
+        <fix-alternatives>
+            <fix-attribute
+                description="Set contentDescription"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="contentDescription"
+                value="TODO"
+                dot="4"
+                mark="0"/>
+            <fix-attribute
+                description="Set importantForAccessibility=&quot;no&quot;"
+                namespace="http://schemas.android.com/apk/res/android"
+                attribute="importantForAccessibility"
+                value="no"/>
+        </fix-alternatives>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="144"
+            column="26"
+            startOffset="6317"
+            endLine="144"
+            endColumn="35"
+            endOffset="6326"/>
     </incident>
 
     <incident
@@ -488,12 +474,12 @@
         message="Hardcoded string &quot;Debug Tools&quot;, should use `@string` resource">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-            line="144"
+            line="155"
             column="29"
-            startOffset="6291"
-            endLine="144"
+            startOffset="6890"
+            endLine="155"
             endColumn="55"
-            endOffset="6317"/>
+            endOffset="6916"/>
     </incident>
 
     <incident
@@ -502,12 +488,12 @@
         message="Hardcoded string &quot;Test Emergency&quot;, should use `@string` resource">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-            line="161"
+            line="172"
             column="29"
-            startOffset="7103"
-            endLine="161"
+            startOffset="7702"
+            endLine="172"
             endColumn="58"
-            endOffset="7132"/>
+            endOffset="7731"/>
     </incident>
 
     <incident
@@ -516,12 +502,12 @@
         message="Hardcoded string &quot;Emergency Call&quot;, should use `@string` resource">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-            line="171"
+            line="182"
             column="29"
-            startOffset="7671"
-            endLine="171"
+            startOffset="8270"
+            endLine="182"
             endColumn="58"
-            endOffset="7700"/>
+            endOffset="8299"/>
     </incident>
 
     <incident
@@ -530,12 +516,12 @@
         message="Hardcoded string &quot;Cyber Cell&quot;, should use `@string` resource">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-            line="181"
+            line="192"
             column="29"
-            startOffset="8235"
-            endLine="181"
+            startOffset="8834"
+            endLine="192"
             endColumn="54"
-            endOffset="8260"/>
+            endOffset="8859"/>
     </incident>
 
     <incident
@@ -544,12 +530,12 @@
         message="Hardcoded string &quot;Location&quot;, should use `@string` resource">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-            line="191"
+            line="202"
             column="29"
-            startOffset="8794"
-            endLine="191"
+            startOffset="9393"
+            endLine="202"
             endColumn="52"
-            endOffset="8817"/>
+            endOffset="9416"/>
     </incident>
 
     <incident
@@ -558,12 +544,12 @@
         message="Hardcoded string &quot;Test Fake Call&quot;, should use `@string` resource">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-            line="201"
+            line="212"
             column="29"
-            startOffset="9355"
-            endLine="201"
+            startOffset="9954"
+            endLine="212"
             endColumn="58"
-            endOffset="9384"/>
+            endOffset="9983"/>
     </incident>
 
     <incident
@@ -572,12 +558,12 @@
         message="Hardcoded string &quot;Test Alert&quot;, should use `@string` resource">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-            line="211"
+            line="222"
             column="29"
-            startOffset="9919"
-            endLine="211"
+            startOffset="10518"
+            endLine="222"
             endColumn="54"
-            endOffset="9944"/>
+            endOffset="10543"/>
     </incident>
 
     <incident
@@ -586,12 +572,26 @@
         message="Hardcoded string &quot;Test Offline&quot;, should use `@string` resource">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
-            line="221"
+            line="232"
             column="29"
-            startOffset="10481"
-            endLine="221"
+            startOffset="11080"
+            endLine="232"
             endColumn="56"
-            endOffset="10508"/>
+            endOffset="11107"/>
+    </incident>
+
+    <incident
+        id="HardcodedText"
+        severity="warning"
+        message="Hardcoded string &quot;Bluetooth Devices&quot;, should use `@string` resource">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*resDir*0}/layout/activity_main.xml"
+            line="244"
+            column="17"
+            startOffset="11667"
+            endLine="244"
+            endColumn="49"
+            endOffset="11699"/>
     </incident>
 
     <incident
@@ -868,12 +868,40 @@
         message="String literal in `setText` can not be translated. Use Android resources instead.">
         <location
             file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/MainActivity.java"
-            line="194"
+            line="207"
             column="33"
-            startOffset="7430"
-            endLine="194"
+            startOffset="7970"
+            endLine="207"
             endColumn="40"
-            endOffset="7437"/>
+            endOffset="7977"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/MainActivity.java"
+            line="638"
+            column="39"
+            startOffset="25442"
+            endLine="638"
+            endColumn="56"
+            endOffset="25459"/>
+    </incident>
+
+    <incident
+        id="SetTextI18n"
+        severity="warning"
+        message="String literal in `setText` can not be translated. Use Android resources instead.">
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/MainActivity.java"
+            line="641"
+            column="39"
+            startOffset="25659"
+            endLine="641"
+            endColumn="57"
+            endOffset="25677"/>
     </incident>
 
     <incident

@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:2:1-118:12
-INJECTED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:2:1-118:12
-INJECTED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:2:1-118:12
-INJECTED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:2:1-118:12
+ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:2:1-119:12
+INJECTED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:2:1-119:12
+INJECTED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:2:1-119:12
+INJECTED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:2:1-119:12
 MERGED from [com.guolindev.permissionx:permissionx:1.7.1] C:\Users\Abhay\.gradle\caches\transforms-3\f1762a667b792e1a449084fc5d470a28\transformed\jetified-permissionx-1.7.1\AndroidManifest.xml:2:1-9:12
 MERGED from [androidx.databinding:viewbinding:8.2.0] C:\Users\Abhay\.gradle\caches\transforms-3\17fbe7d8a48c64081f0a1635390233fe\transformed\jetified-viewbinding-8.2.0\AndroidManifest.xml:2:1-7:12
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\Abhay\.gradle\caches\transforms-3\9ed5f16cbcd27bf9ff2227301560040d\transformed\material-1.11.0\AndroidManifest.xml:17:1-24:12
@@ -172,8 +172,8 @@ ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:48:5
 	android:name
 		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:48:19-63
 application
-ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:50:5-116:19
-INJECTED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:50:5-116:19
+ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:50:5-117:19
+INJECTED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:50:5-117:19
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\Abhay\.gradle\caches\transforms-3\9ed5f16cbcd27bf9ff2227301560040d\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.11.0] C:\Users\Abhay\.gradle\caches\transforms-3\9ed5f16cbcd27bf9ff2227301560040d\transformed\material-1.11.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.4] C:\Users\Abhay\.gradle\caches\transforms-3\aad55ffcee58ccc831f05327108ea51c\transformed\constraintlayout-2.1.4\AndroidManifest.xml:9:5-20
@@ -322,6 +322,10 @@ activity#com.example.emerband.HelpSupportActivity
 ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:114:9-57
 	android:name
 		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:114:19-54
+activity#com.example.emerband.BluetoothDeviceListActivity
+ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:115:9-65
+	android:name
+		ADDED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml:115:19-62
 uses-sdk
 INJECTED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Abhay\Desktop\EmerBand\app\src\main\AndroidManifest.xml

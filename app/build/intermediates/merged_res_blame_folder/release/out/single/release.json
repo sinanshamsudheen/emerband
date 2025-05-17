@@ -224,6 +224,10 @@
         "source": "com.example.emerband.app-main-48:/drawable/ic_signal.xml"
     },
     {
+        "merged": "com.example.emerband.app-merged_res-47:/layout_activity_device_list.xml.flat",
+        "source": "com.example.emerband.app-main-48:/layout/activity_device_list.xml"
+    },
+    {
         "merged": "com.example.emerband.app-merged_res-47:/layout_item_emergency_contact.xml.flat",
         "source": "com.example.emerband.app-main-48:/layout/item_emergency_contact.xml"
     }

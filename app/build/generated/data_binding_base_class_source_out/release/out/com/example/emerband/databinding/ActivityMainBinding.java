@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.widget.Toolbar;
+import androidx.cardview.widget.CardView;
 import androidx.coordinatorlayout.widget.CoordinatorLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
@@ -52,6 +53,12 @@ public final class ActivityMainBinding implements ViewBinding {
   public final Button btnTestOffline;
 
   @NonNull
+  public final Button buttonBluetoothDevices;
+
+  @NonNull
+  public final CardView cardBluetoothStatus;
+
+  @NonNull
   public final CoordinatorLayout coordinatorLayout;
 
   @NonNull
@@ -64,7 +71,7 @@ public final class ActivityMainBinding implements ViewBinding {
   public final LinearLayout debugHeader;
 
   @NonNull
-  public final ImageView ivBluetoothStatus;
+  public final ImageView ivBluetoothIcon;
 
   @NonNull
   public final ImageView ivDebugExpand;
@@ -79,9 +86,10 @@ public final class ActivityMainBinding implements ViewBinding {
       @NonNull Button btnEmergencyCall, @NonNull Button btnEmergencyContacts,
       @NonNull Button btnLocation, @NonNull Button btnSettings, @NonNull Button btnTestAlert,
       @NonNull Button btnTestEmergency, @NonNull Button btnTestFakeCall,
-      @NonNull Button btnTestOffline, @NonNull CoordinatorLayout coordinatorLayout,
+      @NonNull Button btnTestOffline, @NonNull Button buttonBluetoothDevices,
+      @NonNull CardView cardBluetoothStatus, @NonNull CoordinatorLayout coordinatorLayout,
       @NonNull MaterialCardView debugCard, @NonNull LinearLayout debugContent,
-      @NonNull LinearLayout debugHeader, @NonNull ImageView ivBluetoothStatus,
+      @NonNull LinearLayout debugHeader, @NonNull ImageView ivBluetoothIcon,
       @NonNull ImageView ivDebugExpand, @NonNull Toolbar toolbar,
       @NonNull TextView tvBluetoothStatus) {
     this.rootView = rootView;
@@ -94,11 +102,13 @@ public final class ActivityMainBinding implements ViewBinding {
     this.btnTestEmergency = btnTestEmergency;
     this.btnTestFakeCall = btnTestFakeCall;
     this.btnTestOffline = btnTestOffline;
+    this.buttonBluetoothDevices = buttonBluetoothDevices;
+    this.cardBluetoothStatus = cardBluetoothStatus;
     this.coordinatorLayout = coordinatorLayout;
     this.debugCard = debugCard;
     this.debugContent = debugContent;
     this.debugHeader = debugHeader;
-    this.ivBluetoothStatus = ivBluetoothStatus;
+    this.ivBluetoothIcon = ivBluetoothIcon;
     this.ivDebugExpand = ivDebugExpand;
     this.toolbar = toolbar;
     this.tvBluetoothStatus = tvBluetoothStatus;
@@ -185,6 +195,18 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.button_bluetooth_devices;
+      Button buttonBluetoothDevices = ViewBindings.findChildViewById(rootView, id);
+      if (buttonBluetoothDevices == null) {
+        break missingId;
+      }
+
+      id = R.id.card_bluetooth_status;
+      CardView cardBluetoothStatus = ViewBindings.findChildViewById(rootView, id);
+      if (cardBluetoothStatus == null) {
+        break missingId;
+      }
+
       CoordinatorLayout coordinatorLayout = (CoordinatorLayout) rootView;
 
       id = R.id.debugCard;
@@ -205,9 +227,9 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.ivBluetoothStatus;
-      ImageView ivBluetoothStatus = ViewBindings.findChildViewById(rootView, id);
-      if (ivBluetoothStatus == null) {
+      id = R.id.iv_bluetooth_icon;
+      ImageView ivBluetoothIcon = ViewBindings.findChildViewById(rootView, id);
+      if (ivBluetoothIcon == null) {
         break missingId;
       }
 
@@ -223,7 +245,7 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.tvBluetoothStatus;
+      id = R.id.tv_bluetooth_status;
       TextView tvBluetoothStatus = ViewBindings.findChildViewById(rootView, id);
       if (tvBluetoothStatus == null) {
         break missingId;
@@ -231,8 +253,9 @@ public final class ActivityMainBinding implements ViewBinding {
 
       return new ActivityMainBinding((CoordinatorLayout) rootView, btnCyberCell, btnEmergencyCall,
           btnEmergencyContacts, btnLocation, btnSettings, btnTestAlert, btnTestEmergency,
-          btnTestFakeCall, btnTestOffline, coordinatorLayout, debugCard, debugContent, debugHeader,
-          ivBluetoothStatus, ivDebugExpand, toolbar, tvBluetoothStatus);
+          btnTestFakeCall, btnTestOffline, buttonBluetoothDevices, cardBluetoothStatus,
+          coordinatorLayout, debugCard, debugContent, debugHeader, ivBluetoothIcon, ivDebugExpand,
+          toolbar, tvBluetoothStatus);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

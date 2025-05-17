@@ -3306,11 +3306,13 @@ id btnTestEmergency
 id btnTestFakeCall
 id btnTestOffline
 id buttonPanel
+id button_bluetooth_devices
 id cache_measures
 id callDurationText
 id callMeasure
 id cancel_action
 id cancel_button
+id card_bluetooth_status
 id carryVelocity
 id center
 id centerCrop
@@ -3369,6 +3371,7 @@ id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
+id device_list
 id dialog_button
 id dimensions
 id direct
@@ -3456,8 +3459,8 @@ id inward
 id is_pooling_container_tag
 id italic
 id item_touch_helper_previous_elevation
-id ivBluetoothStatus
 id ivDebugExpand
+id iv_bluetooth_icon
 id jumpToEnd
 id jumpToStart
 id labeled
@@ -3723,9 +3726,9 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
-id tvBluetoothStatus
 id tvContactName
 id tvPhoneNumber
+id tv_bluetooth_status
 id unchecked
 id uniform
 id unlabeled
@@ -3869,6 +3872,7 @@ layout activity_about
 layout activity_alert
 layout activity_cyber_cell
 layout activity_cyber_cell_settings
+layout activity_device_list
 layout activity_emergency_contacts
 layout activity_fake_call
 layout activity_help_support
@@ -4014,6 +4018,7 @@ string app_name
 string app_settings
 string appbar_scrolling_view_behavior
 string background_location
+string bluetooth_icon_desc
 string bottom_sheet_behavior
 string bottomsheet_action_collapse
 string bottomsheet_action_expand

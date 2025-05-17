@@ -1,6 +1,50 @@
 C:\Users\Abhay\Desktop\EmerBand\app\lint-baseline.xml: Information: 16 errors and 40 warnings were filtered out because they are listed in the baseline file, lint-baseline.xml
  [LintBaseline]
 C:\Users\Abhay\Desktop\EmerBand\app\lint-baseline.xml: Information: 38 errors/warnings were listed in the baseline file (lint-baseline.xml) but not found in the project; perhaps they have been fixed? Another possible explanation is that lint recently stopped analyzing (and including results from) dependent projects by default. You can turn this back on with android.lintOptions.checkDependencies=true. Unmatched issue types: ButtonStyle (2), HardcodedText (8), NewApi (5), ObsoleteSdkInt, Overdraw (2), PrivateResource, SetTextI18n (4), UnusedAttribute (2), UnusedResources (13) [LintBaseline]
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\java\com\example\emerband\BluetoothDeviceListActivity.java:68: Error: Call requires permission which may be rejected by user: code should explicitly check to see if permission is available (with checkPermission) or explicitly handle a potential SecurityException [MissingPermission]
+        Set<BluetoothDevice> pairedDevices = bluetoothAdapter.getBondedDevices();
+                                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\java\com\example\emerband\BluetoothDeviceListActivity.java:72: Error: Call requires permission which may be rejected by user: code should explicitly check to see if permission is available (with checkPermission) or explicitly handle a potential SecurityException [MissingPermission]
+                deviceList.add(device.getName() + "\n" + device.getAddress());
+                               ~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\java\com\example\emerband\BluetoothDeviceListActivity.java:84: Error: Call requires permission which may be rejected by user: code should explicitly check to see if permission is available (with checkPermission) or explicitly handle a potential SecurityException [MissingPermission]
+                BluetoothSocket socket = device.createRfcommSocketToServiceRecord(MY_UUID);
+                                         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\java\com\example\emerband\BluetoothDeviceListActivity.java:85: Error: Call requires permission which may be rejected by user: code should explicitly check to see if permission is available (with checkPermission) or explicitly handle a potential SecurityException [MissingPermission]
+                socket.connect(); // This will block until the connection is established
+                ~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\java\com\example\emerband\BluetoothDeviceListActivity.java:87: Error: Call requires permission which may be rejected by user: code should explicitly check to see if permission is available (with checkPermission) or explicitly handle a potential SecurityException [MissingPermission]
+                runOnUiThread(() -> Toast.makeText(this, "Connected to " + device.getName(), Toast.LENGTH_SHORT).show());
+                                                                           ~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\java\com\example\emerband\BluetoothDeviceListActivity.java:101: Error: Call requires permission which may be rejected by user: code should explicitly check to see if permission is available (with checkPermission) or explicitly handle a potential SecurityException [MissingPermission]
+        if (bluetoothAdapter.isDiscovering()) {
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\java\com\example\emerband\BluetoothDeviceListActivity.java:102: Error: Call requires permission which may be rejected by user: code should explicitly check to see if permission is available (with checkPermission) or explicitly handle a potential SecurityException [MissingPermission]
+            bluetoothAdapter.cancelDiscovery();
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\java\com\example\emerband\BluetoothDeviceListActivity.java:104: Error: Call requires permission which may be rejected by user: code should explicitly check to see if permission is available (with checkPermission) or explicitly handle a potential SecurityException [MissingPermission]
+        bluetoothAdapter.startDiscovery();
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\java\com\example\emerband\BluetoothDeviceListActivity.java:109: Error: Call requires permission which may be rejected by user: code should explicitly check to see if permission is available (with checkPermission) or explicitly handle a potential SecurityException [MissingPermission]
+        if (bluetoothAdapter != null && bluetoothAdapter.isDiscovering()) {
+                                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\java\com\example\emerband\BluetoothDeviceListActivity.java:110: Error: Call requires permission which may be rejected by user: code should explicitly check to see if permission is available (with checkPermission) or explicitly handle a potential SecurityException [MissingPermission]
+            bluetoothAdapter.cancelDiscovery();
+            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\java\com\example\emerband\BluetoothDeviceListActivity.java:125: Error: Call requires permission which may be rejected by user: code should explicitly check to see if permission is available (with checkPermission) or explicitly handle a potential SecurityException [MissingPermission]
+                    deviceList.add(device.getName() + "\n" + device.getAddress());
+                                   ~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "MissingPermission":
+   This check scans through your code and libraries and looks at the APIs
+   being used, and checks this against the set of permissions required to
+   access those APIs. If the code using those APIs is called at runtime, then
+   the program will crash.
+
+   Furthermore, for permissions that are revocable (with targetSdkVersion 23),
+   client code must also be prepared to handle the calls throwing an exception
+   if the user rejects the request for permission at runtime.
+
 C:\Users\Abhay\Desktop\EmerBand\app\build.gradle:90: Warning: A newer version of androidx.fragment:fragment than 1.6.2 is available: 1.8.6 [GradleDependency]
     implementation 'androidx.fragment:fragment:1.6.2'
                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -24,7 +68,7 @@ C:\Users\Abhay\Desktop\EmerBand\app\build.gradle:121: Warning: A newer version o
    However, you may simply not be aware that a more recent version is
    available, and that is what this lint check helps find.
 
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:138: Error: Must use app:tint instead of android:tint [UseAppTint from androidx.appcompat]
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:149: Error: Must use app:tint instead of android:tint [UseAppTint from androidx.appcompat]
                             android:tint="@color/white" />
                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -71,6 +115,9 @@ C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values-v23: Warning: This folde
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_fake_call.xml:42: Warning: This tag and its children can be replaced by one <TextView/> and a compound drawable [UseCompoundDrawables]
         <LinearLayout
          ~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:55: Warning: This tag and its children can be replaced by one <TextView/> and a compound drawable [UseCompoundDrawables]
+                <LinearLayout
+                 ~~~~~~~~~~~~
 
    Explanation for issues of type "UseCompoundDrawables":
    A LinearLayout which contains an ImageView and a TextView can be more
@@ -195,9 +242,6 @@ C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\drawable\ic_arrow_back.xml:2: W
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\drawable\ic_battery_full.xml:2: Warning: The resource R.drawable.ic_battery_full appears to be unused [UnusedResources]
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
 ^
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\drawable\ic_bluetooth_disabled.xml:2: Warning: The resource R.drawable.ic_bluetooth_disabled appears to be unused [UnusedResources]
-<vector xmlns:android="http://schemas.android.com/apk/res/android"
-^
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\drawable\ic_bug.xml:2: Warning: The resource R.drawable.ic_bug appears to be unused [UnusedResources]
 <vector xmlns:android="http://schemas.android.com/apk/res/android"
 ^
@@ -238,6 +282,9 @@ C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\item_emergency_contact.x
 <com.google.android.material.card.MaterialCardView
 ^
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\drawable\red_circle_button.xml:2: Warning: The resource R.drawable.red_circle_button appears to be unused [UnusedResources]
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+^
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\drawable\rounded_background_dark.xml:2: Warning: The resource R.drawable.rounded_background_dark appears to be unused [UnusedResources]
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
 ^
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\values\strings.xml:6: Warning: The resource R.string.emergency appears to be unused [UnusedResources]
@@ -523,10 +570,7 @@ C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_fake_call.xml:4
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_fake_call.xml:66: Warning: Missing contentDescription attribute on image [ContentDescription]
     <com.google.android.material.floatingactionbutton.FloatingActionButton
      ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:55: Warning: Missing contentDescription attribute on image [ContentDescription]
-                <ImageView
-                 ~~~~~~~~~
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:133: Warning: Missing contentDescription attribute on image [ContentDescription]
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:144: Warning: Missing contentDescription attribute on image [ContentDescription]
                         <ImageView
                          ~~~~~~~~~
 
@@ -549,6 +593,26 @@ C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:133: W
 
    https://developer.android.com/guide/topics/ui/accessibility/apps#special-cases
 
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\java\com\example\emerband\MainActivity.java:638: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            tvBluetoothStatus.setText("Bluetooth is ON"); // Ensure this text is correct
+                                      ~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\java\com\example\emerband\MainActivity.java:641: Warning: String literal in setText can not be translated. Use Android resources instead. [SetTextI18n]
+            tvBluetoothStatus.setText("Bluetooth is OFF");
+                                      ~~~~~~~~~~~~~~~~~~
+
+   Explanation for issues of type "SetTextI18n":
+   When calling TextView#setText
+   * Never call Number#toString() to format numbers; it will not handle
+   fraction separators and locale-specific digits properly. Consider using
+   String#format with proper format specifications (%d or %f) instead.
+   * Do not pass a string literal (e.g. "Hello") to display text. Hardcoded
+   text can not be properly translated to other languages. Consider using
+   Android resource strings instead.
+   * Do not build messages by concatenating text chunks. Such messages can not
+   be properly translated.
+
+   https://developer.android.com/guide/topics/resources/localization.html
+
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_fake_call.xml:28: Warning: Hardcoded string "Wi-Fi call", should use @string resource [HardcodedText]
             android:text="Wi-Fi call"
             ~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -564,42 +628,45 @@ C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_help_support.xm
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:42: Warning: Hardcoded string "Status", should use @string resource [HardcodedText]
                 android:text="Status"
                 ~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:67: Warning: Hardcoded string "Bluetooth Status", should use @string resource [HardcodedText]
-                    android:text="Bluetooth Status"
-                    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:75: Warning: Hardcoded string "Emergency Features", should use @string resource [HardcodedText]
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:73: Warning: Hardcoded string "Bluetooth Status", should use @string resource [HardcodedText]
+                        android:text="Bluetooth Status"
+                        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:86: Warning: Hardcoded string "Emergency Features", should use @string resource [HardcodedText]
                 android:text="Emergency Features"
                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:91: Warning: Hardcoded string "EMERGENCY CONTACTS", should use @string resource [HardcodedText]
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:102: Warning: Hardcoded string "EMERGENCY CONTACTS", should use @string resource [HardcodedText]
                     android:text="EMERGENCY CONTACTS"
                     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:101: Warning: Hardcoded string "About", should use @string resource [HardcodedText]
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:112: Warning: Hardcoded string "About", should use @string resource [HardcodedText]
                     android:text="About"
                     ~~~~~~~~~~~~~~~~~~~~
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:144: Warning: Hardcoded string "Debug Tools", should use @string resource [HardcodedText]
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:155: Warning: Hardcoded string "Debug Tools", should use @string resource [HardcodedText]
                             android:text="Debug Tools"
                             ~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:161: Warning: Hardcoded string "Test Emergency", should use @string resource [HardcodedText]
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:172: Warning: Hardcoded string "Test Emergency", should use @string resource [HardcodedText]
                             android:text="Test Emergency"
                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:171: Warning: Hardcoded string "Emergency Call", should use @string resource [HardcodedText]
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:182: Warning: Hardcoded string "Emergency Call", should use @string resource [HardcodedText]
                             android:text="Emergency Call"
                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:181: Warning: Hardcoded string "Cyber Cell", should use @string resource [HardcodedText]
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:192: Warning: Hardcoded string "Cyber Cell", should use @string resource [HardcodedText]
                             android:text="Cyber Cell"
                             ~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:191: Warning: Hardcoded string "Location", should use @string resource [HardcodedText]
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:202: Warning: Hardcoded string "Location", should use @string resource [HardcodedText]
                             android:text="Location"
                             ~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:201: Warning: Hardcoded string "Test Fake Call", should use @string resource [HardcodedText]
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:212: Warning: Hardcoded string "Test Fake Call", should use @string resource [HardcodedText]
                             android:text="Test Fake Call"
                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:211: Warning: Hardcoded string "Test Alert", should use @string resource [HardcodedText]
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:222: Warning: Hardcoded string "Test Alert", should use @string resource [HardcodedText]
                             android:text="Test Alert"
                             ~~~~~~~~~~~~~~~~~~~~~~~~~
-C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:221: Warning: Hardcoded string "Test Offline", should use @string resource [HardcodedText]
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:232: Warning: Hardcoded string "Test Offline", should use @string resource [HardcodedText]
                             android:text="Test Offline"
                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_main.xml:244: Warning: Hardcoded string "Bluetooth Devices", should use @string resource [HardcodedText]
+                android:text="Bluetooth Devices"
+                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\activity_settings.xml:35: Warning: Hardcoded string "About", should use @string resource [HardcodedText]
                 android:text="About"
                 ~~~~~~~~~~~~~~~~~~~~
@@ -633,4 +700,4 @@ C:\Users\Abhay\Desktop\EmerBand\app\src\main\res\layout\item_emergency_contact.x
    There are quickfixes to automatically extract this hardcoded string into a
    resource lookup.
 
-1 errors, 159 warnings (16 errors, 40 warnings filtered by baseline lint-baseline.xml)
+12 errors, 162 warnings (16 errors, 40 warnings filtered by baseline lint-baseline.xml)

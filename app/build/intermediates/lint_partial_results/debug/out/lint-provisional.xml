@@ -734,6 +734,171 @@
     </incident>
 
     <incident
+        id="MissingPermission"
+        severity="error"
+        message="Call requires permission which may be rejected by user: code should explicitly check to see if permission is available (with `checkPermission`) or explicitly handle a potential `SecurityException`">
+        <fix-data missing="android.permission.BLUETOOTH_CONNECT" requirement="android.permission.BLUETOOTH_CONNECT"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/BluetoothDeviceListActivity.java"
+            line="125"
+            column="36"
+            startOffset="4807"
+            endLine="125"
+            endColumn="52"
+            endOffset="4823"/>
+    </incident>
+
+    <incident
+        id="MissingPermission"
+        severity="error"
+        message="Call requires permission which may be rejected by user: code should explicitly check to see if permission is available (with `checkPermission`) or explicitly handle a potential `SecurityException`">
+        <fix-data missing="android.permission.BLUETOOTH_CONNECT" requirement="android.permission.BLUETOOTH_CONNECT"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/BluetoothDeviceListActivity.java"
+            line="68"
+            column="46"
+            startOffset="2273"
+            endLine="68"
+            endColumn="81"
+            endOffset="2308"/>
+    </incident>
+
+    <incident
+        id="MissingPermission"
+        severity="error"
+        message="Call requires permission which may be rejected by user: code should explicitly check to see if permission is available (with `checkPermission`) or explicitly handle a potential `SecurityException`">
+        <fix-data missing="android.permission.BLUETOOTH_CONNECT" requirement="android.permission.BLUETOOTH_CONNECT"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/BluetoothDeviceListActivity.java"
+            line="72"
+            column="32"
+            startOffset="2523"
+            endLine="72"
+            endColumn="48"
+            endOffset="2539"/>
+    </incident>
+
+    <incident
+        id="MissingPermission"
+        severity="error"
+        message="Call requires permission which may be rejected by user: code should explicitly check to see if permission is available (with `checkPermission`) or explicitly handle a potential `SecurityException`">
+        <fix-data missing="android.permission.BLUETOOTH_CONNECT" requirement="android.permission.BLUETOOTH_CONNECT"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/BluetoothDeviceListActivity.java"
+            line="84"
+            column="42"
+            startOffset="2950"
+            endLine="84"
+            endColumn="91"
+            endOffset="2999"/>
+    </incident>
+
+    <incident
+        id="MissingPermission"
+        severity="error"
+        message="Call requires permission which may be rejected by user: code should explicitly check to see if permission is available (with `checkPermission`) or explicitly handle a potential `SecurityException`">
+        <fix-data missing="android.permission.BLUETOOTH_CONNECT" requirement="android.permission.BLUETOOTH_CONNECT"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/BluetoothDeviceListActivity.java"
+            line="85"
+            column="17"
+            startOffset="3017"
+            endLine="85"
+            endColumn="33"
+            endOffset="3033"/>
+    </incident>
+
+    <incident
+        id="MissingPermission"
+        severity="error"
+        message="Call requires permission which may be rejected by user: code should explicitly check to see if permission is available (with `checkPermission`) or explicitly handle a potential `SecurityException`">
+        <fix-data missing="android.permission.BLUETOOTH_CONNECT" requirement="android.permission.BLUETOOTH_CONNECT"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/BluetoothDeviceListActivity.java"
+            line="87"
+            column="76"
+            startOffset="3166"
+            endLine="87"
+            endColumn="92"
+            endOffset="3182"/>
+    </incident>
+
+    <incident
+        id="MissingPermission"
+        severity="error"
+        message="Call requires permission which may be rejected by user: code should explicitly check to see if permission is available (with `checkPermission`) or explicitly handle a potential `SecurityException`">
+        <fix-data missing="android.permission.BLUETOOTH_SCAN" requirement="android.permission.BLUETOOTH_SCAN"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/BluetoothDeviceListActivity.java"
+            line="101"
+            column="13"
+            startOffset="3761"
+            endLine="101"
+            endColumn="45"
+            endOffset="3793"/>
+    </incident>
+
+    <incident
+        id="MissingPermission"
+        severity="error"
+        message="Call requires permission which may be rejected by user: code should explicitly check to see if permission is available (with `checkPermission`) or explicitly handle a potential `SecurityException`">
+        <fix-data missing="android.permission.BLUETOOTH_SCAN" requirement="android.permission.BLUETOOTH_SCAN"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/BluetoothDeviceListActivity.java"
+            line="102"
+            column="13"
+            startOffset="3809"
+            endLine="102"
+            endColumn="47"
+            endOffset="3843"/>
+    </incident>
+
+    <incident
+        id="MissingPermission"
+        severity="error"
+        message="Call requires permission which may be rejected by user: code should explicitly check to see if permission is available (with `checkPermission`) or explicitly handle a potential `SecurityException`">
+        <fix-data missing="android.permission.BLUETOOTH_SCAN" requirement="android.permission.BLUETOOTH_SCAN"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/BluetoothDeviceListActivity.java"
+            line="104"
+            column="9"
+            startOffset="3863"
+            endLine="104"
+            endColumn="42"
+            endOffset="3896"/>
+    </incident>
+
+    <incident
+        id="MissingPermission"
+        severity="error"
+        message="Call requires permission which may be rejected by user: code should explicitly check to see if permission is available (with `checkPermission`) or explicitly handle a potential `SecurityException`">
+        <fix-data missing="android.permission.BLUETOOTH_SCAN" requirement="android.permission.BLUETOOTH_SCAN"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/BluetoothDeviceListActivity.java"
+            line="109"
+            column="41"
+            startOffset="4064"
+            endLine="109"
+            endColumn="73"
+            endOffset="4096"/>
+    </incident>
+
+    <incident
+        id="MissingPermission"
+        severity="error"
+        message="Call requires permission which may be rejected by user: code should explicitly check to see if permission is available (with `checkPermission`) or explicitly handle a potential `SecurityException`">
+        <fix-data missing="android.permission.BLUETOOTH_SCAN" requirement="android.permission.BLUETOOTH_SCAN"/>
+        <location
+            file="${:app*debug*MAIN*sourceProvider*0*javaDir*0}/com/example/emerband/BluetoothDeviceListActivity.java"
+            line="110"
+            column="13"
+            startOffset="4112"
+            endLine="110"
+            endColumn="47"
+            endOffset="4146"/>
+    </incident>
+
+    <incident
         id="InlinedApi"
         severity="warning"
         message="">
